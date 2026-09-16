@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miyeon | PINKPUNK</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f7f3f8;
+    color: #211c25;
+}
+
+header {
+    background: #111014;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #24131e, #a63f72);
+    color: white;
+    padding: 60px 8%;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.profile-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 45px;
+}
+
+.photo-box {
+    width: 300px;
+    height: 380px;
+    background: #29222f;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.profile-info h2 {
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #a63f72;
+    margin: 8px 0 25px;
+    font-weight: bold;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info-item {
+    background: #f8f2f6;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.info-item strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.section {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    margin-bottom: 15px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    background: #a63f72;
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+}
+
+footer {
+    margin-top: 60px;
+    background: #111014;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 800px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-box {
+        margin: auto;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MUSICVERSE</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Miyeon</h1>
+    <p>PINKPUNK — Main Vocalist, Sub Rapper, Visual</p>
+</section>
+
+<div class="profile-container">
+
+    <div class="photo-box">
+        <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/miyeon.jpg" alt="Miyeon">
+    </div>
+
+    <div class="profile-info">
+        <h2>Miyeon</h2>
+        <div class="subtitle">PINKPUNK</div>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <strong>Stage Name</strong>
+                Miyeon
+            </div>
+
+            <div class="info-item">
+                <strong>Group</strong>
+                PINKPUNK
+            </div>
+
+            <div class="info-item">
+                <strong>Positions</strong>
+                Main Vocalist, Sub Rapper, Visual
+            </div>
+
+            <div class="info-item">
+                <strong>Company</strong>
+                LUX Entertainment
+            </div>
+
+            <div class="info-item">
+                <strong>Vocal Level</strong>
+                98
+            </div>
+
+            <div class="info-item">
+                <strong>Group Position</strong>
+                3rd Oldest Member
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<section class="section">
+    <h2>About Miyeon</h2>
+    <p>
+        Miyeon is the third oldest member of PINKPUNK and serves as the group's
+        Main Vocalist, Sub Rapper and Visual. She is known for her exceptional
+        vocal ability, clear tone and strong presence as one of the group's
+        main vocal pillars.
+    </p>
+
+    <a class="button" href="pinkpunk.html">← Back to PINKPUNK</a>
+</section>
+
+<footer>
+    Musicverse Profiles © 2026
+</footer>
+
+</body>
+</html>
