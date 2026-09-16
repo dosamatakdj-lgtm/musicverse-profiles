@@ -2,427 +2,217 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Idols — Musicverse</title>
+<title>Idols — Musicverse Profiles</title>
 
 <style>
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f2f7;
-color:#211c25;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    color:#111;
 }
-
-/* HEADER */
 
 header{
-height:76px;
-background:#17131c;
-color:white;
-
-display:flex;
-align-items:center;
-
-padding:0 6%;
-gap:30px;
-
-position:sticky;
-top:0;
-z-index:100;
+    background:#111;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.logo{
-font-size:24px;
-font-weight:900;
-letter-spacing:2px;
-}
-
-nav{
-margin-left:auto;
-
-display:flex;
-align-items:center;
-gap:22px;
+header h1{
+    margin:0;
+    font-size:24px;
 }
 
 nav a{
-color:#ddd;
-text-decoration:none;
-
-font-size:13px;
-font-weight:bold;
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
 }
 
 nav a:hover{
-color:white;
+    color:#aaa;
 }
-
-.search-nav{
-width:180px;
-
-padding:10px 15px;
-
-border-radius:20px;
-
-border:1px solid #494151;
-
-background:#29242f;
-
-color:white;
-
-outline:none;
-}
-
-/* HERO */
 
 .hero{
-background:
-linear-gradient(135deg,#21152d,#75449d);
-
-color:white;
-
-padding:85px 7%;
+    background:linear-gradient(135deg,#111,#333);
+    color:white;
+    padding:70px 20px;
+    text-align:center;
 }
 
-.hero small{
-letter-spacing:4px;
-font-size:11px;
-
-color:#d8b5ef;
-
-font-weight:bold;
-}
-
-.hero h1{
-font-size:65px;
-margin:15px 0 10px;
+.hero h2{
+    font-size:55px;
+    margin:0 0 10px;
 }
 
 .hero p{
-color:#ddd;
-max-width:600px;
-line-height:1.7;
+    color:#ccc;
+    font-size:18px;
 }
 
-/* CONTROLS */
-
 .controls{
-padding:35px 7% 10px;
+    max-width:1200px;
+    margin:40px auto 20px;
+    padding:0 20px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-display:flex;
-gap:15px;
-align-items:center;
+.controls input,
+.controls select{
+    padding:14px 18px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    background:white;
 }
 
 .controls input{
-width:320px;
-
-padding:14px 18px;
-
-border-radius:13px;
-
-border:1px solid #ddd;
-
-background:white;
-
-outline:none;
-
-font-size:14px;
+    flex:1;
+    min-width:250px;
 }
 
-.controls select{
-padding:14px 18px;
-
-border-radius:13px;
-
-border:1px solid #ddd;
-
-background:white;
-
-outline:none;
-
-font-size:14px;
+.container{
+    max-width:1200px;
+    margin:20px auto;
+    padding:0 20px;
 }
 
-/* GRID */
-
-.grid{
-padding:30px 7% 35px;
-
-display:grid;
-
-grid-template-columns:
-repeat(5,1fr);
-
-gap:22px;
+.idols-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:25px;
 }
 
-/* IDOL CARD */
-
-.card{
-background:white;
-
-border-radius:20px;
-
-overflow:hidden;
-
-box-shadow:
-0 8px 28px rgba(33,28,37,.08);
-
-transition:.2s;
+.idol-card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-5px);
-
-box-shadow:
-0 14px 35px rgba(33,28,37,.13);
+.idol-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* VERTICAL PHOTO */
-
-.card img{
-display:block;
-
-width:100%;
-
-height:360px;
-
-object-fit:cover;
-
-object-position:center;
-
-background:#29222f;
+.idol-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    object-position:center;
+    display:block;
 }
 
-/* INFO */
-
-.info{
-padding:18px 18px 20px;
+.idol-info{
+    padding:18px;
 }
 
-.group-name{
-font-size:10px;
-
-letter-spacing:1.5px;
-
-font-weight:bold;
-
-color:#8b55b8;
+.idol-info h3{
+    margin:0 0 7px;
+    font-size:22px;
 }
 
-.info h2{
-font-size:21px;
-
-margin:7px 0;
+.idol-info p{
+    margin:5px 0;
+    color:#666;
+    font-size:14px;
 }
 
-.position{
-font-size:12px;
-
-line-height:1.5;
-
-color:#777;
-
-min-height:36px;
+.idol-info a{
+    display:block;
+    margin-top:14px;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:10px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.profile-btn{
-display:block;
-
-margin-top:15px;
-
-padding:10px;
-
-border-radius:20px;
-
-background:#21152d;
-
-color:white;
-
-text-align:center;
-
-text-decoration:none;
-
-font-size:11px;
-
-font-weight:bold;
+.idol-info a:hover{
+    background:#333;
 }
-
-.profile-btn:hover{
-background:#75449d;
-}
-
-/* PAGINATION */
 
 .pagination{
-padding:20px 7% 75px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin:40px 0;
 }
 
-.page-btn{
-border:none;
-
-background:white;
-
-color:#211c25;
-
-min-width:42px;
-
-height:42px;
-
-padding:0 14px;
-
-border-radius:21px;
-
-cursor:pointer;
-
-font-weight:bold;
-
-box-shadow:0 4px 15px rgba(33,28,37,.08);
+.pagination button{
+    border:none;
+    background:#111;
+    color:white;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-.page-btn:hover{
-background:#eee7f4;
+.pagination button:disabled{
+    background:#ccc;
+    cursor:not-allowed;
 }
 
-.page-btn.active{
-background:#21152d;
-
-color:white;
+#pageInfo{
+    font-weight:bold;
 }
-
-.page-btn:disabled{
-opacity:.35;
-
-cursor:not-allowed;
-}
-
-/* NO RESULTS */
-
-.no-results{
-grid-column:1/-1;
-
-text-align:center;
-
-padding:70px 20px;
-
-color:#777;
-
-font-size:16px;
-}
-
-/* FOOTER */
 
 footer{
-background:#17131c;
-
-color:#aaa;
-
-padding:40px;
-
-text-align:center;
-
-font-size:13px;
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    padding:30px;
+    margin-top:60px;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:1200px){
-
-.grid{
-grid-template-columns:
-repeat(4,1fr);
+@media(max-width:1100px){
+    .idols-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
 }
 
-.card img{
-height:350px;
+@media(max-width:850px){
+    .idols-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
 }
 
+@media(max-width:650px){
+    .idols-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    header{
+        padding:20px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 8px;
+    }
+
+    .hero h2{
+        font-size:40px;
+    }
 }
 
-@media(max-width:950px){
-
-.grid{
-grid-template-columns:
-repeat(3,1fr);
-}
-
-}
-
-@media(max-width:700px){
-
-header{
-padding:0 4%;
-}
-
-nav{
-gap:10px;
-}
-
-.search-nav{
-width:120px;
-}
-
-.hero h1{
-font-size:48px;
-}
-
-.controls{
-padding-left:5%;
-padding-right:5%;
-
-flex-direction:column;
-
-align-items:stretch;
-}
-
-.controls input{
-width:100%;
-}
-
-.grid{
-padding-left:5%;
-padding-right:5%;
-
-grid-template-columns:
-repeat(2,1fr);
-}
-
-.card img{
-height:330px;
-}
-
-}
-
-@media(max-width:500px){
-
-nav a{
-font-size:10px;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.card img{
-height:430px;
-}
-
+@media(max-width:450px){
+    .idols-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 </style>
@@ -434,1148 +224,510 @@ height:430px;
 
 <header>
 
-<div class="logo">
-MUSICVERSE
-</div>
+<h1>MUSICVERSE PROFILES</h1>
 
 <nav>
-
-<a href="index.html">
-HOME
-</a>
-
-<a href="groups.html">
-GROUPS
-</a>
-
-<a href="idols.html">
-IDOLS
-</a>
-
-<a href="vote.html">
-VOTE
-</a>
-
-<input
-class="search-nav"
-id="navSearch"
-placeholder="Search..."
->
-
+<a href="index.html">Home</a>
+<a href="groups.html">Groups</a>
+<a href="idols.html">Idols</a>
+<a href="#">Companies</a>
+<a href="#">Rankings</a>
 </nav>
 
 </header>
 
 
-
 <section class="hero">
 
-<small>
-MUSICVERSE DATABASE
-</small>
+<h2>IDOLS</h2>
 
-<h1>
-IDOLS
-</h1>
-
-<p>
-Explore the current Musicverse idol database.
-Search by name, filter by group and discover every profile.
-</p>
+<p>Explore every idol in the Musicverse</p>
 
 </section>
-
 
 
 <div class="controls">
 
 <input
-id="idolSearch"
-placeholder="Search idol..."
+type="text"
+id="search"
+placeholder="Search an idol..."
 >
 
 <select id="groupFilter">
 
-<option value="all">
-All groups
-</option>
-
-<option value="PANDORA">
-PANDORA
-</option>
-
-<option value="ELLEVEN">
-ELLEVEN
-</option>
-
-<option value="PINKPUNK">
-PINKPUNK
-</option>
+<option value="all">All Groups</option>
+<option value="PANDORA">PANDORA</option>
+<option value="ELLEVEN">ELLEVEN</option>
+<option value="PINKPUNK">PINKPUNK</option>
+<option value="STEELROSE">STEELROSE</option>
 
 </select>
 
 </div>
 
 
+<div class="container">
 
-<main
-class="grid"
-id="idolGrid"
->
+<div class="idols-grid" id="idolsGrid"></div>
 
-<!-- PANDORA -->
+<div class="pagination">
 
-<div class="card"
-data-name="jiwoo"
-data-group="PANDORA">
+<button id="prevBtn">← Previous</button>
 
-<img src="jiwoo.jpg">
+<span id="pageInfo"></span>
 
-<div class="info">
+<button id="nextBtn">Next →</button>
 
-<div class="group-name">
-PANDORA
 </div>
 
-<h2>
-Jiwoo
-</h2>
-
-<div class="position">
-Lead Vocalist · Unnie
-</div>
-
-<a
-class="profile-btn"
-href="jiwoo.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="jeemin"
-data-group="PANDORA">
-
-<img src="jeemin.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PANDORA
-</div>
-
-<h2>
-Jeemin
-</h2>
-
-<div class="position">
-Visual · Sub Dancer · Sub Rapper
-</div>
-
-<a
-class="profile-btn"
-href="jeemin.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="kylie"
-data-group="PANDORA">
-
-<img src="kylie.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PANDORA
-</div>
-
-<h2>
-Kylie
-</h2>
-
-<div class="position">
-Main Vocalist
-</div>
-
-<a
-class="profile-btn"
-href="kylie.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="hinari"
-data-group="PANDORA">
-
-<img src="hinari.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PANDORA
-</div>
-
-<h2>
-Hinari
-</h2>
-
-<div class="position">
-Main Rapper · Lead Dancer
-</div>
-
-<a
-class="profile-btn"
-href="hinari.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="ruby"
-data-group="PANDORA">
-
-<img src="ruby.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PANDORA
-</div>
-
-<h2>
-Ruby
-</h2>
-
-<div class="position">
-Main Dancer · Lead Rapper · Visual
-</div>
-
-<a
-class="profile-btn"
-href="ruby.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="bonnie"
-data-group="PANDORA">
-
-<img src="bonnie.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PANDORA
-</div>
-
-<h2>
-Bonnie
-</h2>
-
-<div class="position">
-Lead Dancer · Lead Vocalist · Maknae
-</div>
-
-<a
-class="profile-btn"
-href="bonnie.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-<!-- ELLEVEN -->
-
-<div class="card"
-data-name="ruka"
-data-group="ELLEVEN">
-
-<img src="ruka.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Ruka
-</h2>
-
-<div class="position">
-Main Dancer · Main Rapper
-</div>
-
-<a
-class="profile-btn"
-href="ruka.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="pharita"
-data-group="ELLEVEN">
-
-<img src="pharita.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Pharita
-</h2>
-
-<div class="position">
-Main Vocalist · Visual
-</div>
-
-<a
-class="profile-btn"
-href="pharita.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="asa"
-data-group="ELLEVEN">
-
-<img src="asa.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Asa
-</h2>
-
-<div class="position">
-Main Rapper · Lead Dancer
-</div>
-
-<a
-class="profile-btn"
-href="asa.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="ahyeon"
-data-group="ELLEVEN">
-
-<img src="ahyeon.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Ahyeon
-</h2>
-
-<div class="position">
-Main Vocalist · Lead Rapper · Center
-</div>
-
-<a
-class="profile-btn"
-href="ahyeon.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="yuha"
-data-group="ELLEVEN">
-
-<img src="yuha.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Yuha
-</h2>
-
-<div class="position">
-Main Vocalist
-</div>
-
-<a
-class="profile-btn"
-href="yuha.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="stella"
-data-group="ELLEVEN">
-
-<img src="stella.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Stella
-</h2>
-
-<div class="position">
-Lead Vocalist · Visual
-</div>
-
-<a
-class="profile-btn"
-href="stella.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="rami"
-data-group="ELLEVEN">
-
-<img src="rami.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
 </div>
-
-<h2>
-Rami
-</h2>
-
-<div class="position">
-Main Vocalist
-</div>
-
-<a
-class="profile-btn"
-href="rami.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="rora"
-data-group="ELLEVEN">
-
-<img src="rora.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Rora
-</h2>
-
-<div class="position">
-Lead Vocalist
-</div>
-
-<a
-class="profile-btn"
-href="rora.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="juun"
-data-group="ELLEVEN">
-
-<img src="juun.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Juun
-</h2>
-
-<div class="position">
-Main Dancer · Lead Vocalist
-</div>
-
-<a
-class="profile-btn"
-href="juun.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="a-na"
-data-group="ELLEVEN">
-
-<img src="a-na.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-A-na
-</h2>
-
-<div class="position">
-Sub Vocalist · Visual
-</div>
-
-<a
-class="profile-btn"
-href="a-na.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="chiquita"
-data-group="ELLEVEN">
-
-<img src="chiquita.jpg">
-
-<div class="info">
-
-<div class="group-name">
-ELLEVEN
-</div>
-
-<h2>
-Chiquita
-</h2>
-
-<div class="position">
-Lead Vocalist · Lead Dancer · Maknae
-</div>
-
-<a
-class="profile-btn"
-href="chiquita.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-<!-- PINKPUNK -->
-
-<div class="card"
-data-name="jisoo"
-data-group="PINKPUNK">
-
-<img src="jisoo.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PINKPUNK
-</div>
-
-<h2>
-Jisoo
-</h2>
-
-<div class="position">
-Visual · Unnie · Sub Rapper
-</div>
-
-<a
-class="profile-btn"
-href="jisoo.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="jennie"
-data-group="PINKPUNK">
-
-<img src="jennie.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PINKPUNK
-</div>
-
-<h2>
-Jennie
-</h2>
-
-<div class="position">
-Main Rapper · Sub Vocalist · FOTG
-</div>
-
-<a
-class="profile-btn"
-href="jennie.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="miyeon"
-data-group="PINKPUNK">
-
-<img src="miyeon.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PINKPUNK
-</div>
-
-<h2>
-Miyeon
-</h2>
-
-<div class="position">
-Main Vocalist · Sub Rapper · Visual
-</div>
-
-<a
-class="profile-btn"
-href="miyeon.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="rose"
-data-group="PINKPUNK">
-
-<img src="rose.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PINKPUNK
-</div>
-
-<h2>
-Rosé
-</h2>
-
-<div class="position">
-Main Vocalist · Lead Dancer
-</div>
-
-<a
-class="profile-btn"
-href="rose.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="mina"
-data-group="PINKPUNK">
-
-<img src="mina.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PINKPUNK
-</div>
-
-<h2>
-Mina
-</h2>
-
-<div class="position">
-Lead Dancer · Visual · Sub Vocalist
-</div>
-
-<a
-class="profile-btn"
-href="mina.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="lisa"
-data-group="PINKPUNK">
-
-<img src="lisa.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PINKPUNK
-</div>
-
-<h2>
-Lisa
-</h2>
-
-<div class="position">
-Main Dancer · Lead Rapper
-</div>
-
-<a
-class="profile-btn"
-href="lisa.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-
-
-<div class="card"
-data-name="minnie"
-data-group="PINKPUNK">
-
-<img src="minnie.jpg">
-
-<div class="info">
-
-<div class="group-name">
-PINKPUNK
-</div>
-
-<h2>
-Minnie
-</h2>
-
-<div class="position">
-Lead Vocalist · Lead Rapper · Lead Dancer
-</div>
-
-<a
-class="profile-btn"
-href="minnie.html"
->
-VIEW PROFILE
-</a>
-
-</div>
-</div>
-
-</main>
-
-
-
-<div
-class="pagination"
-id="pagination"
->
-</div>
-
 
 
 <footer>
-MUSICVERSE © 2026 · Fictional K-Pop Database
-</footer>
 
+Musicverse Profiles © 2026
+
+</footer>
 
 
 <script>
 
-const cards=[
-...document.querySelectorAll(".card")
+const idols = [
+
+
+/* ================= PANDORA ================= */
+
+{
+name:"Jiwoo",
+group:"PANDORA",
+company:"Starship Entertainment",
+image:"jiwoo.jpg",
+link:"jiwoo.html"
+},
+
+{
+name:"Jeemin",
+group:"PANDORA",
+company:"Starship Entertainment",
+image:"jeemin.jpg",
+link:"jeemin.html"
+},
+
+{
+name:"Kylie",
+group:"PANDORA",
+company:"Starship Entertainment",
+image:"kylie.jpg",
+link:"kylie.html"
+},
+
+{
+name:"Hinari",
+group:"PANDORA",
+company:"Starship Entertainment",
+image:"hinari.jpg",
+link:"hinari.html"
+},
+
+{
+name:"Ruby",
+group:"PANDORA",
+company:"Starship Entertainment",
+image:"ruby.jpg",
+link:"ruby.html"
+},
+
+{
+name:"Bonnie",
+group:"PANDORA",
+company:"Starship Entertainment",
+image:"bonnie.jpg",
+link:"bonnie.html"
+},
+
+
+/* ================= ELLEVEN ================= */
+
+{
+name:"Ruka",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"ruka.jpg",
+link:"ruka.html"
+},
+
+{
+name:"Pharita",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"pharita.jpg",
+link:"pharita.html"
+},
+
+{
+name:"Asa",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"asa.jpg",
+link:"asa.html"
+},
+
+{
+name:"Ahyeon",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"ahyeon.jpg",
+link:"ahyeon.html"
+},
+
+{
+name:"Yuha",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"yuha.jpg",
+link:"yuha.html"
+},
+
+{
+name:"Stella",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"stella.jpg",
+link:"stella.html"
+},
+
+{
+name:"Rami",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"rami.jpg",
+link:"rami.html"
+},
+
+{
+name:"Rora",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"rora.jpg",
+link:"rora.html"
+},
+
+{
+name:"Juun",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"juun.jpg",
+link:"juun.html"
+},
+
+{
+name:"A-na",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"a-na.jpg",
+link:"a-na.html"
+},
+
+{
+name:"Chiquita",
+group:"ELLEVEN",
+company:"Aurelia Entertainment",
+image:"chiquita.jpg",
+link:"chiquita.html"
+},
+
+
+/* ================= PINKPUNK ================= */
+
+{
+name:"Jisoo",
+group:"PINKPUNK",
+company:"LUX Entertainment",
+image:"jisoo.jpg",
+link:"jisoo.html"
+},
+
+{
+name:"Jennie",
+group:"PINKPUNK",
+company:"LUX Entertainment",
+image:"jennie.jpg",
+link:"jennie.html"
+},
+
+{
+name:"Miyeon",
+group:"PINKPUNK",
+company:"LUX Entertainment",
+image:"miyeon.jpg",
+link:"miyeon.html"
+},
+
+{
+name:"Rosé",
+group:"PINKPUNK",
+company:"LUX Entertainment",
+image:"rose.jpg",
+link:"rose.html"
+},
+
+{
+name:"Mina",
+group:"PINKPUNK",
+company:"LUX Entertainment",
+image:"mina.jpg",
+link:"mina.html"
+},
+
+{
+name:"Lisa",
+group:"PINKPUNK",
+company:"LUX Entertainment",
+image:"lisa.jpg",
+link:"lisa.html"
+},
+
+{
+name:"Minnie",
+group:"PINKPUNK",
+company:"LUX Entertainment",
+image:"minnie.jpg",
+link:"minnie.html"
+},
+
+
+/* ================= STEELROSE ================= */
+
+{
+name:"Belle",
+group:"STEELROSE",
+company:"XG Labels",
+image:"belle.jpg",
+link:"belle.html"
+},
+
+{
+name:"Sooin",
+group:"STEELROSE",
+company:"XG Labels",
+image:"sooin.jpg",
+link:"sooin.html"
+},
+
+{
+name:"Gawon",
+group:"STEELROSE",
+company:"XG Labels",
+image:"gawon.jpg",
+link:"gawon.html"
+},
+
+{
+name:"Garam",
+group:"STEELROSE",
+company:"XG Labels",
+image:"garam.jpg",
+link:"garam.html"
+},
+
+{
+name:"Anna",
+group:"STEELROSE",
+company:"XG Labels",
+image:"anna.jpg",
+link:"anna.html"
+},
+
+{
+name:"Ella",
+group:"STEELROSE",
+company:"XG Labels",
+image:"ella.jpg",
+link:"ella.html"
+}
+
 ];
 
-const searchInput=
-document.getElementById("idolSearch");
 
-const groupFilter=
-document.getElementById("groupFilter");
+const grid = document.getElementById("idolsGrid");
+const search = document.getElementById("search");
+const groupFilter = document.getElementById("groupFilter");
 
-const pagination=
-document.getElementById("pagination");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const pageInfo = document.getElementById("pageInfo");
 
-const navSearch=
-document.getElementById("navSearch");
+let currentPage = 1;
 
-const PER_PAGE=10;
-
-let currentPage=1;
+const itemsPerPage = 10;
 
 
-/* FILTER */
+function getFilteredIdols(){
 
-function getFiltered(){
+    const searchText =
+        search.value.toLowerCase().trim();
 
-const query=
-searchInput.value
-.toLowerCase()
-.trim();
+    const selectedGroup =
+        groupFilter.value;
 
-const group=
-groupFilter.value;
+    return idols.filter(idol => {
 
-return cards.filter(card=>{
+        const matchesSearch =
+            idol.name.toLowerCase().includes(searchText);
 
-const name=
-card.dataset.name
-.toLowerCase();
+        const matchesGroup =
+            selectedGroup === "all" ||
+            idol.group === selectedGroup;
 
-const cardGroup=
-card.dataset.group;
+        return matchesSearch && matchesGroup;
 
-const nameMatch=
-name.includes(query);
+    });
 
-const groupMatch=
-group==="all" ||
-cardGroup===group;
+}
 
-return nameMatch && groupMatch;
+
+function renderIdols(){
+
+    const filtered = getFilteredIdols();
+
+    const totalPages =
+        Math.max(1,Math.ceil(filtered.length / itemsPerPage));
+
+    if(currentPage > totalPages){
+        currentPage = totalPages;
+    }
+
+    const start =
+        (currentPage - 1) * itemsPerPage;
+
+    const end =
+        start + itemsPerPage;
+
+    const pageItems =
+        filtered.slice(start,end);
+
+
+    grid.innerHTML = "";
+
+
+    if(pageItems.length === 0){
+
+        grid.innerHTML = `
+            <p style="grid-column:1/-1;text-align:center;padding:50px;">
+                No idols found.
+            </p>
+        `;
+
+    }else{
+
+        pageItems.forEach(idol => {
+
+            grid.innerHTML += `
+
+                <div class="idol-card">
+
+                    <img
+                        src="${idol.image}"
+                        alt="${idol.name}"
+                    >
+
+                    <div class="idol-info">
+
+                        <h3>${idol.name}</h3>
+
+                        <p>${idol.group}</p>
+
+                        <p>${idol.company}</p>
+
+                        <a href="${idol.link}">
+                            View Profile →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    pageInfo.textContent =
+        `Page ${currentPage} of ${totalPages}`;
+
+    prevBtn.disabled =
+        currentPage === 1;
+
+    nextBtn.disabled =
+        currentPage === totalPages;
+
+}
+
+
+prevBtn.addEventListener("click",() => {
+
+    if(currentPage > 1){
+
+        currentPage--;
+
+        renderIdols();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
 
 });
 
-}
 
+nextBtn.addEventListener("click",() => {
 
-/* DISPLAY */
+    const totalPages =
+        Math.ceil(
+            getFilteredIdols().length /
+            itemsPerPage
+        );
 
-function render(){
+    if(currentPage < totalPages){
 
-const filtered=
-getFiltered();
+        currentPage++;
 
-const totalPages=
-Math.max(
-1,
-Math.ceil(filtered.length/PER_PAGE)
-);
+        renderIdols();
 
-if(currentPage>totalPages){
-currentPage=totalPages;
-}
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
 
-cards.forEach(card=>{
-card.style.display="none";
-});
+    }
 
-const start=
-(currentPage-1)*PER_PAGE;
-
-const end=
-start+PER_PAGE;
-
-filtered
-.slice(start,end)
-.forEach(card=>{
-card.style.display="block";
 });
 
 
-renderPagination(
-totalPages,
-filtered.length
-);
+search.addEventListener("input",() => {
 
-}
+    currentPage = 1;
 
+    renderIdols();
 
-/* PAGINATION */
-
-function renderPagination(
-totalPages,
-totalResults
-){
-
-pagination.innerHTML="";
-
-if(totalResults===0){
-
-pagination.innerHTML=
-`<div class="no-results">
-No idols found.
-</div>`;
-
-return;
-
-}
-
-
-const previous=
-document.createElement("button");
-
-previous.className="page-btn";
-
-previous.innerHTML="← PREVIOUS";
-
-previous.disabled=
-currentPage===1;
-
-previous.onclick=()=>{
-currentPage--;
-render();
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
 });
-};
-
-pagination.appendChild(previous);
 
 
-for(
-let i=1;
-i<=totalPages;
-i++
-){
+groupFilter.addEventListener("change",() => {
 
-const button=
-document.createElement("button");
+    currentPage = 1;
 
-button.className="page-btn";
+    renderIdols();
 
-if(i===currentPage){
-button.classList.add("active");
-}
-
-button.textContent=i;
-
-button.onclick=()=>{
-currentPage=i;
-render();
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
 });
-};
-
-pagination.appendChild(button);
-
-}
 
 
-const next=
-document.createElement("button");
-
-next.className="page-btn";
-
-next.innerHTML="NEXT →";
-
-next.disabled=
-currentPage===totalPages;
-
-next.onclick=()=>{
-currentPage++;
-render();
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-};
-
-pagination.appendChild(next);
-
-}
-
-
-/* LIVE SEARCH */
-
-searchInput.addEventListener(
-"input",
-()=>{
-currentPage=1;
-render();
-}
-);
-
-
-groupFilter.addEventListener(
-"change",
-()=>{
-currentPage=1;
-render();
-}
-);
-
-
-/* NAVBAR SEARCH */
-
-navSearch.addEventListener(
-"keydown",
-e=>{
-
-if(e.key==="Enter"){
-
-const q=
-navSearch.value
-.toLowerCase()
-.trim();
-
-location.href=
-"idols.html?search="+
-encodeURIComponent(q);
-
-}
-
-}
-);
-
-
-/* URL SEARCH */
-
-const params=
-new URLSearchParams(
-location.search
-);
-
-const initialSearch=
-params.get("search");
-
-if(initialSearch){
-
-searchInput.value=
-initialSearch;
-
-}
-
-
-/* START */
-
-render();
+renderIdols();
 
 </script>
 
