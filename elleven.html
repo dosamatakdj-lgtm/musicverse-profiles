@@ -7,226 +7,194 @@
 <title>ELLEVEN — Musicverse Profiles</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f7f3f8;
-    color:#211c25;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f3f8;
+    color: #211c25;
 }
 
-/* HEADER */
-
-header{
-    background:#111014;
-    color:white;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+header {
+    background: #111014;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    letter-spacing:1px;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-nav a{
-    color:#ddd;
-    text-decoration:none;
-    margin-left:25px;
-    font-size:14px;
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
 }
 
-nav a:hover{
-    color:#c993e8;
+nav a:hover {
+    color: #c993e8;
 }
 
-/* HERO */
-
-.hero{
-    background:linear-gradient(135deg,#21152d,#6d3f91);
-    color:white;
-    padding:65px 8%;
+.hero {
+    background: linear-gradient(135deg, #21152d, #6d3f91);
+    color: white;
+    padding: 70px 8%;
 }
 
-.hero h1{
-    font-size:48px;
-    margin-bottom:10px;
-    letter-spacing:2px;
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
 }
 
-.hero p{
-    color:#ddd;
-    font-size:16px;
+.hero p {
+    color: #eadcf1;
+    font-size: 17px;
 }
 
-/* GROUP INFO */
-
-.group-container{
-    max-width:1100px;
-    margin:45px auto;
-    padding:0 25px;
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 25px;
 }
 
-.group-card{
-    background:white;
-    border-radius:22px;
-    padding:35px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+.group-card {
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+    margin-bottom: 35px;
 }
 
-.group-card h2{
-    font-size:28px;
-    margin-bottom:25px;
+.group-card h2 {
+    color: #4d2863;
+    margin-bottom: 15px;
 }
 
-.info-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+.group-card p {
+    color: #555;
+    line-height: 1.7;
 }
 
-.info-item{
-    background:#f7f4f9;
-    padding:18px;
-    border-radius:14px;
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
 }
 
-.info-item span{
-    display:block;
-    color:#76558c;
-    font-size:12px;
-    font-weight:bold;
-    text-transform:uppercase;
-    margin-bottom:7px;
+.info-item {
+    background: #f8f4fa;
+    padding: 18px;
+    border-radius: 12px;
 }
 
-.info-item strong{
-    font-size:15px;
+.info-item strong {
+    display: block;
+    color: #6d3f91;
+    font-size: 13px;
+    margin-bottom: 6px;
 }
 
-/* MEMBERS */
-
-.members-section{
-    max-width:1100px;
-    margin:50px auto;
-    padding:0 25px;
+.members-title {
+    font-size: 30px;
+    margin: 40px 0 25px;
+    color: #35213f;
 }
 
-.members-section h2{
-    font-size:30px;
-    margin-bottom:25px;
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-.members-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+.member-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+    transition: transform .2s, box-shadow .2s;
 }
 
-/* MEMBER CARD */
-
-.member-card{
-    background:white;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    transition:transform .25s, box-shadow .25s;
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
 }
 
-.member-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 14px 30px rgba(0,0,0,0.14);
+.member-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 18px;
 }
 
-.member-photo{
-    width:100%;
-    height:390px;
-    object-fit:cover;
-    display:block;
+.member-card h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
 }
 
-.member-info{
-    padding:24px;
+.member-card p {
+    color: #76558c;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-.member-info h3{
-    font-size:24px;
-    margin-bottom:8px;
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    background: #6d3f91;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 14px;
 }
 
-.member-position{
-    color:#76558c;
-    font-size:14px;
-    line-height:1.5;
-    min-height:42px;
-    margin-bottom:18px;
+.button:hover {
+    background: #512d6d;
 }
 
-.profile-button{
-    display:inline-block;
-    text-decoration:none;
-    background:#6d3f91;
-    color:white;
-    padding:11px 18px;
-    border-radius:10px;
-    font-size:13px;
-    font-weight:bold;
-    transition:.2s;
+footer {
+    margin-top: 70px;
+    background: #111014;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
 }
 
-.profile-button:hover{
-    background:#9b62c2;
-}
+@media (max-width: 800px) {
 
-/* FOOTER */
-
-footer{
-    background:#111014;
-    color:#aaa;
-    text-align:center;
-    padding:30px;
-    margin-top:70px;
-    font-size:13px;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    header{
-        flex-direction:column;
-        gap:15px;
+    header {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    nav a{
-        margin:0 8px;
+    nav a {
+        margin: 0 8px;
     }
 
-    .hero h1{
-        font-size:38px;
+    .hero h1 {
+        font-size: 40px;
     }
 
-    .info-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .members-grid{
-        grid-template-columns:1fr;
-    }
-
-    .member-photo{
-        height:420px;
+    .info-grid,
+    .member-grid {
+        grid-template-columns: 1fr;
     }
 }
-
 </style>
 </head>
 
@@ -234,354 +202,160 @@ footer{
 
 <header>
 
-<div class="logo">MUSICVERSE PROFILES</div>
+    <div class="logo">MUSICVERSE PROFILES</div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="groups.html">Groups</a>
-<a href="idols.html">Idols</a>
-<a href="index.html">Companies</a>
-<a href="index.html">Rankings</a>
-</nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="index.html">Companies</a>
+        <a href="index.html">Rankings</a>
+    </nav>
 
 </header>
 
-
 <section class="hero">
 
-<h1>ELLEVEN</h1>
-
-<p>11-member girl group under Aurelia Entertainment</p>
+    <h1>ELLEVEN</h1>
+    <p>11-member girl group · Aurelia Entertainment</p>
 
 </section>
 
+<div class="container">
 
-<div class="group-container">
+    <div class="group-card">
 
-<div class="group-card">
+        <h2>About ELLEVEN</h2>
 
-<h2>ELLEVEN</h2>
+        <p>
+            ELLEVEN is an 11-member girl group under Aurelia Entertainment.
+            The group is known for its powerful performances, strong vocal
+            ability, impressive rap line and versatile members.
+        </p>
 
-<div class="info-grid">
+        <div class="info-grid">
 
-<div class="info-item">
-<span>Company</span>
-<strong>Aurelia Entertainment</strong>
-</div>
+            <div class="info-item">
+                <strong>Group</strong>
+                ELLEVEN
+            </div>
 
-<div class="info-item">
-<span>Members</span>
-<strong>11</strong>
-</div>
+            <div class="info-item">
+                <strong>Company</strong>
+                Aurelia Entertainment
+            </div>
 
-<div class="info-item">
-<span>Debut</span>
-<strong>Lion</strong>
-</div>
+            <div class="info-item">
+                <strong>Members</strong>
+                11
+            </div>
 
-<div class="info-item">
-<span>Fandom</span>
-<strong>Levens</strong>
-</div>
+            <div class="info-item">
+                <strong>Debut Song</strong>
+                Lion
+            </div>
 
-</div>
+            <div class="info-item">
+                <strong>Fandom</strong>
+                Levens
+            </div>
 
-</div>
+            <div class="info-item">
+                <strong>Type</strong>
+                Girl Group
+            </div>
 
-</div>
+        </div>
 
+    </div>
 
-<section class="members-section">
+    <h2 class="members-title">Members</h2>
 
-<h2>Members</h2>
+    <div class="member-grid">
 
-<div class="members-grid">
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ruka.jpg" alt="Ruka">
+            <h3>Ruka</h3>
+            <p>Main Dancer · Main Rapper</p>
+            <a class="button" href="ruka.html">View Profile</a>
+        </div>
 
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/pharita.jpg" alt="Pharita">
+            <h3>Pharita</h3>
+            <p>Main Vocalist · Visual</p>
+            <a class="button" href="pharita.html">View Profile</a>
+        </div>
 
-<!-- RUKA -->
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/asa.jpg" alt="Asa">
+            <h3>Asa</h3>
+            <p>Main Rapper · Lead Dancer</p>
+            <a class="button" href="asa.html">View Profile</a>
+        </div>
 
-<div class="member-card">
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ahyeon.jpg" alt="Ahyeon">
+            <h3>Ahyeon</h3>
+            <p>Main Vocalist · Lead Rapper · Center</p>
+            <a class="button" href="ahyeon.html">View Profile</a>
+        </div>
 
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ruka.jpg"
-alt="Ruka">
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/yuha.jpg" alt="Yuha">
+            <h3>Yuha</h3>
+            <p>Main Vocalist</p>
+            <a class="button" href="yuha.html">View Profile</a>
+        </div>
 
-<div class="member-info">
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/stella.jpg" alt="Stella">
+            <h3>Stella</h3>
+            <p>Lead Vocalist · Visual</p>
+            <a class="button" href="stella.html">View Profile</a>
+        </div>
 
-<h3>Ruka</h3>
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rami.jpg" alt="Rami">
+            <h3>Rami</h3>
+            <p>Main Vocalist</p>
+            <a class="button" href="rami.html">View Profile</a>
+        </div>
 
-<p class="member-position">
-Main Dancer · Main Rapper
-</p>
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rora.jpg" alt="Rora">
+            <h3>Rora</h3>
+            <p>Lead Vocalist</p>
+            <a class="button" href="rora.html">View Profile</a>
+        </div>
 
-<a class="profile-button" href="ruka.html">
-View Profile
-</a>
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/juun.jpg" alt="Juun">
+            <h3>Juun</h3>
+            <p>Main Dancer · Lead Vocalist</p>
+            <a class="button" href="juun.html">View Profile</a>
+        </div>
 
-</div>
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/a-na.jpg" alt="A-na">
+            <h3>A-na</h3>
+            <p>Sub Vocalist · Visual</p>
+            <a class="button" href="a-na.html">View Profile</a>
+        </div>
 
-</div>
+        <div class="member-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/chiquita.jpg" alt="Chiquita">
+            <h3>Chiquita</h3>
+            <p>Lead Vocalist · Lead Dancer · Maknae</p>
+            <a class="button" href="chiquita.html">View Profile</a>
+        </div>
 
-
-<!-- PHARITA -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/pharita.jpg"
-alt="Pharita">
-
-<div class="member-info">
-
-<h3>Pharita</h3>
-
-<p class="member-position">
-Main Vocalist · Visual
-</p>
-
-<a class="profile-button" href="pharita.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-<!-- ASA -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/asa.jpg"
-alt="Asa">
-
-<div class="member-info">
-
-<h3>Asa</h3>
-
-<p class="member-position">
-Main Rapper · Lead Dancer
-</p>
-
-<a class="profile-button" href="asa.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-<!-- AHYEON -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ahyeon.jpg"
-alt="Ahyeon">
-
-<div class="member-info">
-
-<h3>Ahyeon</h3>
-
-<p class="member-position">
-Main Vocalist · Lead Rapper · Center
-</p>
-
-<a class="profile-button" href="ahyeon.html">
-View Profile
-</a>
+    </div>
 
 </div>
-
-</div>
-
-
-<!-- YUHA -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/yuha.jpg"
-alt="Yuha">
-
-<div class="member-info">
-
-<h3>Yuha</h3>
-
-<p class="member-position">
-Main Vocalist
-</p>
-
-<a class="profile-button" href="yuha.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-<!-- STELLA -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/stella.jpg"
-alt="Stella">
-
-<div class="member-info">
-
-<h3>Stella</h3>
-
-<p class="member-position">
-Lead Vocalist · Visual
-</p>
-
-<a class="profile-button" href="stella.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-<!-- RAMI -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rami.jpg"
-alt="Rami">
-
-<div class="member-info">
-
-<h3>Rami</h3>
-
-<p class="member-position">
-Main Vocalist
-</p>
-
-<a class="profile-button" href="rami.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-<!-- RORA -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rora.jpg"
-alt="Rora">
-
-<div class="member-info">
-
-<h3>Rora</h3>
-
-<p class="member-position">
-Lead Vocalist
-</p>
-
-<a class="profile-button" href="rora.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-<!-- JUUN -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/juun.jpg"
-alt="Juun">
-
-<div class="member-info">
-
-<h3>Juun</h3>
-
-<p class="member-position">
-Main Dancer · Lead Vocalist
-</p>
-
-<a class="profile-button" href="juun.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-<!-- A-NA -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/a-na.jpg"
-alt="A-na">
-
-<div class="member-info">
-
-<h3>A-na</h3>
-
-<p class="member-position">
-Sub Vocalist · Visual
-</p>
-
-<a class="profile-button" href="a-na.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-<!-- CHIQUITA -->
-
-<div class="member-card">
-
-<img class="member-photo"
-src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/chiquita.jpg"
-alt="Chiquita">
-
-<div class="member-info">
-
-<h3>Chiquita</h3>
-
-<p class="member-position">
-Lead Vocalist · Lead Dancer · Maknae
-</p>
-
-<a class="profile-button" href="chiquita.html">
-View Profile
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
 
 <footer>
-
-© 2026 Musicverse Profiles · Fictional Musicverse
-
+    © 2026 Musicverse Profiles · Fictional Musicverse Database
 </footer>
 
 </body>
