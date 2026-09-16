@@ -2,144 +2,144 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Groups — Musicverse</title>
+<title>Groups — Musicverse Profiles</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f2f7;
-color:#211c25;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
+    color:#111;
 }
+
 header{
-height:76px;
-background:#17131c;
-color:white;
-display:flex;
-align-items:center;
-padding:0 6%;
-gap:30px;
-position:sticky;
-top:0;
-z-index:10;
+    background:#111;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-.logo{
-font-size:24px;
-font-weight:900;
-letter-spacing:2px;
+
+header h1{
+    margin:0;
+    font-size:24px;
 }
-nav{
-margin-left:auto;
-display:flex;
-align-items:center;
-gap:22px;
-}
+
 nav a{
-color:#ddd;
-text-decoration:none;
-font-size:13px;
-font-weight:bold;
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
 }
-nav a:hover{color:white}
-.search{
-width:180px;
-padding:10px 15px;
-border-radius:20px;
-border:1px solid #494151;
-background:#29242f;
-color:white;
-outline:none;
+
+nav a:hover{
+    color:#aaa;
 }
+
 .hero{
-background:linear-gradient(135deg,#21152d,#75449d);
-color:white;
-padding:90px 7%;
+    background:linear-gradient(135deg,#111,#333);
+    color:white;
+    padding:70px 20px;
+    text-align:center;
 }
-.hero small{
-letter-spacing:4px;
-color:#d8b5ef;
-font-weight:bold;
+
+.hero h2{
+    font-size:55px;
+    margin:0 0 10px;
 }
-.hero h1{
-font-size:65px;
-margin:15px 0;
-}
+
 .hero p{
-color:#ddd;
-max-width:600px;
-line-height:1.7;
+    font-size:18px;
+    color:#ccc;
 }
-.controls{
-padding:35px 7% 10px;
-display:flex;
-gap:15px;
+
+.container{
+    max-width:1200px;
+    margin:50px auto;
+    padding:0 20px;
 }
-select{
-padding:12px 18px;
-border-radius:12px;
-border:1px solid #ddd;
-background:white;
+
+.groups-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
 }
-.grid{
-padding:30px 7% 80px;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
+
+.group-card{
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+    position:relative;
 }
-.card{
-background:white;
-border-radius:24px;
-padding:30px;
-box-shadow:0 10px 30px #211c2510;
-transition:.2s;
+
+.group-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
-.card:hover{transform:translateY(-5px)}
-.card .status{
-font-size:11px;
-font-weight:bold;
-letter-spacing:2px;
-color:#8b55b8;
+
+.group-card h3{
+    font-size:30px;
+    margin:0 0 10px;
 }
-.card h2{
-font-size:32px;
-margin:13px 0 7px;
+
+.group-card p{
+    color:#666;
+    line-height:1.6;
 }
-.card p{
-color:#777;
-line-height:1.5;
+
+.group-card a{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 20px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
 }
-.card a{
-display:inline-block;
-margin-top:22px;
-padding:11px 18px;
-border-radius:20px;
-background:#21152d;
-color:white;
-text-decoration:none;
-font-size:13px;
-font-weight:bold;
+
+.group-card a:hover{
+    background:#333;
 }
-.card.coming{
-opacity:.72;
+
+.tag{
+    display:inline-block;
+    background:#eee;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    margin-bottom:15px;
 }
-.card.coming a{
-background:#ddd;
-color:#555;
-pointer-events:none;
-}
+
 footer{
-background:#17131c;
-color:#aaa;
-text-align:center;
-padding:40px;
-font-size:13px;
+    margin-top:80px;
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    padding:30px;
 }
-@media(max-width:850px){
-nav{gap:8px}
-.search{width:110px}
-.grid{grid-template-columns:1fr}
-.hero h1{font-size:48px}
+
+@media(max-width:800px){
+    .groups-grid{
+        grid-template-columns:1fr;
+    }
+
+    header{
+        padding:20px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 8px;
+    }
+
+    .hero h2{
+        font-size:40px;
+    }
 }
 </style>
 </head>
@@ -147,136 +147,134 @@ nav{gap:8px}
 <body>
 
 <header>
-<div class="logo">MUSICVERSE</div>
+
+<h1>MUSICVERSE PROFILES</h1>
+
 <nav>
-<a href="index.html">HOME</a>
-<a href="groups.html">GROUPS</a>
-<a href="idols.html">IDOLS</a>
-<a href="vote.html">VOTE</a>
-<input class="search" id="search" placeholder="Search...">
+<a href="index.html">Home</a>
+<a href="groups.html">Groups</a>
+<a href="idols.html">Idols</a>
+<a href="#">Companies</a>
+<a href="#">Rankings</a>
 </nav>
+
 </header>
 
+
 <section class="hero">
-<small>MUSICVERSE DATABASE</small>
-<h1>GROUPS</h1>
-<p>
-Explore every group inside the Musicverse — from fully profiled
-groups to the next acts waiting to be introduced.
-</p>
+
+<h2>GROUPS</h2>
+
+<p>Explore every group in the Musicverse</p>
+
 </section>
 
-<div class="controls">
-<select id="filter">
-<option value="all">All groups</option>
-<option value="profiled">Profiled</option>
-<option value="coming">Coming soon</option>
-</select>
+
+<div class="container">
+
+<div class="groups-grid">
+
+
+<!-- PANDORA -->
+
+<div class="group-card">
+
+<span class="tag">Starship Entertainment</span>
+
+<h3>PANDORA</h3>
+
+<p>
+6-member girl group under Starship Entertainment.
+Debuted with <b>“Pandora”</b>.
+</p>
+
+<p><b>Members:</b> Jiwoo, Jeemin, Kylie, Hinari, Ruby, Bonnie</p>
+
+<a href="pandora.html">View Group →</a>
+
 </div>
 
-<main class="grid">
 
-<div class="card profiled">
-<div class="status">PROFILED · 6 MEMBERS</div>
-<h2>PANDORA</h2>
-<p>Starship Entertainment</p>
-<a href="pandora.html">VIEW GROUP →</a>
+<!-- ELLEVEN -->
+
+<div class="group-card">
+
+<span class="tag">Aurelia Entertainment</span>
+
+<h3>ELLEVEN</h3>
+
+<p>
+11-member girl group under Aurelia Entertainment.
+Debuted with <b>“Lion”</b>.
+</p>
+
+<p>
+<b>Members:</b>
+Ruka, Pharita, Asa, Ahyeon, Yuha, Stella,
+Rami, Rora, Juun, A-na, Chiquita
+</p>
+
+<a href="elleven.html">View Group →</a>
+
 </div>
 
-<div class="card profiled">
-<div class="status">PROFILED · 11 MEMBERS</div>
-<h2>ELLEVEN</h2>
-<p>Aurelia Entertainment</p>
-<a href="elleven.html">VIEW GROUP →</a>
+
+<!-- PINKPUNK -->
+
+<div class="group-card">
+
+<span class="tag">LUX Entertainment</span>
+
+<h3>PINKPUNK</h3>
+
+<p>
+7-member girl group under LUX Entertainment.
+Debuted with <b>“Whistle”</b>.
+</p>
+
+<p>
+<b>Members:</b>
+Jisoo, Jennie, Miyeon, Rosé, Mina, Lisa, Minnie
+</p>
+
+<a href="pinkpunk.html">View Group →</a>
+
 </div>
 
-<div class="card profiled">
-<div class="status">PROFILED · 7 MEMBERS</div>
-<h2>PINKPUNK</h2>
-<p>LUX Entertainment</p>
-<a href="pinkpunk.html">VIEW GROUP →</a>
+
+<!-- STEELROSE -->
+
+<div class="group-card">
+
+<span class="tag">XG Labels</span>
+
+<h3>STEELROSE</h3>
+
+<p>
+6-member girl group under XG Labels.
+Debuted with <b>“Jump”</b>.
+</p>
+
+<p>
+<b>Members:</b>
+Belle, Sooin, Gawon, Garam, Anna, Ella
+</p>
+
+<a href="steelrose.html">View Group →</a>
+
 </div>
 
-<div class="card coming">
-<div class="status">COMING SOON</div>
-<h2>STEELROSE</h2>
-<p>XG Labels · 6 members</p>
-<a>COMING SOON</a>
+
 </div>
 
-<div class="card coming">
-<div class="status">COMING SOON</div>
-<h2>ONCE</h2>
-<p>MDX Entertainment · 5 members</p>
-<a>COMING SOON</a>
 </div>
 
-<div class="card coming">
-<div class="status">COMING SOON</div>
-<h2>GARLS</h2>
-<p>Aurelia Entertainment · 5 members</p>
-<a>COMING SOON</a>
-</div>
-
-<div class="card coming">
-<div class="status">COMING SOON</div>
-<h2>WO!AH</h2>
-<p>LUX Entertainment · 4 members</p>
-<a>COMING SOON</a>
-</div>
-
-<div class="card coming">
-<div class="status">COMING SOON</div>
-<h2>LESSERAFIM</h2>
-<p>Aurelia Entertainment · 6 members</p>
-<a>COMING SOON</a>
-</div>
-
-<div class="card coming">
-<div class="status">COMING SOON</div>
-<h2>TWOON</h2>
-<p>5 members</p>
-<a>COMING SOON</a>
-</div>
-
-<div class="card coming">
-<div class="status">COMING SOON</div>
-<h2>MIDZY</h2>
-<p>8 members</p>
-<a>COMING SOON</a>
-</div>
-
-</main>
 
 <footer>
-MUSICVERSE © 2026 · Fictional K-Pop Database
+
+Musicverse Profiles © 2026
+
 </footer>
-
-<script>
-const filter=document.getElementById("filter");
-const cards=document.querySelectorAll(".card");
-
-filter.addEventListener("change",()=>{
-cards.forEach(card=>{
-if(filter.value==="all"){
-card.style.display="block";
-}else{
-card.style.display=card.classList.contains(filter.value)?"block":"none";
-}
-});
-});
-
-document.getElementById("search").addEventListener("keydown",function(e){
-if(e.key==="Enter"){
-const q=this.value.toLowerCase().trim();
-
-if(q==="pandora")location.href="pandora.html";
-else if(q==="elleven")location.href="elleven.html";
-else if(q==="pinkpunk")location.href="pinkpunk.html";
-else location.href="idols.html?search="+encodeURIComponent(q);
-}
-});
-</script>
 
 </body>
 </html>
