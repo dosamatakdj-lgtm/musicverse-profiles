@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haerin | Musicverse Profiles</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f2f7;color:#241b2d}
+header{background:#21152d;color:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:bold;letter-spacing:2px}
+nav a{color:white;text-decoration:none;margin-left:20px;font-size:14px}
+.hero{background:linear-gradient(135deg,#21152d,#6d3f91);color:white;text-align:center;padding:65px 20px}
+.hero h1{font-size:48px;margin-bottom:10px}
+.hero p{opacity:.85}
+.profile{max-width:1000px;margin:45px auto;padding:0 20px;display:grid;grid-template-columns:300px 1fr;gap:35px}
+.profile img{width:300px;height:380px;object-fit:cover;border-radius:18px;box-shadow:0 15px 35px rgba(0,0,0,.18)}
+.card{background:white;border-radius:18px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.card h2{margin-bottom:20px;color:#76558c}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.info div{background:#f5f2f7;padding:15px;border-radius:12px}
+.info strong{display:block;font-size:12px;text-transform:uppercase;color:#76558c;margin-bottom:5px}
+section{max-width:1000px;margin:0 auto 40px;padding:0 20px}
+section h2{margin-bottom:15px;color:#76558c}
+.about{background:white;padding:25px;border-radius:18px;line-height:1.7;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+footer{text-align:center;padding:30px;background:#21152d;color:white;margin-top:50px}
+@media(max-width:750px){.profile{grid-template-columns:1fr}.profile img{margin:auto}.info{grid-template-columns:1fr}header{flex-direction:column;gap:15px}nav a{margin:0 7px}.hero h1{font-size:38px}}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">MUSICVERSE PROFILES</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="groups.html">Groups</a>
+<a href="idols.html">Idols</a>
+<a href="#">Companies</a>
+<a href="#">Rankings</a>
+</nav>
+</header>
+
+<div class="hero">
+<h1>HAERIN</h1>
+<p>LESSERAFIM · Aurelia Entertainment</p>
+</div>
+
+<div class="profile">
+
+<img src="haerin.jpg" alt="Haerin">
+
+<div class="card">
+<h2>Profile</h2>
+
+<div class="info">
+
+<div><strong>Name</strong>Haerin</div>
+<div><strong>Group</strong>LESSERAFIM</div>
+<div><strong>Company</strong>Aurelia Entertainment</div>
+<div><strong>Positions</strong>Main Dancer · Sub Vocalist</div>
+<div><strong>Vocal</strong>B+</div>
+<div><strong>Rap</strong>B</div>
+<div><strong>Dance</strong>S+</div>
+
+</div>
+</div>
+</div>
+
+<section>
+<h2>About Haerin</h2>
+<div class="about">
+Haerin is a member of LESSERAFIM under Aurelia Entertainment.
+She holds the Main Dancer position and also participates as a Sub Vocalist.
+</div>
+</section>
+
+<section>
+<h2>Group</h2>
+<div class="about">
+<strong>LESSERAFIM</strong><br>
+A six-member girl group under Aurelia Entertainment.
+<br><br>
+<a href="lesserafim.html">View LESSERAFIM profile →</a>
+</div>
+</section>
+
+<footer>Musicverse Profiles · Fictional Musicverse</footer>
+
+</body>
+</html>
