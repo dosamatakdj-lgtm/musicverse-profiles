@@ -249,18 +249,14 @@ footer{
 <div class="controls">
 
 <input
-type="text"
-id="search"
-placeholder="Search an idol..."
+    type="text"
+    id="search"
+    placeholder="Search an idol..."
 >
 
 <select id="groupFilter">
 
-<option value="all">All Groups</option>
-<option value="PANDORA">PANDORA</option>
-<option value="ELLEVEN">ELLEVEN</option>
-<option value="PINKPUNK">PINKPUNK</option>
-<option value="STEELROSE">STEELROSE</option>
+    <option value="all">All Groups</option>
 
 </select>
 
@@ -291,277 +287,58 @@ Musicverse Profiles © 2026
 </footer>
 
 
+<!-- MUSICVERSE DATABASE -->
+
+<script src="data.js"></script>
+
+
 <script>
 
-const idols = [
+const grid =
+    document.getElementById("idolsGrid");
 
+const search =
+    document.getElementById("search");
 
-/* ================= PANDORA ================= */
+const groupFilter =
+    document.getElementById("groupFilter");
 
-{
-name:"Jiwoo",
-group:"PANDORA",
-company:"Starship Entertainment",
-image:"jiwoo.jpg",
-link:"jiwoo.html"
-},
+const prevBtn =
+    document.getElementById("prevBtn");
 
-{
-name:"Jeemin",
-group:"PANDORA",
-company:"Starship Entertainment",
-image:"jeemin.jpg",
-link:"jeemin.html"
-},
+const nextBtn =
+    document.getElementById("nextBtn");
 
-{
-name:"Kylie",
-group:"PANDORA",
-company:"Starship Entertainment",
-image:"kylie.jpg",
-link:"kylie.html"
-},
+const pageInfo =
+    document.getElementById("pageInfo");
 
-{
-name:"Hinari",
-group:"PANDORA",
-company:"Starship Entertainment",
-image:"hinari.jpg",
-link:"hinari.html"
-},
-
-{
-name:"Ruby",
-group:"PANDORA",
-company:"Starship Entertainment",
-image:"ruby.jpg",
-link:"ruby.html"
-},
-
-{
-name:"Bonnie",
-group:"PANDORA",
-company:"Starship Entertainment",
-image:"bonnie.jpg",
-link:"bonnie.html"
-},
-
-
-/* ================= ELLEVEN ================= */
-
-{
-name:"Ruka",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"ruka.jpg",
-link:"ruka.html"
-},
-
-{
-name:"Pharita",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"pharita.jpg",
-link:"pharita.html"
-},
-
-{
-name:"Asa",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"asa.jpg",
-link:"asa.html"
-},
-
-{
-name:"Ahyeon",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"ahyeon.jpg",
-link:"ahyeon.html"
-},
-
-{
-name:"Yuha",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"yuha.jpg",
-link:"yuha.html"
-},
-
-{
-name:"Stella",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"stella.jpg",
-link:"stella.html"
-},
-
-{
-name:"Rami",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"rami.jpg",
-link:"rami.html"
-},
-
-{
-name:"Rora",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"rora.jpg",
-link:"rora.html"
-},
-
-{
-name:"Juun",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"juun.jpg",
-link:"juun.html"
-},
-
-{
-name:"A-na",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"a-na.jpg",
-link:"a-na.html"
-},
-
-{
-name:"Chiquita",
-group:"ELLEVEN",
-company:"Aurelia Entertainment",
-image:"chiquita.jpg",
-link:"chiquita.html"
-},
-
-
-/* ================= PINKPUNK ================= */
-
-{
-name:"Jisoo",
-group:"PINKPUNK",
-company:"LUX Entertainment",
-image:"jisoo.jpg",
-link:"jisoo.html"
-},
-
-{
-name:"Jennie",
-group:"PINKPUNK",
-company:"LUX Entertainment",
-image:"jennie.jpg",
-link:"jennie.html"
-},
-
-{
-name:"Miyeon",
-group:"PINKPUNK",
-company:"LUX Entertainment",
-image:"miyeon.jpg",
-link:"miyeon.html"
-},
-
-{
-name:"Rosé",
-group:"PINKPUNK",
-company:"LUX Entertainment",
-image:"rose.jpg",
-link:"rose.html"
-},
-
-{
-name:"Mina",
-group:"PINKPUNK",
-company:"LUX Entertainment",
-image:"mina.jpg",
-link:"mina.html"
-},
-
-{
-name:"Lisa",
-group:"PINKPUNK",
-company:"LUX Entertainment",
-image:"lisa.jpg",
-link:"lisa.html"
-},
-
-{
-name:"Minnie",
-group:"PINKPUNK",
-company:"LUX Entertainment",
-image:"minnie.jpg",
-link:"minnie.html"
-},
-
-
-/* ================= STEELROSE ================= */
-
-{
-name:"Belle",
-group:"STEELROSE",
-company:"XG Labels",
-image:"belle.jpg",
-link:"belle.html"
-},
-
-{
-name:"Sooin",
-group:"STEELROSE",
-company:"XG Labels",
-image:"sooin.jpg",
-link:"sooin.html"
-},
-
-{
-name:"Gawon",
-group:"STEELROSE",
-company:"XG Labels",
-image:"gawon.jpg",
-link:"gawon.html"
-},
-
-{
-name:"Garam",
-group:"STEELROSE",
-company:"XG Labels",
-image:"garam.jpg",
-link:"garam.html"
-},
-
-{
-name:"Anna",
-group:"STEELROSE",
-company:"XG Labels",
-image:"anna.jpg",
-link:"anna.html"
-},
-
-{
-name:"Ella",
-group:"STEELROSE",
-company:"XG Labels",
-image:"ella.jpg",
-link:"ella.html"
-}
-
-];
-
-
-const grid = document.getElementById("idolsGrid");
-const search = document.getElementById("search");
-const groupFilter = document.getElementById("groupFilter");
-
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const pageInfo = document.getElementById("pageInfo");
 
 let currentPage = 1;
 
 const itemsPerPage = 10;
 
+
+/* ================================
+   CREATE GROUP FILTER AUTOMATICALLY
+================================ */
+
+MUSICVERSE_GROUPS.forEach(group => {
+
+    const option =
+        document.createElement("option");
+
+    option.value = group.name;
+
+    option.textContent = group.name;
+
+    groupFilter.appendChild(option);
+
+});
+
+
+/* ================================
+   FILTER IDOLS
+================================ */
 
 function getFilteredIdols(){
 
@@ -571,14 +348,19 @@ function getFilteredIdols(){
     const selectedGroup =
         groupFilter.value;
 
-    return idols.filter(idol => {
+
+    return MUSICVERSE_IDOLS.filter(idol => {
 
         const matchesSearch =
-            idol.name.toLowerCase().includes(searchText);
+            idol.name
+                .toLowerCase()
+                .includes(searchText);
+
 
         const matchesGroup =
             selectedGroup === "all" ||
             idol.group === selectedGroup;
+
 
         return matchesSearch && matchesGroup;
 
@@ -587,22 +369,43 @@ function getFilteredIdols(){
 }
 
 
+/* ================================
+   RENDER IDOLS
+================================ */
+
 function renderIdols(){
 
-    const filtered = getFilteredIdols();
+    const filtered =
+        getFilteredIdols();
+
 
     const totalPages =
-        Math.max(1,Math.ceil(filtered.length / itemsPerPage));
+        Math.max(
+            1,
+            Math.ceil(
+                filtered.length /
+                itemsPerPage
+            )
+        );
+
 
     if(currentPage > totalPages){
-        currentPage = totalPages;
+
+        currentPage =
+            totalPages;
+
     }
 
+
     const start =
-        (currentPage - 1) * itemsPerPage;
+        (currentPage - 1) *
+        itemsPerPage;
+
 
     const end =
-        start + itemsPerPage;
+        start +
+        itemsPerPage;
+
 
     const pageItems =
         filtered.slice(start,end);
@@ -614,12 +417,22 @@ function renderIdols(){
     if(pageItems.length === 0){
 
         grid.innerHTML = `
-            <p style="grid-column:1/-1;text-align:center;padding:50px;">
+
+            <p style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:50px;
+            ">
+
                 No idols found.
+
             </p>
+
         `;
 
-    }else{
+    }
+
+    else{
 
         pageItems.forEach(idol => {
 
@@ -634,13 +447,19 @@ function renderIdols(){
 
                     <div class="idol-info">
 
-                        <h3>${idol.name}</h3>
+                        <h3>
+                            ${idol.name}
+                        </h3>
 
-                        <p>${idol.group}</p>
+                        <p>
+                            ${idol.group}
+                        </p>
 
-                        <p>${idol.company}</p>
+                        <p>
+                            ${idol.company}
+                        </p>
 
-                        <a href="${idol.link}">
+                        <a href="${idol.page}">
                             View Profile →
                         </a>
 
@@ -658,14 +477,20 @@ function renderIdols(){
     pageInfo.textContent =
         `Page ${currentPage} of ${totalPages}`;
 
+
     prevBtn.disabled =
         currentPage === 1;
+
 
     nextBtn.disabled =
         currentPage === totalPages;
 
 }
 
+
+/* ================================
+   PREVIOUS PAGE
+================================ */
 
 prevBtn.addEventListener("click",() => {
 
@@ -685,6 +510,10 @@ prevBtn.addEventListener("click",() => {
 });
 
 
+/* ================================
+   NEXT PAGE
+================================ */
+
 nextBtn.addEventListener("click",() => {
 
     const totalPages =
@@ -692,6 +521,7 @@ nextBtn.addEventListener("click",() => {
             getFilteredIdols().length /
             itemsPerPage
         );
+
 
     if(currentPage < totalPages){
 
@@ -709,6 +539,10 @@ nextBtn.addEventListener("click",() => {
 });
 
 
+/* ================================
+   SEARCH
+================================ */
+
 search.addEventListener("input",() => {
 
     currentPage = 1;
@@ -717,6 +551,10 @@ search.addEventListener("input",() => {
 
 });
 
+
+/* ================================
+   GROUP FILTER
+================================ */
 
 groupFilter.addEventListener("change",() => {
 
@@ -727,9 +565,14 @@ groupFilter.addEventListener("change",() => {
 });
 
 
+/* ================================
+   START
+================================ */
+
 renderIdols();
 
 </script>
+
 
 </body>
 </html>
