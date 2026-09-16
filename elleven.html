@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ELLEVEN — Musicverse Profiles</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f6f8;
+    color: #17171c;
+}
+
+/* HEADER */
+
+header {
+    background: #111116;
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #d7d7dc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #b56cff;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg, #17121f, #4a2369);
+    color: white;
+    padding: 70px 8%;
+}
+
+.hero small {
+    color: #d2a7ff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin: 12px 0;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    color: #ddd2e5;
+    font-size: 17px;
+}
+
+.company {
+    margin-top: 12px;
+    color: #c99cff;
+    font-weight: 600;
+}
+
+/* CONTENT */
+
+.content {
+    max-width: 1150px;
+    margin: auto;
+    padding: 55px 25px 80px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.section-title h2 {
+    font-size: 29px;
+}
+
+.section-title span {
+    color: #888;
+    font-size: 14px;
+}
+
+/* GROUP INFO */
+
+.info-box {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 45px;
+    border: 1px solid #e8e8ec;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.info-box p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.info-item {
+    background: #f7f4fa;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.info-item span {
+    font-weight: 700;
+}
+
+/* MEMBERS */
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.member-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    border: 1px solid #e8e8ec;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    transition: .25s;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.10);
+}
+
+.member-number {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    color: #c7b8d2;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.member-name {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+
+.member-real {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.positions {
+    color: #6e3897;
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.member-line {
+    height: 1px;
+    background: #eeeeef;
+    margin: 18px 0;
+}
+
+.member-fact {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.member-fact span:first-child {
+    color: #888;
+}
+
+.member-fact span:last-child {
+    font-weight: 600;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111116;
+    color: #777;
+    text-align: center;
+    padding: 28px;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">MUSICVERSE PROFILES</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="index.html">Companies</a>
+        <a href="index.html">Rankings</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <small>Girl Group Profile</small>
+
+    <h1>ELLEVEN</h1>
+
+    <p>엘레븐</p>
+
+    <div class="company">
+        Aurelia Entertainment
+    </div>
+
+</section>
+
+
+<main class="content">
+
+
+    <!-- GROUP INFORMATION -->
+
+    <div class="section-title">
+        <h2>ELLEVEN Profile</h2>
+        <span>11 Members</span>
+    </div>
+
+    <div class="info-box">
+
+        <p>
+            <strong>ELLEVEN</strong> is an eleven-member girl group
+            under Aurelia Entertainment. The group is known for its
+            combination of powerful vocals, rap and high-level
+            performance.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <strong>Group Name</strong>
+                <span>ELLEVEN</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Members</strong>
+                <span>11</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Company</strong>
+                <span>Aurelia Entertainment</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Debut Song</strong>
+                <span>Lion</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MEMBERS -->
+
+    <div class="section-title">
+        <h2>Members</h2>
+        <span>Oldest → Youngest</span>
+    </div>
+
+
+    <div class="members-grid">
+
+
+        <!-- RUKA -->
+
+        <div class="member-card">
+
+            <div class="member-number">01</div>
+
+            <div class="member-name">Ruka</div>
+
+            <div class="member-real">
+                Ruka
+            </div>
+
+            <div class="positions">
+                Main Dancer · Main Rapper
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Dance</span>
+                <span>S</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Rap</span>
+                <span>S</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>45</span>
+            </div>
+
+        </div>
+
+
+        <!-- PHARITA -->
+
+        <div class="member-card">
+
+            <div class="member-number">02</div>
+
+            <div class="member-name">Pharita</div>
+
+            <div class="member-real">
+                Pharita
+            </div>
+
+            <div class="positions">
+                Main Vocalist · Visual
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>90</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Nationality</span>
+                <span>Thai</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Vocal</span>
+            </div>
+
+        </div>
+
+
+        <!-- ASA -->
+
+        <div class="member-card">
+
+            <div class="member-number">03</div>
+
+            <div class="member-name">Asa</div>
+
+            <div class="member-real">
+                Asa
+            </div>
+
+            <div class="positions">
+                Main Rapper · Lead Dancer
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Rap</span>
+                <span>S++</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Dance</span>
+                <span>S-</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>64</span>
+            </div>
+
+        </div>
+
+
+        <!-- AHYEON -->
+
+        <div class="member-card">
+
+            <div class="member-number">04</div>
+
+            <div class="member-name">Ahyeon</div>
+
+            <div class="member-real">
+                Ahyeon
+            </div>
+
+            <div class="positions">
+                Main Vocalist · Lead Rapper · Center
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>95</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Rap</span>
+                <span>S-</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Center</span>
+            </div>
+
+        </div>
+
+
+        <!-- YUHA -->
+
+        <div class="member-card">
+
+            <div class="member-number">05</div>
+
+            <div class="member-name">Yuha</div>
+
+            <div class="member-real">
+                Yuha
+            </div>
+
+            <div class="positions">
+                Main Vocalist
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>96</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Vocal</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Group</span>
+                <span>ELLEVEN</span>
+            </div>
+
+        </div>
+
+
+        <!-- STELLA -->
+
+        <div class="member-card">
+
+            <div class="member-number">06</div>
+
+            <div class="member-name">Stella</div>
+
+            <div class="member-real">
+                Stella
+            </div>
+
+            <div class="positions">
+                Lead Vocalist · Visual
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>90</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Vocal</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Group</span>
+                <span>ELLEVEN</span>
+            </div>
+
+        </div>
+
+
+        <!-- RAMI -->
+
+        <div class="member-card">
+
+            <div class="member-number">07</div>
+
+            <div class="member-name">Rami</div>
+
+            <div class="member-real">
+                Rami
+            </div>
+
+            <div class="positions">
+                Main Vocalist
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>99</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Main Vocal</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Group</span>
+                <span>ELLEVEN</span>
+            </div>
+
+        </div>
+
+
+        <!-- RORA -->
+
+        <div class="member-card">
+
+            <div class="member-number">08</div>
+
+            <div class="member-name">Rora</div>
+
+            <div class="member-real">
+                Rora
+            </div>
+
+            <div class="positions">
+                Lead Vocalist
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>97</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Vocal</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Group</span>
+                <span>ELLEVEN</span>
+            </div>
+
+        </div>
+
+
+        <!-- JUUN -->
+
+        <div class="member-card">
+
+            <div class="member-number">09</div>
+
+            <div class="member-name">Juun</div>
+
+            <div class="member-real">
+                Juun
+            </div>
+
+            <div class="positions">
+                Main Dancer · Lead Vocalist
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Dance</span>
+                <span>S</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>85</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Dance</span>
+            </div>
+
+        </div>
+
+
+        <!-- A-NA -->
+
+        <div class="member-card">
+
+            <div class="member-number">10</div>
+
+            <div class="member-name">A-na</div>
+
+            <div class="member-real">
+                A-na
+            </div>
+
+            <div class="positions">
+                Sub Vocalist · Visual
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>61</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Visual</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Group</span>
+                <span>ELLEVEN</span>
+            </div>
+
+        </div>
+
+
+        <!-- CHIQUITA -->
+
+        <div class="member-card">
+
+            <div class="member-number">11</div>
+
+            <div class="member-name">Chiquita</div>
+
+            <div class="member-real">
+                Chiquita
+            </div>
+
+            <div class="positions">
+                Lead Vocalist · Lead Dancer · Maknae
+            </div>
+
+            <div class="member-line"></div>
+
+            <div class="member-fact">
+                <span>Vocal</span>
+                <span>94</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Rap</span>
+                <span>A+</span>
+            </div>
+
+            <div class="member-fact">
+                <span>Role</span>
+                <span>Maknae</span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<footer>
+    © 2026 Musicverse Profiles · Fictional database
+</footer>
+
+</body>
+</html>
