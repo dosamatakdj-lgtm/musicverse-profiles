@@ -3,58 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeemin - Musicverse Profiles</title>
+<title>Jeemin — PANDORA | Musicverse Profiles</title>
+
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#f7f7fb;color:#222}
-header{background:#111;color:white;padding:25px;text-align:center}
-nav{background:#222;padding:12px;text-align:center}
-nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold}
-main{max-width:900px;margin:40px auto;padding:0 20px}
-.profile{background:white;padding:30px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.08)}
-h2{text-align:center}
-.info{line-height:1.8}
-.story{margin-top:30px;line-height:1.7}
-footer{text-align:center;padding:30px;color:#777}
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f2f7;
+color:#222;
+}
+
+header{
+background:#17121c;
+color:white;
+padding:22px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h1{font-size:24px}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:14px;
+}
+
+.hero{
+background:linear-gradient(135deg,#21152d,#6d3f91);
+color:white;
+padding:70px 8%;
+}
+
+.hero h2{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+opacity:.85;
+}
+
+.profile{
+max-width:1100px;
+margin:50px auto;
+padding:0 25px;
+display:grid;
+grid-template-columns:300px 1fr;
+gap:35px;
+}
+
+.profile img{
+width:300px;
+height:380px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card h3{
+font-size:26px;
+margin-bottom:25px;
+color:#76558c;
+}
+
+.info{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.info div{
+padding-bottom:15px;
+border-bottom:1px solid #eee;
+}
+
+.info strong{
+display:block;
+font-size:12px;
+text-transform:uppercase;
+color:#999;
+margin-bottom:6px;
+}
+
+section{
+max-width:1100px;
+margin:50px auto;
+padding:0 25px;
+}
+
+section .card{margin-bottom:25px}
+
+section h2{
+font-size:30px;
+margin-bottom:20px;
+color:#76558c;
+}
+
+footer{
+background:#17121c;
+color:#aaa;
+text-align:center;
+padding:30px;
+margin-top:70px;
+font-size:13px;
+}
+
+@media(max-width:750px){
+header{flex-direction:column;gap:15px}
+nav a{margin:0 8px}
+.hero h2{font-size:38px}
+.profile{grid-template-columns:1fr}
+.profile img{width:100%;height:auto;max-height:500px}
+}
 </style>
 </head>
+
 <body>
 
-<header><h1>Musicverse Profiles</h1><p>Idol Profile</p></header>
+<header>
+<h1>MUSICVERSE PROFILES</h1>
 
 <nav>
 <a href="index.html">Home</a>
-<a href="index.html">Groups</a>
+<a href="groups.html">Groups</a>
 <a href="idols.html">Idols</a>
-<a href="index.html">Companies</a>
-<a href="index.html">Rankings</a>
+<a href="#">Companies</a>
+<a href="#">Rankings</a>
 </nav>
+</header>
 
-<main><div class="profile">
-<h2>Jeemin (지민)</h2>
+<div class="hero">
+<h2>Jeemin</h2>
+<p>PANDORA · Starship Entertainment</p>
+</div>
+
+<div class="profile">
+
+<img src="jeemin.jpg" alt="Jeemin">
+
+<div class="card">
+
+<h3>Profile</h3>
 
 <div class="info">
-<p><b>Group:</b> PANDORA</p>
-<p><b>Stage Name:</b> Jeemin</p>
-<p><b>Birth Name:</b> Zhang Jeemin (장지민)</p>
-<p><b>Position(s):</b> Visual, Sub Dancer, Sub Rapper</p>
-<p><b>Birthday:</b> August 12, 2008</p>
-<p><b>Zodiac Sign:</b> Leo</p>
-<p><b>Chinese Zodiac:</b> Rat</p>
-<p><b>Height:</b> 167 cm</p>
-<p><b>Weight:</b> —</p>
-<p><b>MBTI:</b> ISFP</p>
-<p><b>Nationality:</b> Chinese</p>
-<p><b>Representative Color:</b> Dark Blue</p>
+
+<div>
+<strong>Stage Name</strong>
+Jeemin
 </div>
 
-<div class="story">
-<h3>Pre-Debut Story</h3>
-<p>Jeemin became interested in performing after joining a school dance club at a young age. She later auditioned for Starship Entertainment after a staff member noticed her at a dance showcase.</p>
-
-<p>As a trainee, Jeemin stood out for her camera presence and expressive facial expressions. Although she initially focused mainly on dance, she gradually trained in rap and became one of PANDORA's most recognizable members during pre-debut evaluations.</p>
+<div>
+<strong>Group</strong>
+PANDORA
 </div>
 
-</div></main>
-<footer>Musicverse Profiles © 2026</footer>
+<div>
+<strong>Positions</strong>
+Visual · Sub Dancer · Sub Rapper
+</div>
+
+<div>
+<strong>Company</strong>
+Starship Entertainment
+</div>
+
+<div>
+<strong>Vocal Level</strong>
+—
+</div>
+
+<div>
+<strong>Rap Level</strong>
+—
+</div>
+
+<div>
+<strong>Dance Level</strong>
+—
+</div>
+
+<div>
+<strong>Group Position</strong>
+2nd Oldest Member
+</div>
+
+</div>
+</div>
+</div>
+
+<section>
+
+<div class="card">
+
+<h2>About Jeemin</h2>
+
+<p>
+Jeemin is a member of PANDORA under Starship Entertainment.
+She holds the positions of Visual, Sub Dancer and Sub Rapper.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>PANDORA</h2>
+
+<p>
+PANDORA is a six-member girl group under Starship Entertainment.
+The group debuted with their debut single <strong>Pandora</strong>.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Musicverse Profiles · Fictional Musicverse
+</footer>
+
 </body>
 </html>
