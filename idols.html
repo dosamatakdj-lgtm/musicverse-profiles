@@ -2,157 +2,145 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Idols | Musicverse</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Idols — Musicverse</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f2f7;
+color:#211c25;
 }
-
-body {
-    background: #f7f3f8;
-    color: #211c25;
+header{
+height:76px;
+background:#17131c;
+color:white;
+display:flex;
+align-items:center;
+padding:0 6%;
+gap:30px;
+position:sticky;
+top:0;
+z-index:10;
 }
-
-header {
-    background: #111014;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.logo{
+font-size:24px;
+font-weight:900;
+letter-spacing:2px;
 }
-
-.logo {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+nav{
+margin-left:auto;
+display:flex;
+gap:22px;
+align-items:center;
 }
-
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    margin-left: 25px;
+nav a{
+color:#ddd;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
 }
-
-.hero {
-    background: linear-gradient(135deg, #24131e, #a63f72);
-    color: white;
-    padding: 65px 8%;
+.search{
+width:180px;
+padding:10px 15px;
+border-radius:20px;
+border:1px solid #494151;
+background:#29242f;
+color:white;
+outline:none;
 }
-
-.hero h1 {
-    font-size: 48px;
+.hero{
+background:linear-gradient(135deg,#21152d,#75449d);
+color:white;
+padding:80px 7%;
 }
-
-.hero p {
-    margin-top: 10px;
-    font-size: 18px;
+.hero small{
+letter-spacing:4px;
+color:#d8b5ef;
+font-weight:bold;
 }
-
-.container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
+.hero h1{
+font-size:65px;
+margin:15px 0;
 }
-
-.group-section {
-    margin-bottom: 60px;
+.hero p{color:#ddd}
+.controls{
+padding:30px 7%;
+display:flex;
+gap:15px;
 }
-
-.group-title {
-    font-size: 32px;
-    margin-bottom: 8px;
+.controls input,.controls select{
+padding:13px 18px;
+border:1px solid #ddd;
+border-radius:12px;
+background:white;
+outline:none;
 }
-
-.group-subtitle {
-    color: #777;
-    margin-bottom: 25px;
+.controls input{
+width:300px;
 }
-
-.idols-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+.grid{
+padding:20px 7% 80px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:22px;
 }
-
-.idol-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 8px 25px #211c2510;
+transition:.2s;
 }
-
-.idol-card:hover {
-    transform: translateY(-5px);
+.card:hover{transform:translateY(-5px)}
+.card img{
+width:100%;
+height:270px;
+object-fit:cover;
 }
-
-.idol-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+.info{padding:20px}
+.info small{
+color:#8b55b8;
+font-weight:bold;
+font-size:11px;
+letter-spacing:1px;
 }
-
-.idol-content {
-    padding: 20px;
+.info h2{
+font-size:23px;
+margin:8px 0;
 }
-
-.idol-content h3 {
-    font-size: 23px;
-    margin-bottom: 6px;
+.info p{
+font-size:13px;
+color:#777;
+line-height:1.5;
 }
-
-.position {
-    color: #777;
-    min-height: 40px;
-    margin-bottom: 15px;
+.info a{
+display:block;
+margin-top:15px;
+text-align:center;
+padding:10px;
+background:#21152d;
+border-radius:20px;
+color:white;
+text-decoration:none;
+font-size:12px;
+font-weight:bold;
 }
-
-.button {
-    display: inline-block;
-    padding: 10px 17px;
-    background: #a63f72;
-    color: white;
-    text-decoration: none;
-    border-radius: 9px;
+footer{
+background:#17131c;
+color:#aaa;
+text-align:center;
+padding:40px;
 }
-
-.pandora-button {
-    background: #5269b7;
+@media(max-width:1000px){
+.grid{grid-template-columns:repeat(2,1fr)}
 }
-
-.elleven-button {
-    background: #6d3f91;
-}
-
-footer {
-    margin-top: 70px;
-    background: #111014;
-    color: #aaa;
-    text-align: center;
-    padding: 25px;
-}
-
-@media (max-width: 1000px) {
-    .idols-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 700px) {
-    .idols-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 500px) {
-    .idols-grid {
-        grid-template-columns: 1fr;
-    }
+@media(max-width:600px){
+.grid{grid-template-columns:1fr}
+.controls{flex-direction:column}
+.controls input{width:100%}
+.hero h1{font-size:48px}
 }
 </style>
 </head>
@@ -160,291 +148,245 @@ footer {
 <body>
 
 <header>
-    <div class="logo">MUSICVERSE</div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="groups.html">Groups</a>
-        <a href="idols.html">Idols</a>
-    </nav>
+<div class="logo">MUSICVERSE</div>
+<nav>
+<a href="index.html">HOME</a>
+<a href="groups.html">GROUPS</a>
+<a href="idols.html">IDOLS</a>
+<a href="vote.html">VOTE</a>
+<input class="search" id="navSearch" placeholder="Search...">
+</nav>
 </header>
 
 <section class="hero">
-    <h1>Idols</h1>
-    <p>Explore the individual profiles of Musicverse idols.</p>
+<small>MUSICVERSE DATABASE</small>
+<h1>IDOLS</h1>
+<p>Discover every profiled idol in the Musicverse.</p>
 </section>
 
-<div class="container">
-
-
-<!-- ==================== PANDORA ==================== -->
-
-<section class="group-section">
-
-    <h2 class="group-title">PANDORA</h2>
-
-    <p class="group-subtitle">
-        Starship Entertainment · 6 Members
-    </p>
-
-    <div class="idols-grid">
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jiwoo.jpg" alt="Jiwoo">
-            <div class="idol-content">
-                <h3>Jiwoo</h3>
-                <p class="position">Lead Vocalist, Unnie</p>
-                <a href="jiwoo.html" class="button pandora-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jeemin.jpg" alt="Jeemin">
-            <div class="idol-content">
-                <h3>Jeemin</h3>
-                <p class="position">Visual, Sub Dancer, Sub Rapper</p>
-                <a href="jeemin.html" class="button pandora-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/kylie.jpg" alt="Kylie">
-            <div class="idol-content">
-                <h3>Kylie</h3>
-                <p class="position">Main Vocalist</p>
-                <a href="kylie.html" class="button pandora-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/hinari.jpg" alt="Hinari">
-            <div class="idol-content">
-                <h3>Hinari</h3>
-                <p class="position">Main Rapper, Lead Dancer</p>
-                <a href="hinari.html" class="button pandora-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ruby.jpg" alt="Ruby">
-            <div class="idol-content">
-                <h3>Ruby</h3>
-                <p class="position">Main Dancer, Lead Rapper, Lead Vocalist, Visual</p>
-                <a href="ruby.html" class="button pandora-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/bonnie.jpg" alt="Bonnie">
-            <div class="idol-content">
-                <h3>Bonnie</h3>
-                <p class="position">Lead Dancer, Lead Vocalist, Maknae</p>
-                <a href="bonnie.html" class="button pandora-button">View Profile</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ==================== ELLEVEN ==================== -->
-
-<section class="group-section">
-
-    <h2 class="group-title">ELLEVEN</h2>
-
-    <p class="group-subtitle">
-        Aurelia Entertainment · 11 Members
-    </p>
-
-    <div class="idols-grid">
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ruka.jpg" alt="Ruka">
-            <div class="idol-content">
-                <h3>Ruka</h3>
-                <p class="position">Main Dancer, Main Rapper</p>
-                <a href="ruka.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/pharita.jpg" alt="Pharita">
-            <div class="idol-content">
-                <h3>Pharita</h3>
-                <p class="position">Main Vocalist, Visual</p>
-                <a href="pharita.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/asa.jpg" alt="Asa">
-            <div class="idol-content">
-                <h3>Asa</h3>
-                <p class="position">Main Rapper, Lead Dancer</p>
-                <a href="asa.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ahyeon.jpg" alt="Ahyeon">
-            <div class="idol-content">
-                <h3>Ahyeon</h3>
-                <p class="position">Main Vocalist, Lead Rapper, Center</p>
-                <a href="ahyeon.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/yuha.jpg" alt="Yuha">
-            <div class="idol-content">
-                <h3>Yuha</h3>
-                <p class="position">Main Vocalist</p>
-                <a href="yuha.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/stella.jpg" alt="Stella">
-            <div class="idol-content">
-                <h3>Stella</h3>
-                <p class="position">Lead Vocalist, Visual</p>
-                <a href="stella.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rami.jpg" alt="Rami">
-            <div class="idol-content">
-                <h3>Rami</h3>
-                <p class="position">Main Vocalist</p>
-                <a href="rami.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rora.jpg" alt="Rora">
-            <div class="idol-content">
-                <h3>Rora</h3>
-                <p class="position">Lead Vocalist</p>
-                <a href="rora.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/juun.jpg" alt="Juun">
-            <div class="idol-content">
-                <h3>Juun</h3>
-                <p class="position">Main Dancer, Lead Vocalist</p>
-                <a href="juun.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/a-na.jpg" alt="A-na">
-            <div class="idol-content">
-                <h3>A-na</h3>
-                <p class="position">Sub Vocalist, Visual</p>
-                <a href="a-na.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/chiquita.jpg" alt="Chiquita">
-            <div class="idol-content">
-                <h3>Chiquita</h3>
-                <p class="position">Lead Vocalist, Lead Dancer, Maknae</p>
-                <a href="chiquita.html" class="button elleven-button">View Profile</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ==================== PINKPUNK ==================== -->
-
-<section class="group-section">
-
-    <h2 class="group-title">PINKPUNK</h2>
-
-    <p class="group-subtitle">
-        LUX Entertainment · 7 Members
-    </p>
-
-    <div class="idols-grid">
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jisoo.jpg" alt="Jisoo">
-            <div class="idol-content">
-                <h3>Jisoo</h3>
-                <p class="position">Visual, Unnie, Sub Rapper</p>
-                <a href="jisoo.html" class="button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jennie.jpg" alt="Jennie">
-            <div class="idol-content">
-                <h3>Jennie</h3>
-                <p class="position">Main Rapper, Sub Vocalist, FOTG</p>
-                <a href="jennie.html" class="button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/miyeon.jpg" alt="Miyeon">
-            <div class="idol-content">
-                <h3>Miyeon</h3>
-                <p class="position">Main Vocalist, Sub Rapper, Visual</p>
-                <a href="miyeon.html" class="button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rose.jpg" alt="Rosé">
-            <div class="idol-content">
-                <h3>Rosé</h3>
-                <p class="position">Main Vocalist, Lead Dancer</p>
-                <a href="rose.html" class="button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/mina.jpg" alt="Mina">
-            <div class="idol-content">
-                <h3>Mina</h3>
-                <p class="position">Lead Dancer, Visual, Sub Vocalist</p>
-                <a href="mina.html" class="button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/lisa.jpg" alt="Lisa">
-            <div class="idol-content">
-                <h3>Lisa</h3>
-                <p class="position">Main Dancer, Lead Rapper</p>
-                <a href="lisa.html" class="button">View Profile</a>
-            </div>
-        </div>
-
-        <div class="idol-card">
-            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/minnie.jpg" alt="Minnie">
-            <div class="idol-content">
-                <h3>Minnie</h3>
-                <p class="position">Lead Vocalist, Lead Rapper, Lead Dancer</p>
-                <a href="minnie.html" class="button">View Profile</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
+<div class="controls">
+<input id="idolSearch" placeholder="Search idol...">
+<select id="groupFilter">
+<option value="all">All groups</option>
+<option value="PANDORA">PANDORA</option>
+<option value="ELLEVEN">ELLEVEN</option>
+<option value="PINKPUNK">PINKPUNK</option>
+</select>
 </div>
 
+<main class="grid" id="idolGrid">
+
+<div class="card" data-name="jiwoo" data-group="PANDORA">
+<img src="jiwoo.jpg"><div class="info">
+<small>PANDORA</small><h2>Jiwoo</h2>
+<p>Lead Vocalist · Unnie</p>
+<a href="jiwoo.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="jeemin" data-group="PANDORA">
+<img src="jeemin.jpg"><div class="info">
+<small>PANDORA</small><h2>Jeemin</h2>
+<p>Visual · Sub Dancer · Sub Rapper</p>
+<a href="jeemin.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="kylie" data-group="PANDORA">
+<img src="kylie.jpg"><div class="info">
+<small>PANDORA</small><h2>Kylie</h2>
+<p>Main Vocalist</p>
+<a href="kylie.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="hinari" data-group="PANDORA">
+<img src="hinari.jpg"><div class="info">
+<small>PANDORA</small><h2>Hinari</h2>
+<p>Main Rapper · Lead Dancer</p>
+<a href="hinari.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="ruby" data-group="PANDORA">
+<img src="ruby.jpg"><div class="info">
+<small>PANDORA</small><h2>Ruby</h2>
+<p>Main Dancer · Lead Rapper · Visual</p>
+<a href="ruby.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="bonnie" data-group="PANDORA">
+<img src="bonnie.jpg"><div class="info">
+<small>PANDORA</small><h2>Bonnie</h2>
+<p>Lead Dancer · Lead Vocalist · Maknae</p>
+<a href="bonnie.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="ruka" data-group="ELLEVEN">
+<img src="ruka.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Ruka</h2>
+<p>Main Dancer · Main Rapper</p>
+<a href="ruka.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="pharita" data-group="ELLEVEN">
+<img src="pharita.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Pharita</h2>
+<p>Main Vocalist · Visual</p>
+<a href="pharita.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="asa" data-group="ELLEVEN">
+<img src="asa.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Asa</h2>
+<p>Main Rapper · Lead Dancer</p>
+<a href="asa.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="ahyeon" data-group="ELLEVEN">
+<img src="ahyeon.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Ahyeon</h2>
+<p>Main Vocalist · Lead Rapper · Center</p>
+<a href="ahyeon.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="yuha" data-group="ELLEVEN">
+<img src="yuha.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Yuha</h2>
+<p>Main Vocalist</p>
+<a href="yuha.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="stella" data-group="ELLEVEN">
+<img src="stella.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Stella</h2>
+<p>Lead Vocalist · Visual</p>
+<a href="stella.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="rami" data-group="ELLEVEN">
+<img src="rami.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Rami</h2>
+<p>Main Vocalist</p>
+<a href="rami.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="rora" data-group="ELLEVEN">
+<img src="rora.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Rora</h2>
+<p>Lead Vocalist</p>
+<a href="rora.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="juun" data-group="ELLEVEN">
+<img src="juun.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Juun</h2>
+<p>Main Dancer · Lead Vocalist</p>
+<a href="juun.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="a-na" data-group="ELLEVEN">
+<img src="a-na.jpg"><div class="info">
+<small>ELLEVEN</small><h2>A-na</h2>
+<p>Sub Vocalist · Visual</p>
+<a href="a-na.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="chiquita" data-group="ELLEVEN">
+<img src="chiquita.jpg"><div class="info">
+<small>ELLEVEN</small><h2>Chiquita</h2>
+<p>Lead Vocalist · Lead Dancer · Maknae</p>
+<a href="chiquita.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="jisoo" data-group="PINKPUNK">
+<img src="jisoo.jpg"><div class="info">
+<small>PINKPUNK</small><h2>Jisoo</h2>
+<p>Visual · Unnie · Sub Rapper</p>
+<a href="jisoo.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="jennie" data-group="PINKPUNK">
+<img src="jennie.jpg"><div class="info">
+<small>PINKPUNK</small><h2>Jennie</h2>
+<p>Main Rapper · Sub Vocalist · FOTG</p>
+<a href="jennie.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="miyeon" data-group="PINKPUNK">
+<img src="miyeon.jpg"><div class="info">
+<small>PINKPUNK</small><h2>Miyeon</h2>
+<p>Main Vocalist · Sub Rapper · Visual</p>
+<a href="miyeon.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="rose" data-group="PINKPUNK">
+<img src="rose.jpg"><div class="info">
+<small>PINKPUNK</small><h2>Rosé</h2>
+<p>Main Vocalist · Lead Dancer</p>
+<a href="rose.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="mina" data-group="PINKPUNK">
+<img src="mina.jpg"><div class="info">
+<small>PINKPUNK</small><h2>Mina</h2>
+<p>Lead Dancer · Visual · Sub Vocalist</p>
+<a href="mina.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="lisa" data-group="PINKPUNK">
+<img src="lisa.jpg"><div class="info">
+<small>PINKPUNK</small><h2>Lisa</h2>
+<p>Main Dancer · Lead Rapper</p>
+<a href="lisa.html">PROFILE</a></div>
+</div>
+
+<div class="card" data-name="minnie" data-group="PINKPUNK">
+<img src="minnie.jpg"><div class="info">
+<small>PINKPUNK</small><h2>Minnie</h2>
+<p>Lead Vocalist · Lead Rapper · Lead Dancer</p>
+<a href="minnie.html">PROFILE</a></div>
+</div>
+
+</main>
+
 <footer>
-    Musicverse Profiles © 2026
+MUSICVERSE © 2026 · Fictional K-Pop Database
 </footer>
+
+<script>
+const search=document.getElementById("idolSearch");
+const filter=document.getElementById("groupFilter");
+const cards=[...document.querySelectorAll(".card")];
+
+function update(){
+const q=search.value.toLowerCase().trim();
+const group=filter.value;
+
+cards.forEach(card=>{
+const name=card.dataset.name;
+const cardGroup=card.dataset.group;
+
+const matchName=name.includes(q);
+const matchGroup=group==="all"||cardGroup===group;
+
+card.style.display=(matchName&&matchGroup)?"block":"none";
+});
+}
+
+search.addEventListener("input",update);
+filter.addEventListener("change",update);
+
+const params=new URLSearchParams(location.search);
+const initial=params.get("search");
+
+if(initial){
+search.value=initial;
+update();
+}
+
+document.getElementById("navSearch").addEventListener("keydown",function(e){
+if(e.key==="Enter"){
+location.href="idols.html?search="+encodeURIComponent(this.value);
+}
+});
+</script>
 
 </body>
 </html>
