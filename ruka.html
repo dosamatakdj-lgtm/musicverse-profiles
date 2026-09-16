@@ -1,1 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Ruka — ELLEVEN | Musicverse Profiles</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f6f8;
+    color: #17171c;
+}
+
+/* HEADER */
+
+header {
+    background: #111116;
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #d7d7dc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #b56cff;
+}
+
+/* PROFILE HERO */
+
+.profile-hero {
+    background: linear-gradient(135deg, #17121f, #4a2369);
+    color: white;
+    padding: 60px 8%;
+}
+
+.profile-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* PHOTO */
+
+.photo-box {
+    width: 300px;
+    height: 380px;
+    background: #29222f;
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    color: #a99bae;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.profile-text small {
+    color: #d2a7ff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.profile-text h1 {
+    font-size: 58px;
+    margin: 12px 0 5px;
+}
+
+.group-name {
+    color: #ddd2e5;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.positions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.position {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+    padding: 9px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* CONTENT */
+
+.content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 55px 25px 80px;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.info-box {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    border: 1px solid #e8e8ec;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    margin-bottom: 45px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info-item {
+    background: #f7f4fa;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.info-item strong {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.info-item span {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.story {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    border: 1px solid #e8e8ec;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    color: #666;
+    line-height: 1.8;
+}
+
+footer {
+    background: #111116;
+    color: #777;
+    text-align: center;
+    padding: 28px;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .profile-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .photo-box {
+        margin: auto;
+    }
+
+    .positions {
+        justify-content: center;
+    }
+
+    .profile-text h1 {
+        font-size: 45px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">MUSICVERSE PROFILES</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="index.html">Companies</a>
+        <a href="index.html">Rankings</a>
+    </nav>
+
+</header>
+
+
+<section class="profile-hero">
+
+    <div class="profile-container">
+
+        <div class="photo-box">
+
+            <!-- ADD RUKA'S PHOTO HERE LATER -->
+
+            <div class="photo-placeholder">
+                Ruka's photo
+            </div>
+
+        </div>
+
+
+        <div class="profile-text">
+
+            <small>ELLEVEN Member</small>
+
+            <h1>Ruka</h1>
+
+            <div class="group-name">
+                ELLEVEN · Aurelia Entertainment
+            </div>
+
+            <div class="positions">
+
+                <div class="position">
+                    Main Dancer
+                </div>
+
+                <div class="position">
+                    Main Rapper
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="content">
+
+
+    <h2 class="section-title">
+        Ruka Profile
+    </h2>
+
+
+    <div class="info-box">
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <strong>Stage Name</strong>
+                <span>Ruka</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Group</strong>
+                <span>ELLEVEN</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Positions</strong>
+                <span>Main Dancer, Main Rapper</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Company</strong>
+                <span>Aurelia Entertainment</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Dance Level</strong>
+                <span>S</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Rap Level</strong>
+                <span>S</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Vocal Level</strong>
+                <span>45</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Group Position</strong>
+                <span>Oldest Member</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">
+        About Ruka
+    </h2>
+
+
+    <div class="story">
+
+        <p>
+            Ruka is a member of ELLEVEN under Aurelia Entertainment.
+            She is known within the group for her strong dance skills
+            and powerful rap style.
+        </p>
+
+        <br>
+
+        <p>
+            As one of ELLEVEN's main performers, Ruka plays an important
+            role during choreography-heavy performances and rap sections.
+        </p>
+
+    </div>
+
+
+</main>
+
+
+<footer>
+    © 2026 Musicverse Profiles · Fictional database
+</footer>
+
+</body>
+</html>
