@@ -307,9 +307,38 @@ footer {
         The ultimate database for groups, idols and the Musicverse.
     </p>
 
-    <div class="search">
-        🔎 &nbsp; Search for an idol or group...
-    </div>
+<div class="search-box">
+    <span>🔎</span>
+    <input type="text" id="searchInput" placeholder="Search for an idol or group..." onkeyup="searchSite()">
+</div>
+
+<script>
+function searchSite() {
+    const search = document.getElementById("searchInput").value.toLowerCase();
+
+    if (search.includes("pandora")) {
+        window.location.href = "pandora.html";
+    } 
+    else if (search.includes("jiwoo")) {
+        window.location.href = "jiwoo.html";
+    }
+    else if (search.includes("jeemin")) {
+        window.location.href = "jeemin.html";
+    }
+    else if (search.includes("kylie")) {
+        window.location.href = "kylie.html";
+    }
+    else if (search.includes("hinari")) {
+        window.location.href = "hinari.html";
+    }
+    else if (search.includes("ruby")) {
+        window.location.href = "ruby.html";
+    }
+    else if (search.includes("bonnie")) {
+        window.location.href = "bonnie.html";
+    }
+}
+</script>
 
 </section>
 
