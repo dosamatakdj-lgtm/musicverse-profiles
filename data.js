@@ -71,53 +71,59 @@ const MUSICVERSE_GROUPS = [
 
 const MUSICVERSE_IDOLS = [
 
-    {
-        name: "Jiwoo",
-        group: "PANDORA",
-        company: "Starship Entertainment",
-        image: "jiwoo.jpg",
-        page: "jiwoo.html"
-    },
+  {
+    name:"Jiwoo",
+    group:"PANDORA",
+    company:"Starship Entertainment",
+    image:"jiwoo.jpg",
+    page:"jiwoo.html",
+    positions:"Lead Vocalist · Unnie"
+},
 
-    {
-        name: "Jeemin",
-        group: "PANDORA",
-        company: "Starship Entertainment",
-        image: "jeemin.jpg",
-        page: "jeemin.html"
-    },
+{
+    name:"Jeemin",
+    group:"PANDORA",
+    company:"Starship Entertainment",
+    image:"jeemin.jpg",
+    page:"jeemin.html",
+    positions:"Visual · Sub Dancer · Sub Rapper"
+},
 
-    {
-        name: "Kylie",
-        group: "PANDORA",
-        company: "Starship Entertainment",
-        image: "kylie.jpg",
-        page: "kylie.html"
-    },
+{
+    name:"Kylie",
+    group:"PANDORA",
+    company:"Starship Entertainment",
+    image:"kylie.jpg",
+    page:"kylie.html",
+    positions:"Main Vocalist"
+},
 
-    {
-        name: "Hinari",
-        group: "PANDORA",
-        company: "Starship Entertainment",
-        image: "hinari.jpg",
-        page: "hinari.html"
-    },
+{
+    name:"Hinari",
+    group:"PANDORA",
+    company:"Starship Entertainment",
+    image:"hinari.jpg",
+    page:"hinari.html",
+    positions:"Main Rapper · Lead Dancer"
+},
 
-    {
-        name: "Ruby",
-        group: "PANDORA",
-        company: "Starship Entertainment",
-        image: "ruby.jpg",
-        page: "ruby.html"
-    },
+{
+    name:"Ruby",
+    group:"PANDORA",
+    company:"Starship Entertainment",
+    image:"ruby.jpg",
+    page:"ruby.html",
+    positions:"Main Dancer · Lead Rapper · Lead Vocalist · Visual"
+},
 
-    {
-        name: "Bonnie",
-        group: "PANDORA",
-        company: "Starship Entertainment",
-        image: "bonnie.jpg",
-        page: "bonnie.html"
-    },
+{
+    name:"Bonnie",
+    group:"PANDORA",
+    company:"Starship Entertainment",
+    image:"bonnie.jpg",
+    page:"bonnie.html",
+    positions:"Maknae · Lead Dancer · Lead Vocalist"
+}
 
 
     {
