@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vote — Musicverse</title>
 
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f2f7;
+color:#211c25;
+}
+header{
+height:76px;
+background:#17131c;
+color:white;
+display:flex;
+align-items:center;
+padding:0 6%;
+gap:30px;
+position:sticky;
+top:0;
+z-index:10;
+}
+.logo{
+font-size:24px;
+font-weight:900;
+letter-spacing:2px;
+}
+nav{
+margin-left:auto;
+display:flex;
+gap:22px;
+align-items:center;
+}
+nav a{
+color:#ddd;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+}
+.search{
+width:180px;
+padding:10px 15px;
+border-radius:20px;
+border:1px solid #494151;
+background:#29242f;
+color:white;
+}
+.hero{
+background:linear-gradient(135deg,#21152d,#75449d);
+color:white;
+padding:90px 7%;
+}
+.hero small{
+letter-spacing:4px;
+color:#d8b5ef;
+font-weight:bold;
+}
+.hero h1{
+font-size:65px;
+margin:15px 0;
+}
+.hero p{color:#ddd;max-width:600px}
+.vote-grid{
+padding:50px 7% 80px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:22px;
+}
+.card{
+background:white;
+border-radius:20px;
+padding:18px;
+box-shadow:0 8px 25px #211c2510;
+}
+.card img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:15px;
+}
+.card h2{
+margin:15px 0 3px;
+}
+.group{
+font-size:11px;
+font-weight:bold;
+color:#8b55b8;
+letter-spacing:1px;
+}
+.count{
+font-size:25px;
+font-weight:900;
+margin:15px 0 8px;
+}
+.bar{
+height:8px;
+background:#eee;
+border-radius:10px;
+overflow:hidden;
+}
+.fill{
+height:100%;
+width:0%;
+background:#8b55b8;
+}
+button{
+width:100%;
+margin-top:15px;
+border:0;
+padding:12px;
+border-radius:20px;
+background:#21152d;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+button:disabled{
+background:#aaa;
+cursor:not-allowed;
+}
+.status{
+text-align:center;
+margin:30px 7% 0;
+padding:15px;
+background:white;
+border-radius:15px;
+color:#777;
+}
+footer{
+background:#17131c;
+color:#aaa;
+padding:40px;
+text-align:center;
+}
+@media(max-width:1000px){
+.vote-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+.vote-grid{grid-template-columns:1fr}
+.hero h1{font-size:48px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">MUSICVERSE</div>
+<nav>
+<a href="index.html">HOME</a>
+<a href="groups.html">GROUPS</a>
+<a href="idols.html">IDOLS</a>
+<a href="vote.html">VOTE</a>
+<input class="search" id="search" placeholder="Search...">
+</nav>
+</header>
+
+<section class="hero">
+<small>MUSICVERSE FAN VOTE</small>
+<h1>YOUR FAVORITE.</h1>
+<p>
+Choose one idol and make your voice heard.
+Vote totals will be displayed publicly.
+</p>
+</section>
+
+<div class="status" id="status">
+Loading voting system...
+</div>
+
+<main class="vote-grid" id="voteGrid"></main>
+
+<footer>
+MUSICVERSE © 2026 · Fictional K-Pop Database
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL="YOUR_SUPABASE_URL";
+const SUPABASE_KEY="YOUR_SUPABASE_PUBLISHABLE_KEY";
+
+const idols=[
+["Jiwoo","PANDORA","jiwoo.jpg"],
+["Jeemin","PANDORA","jeemin.jpg"],
+["Kylie","PANDORA","kylie.jpg"],
+["Hinari","PANDORA","hinari.jpg"],
+["Ruby","PANDORA","ruby.jpg"],
+["Bonnie","PANDORA","bonnie.jpg"],
+
+["Ruka","ELLEVEN","ruka.jpg"],
+["Pharita","ELLEVEN","pharita.jpg"],
+["Asa","ELLEVEN","asa.jpg"],
+["Ahyeon","ELLEVEN","ahyeon.jpg"],
+["Yuha","ELLEVEN","yuha.jpg"],
+["Stella","ELLEVEN","stella.jpg"],
+["Rami","ELLEVEN","rami.jpg"],
+["Rora","ELLEVEN","rora.jpg"],
+["Juun","ELLEVEN","juun.jpg"],
+["A-na","ELLEVEN","a-na.jpg"],
+["Chiquita","ELLEVEN","chiquita.jpg"],
+
+["Jisoo","PINKPUNK","jisoo.jpg"],
+["Jennie","PINKPUNK","jennie.jpg"],
+["Miyeon","PINKPUNK","miyeon.jpg"],
+["Rosé","PINKPUNK","rose.jpg"],
+["Mina","PINKPUNK","mina.jpg"],
+["Lisa","PINKPUNK","lisa.jpg"],
+["Minnie","PINKPUNK","minnie.jpg"]
+];
+
+const grid=document.getElementById("voteGrid");
+const status=document.getElementById("status");
+
+let client=null;
+let user=null;
+let voteData=[];
+
+function render(){
+grid.innerHTML="";
+
+const total=voteData.reduce((a,b)=>a+b.votes,0);
+
+voteData.forEach(idol=>{
+const percent=total?((idol.votes/total)*100):0;
+
+const card=document.createElement("div");
+card.className="card";
+
+card.innerHTML=`
+<img src="${idol.image}">
+<div class="group">${idol.group_name}</div>
+<h2>${idol.name}</h2>
+<div class="count">${idol.votes.toLocaleString()} votes</div>
+<div class="bar">
+<div class="fill" style="width:${percent}%"></div>
+</div>
+<button onclick="vote(${idol.id})">VOTE</button>
+`;
+
+grid.appendChild(card);
+});
+}
+
+async function start(){
+
+if(SUPABASE_URL==="YOUR_SUPABASE_URL"){
+status.innerHTML="⚠️ Supabase still needs to be connected. Follow the setup instructions below.";
+return;
+}
+
+client=window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+const auth=await client.auth.signInAnonymously();
+
+if(auth.error){
+status.innerHTML="There was a problem connecting to the voting system.";
+return;
+}
+
+user=auth.data.user;
+
+await loadVotes();
+
+status.innerHTML="🟢 Voting system connected.";
+}
+
+async function loadVotes(){
+
+const result=await client
+.from("idol_votes")
+.select("*")
+.order("votes",{ascending:false});
+
+if(result.error){
+status.innerHTML="Could not load votes.";
+return;
+}
+
+voteData=result.data;
+render();
+}
+
+async function vote(id){
+
+if(!client||!user){
+alert("The voting system is not connected yet.");
+return;
+}
+
+const result=await client.rpc(
+"cast_idol_vote",
+{p_id:id}
+);
+
+if(result.error){
+alert(result.error.message);
+return;
+}
+
+await loadVotes();
+
+alert("Your vote has been counted! 💗");
+}
+
+document.getElementById("search").addEventListener("keydown",function(e){
+if(e.key==="Enter"){
+location.href="idols.html?search="+encodeURIComponent(this.value);
+}
+});
+
+start();
+
+</script>
+
+</body>
+</html>
