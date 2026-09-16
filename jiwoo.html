@@ -3,64 +3,316 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jiwoo - Musicverse Profiles</title>
+
+<title>Jiwoo — PANDORA | Musicverse Profiles</title>
+
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#f7f7fb;color:#222}
-header{background:#111;color:white;padding:25px;text-align:center}
-nav{background:#222;padding:12px;text-align:center}
-nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold}
-main{max-width:900px;margin:40px auto;padding:0 20px}
-.profile{background:white;padding:30px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.08)}
-h2{text-align:center}
-.info{line-height:1.8}
-.story{margin-top:30px;line-height:1.7}
-footer{text-align:center;padding:30px;color:#777}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f2f7;
+    color: #211c25;
+}
+
+header {
+    background: #111014;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #b98cff;
+}
+
+.hero {
+    background: linear-gradient(135deg, #21152d, #6d3f91);
+    color: white;
+    padding: 60px 8%;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 17px;
+}
+
+.profile-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.photo-box {
+    width: 300px;
+    height: 380px;
+    background: #29222f;
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.profile-info h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #76558c;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.info-item {
+    background: #f7f4f9;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.info-item strong {
+    display: block;
+    color: #76558c;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.section {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+.section-card {
+    background: white;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.section-card h2 {
+    margin-bottom: 15px;
+    color: #35213f;
+}
+
+.section-card p {
+    line-height: 1.7;
+    color: #555;
+}
+
+footer {
+    margin-top: 70px;
+    background: #111014;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .profile-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .profile-info {
+        width: 100%;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>Musicverse Profiles</h1>
-<p>Idol Profile</p>
+
+    <div class="logo">MUSICVERSE PROFILES</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="index.html">Companies</a>
+        <a href="index.html">Rankings</a>
+    </nav>
+
 </header>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="index.html">Groups</a>
-<a href="idols.html">Idols</a>
-<a href="index.html">Companies</a>
-<a href="index.html">Rankings</a>
-</nav>
 
-<main>
-<div class="profile">
-<h2>Jiwoo (지우)</h2>
+<section class="hero">
 
-<div class="info">
-<p><b>Group:</b> PANDORA</p>
-<p><b>Stage Name:</b> Jiwoo</p>
-<p><b>Birth Name:</b> Kim Jiwoo (김지우)</p>
-<p><b>Position(s):</b> Lead Vocalist, Unnie</p>
-<p><b>Birthday:</b> March 18, 2007</p>
-<p><b>Zodiac Sign:</b> Pisces</p>
-<p><b>Chinese Zodiac:</b> Pig</p>
-<p><b>Height:</b> 165 cm</p>
-<p><b>Weight:</b> —</p>
-<p><b>MBTI:</b> ISFJ</p>
-<p><b>Nationality:</b> Korean</p>
-<p><b>Representative Color:</b> Yellow</p>
+    <h1>Jiwoo</h1>
+    <p>PANDORA · Starship Entertainment</p>
+
+</section>
+
+
+<div class="profile-container">
+
+    <div class="photo-box">
+        <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jiwoo.jpg" alt="Jiwoo">
+    </div>
+
+
+    <div class="profile-info">
+
+        <h2>Jiwoo</h2>
+
+        <div class="subtitle">
+            PANDORA Member
+        </div>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <strong>Stage Name</strong>
+                Jiwoo
+            </div>
+
+            <div class="info-item">
+                <strong>Group</strong>
+                PANDORA
+            </div>
+
+            <div class="info-item">
+                <strong>Positions</strong>
+                Lead Vocalist, Unnie
+            </div>
+
+            <div class="info-item">
+                <strong>Company</strong>
+                Starship Entertainment
+            </div>
+
+            <div class="info-item">
+                <strong>Vocal Level</strong>
+                —
+            </div>
+
+            <div class="info-item">
+                <strong>Rap Level</strong>
+                —
+            </div>
+
+            <div class="info-item">
+                <strong>Dance Level</strong>
+                —
+            </div>
+
+            <div class="info-item">
+                <strong>Group Position</strong>
+                Oldest Member
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div class="story">
-<h3>Pre-Debut Story</h3>
-<p>Jiwoo began training after being discovered at a local youth dance competition. She originally auditioned for Starship Entertainment as a vocalist, but her strong stage presence quickly caught the attention of the dance trainers as well.</p>
 
-<p>During her trainee years, Jiwoo became known for being one of the most dependable members in monthly evaluations. She often helped younger trainees learn choreography and was eventually chosen as one of the first members of PANDORA's debut lineup.</p>
-</div>
+<section class="section">
 
-</div>
-</main>
+    <div class="section-card">
 
-<footer>Musicverse Profiles © 2026</footer>
+        <h2>About Jiwoo</h2>
+
+        <p>
+            Jiwoo is the oldest member of PANDORA and serves as the group's
+            Lead Vocalist. She is known as the unnie of the group.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-card">
+
+        <h2>PANDORA</h2>
+
+        <p>
+            PANDORA is a 6-member girl group under Starship Entertainment.
+            The group debuted with <strong>Pandora</strong>.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 Musicverse Profiles · Fictional Musicverse Database
+</footer>
+
 </body>
 </html>
