@@ -3,25 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Idols — Musicverse Profiles</title>
+<title>Idols | Musicverse</title>
 
 <style>
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f2f7;
+    background: #f7f3f8;
     color: #211c25;
 }
 
 header {
     background: #111014;
-    color: white;
     padding: 20px 8%;
     display: flex;
     justify-content: space-between;
@@ -29,107 +27,106 @@ header {
 }
 
 .logo {
+    color: white;
     font-size: 22px;
     font-weight: bold;
-    letter-spacing: 2px;
 }
 
 nav a {
     color: #ddd;
     text-decoration: none;
-    margin-left: 24px;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #b98cff;
+    margin-left: 25px;
 }
 
 .hero {
-    background: linear-gradient(135deg, #21152d, #6d3f91);
+    background: linear-gradient(135deg, #24131e, #a63f72);
     color: white;
-    padding: 60px 8%;
+    padding: 65px 8%;
 }
 
 .hero h1 {
-    font-size: 46px;
-    margin-bottom: 10px;
+    font-size: 48px;
 }
 
 .hero p {
-    color: #ddd;
-    font-size: 17px;
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 50px auto;
-    padding: 0 25px;
+    padding: 0 20px;
 }
 
-.section-title {
-    font-size: 28px;
+.group-section {
+    margin-bottom: 60px;
+}
+
+.group-title {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.group-subtitle {
+    color: #777;
     margin-bottom: 25px;
-    color: #35213f;
 }
 
-.idol-grid {
+.idols-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
 
 .idol-card {
     background: white;
     border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-    transition: transform .2s, box-shadow .2s;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
 }
 
 .idol-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.12);
 }
 
 .idol-card img {
     width: 100%;
-    height: 280px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 18px;
 }
 
-.idol-card h2 {
+.idol-content {
+    padding: 20px;
+}
+
+.idol-content h3 {
     font-size: 23px;
-    margin-bottom: 7px;
-}
-
-.group {
-    color: #76558c;
-    font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .position {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 18px;
+    color: #777;
+    min-height: 40px;
+    margin-bottom: 15px;
 }
 
 .button {
     display: inline-block;
-    background: #6d3f91;
+    padding: 10px 17px;
+    background: #a63f72;
     color: white;
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 10px;
-    font-size: 14px;
+    border-radius: 9px;
 }
 
-.button:hover {
-    background: #542d73;
+.pandora-button {
+    background: #5269b7;
+}
+
+.elleven-button {
+    background: #6d3f91;
 }
 
 footer {
@@ -138,25 +135,22 @@ footer {
     color: #aaa;
     text-align: center;
     padding: 25px;
-    font-size: 13px;
 }
 
-@media (max-width: 800px) {
-
-    header {
-        flex-direction: column;
-        gap: 15px;
+@media (max-width: 1000px) {
+    .idols-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
+}
 
-    nav a {
-        margin: 0 8px;
+@media (max-width: 700px) {
+    .idols-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .idol-grid {
+@media (max-width: 500px) {
+    .idols-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -166,163 +160,290 @@ footer {
 <body>
 
 <header>
-
-    <div class="logo">MUSICVERSE PROFILES</div>
+    <div class="logo">MUSICVERSE</div>
 
     <nav>
         <a href="index.html">Home</a>
         <a href="groups.html">Groups</a>
         <a href="idols.html">Idols</a>
-        <a href="index.html">Companies</a>
-        <a href="index.html">Rankings</a>
     </nav>
-
 </header>
 
 <section class="hero">
-
     <h1>Idols</h1>
-    <p>Explore the idols of the Musicverse.</p>
-
+    <p>Explore the individual profiles of Musicverse idols.</p>
 </section>
 
 <div class="container">
 
-    <h2 class="section-title">PANDORA</h2>
 
-    <div class="idol-grid">
+<!-- ==================== PANDORA ==================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">PANDORA</h2>
+
+    <p class="group-subtitle">
+        Starship Entertainment · 6 Members
+    </p>
+
+    <div class="idols-grid">
 
         <div class="idol-card">
-            <h2>Jiwoo</h2>
-            <div class="group">PANDORA</div>
-            <div class="position">Lead Vocalist, Unnie</div>
-            <a class="button" href="jiwoo.html">View Profile</a>
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jiwoo.jpg" alt="Jiwoo">
+            <div class="idol-content">
+                <h3>Jiwoo</h3>
+                <p class="position">Lead Vocalist, Unnie</p>
+                <a href="jiwoo.html" class="button pandora-button">View Profile</a>
+            </div>
         </div>
 
         <div class="idol-card">
-            <h2>Jeemin</h2>
-            <div class="group">PANDORA</div>
-            <div class="position">Visual, Sub Dancer, Sub Rapper</div>
-            <a class="button" href="jeemin.html">View Profile</a>
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jeemin.jpg" alt="Jeemin">
+            <div class="idol-content">
+                <h3>Jeemin</h3>
+                <p class="position">Visual, Sub Dancer, Sub Rapper</p>
+                <a href="jeemin.html" class="button pandora-button">View Profile</a>
+            </div>
         </div>
 
         <div class="idol-card">
-            <h2>Kylie</h2>
-            <div class="group">PANDORA</div>
-            <div class="position">Main Vocalist</div>
-            <a class="button" href="kylie.html">View Profile</a>
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/kylie.jpg" alt="Kylie">
+            <div class="idol-content">
+                <h3>Kylie</h3>
+                <p class="position">Main Vocalist</p>
+                <a href="kylie.html" class="button pandora-button">View Profile</a>
+            </div>
         </div>
 
         <div class="idol-card">
-            <h2>Hinari</h2>
-            <div class="group">PANDORA</div>
-            <div class="position">Main Rapper, Lead Dancer</div>
-            <a class="button" href="hinari.html">View Profile</a>
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/hinari.jpg" alt="Hinari">
+            <div class="idol-content">
+                <h3>Hinari</h3>
+                <p class="position">Main Rapper, Lead Dancer</p>
+                <a href="hinari.html" class="button pandora-button">View Profile</a>
+            </div>
         </div>
 
         <div class="idol-card">
-            <h2>Ruby</h2>
-            <div class="group">PANDORA</div>
-            <div class="position">Main Dancer, Lead Rapper, Lead Vocalist, Visual</div>
-            <a class="button" href="ruby.html">View Profile</a>
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ruby.jpg" alt="Ruby">
+            <div class="idol-content">
+                <h3>Ruby</h3>
+                <p class="position">Main Dancer, Lead Rapper, Lead Vocalist, Visual</p>
+                <a href="ruby.html" class="button pandora-button">View Profile</a>
+            </div>
         </div>
 
         <div class="idol-card">
-            <h2>Bonnie</h2>
-            <div class="group">PANDORA</div>
-            <div class="position">Lead Dancer, Lead Vocalist, Maknae</div>
-            <a class="button" href="bonnie.html">View Profile</a>
-        </div>
-
-    </div>
-
-    <h2 class="section-title" style="margin-top: 60px;">ELLEVEN</h2>
-
-    <div class="idol-grid">
-
-        <div class="idol-card">
-            <h2>Ruka</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Main Dancer, Main Rapper</div>
-            <a class="button" href="ruka.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Pharita</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Main Vocalist, Visual</div>
-            <a class="button" href="pharita.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Asa</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Main Rapper, Lead Dancer</div>
-            <a class="button" href="asa.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Ahyeon</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Main Vocalist, Lead Rapper, Center</div>
-            <a class="button" href="ahyeon.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Yuha</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Main Vocalist</div>
-            <a class="button" href="yuha.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Stella</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Lead Vocalist, Visual</div>
-            <a class="button" href="stella.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Rami</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Main Vocalist</div>
-            <a class="button" href="rami.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Rora</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Lead Vocalist</div>
-            <a class="button" href="rora.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Juun</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Main Dancer, Lead Vocalist</div>
-            <a class="button" href="juun.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>A-na</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Sub Vocalist, Visual</div>
-            <a class="button" href="a-na.html">View Profile</a>
-        </div>
-
-        <div class="idol-card">
-            <h2>Chiquita</h2>
-            <div class="group">ELLEVEN</div>
-            <div class="position">Lead Vocalist, Lead Dancer, Maknae</div>
-            <a class="button" href="chiquita.html">View Profile</a>
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/bonnie.jpg" alt="Bonnie">
+            <div class="idol-content">
+                <h3>Bonnie</h3>
+                <p class="position">Lead Dancer, Lead Vocalist, Maknae</p>
+                <a href="bonnie.html" class="button pandora-button">View Profile</a>
+            </div>
         </div>
 
     </div>
+</section>
+
+
+<!-- ==================== ELLEVEN ==================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">ELLEVEN</h2>
+
+    <p class="group-subtitle">
+        Aurelia Entertainment · 11 Members
+    </p>
+
+    <div class="idols-grid">
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ruka.jpg" alt="Ruka">
+            <div class="idol-content">
+                <h3>Ruka</h3>
+                <p class="position">Main Dancer, Main Rapper</p>
+                <a href="ruka.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/pharita.jpg" alt="Pharita">
+            <div class="idol-content">
+                <h3>Pharita</h3>
+                <p class="position">Main Vocalist, Visual</p>
+                <a href="pharita.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/asa.jpg" alt="Asa">
+            <div class="idol-content">
+                <h3>Asa</h3>
+                <p class="position">Main Rapper, Lead Dancer</p>
+                <a href="asa.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/ahyeon.jpg" alt="Ahyeon">
+            <div class="idol-content">
+                <h3>Ahyeon</h3>
+                <p class="position">Main Vocalist, Lead Rapper, Center</p>
+                <a href="ahyeon.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/yuha.jpg" alt="Yuha">
+            <div class="idol-content">
+                <h3>Yuha</h3>
+                <p class="position">Main Vocalist</p>
+                <a href="yuha.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/stella.jpg" alt="Stella">
+            <div class="idol-content">
+                <h3>Stella</h3>
+                <p class="position">Lead Vocalist, Visual</p>
+                <a href="stella.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rami.jpg" alt="Rami">
+            <div class="idol-content">
+                <h3>Rami</h3>
+                <p class="position">Main Vocalist</p>
+                <a href="rami.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rora.jpg" alt="Rora">
+            <div class="idol-content">
+                <h3>Rora</h3>
+                <p class="position">Lead Vocalist</p>
+                <a href="rora.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/juun.jpg" alt="Juun">
+            <div class="idol-content">
+                <h3>Juun</h3>
+                <p class="position">Main Dancer, Lead Vocalist</p>
+                <a href="juun.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/a-na.jpg" alt="A-na">
+            <div class="idol-content">
+                <h3>A-na</h3>
+                <p class="position">Sub Vocalist, Visual</p>
+                <a href="a-na.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/chiquita.jpg" alt="Chiquita">
+            <div class="idol-content">
+                <h3>Chiquita</h3>
+                <p class="position">Lead Vocalist, Lead Dancer, Maknae</p>
+                <a href="chiquita.html" class="button elleven-button">View Profile</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================== PINKPUNK ==================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">PINKPUNK</h2>
+
+    <p class="group-subtitle">
+        LUX Entertainment · 7 Members
+    </p>
+
+    <div class="idols-grid">
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jisoo.jpg" alt="Jisoo">
+            <div class="idol-content">
+                <h3>Jisoo</h3>
+                <p class="position">Visual, Unnie, Sub Rapper</p>
+                <a href="jisoo.html" class="button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/jennie.jpg" alt="Jennie">
+            <div class="idol-content">
+                <h3>Jennie</h3>
+                <p class="position">Main Rapper, Sub Vocalist, FOTG</p>
+                <a href="jennie.html" class="button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/miyeon.jpg" alt="Miyeon">
+            <div class="idol-content">
+                <h3>Miyeon</h3>
+                <p class="position">Main Vocalist, Sub Rapper, Visual</p>
+                <a href="miyeon.html" class="button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/rose.jpg" alt="Rosé">
+            <div class="idol-content">
+                <h3>Rosé</h3>
+                <p class="position">Main Vocalist, Lead Dancer</p>
+                <a href="rose.html" class="button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/mina.jpg" alt="Mina">
+            <div class="idol-content">
+                <h3>Mina</h3>
+                <p class="position">Lead Dancer, Visual, Sub Vocalist</p>
+                <a href="mina.html" class="button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/lisa.jpg" alt="Lisa">
+            <div class="idol-content">
+                <h3>Lisa</h3>
+                <p class="position">Main Dancer, Lead Rapper</p>
+                <a href="lisa.html" class="button">View Profile</a>
+            </div>
+        </div>
+
+        <div class="idol-card">
+            <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/minnie.jpg" alt="Minnie">
+            <div class="idol-content">
+                <h3>Minnie</h3>
+                <p class="position">Lead Vocalist, Lead Rapper, Lead Dancer</p>
+                <a href="minnie.html" class="button">View Profile</a>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 </div>
 
 <footer>
-    © 2026 Musicverse Profiles · Fictional Musicverse Database
+    Musicverse Profiles © 2026
 </footer>
 
 </body>
