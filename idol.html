@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Idol — Musicverse Profiles</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f7;
+    color:#111;
+}
+
+header{
+    background:#111;
+    color:white;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h1{
+    margin:0;
+    font-size:24px;
+    letter-spacing:1px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:14px;
+}
+
+.hero{
+    padding:70px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#111,#333);
+    color:white;
+}
+
+.hero h2{
+    font-size:48px;
+    margin:0 0 12px;
+}
+
+.hero p{
+    font-size:18px;
+    opacity:.8;
+}
+
+.container{
+    max-width:1100px;
+    margin:50px auto;
+    padding:0 20px;
+}
+
+.profile{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:35px;
+    align-items:start;
+}
+
+.profile img{
+    width:300px;
+    height:380px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-top:0;
+    font-size:25px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.info-item{
+    background:#f5f5f7;
+    padding:18px;
+    border-radius:15px;
+}
+
+.info-item strong{
+    display:block;
+    color:#777;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+.section{
+    margin-top:35px;
+}
+
+.section p{
+    line-height:1.7;
+    color:#555;
+}
+
+.group-link{
+    display:inline-block;
+    margin-top:10px;
+    padding:12px 18px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+footer{
+    margin-top:70px;
+    padding:30px;
+    text-align:center;
+    background:#111;
+    color:#aaa;
+    font-size:13px;
+}
+
+.error{
+    text-align:center;
+    padding:80px 20px;
+}
+
+@media(max-width:750px){
+
+    header{
+        padding:18px 20px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 8px;
+    }
+
+    .hero h2{
+        font-size:38px;
+    }
+
+    .profile{
+        grid-template-columns:1fr;
+    }
+
+    .profile img{
+        width:100%;
+        height:auto;
+        max-height:500px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>MUSICVERSE PROFILES</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="groups.html">Groups</a>
+<a href="idols.html">Idols</a>
+<a href="#">Companies</a>
+<a href="#">Rankings</a>
+</nav>
+
+</header>
+
+
+<div id="content"></div>
+
+
+<footer>
+Musicverse Profiles · Fictional Musicverse
+</footer>
+
+
+<script src="data.js"></script>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const idolName = params.get("id");
+
+const idol = MUSICVERSE_IDOLS.find(
+    item => item.name.toLowerCase() === (idolName || "").toLowerCase()
+);
+
+const content = document.getElementById("content");
+
+if(!idol){
+
+    content.innerHTML = `
+        <div class="error">
+            <h2>Idol not found</h2>
+            <p>This idol does not exist in the Musicverse database.</p>
+        </div>
+    `;
+
+}else{
+
+    document.title = `${idol.name} — Musicverse Profiles`;
+
+    const group = MUSICVERSE_GROUPS.find(
+        item => item.name === idol.group
+    );
+
+    content.innerHTML = `
+
+        <section class="hero">
+            <h2>${idol.name}</h2>
+            <p>${idol.group} · ${idol.company}</p>
+        </section>
+
+        <div class="container">
+
+            <div class="profile">
+
+                <img src="${idol.image}" alt="${idol.name}">
+
+                <div class="card">
+
+                    <h3>${idol.name}</h3>
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+                            <strong>Stage Name</strong>
+                            ${idol.name}
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Group</strong>
+                            ${idol.group}
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Positions</strong>
+                            ${idol.positions || "—"}
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Company</strong>
+                            ${idol.company}
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Vocal Level</strong>
+                            ${idol.vocal || "—"}
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Rap Level</strong>
+                            ${idol.rap || "—"}
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Dance Level</strong>
+                            ${idol.dance || "—"}
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card section">
+
+                <h3>About</h3>
+
+                <p>
+                    ${idol.about || `${idol.name} is a member of ${idol.group} under ${idol.company}.`}
+                </p>
+
+            </div>
+
+
+            <div class="card section">
+
+                <h3>Group</h3>
+
+                <p>
+                    ${idol.name} is a member of ${idol.group}.
+                </p>
+
+                ${
+                    group
+                    ?
+                    `<a class="group-link" href="${group.page}">
+                        View ${group.name}
+                    </a>`
+                    :
+                    ""
+                }
+
+            </div>
+
+        </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>
