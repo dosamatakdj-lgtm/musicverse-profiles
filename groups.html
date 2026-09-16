@@ -172,100 +172,7 @@ footer{
 
 <div class="container">
 
-<div class="groups-grid">
-
-
-<!-- PANDORA -->
-
-<div class="group-card">
-
-<span class="tag">Starship Entertainment</span>
-
-<h3>PANDORA</h3>
-
-<p>
-6-member girl group under Starship Entertainment.
-Debuted with <b>“Pandora”</b>.
-</p>
-
-<p><b>Members:</b> Jiwoo, Jeemin, Kylie, Hinari, Ruby, Bonnie</p>
-
-<a href="pandora.html">View Group →</a>
-
-</div>
-
-
-<!-- ELLEVEN -->
-
-<div class="group-card">
-
-<span class="tag">Aurelia Entertainment</span>
-
-<h3>ELLEVEN</h3>
-
-<p>
-11-member girl group under Aurelia Entertainment.
-Debuted with <b>“Lion”</b>.
-</p>
-
-<p>
-<b>Members:</b>
-Ruka, Pharita, Asa, Ahyeon, Yuha, Stella,
-Rami, Rora, Juun, A-na, Chiquita
-</p>
-
-<a href="elleven.html">View Group →</a>
-
-</div>
-
-
-<!-- PINKPUNK -->
-
-<div class="group-card">
-
-<span class="tag">LUX Entertainment</span>
-
-<h3>PINKPUNK</h3>
-
-<p>
-7-member girl group under LUX Entertainment.
-Debuted with <b>“Whistle”</b>.
-</p>
-
-<p>
-<b>Members:</b>
-Jisoo, Jennie, Miyeon, Rosé, Mina, Lisa, Minnie
-</p>
-
-<a href="pinkpunk.html">View Group →</a>
-
-</div>
-
-
-<!-- STEELROSE -->
-
-<div class="group-card">
-
-<span class="tag">XG Labels</span>
-
-<h3>STEELROSE</h3>
-
-<p>
-6-member girl group under XG Labels.
-Debuted with <b>“Jump”</b>.
-</p>
-
-<p>
-<b>Members:</b>
-Belle, Sooin, Gawon, Garam, Anna, Ella
-</p>
-
-<a href="steelrose.html">View Group →</a>
-
-</div>
-
-
-</div>
+<div class="groups-grid" id="groupsGrid"></div>
 
 </div>
 
@@ -275,6 +182,53 @@ Belle, Sooin, Gawon, Garam, Anna, Ella
 Musicverse Profiles © 2026
 
 </footer>
+
+
+<script src="data.js"></script>
+
+<script>
+
+const groupsGrid = document.getElementById("groupsGrid");
+
+
+MUSICVERSE_GROUPS.forEach(group => {
+
+    const card = document.createElement("div");
+
+    card.className = "group-card";
+
+    card.innerHTML = `
+
+        <span class="tag">
+            ${group.company}
+        </span>
+
+        <h3>
+            ${group.name}
+        </h3>
+
+        <p>
+            ${group.members.length}-member girl group under
+            ${group.company}.
+            Debuted with <b>“${group.debut}”</b>.
+        </p>
+
+        <p>
+            <b>Members:</b>
+            ${group.members.join(", ")}
+        </p>
+
+        <a href="${group.page}">
+            View Group →
+        </a>
+
+    `;
+
+    groupsGrid.appendChild(card);
+
+});
+
+</script>
 
 </body>
 </html>
