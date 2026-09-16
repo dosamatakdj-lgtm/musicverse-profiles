@@ -3,167 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Groups | Musicverse</title>
+<title>Groups — Musicverse</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f2f7;
+color:#211c25;
 }
-
-body {
-    background: #f7f3f8;
-    color: #211c25;
+header{
+height:76px;
+background:#17131c;
+color:white;
+display:flex;
+align-items:center;
+padding:0 6%;
+gap:30px;
+position:sticky;
+top:0;
+z-index:10;
 }
-
-header {
-    background: #111014;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.logo{
+font-size:24px;
+font-weight:900;
+letter-spacing:2px;
 }
-
-.logo {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+nav{
+margin-left:auto;
+display:flex;
+align-items:center;
+gap:22px;
 }
-
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    margin-left: 25px;
+nav a{
+color:#ddd;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
 }
-
-.hero {
-    background: linear-gradient(135deg, #24131e, #a63f72);
-    color: white;
-    padding: 65px 8%;
+nav a:hover{color:white}
+.search{
+width:180px;
+padding:10px 15px;
+border-radius:20px;
+border:1px solid #494151;
+background:#29242f;
+color:white;
+outline:none;
 }
-
-.hero h1 {
-    font-size: 48px;
+.hero{
+background:linear-gradient(135deg,#21152d,#75449d);
+color:white;
+padding:90px 7%;
 }
-
-.hero p {
-    margin-top: 10px;
-    font-size: 18px;
+.hero small{
+letter-spacing:4px;
+color:#d8b5ef;
+font-weight:bold;
 }
-
-.container {
-    max-width: 1150px;
-    margin: 50px auto;
-    padding: 0 20px;
+.hero h1{
+font-size:65px;
+margin:15px 0;
 }
-
-.groups-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+.hero p{
+color:#ddd;
+max-width:600px;
+line-height:1.7;
 }
-
-.group-card {
-    background: white;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
+.controls{
+padding:35px 7% 10px;
+display:flex;
+gap:15px;
 }
-
-.group-card:hover {
-    transform: translateY(-5px);
+select{
+padding:12px 18px;
+border-radius:12px;
+border:1px solid #ddd;
+background:white;
 }
-
-.group-top {
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+.grid{
+padding:30px 7% 80px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
-
-.pandora {
-    background: linear-gradient(135deg, #263b80, #7188d8);
+.card{
+background:white;
+border-radius:24px;
+padding:30px;
+box-shadow:0 10px 30px #211c2510;
+transition:.2s;
 }
-
-.elleven {
-    background: linear-gradient(135deg, #21152d, #6d3f91);
+.card:hover{transform:translateY(-5px)}
+.card .status{
+font-size:11px;
+font-weight:bold;
+letter-spacing:2px;
+color:#8b55b8;
 }
-
-.pinkpunk {
-    background: linear-gradient(135deg, #24131e, #a63f72);
+.card h2{
+font-size:32px;
+margin:13px 0 7px;
 }
-
-.group-name {
-    font-size: 38px;
-    font-weight: bold;
+.card p{
+color:#777;
+line-height:1.5;
 }
-
-.group-content {
-    padding: 28px;
+.card a{
+display:inline-block;
+margin-top:22px;
+padding:11px 18px;
+border-radius:20px;
+background:#21152d;
+color:white;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
 }
-
-.group-content h2 {
-    font-size: 28px;
-    margin-bottom: 8px;
+.card.coming{
+opacity:.72;
 }
-
-.group-subtitle {
-    color: #777;
-    margin-bottom: 20px;
+.card.coming a{
+background:#ddd;
+color:#555;
+pointer-events:none;
 }
-
-.info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 20px;
+footer{
+background:#17131c;
+color:#aaa;
+text-align:center;
+padding:40px;
+font-size:13px;
 }
-
-.info-item {
-    background: #f7f3f8;
-    padding: 12px;
-    border-radius: 10px;
-}
-
-.info-item strong {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 4px;
-}
-
-.button {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #a63f72;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-}
-
-.pandora-button {
-    background: #5269b7;
-}
-
-.elleven-button {
-    background: #6d3f91;
-}
-
-footer {
-    margin-top: 70px;
-    background: #111014;
-    color: #aaa;
-    text-align: center;
-    padding: 25px;
-}
-
-@media (max-width: 900px) {
-    .groups-grid {
-        grid-template-columns: 1fr;
-    }
+@media(max-width:850px){
+nav{gap:8px}
+.search{width:110px}
+.grid{grid-template-columns:1fr}
+.hero h1{font-size:48px}
 }
 </style>
 </head>
@@ -171,174 +147,136 @@ footer {
 <body>
 
 <header>
-    <div class="logo">MUSICVERSE</div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="groups.html">Groups</a>
-        <a href="idols.html">Idols</a>
-    </nav>
+<div class="logo">MUSICVERSE</div>
+<nav>
+<a href="index.html">HOME</a>
+<a href="groups.html">GROUPS</a>
+<a href="idols.html">IDOLS</a>
+<a href="vote.html">VOTE</a>
+<input class="search" id="search" placeholder="Search...">
+</nav>
 </header>
 
 <section class="hero">
-    <h1>Groups</h1>
-    <p>Explore the girl groups of the Musicverse.</p>
+<small>MUSICVERSE DATABASE</small>
+<h1>GROUPS</h1>
+<p>
+Explore every group inside the Musicverse — from fully profiled
+groups to the next acts waiting to be introduced.
+</p>
 </section>
 
-<div class="container">
-
-    <div class="groups-grid">
-
-        <!-- PANDORA -->
-
-        <div class="group-card">
-
-            <div class="group-top pandora">
-                <div class="group-name">PANDORA</div>
-            </div>
-
-            <div class="group-content">
-
-                <h2>PANDORA</h2>
-
-                <p class="group-subtitle">
-                    Starship Entertainment
-                </p>
-
-                <div class="info">
-
-                    <div class="info-item">
-                        <strong>Members</strong>
-                        6
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Type</strong>
-                        Girl Group
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Company</strong>
-                        Starship Entertainment
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Members</strong>
-                        Jiwoo, Jeemin, Kylie, Hinari, Ruby, Bonnie
-                    </div>
-
-                </div>
-
-                <a href="pandora.html" class="button pandora-button">
-                    View Group
-                </a>
-
-            </div>
-        </div>
-
-
-        <!-- ELLEVEN -->
-
-        <div class="group-card">
-
-            <div class="group-top elleven">
-                <div class="group-name">ELLEVEN</div>
-            </div>
-
-            <div class="group-content">
-
-                <h2>ELLEVEN</h2>
-
-                <p class="group-subtitle">
-                    Aurelia Entertainment
-                </p>
-
-                <div class="info">
-
-                    <div class="info-item">
-                        <strong>Members</strong>
-                        11
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Debut</strong>
-                        Lion
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Fandom</strong>
-                        Levens
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Type</strong>
-                        Girl Group
-                    </div>
-
-                </div>
-
-                <a href="elleven.html" class="button elleven-button">
-                    View Group
-                </a>
-
-            </div>
-        </div>
-
-
-        <!-- PINKPUNK -->
-
-        <div class="group-card">
-
-            <div class="group-top pinkpunk">
-                <div class="group-name">PINKPUNK</div>
-            </div>
-
-            <div class="group-content">
-
-                <h2>PINKPUNK</h2>
-
-                <p class="group-subtitle">
-                    LUX Entertainment
-                </p>
-
-                <div class="info">
-
-                    <div class="info-item">
-                        <strong>Members</strong>
-                        7
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Debut</strong>
-                        Whistle
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Fandom</strong>
-                        Pookies
-                    </div>
-
-                    <div class="info-item">
-                        <strong>Type</strong>
-                        Girl Group
-                    </div>
-
-                </div>
-
-                <a href="pinkpunk.html" class="button">
-                    View Group
-                </a>
-
-            </div>
-        </div>
-
-    </div>
-
+<div class="controls">
+<select id="filter">
+<option value="all">All groups</option>
+<option value="profiled">Profiled</option>
+<option value="coming">Coming soon</option>
+</select>
 </div>
 
+<main class="grid">
+
+<div class="card profiled">
+<div class="status">PROFILED · 6 MEMBERS</div>
+<h2>PANDORA</h2>
+<p>Starship Entertainment</p>
+<a href="pandora.html">VIEW GROUP →</a>
+</div>
+
+<div class="card profiled">
+<div class="status">PROFILED · 11 MEMBERS</div>
+<h2>ELLEVEN</h2>
+<p>Aurelia Entertainment</p>
+<a href="elleven.html">VIEW GROUP →</a>
+</div>
+
+<div class="card profiled">
+<div class="status">PROFILED · 7 MEMBERS</div>
+<h2>PINKPUNK</h2>
+<p>LUX Entertainment</p>
+<a href="pinkpunk.html">VIEW GROUP →</a>
+</div>
+
+<div class="card coming">
+<div class="status">COMING SOON</div>
+<h2>STEELROSE</h2>
+<p>XG Labels · 6 members</p>
+<a>COMING SOON</a>
+</div>
+
+<div class="card coming">
+<div class="status">COMING SOON</div>
+<h2>ONCE</h2>
+<p>MDX Entertainment · 5 members</p>
+<a>COMING SOON</a>
+</div>
+
+<div class="card coming">
+<div class="status">COMING SOON</div>
+<h2>GARLS</h2>
+<p>Aurelia Entertainment · 5 members</p>
+<a>COMING SOON</a>
+</div>
+
+<div class="card coming">
+<div class="status">COMING SOON</div>
+<h2>WO!AH</h2>
+<p>LUX Entertainment · 4 members</p>
+<a>COMING SOON</a>
+</div>
+
+<div class="card coming">
+<div class="status">COMING SOON</div>
+<h2>LESSERAFIM</h2>
+<p>Aurelia Entertainment · 6 members</p>
+<a>COMING SOON</a>
+</div>
+
+<div class="card coming">
+<div class="status">COMING SOON</div>
+<h2>TWOON</h2>
+<p>5 members</p>
+<a>COMING SOON</a>
+</div>
+
+<div class="card coming">
+<div class="status">COMING SOON</div>
+<h2>MIDZY</h2>
+<p>8 members</p>
+<a>COMING SOON</a>
+</div>
+
+</main>
+
 <footer>
-    Musicverse Profiles © 2026
+MUSICVERSE © 2026 · Fictional K-Pop Database
 </footer>
+
+<script>
+const filter=document.getElementById("filter");
+const cards=document.querySelectorAll(".card");
+
+filter.addEventListener("change",()=>{
+cards.forEach(card=>{
+if(filter.value==="all"){
+card.style.display="block";
+}else{
+card.style.display=card.classList.contains(filter.value)?"block":"none";
+}
+});
+});
+
+document.getElementById("search").addEventListener("keydown",function(e){
+if(e.key==="Enter"){
+const q=this.value.toLowerCase().trim();
+
+if(q==="pandora")location.href="pandora.html";
+else if(q==="elleven")location.href="elleven.html";
+else if(q==="pinkpunk")location.href="pinkpunk.html";
+else location.href="idols.html?search="+encodeURIComponent(q);
+}
+});
+</script>
 
 </body>
 </html>
