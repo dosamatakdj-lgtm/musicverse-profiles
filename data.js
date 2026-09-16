@@ -71,253 +71,253 @@ const MUSICVERSE_GROUPS = [
 
 const MUSICVERSE_IDOLS = [
 
-  {
-    name:"Jiwoo",
-    group:"PANDORA",
-    company:"Starship Entertainment",
-    image:"jiwoo.jpg",
-    page:"jiwoo.html",
-    positions:"Lead Vocalist · Unnie"
-},
-
-{
-    name:"Jeemin",
-    group:"PANDORA",
-    company:"Starship Entertainment",
-    image:"jeemin.jpg",
-    page:"jeemin.html",
-    positions:"Visual · Sub Dancer · Sub Rapper"
-},
-
-{
-    name:"Kylie",
-    group:"PANDORA",
-    company:"Starship Entertainment",
-    image:"kylie.jpg",
-    page:"kylie.html",
-    positions:"Main Vocalist"
-},
-
-{
-    name:"Hinari",
-    group:"PANDORA",
-    company:"Starship Entertainment",
-    image:"hinari.jpg",
-    page:"hinari.html",
-    positions:"Main Rapper · Lead Dancer"
-},
-
-{
-    name:"Ruby",
-    group:"PANDORA",
-    company:"Starship Entertainment",
-    image:"ruby.jpg",
-    page:"ruby.html",
-    positions:"Main Dancer · Lead Rapper · Lead Vocalist · Visual"
-},
-
-{
-    name:"Bonnie",
-    group:"PANDORA",
-    company:"Starship Entertainment",
-    image:"bonnie.jpg",
-    page:"bonnie.html",
-    positions:"Maknae · Lead Dancer · Lead Vocalist"
-}
-
-
     {
-        name: "Ruka",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "ruka.jpg",
-        page: "ruka.html"
+        name:"Jiwoo",
+        group:"PANDORA",
+        company:"Starship Entertainment",
+        image:"jiwoo.jpg",
+        page:"jiwoo.html",
+        positions:"Lead Vocalist · Unnie"
     },
 
     {
-        name: "Pharita",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "pharita.jpg",
-        page: "pharita.html"
+        name:"Jeemin",
+        group:"PANDORA",
+        company:"Starship Entertainment",
+        image:"jeemin.jpg",
+        page:"jeemin.html",
+        positions:"Visual · Sub Dancer · Sub Rapper"
     },
 
     {
-        name: "Asa",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "asa.jpg",
-        page: "asa.html"
+        name:"Kylie",
+        group:"PANDORA",
+        company:"Starship Entertainment",
+        image:"kylie.jpg",
+        page:"kylie.html",
+        positions:"Main Vocalist"
     },
 
     {
-        name: "Ahyeon",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "ahyeon.jpg",
-        page: "ahyeon.html"
+        name:"Hinari",
+        group:"PANDORA",
+        company:"Starship Entertainment",
+        image:"hinari.jpg",
+        page:"hinari.html",
+        positions:"Main Rapper · Lead Dancer"
     },
 
     {
-        name: "Yuha",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "yuha.jpg",
-        page: "yuha.html"
+        name:"Ruby",
+        group:"PANDORA",
+        company:"Starship Entertainment",
+        image:"ruby.jpg",
+        page:"ruby.html",
+        positions:"Main Dancer · Lead Rapper · Lead Vocalist · Visual"
     },
 
     {
-        name: "Stella",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "stella.jpg",
-        page: "stella.html"
-    },
-
-    {
-        name: "Rami",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "rami.jpg",
-        page: "rami.html"
-    },
-
-    {
-        name: "Rora",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "rora.jpg",
-        page: "rora.html"
-    },
-
-    {
-        name: "Juun",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "juun.jpg",
-        page: "juun.html"
-    },
-
-    {
-        name: "A-na",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "a-na.jpg",
-        page: "a-na.html"
-    },
-
-    {
-        name: "Chiquita",
-        group: "ELLEVEN",
-        company: "Aurelia Entertainment",
-        image: "chiquita.jpg",
-        page: "chiquita.html"
+        name:"Bonnie",
+        group:"PANDORA",
+        company:"Starship Entertainment",
+        image:"bonnie.jpg",
+        page:"bonnie.html",
+        positions:"Maknae · Lead Dancer · Lead Vocalist"
     },
 
 
     {
-        name: "Jisoo",
-        group: "PINKPUNK",
-        company: "LUX Entertainment",
-        image: "jisoo.jpg",
-        page: "jisoo.html"
+        name:"Ruka",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"ruka.jpg",
+        page:"ruka.html"
     },
 
     {
-        name: "Jennie",
-        group: "PINKPUNK",
-        company: "LUX Entertainment",
-        image: "jennie.jpg",
-        page: "jennie.html"
+        name:"Pharita",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"pharita.jpg",
+        page:"pharita.html"
     },
 
     {
-        name: "Miyeon",
-        group: "PINKPUNK",
-        company: "LUX Entertainment",
-        image: "miyeon.jpg",
-        page: "miyeon.html"
+        name:"Asa",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"asa.jpg",
+        page:"asa.html"
     },
 
     {
-        name: "Rosé",
-        group: "PINKPUNK",
-        company: "LUX Entertainment",
-        image: "rose.jpg",
-        page: "rose.html"
+        name:"Ahyeon",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"ahyeon.jpg",
+        page:"ahyeon.html"
     },
 
     {
-        name: "Mina",
-        group: "PINKPUNK",
-        company: "LUX Entertainment",
-        image: "mina.jpg",
-        page: "mina.html"
+        name:"Yuha",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"yuha.jpg",
+        page:"yuha.html"
     },
 
     {
-        name: "Lisa",
-        group: "PINKPUNK",
-        company: "LUX Entertainment",
-        image: "lisa.jpg",
-        page: "lisa.html"
+        name:"Stella",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"stella.jpg",
+        page:"stella.html"
     },
 
     {
-        name: "Minnie",
-        group: "PINKPUNK",
-        company: "LUX Entertainment",
-        image: "minnie.jpg",
-        page: "minnie.html"
+        name:"Rami",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"rami.jpg",
+        page:"rami.html"
+    },
+
+    {
+        name:"Rora",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"rora.jpg",
+        page:"rora.html"
+    },
+
+    {
+        name:"Juun",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"juun.jpg",
+        page:"juun.html"
+    },
+
+    {
+        name:"A-na",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"a-na.jpg",
+        page:"a-na.html"
+    },
+
+    {
+        name:"Chiquita",
+        group:"ELLEVEN",
+        company:"Aurelia Entertainment",
+        image:"chiquita.jpg",
+        page:"chiquita.html"
     },
 
 
     {
-        name: "Belle",
-        group: "STEELROSE",
-        company: "XG Labels",
-        image: "belle.jpg",
-        page: "belle.html"
+        name:"Jisoo",
+        group:"PINKPUNK",
+        company:"LUX Entertainment",
+        image:"jisoo.jpg",
+        page:"jisoo.html"
     },
 
     {
-        name: "Sooin",
-        group: "STEELROSE",
-        company: "XG Labels",
-        image: "sooin.jpg",
-        page: "sooin.html"
+        name:"Jennie",
+        group:"PINKPUNK",
+        company:"LUX Entertainment",
+        image:"jennie.jpg",
+        page:"jennie.html"
     },
 
     {
-        name: "Gawon",
-        group: "STEELROSE",
-        company: "XG Labels",
-        image: "gawon.jpg",
-        page: "gawon.html"
+        name:"Miyeon",
+        group:"PINKPUNK",
+        company:"LUX Entertainment",
+        image:"miyeon.jpg",
+        page:"miyeon.html"
     },
 
     {
-        name: "Garam",
-        group: "STEELROSE",
-        company: "XG Labels",
-        image: "garam.jpg",
-        page: "garam.html"
+        name:"Rosé",
+        group:"PINKPUNK",
+        company:"LUX Entertainment",
+        image:"rose.jpg",
+        page:"rose.html"
     },
 
     {
-        name: "Anna",
-        group: "STEELROSE",
-        company: "XG Labels",
-        image: "anna.jpg",
-        page: "anna.html"
+        name:"Mina",
+        group:"PINKPUNK",
+        company:"LUX Entertainment",
+        image:"mina.jpg",
+        page:"mina.html"
     },
 
     {
-        name: "Ella",
-        group: "STEELROSE",
-        company: "XG Labels",
-        image: "ella.jpg",
-        page: "ella.html"
+        name:"Lisa",
+        group:"PINKPUNK",
+        company:"LUX Entertainment",
+        image:"lisa.jpg",
+        page:"lisa.html"
+    },
+
+    {
+        name:"Minnie",
+        group:"PINKPUNK",
+        company:"LUX Entertainment",
+        image:"minnie.jpg",
+        page:"minnie.html"
+    },
+
+
+    {
+        name:"Belle",
+        group:"STEELROSE",
+        company:"XG Labels",
+        image:"belle.jpg",
+        page:"belle.html"
+    },
+
+    {
+        name:"Sooin",
+        group:"STEELROSE",
+        company:"XG Labels",
+        image:"sooin.jpg",
+        page:"sooin.html"
+    },
+
+    {
+        name:"Gawon",
+        group:"STEELROSE",
+        company:"XG Labels",
+        image:"gawon.jpg",
+        page:"gawon.html"
+    },
+
+    {
+        name:"Garam",
+        group:"STEELROSE",
+        company:"XG Labels",
+        image:"garam.jpg",
+        page:"garam.html"
+    },
+
+    {
+        name:"Anna",
+        group:"STEELROSE",
+        company:"XG Labels",
+        image:"anna.jpg",
+        page:"anna.html"
+    },
+
+    {
+        name:"Ella",
+        group:"STEELROSE",
+        company:"XG Labels",
+        image:"ella.jpg",
+        page:"ella.html"
     }
 
 ];
