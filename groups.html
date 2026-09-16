@@ -3,321 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Groups — Musicverse Profiles</title>
+<title>Groups | Musicverse</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f6f6f8;
-        color: #17171c;
-    }
+body {
+    background: #f7f3f8;
+    color: #211c25;
+}
 
-    header {
-        background: #111116;
-        color: white;
-        padding: 22px 8%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+header {
+    background: #111014;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .logo {
-        font-size: 22px;
-        font-weight: 800;
-        letter-spacing: 1px;
-    }
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
 
-    nav {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-    }
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 25px;
+}
 
-    nav a {
-        color: #d7d7dc;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-        transition: 0.2s;
-    }
+.hero {
+    background: linear-gradient(135deg, #24131e, #a63f72);
+    color: white;
+    padding: 65px 8%;
+}
 
-    nav a:hover,
-    nav a.active {
-        color: #b56cff;
-    }
+.hero h1 {
+    font-size: 48px;
+}
 
-    .hero {
-        background: linear-gradient(135deg, #17121f, #3a2058);
-        color: white;
-        padding: 65px 8%;
-    }
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+}
 
-    .hero small {
-        color: #c99cff;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
+.container {
+    max-width: 1150px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
 
-    .hero h1 {
-        font-size: 48px;
-        margin: 12px 0;
-    }
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
 
-    .hero p {
-        color: #d8d0df;
-        max-width: 650px;
-        font-size: 16px;
-        line-height: 1.6;
-    }
+.group-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
 
-    .content {
-        max-width: 1150px;
-        margin: 0 auto;
-        padding: 55px 25px 80px;
-    }
+.group-card:hover {
+    transform: translateY(-5px);
+}
 
-    .section-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 28px;
-    }
+.group-top {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
 
-    .section-title h2 {
-        font-size: 28px;
-    }
+.pandora {
+    background: linear-gradient(135deg, #263b80, #7188d8);
+}
 
-    .section-title span {
-        color: #888;
-        font-size: 14px;
-    }
+.elleven {
+    background: linear-gradient(135deg, #21152d, #6d3f91);
+}
 
+.pinkpunk {
+    background: linear-gradient(135deg, #24131e, #a63f72);
+}
+
+.group-name {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.group-content {
+    padding: 28px;
+}
+
+.group-content h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.group-subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    background: #f7f3f8;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #a63f72;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.pandora-button {
+    background: #5269b7;
+}
+
+.elleven-button {
+    background: #6d3f91;
+}
+
+footer {
+    margin-top: 70px;
+    background: #111014;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 900px) {
     .groups-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
+        grid-template-columns: 1fr;
     }
-
-    .group-card {
-        background: white;
-        border-radius: 18px;
-        padding: 28px;
-        border: 1px solid #e8e8ec;
-        box-shadow: 0 8px 25px rgba(0,0,0,.05);
-        transition: 0.25s;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .group-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0,0,0,.10);
-    }
-
-    .group-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: linear-gradient(90deg, #9b51e0, #d99cff);
-    }
-
-    .group-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .group-name {
-        font-size: 25px;
-        font-weight: 800;
-        margin-bottom: 7px;
-    }
-
-    .company {
-        color: #777;
-        font-size: 14px;
-    }
-
-    .status {
-        background: #f0e4ff;
-        color: #7a35b8;
-        padding: 6px 10px;
-        border-radius: 20px;
-        font-size: 11px;
-        font-weight: 800;
-        text-transform: uppercase;
-        white-space: nowrap;
-    }
-
-    .description {
-        color: #666;
-        line-height: 1.6;
-        font-size: 14px;
-        margin: 22px 0;
-    }
-
-    .details {
-        display: flex;
-        gap: 25px;
-        border-top: 1px solid #eeeeef;
-        padding-top: 17px;
-        margin-top: 5px;
-    }
-
-    .detail strong {
-        display: block;
-        font-size: 13px;
-        margin-bottom: 4px;
-    }
-
-    .detail span {
-        color: #777;
-        font-size: 13px;
-    }
-
-    .view-button {
-        display: inline-block;
-        margin-top: 22px;
-        padding: 11px 18px;
-        border-radius: 10px;
-        background: #17171c;
-        color: white;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 700;
-        transition: 0.2s;
-    }
-
-    .view-button:hover {
-        background: #8d45c7;
-    }
-
-    footer {
-        background: #111116;
-        color: #777;
-        text-align: center;
-        padding: 28px;
-        font-size: 13px;
-    }
-
-    @media (max-width: 750px) {
-        header {
-            padding: 20px;
-        }
-
-        .hero {
-            padding: 45px 20px;
-        }
-
-        .hero h1 {
-            font-size: 38px;
-        }
-
-        .groups-grid {
-            grid-template-columns: 1fr;
-        }
-
-        nav {
-            gap: 15px;
-        }
-    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-
-    <div class="logo">MUSICVERSE PROFILES</div>
+    <div class="logo">MUSICVERSE</div>
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="groups.html" class="active">Groups</a>
+        <a href="groups.html">Groups</a>
         <a href="idols.html">Idols</a>
-        <a href="index.html">Companies</a>
-        <a href="index.html">Rankings</a>
     </nav>
-
 </header>
 
-
 <section class="hero">
-
-    <small>Musicverse Database</small>
-
     <h1>Groups</h1>
-
-    <p>
-        Explore the girl groups of the Musicverse, including their members,
-        companies, debut information and latest activities.
-    </p>
-
+    <p>Explore the girl groups of the Musicverse.</p>
 </section>
 
-
-<main class="content">
-
-    <div class="section-title">
-        <h2>All Groups</h2>
-        <span>8 groups in the database</span>
-    </div>
-
+<div class="container">
 
     <div class="groups-grid">
-
 
         <!-- PANDORA -->
 
         <div class="group-card">
 
-            <div class="group-top">
-
-                <div>
-                    <div class="group-name">PANDORA</div>
-                    <div class="company">Starship Entertainment</div>
-                </div>
-
-                <div class="status">Active</div>
-
+            <div class="group-top pandora">
+                <div class="group-name">PANDORA</div>
             </div>
 
-            <p class="description">
-                A six-member girl group known for their elegant image,
-                strong performances and diverse vocal colors.
-            </p>
+            <div class="group-content">
 
-            <div class="details">
+                <h2>PANDORA</h2>
 
-                <div class="detail">
-                    <strong>Members</strong>
-                    <span>6</span>
+                <p class="group-subtitle">
+                    Starship Entertainment
+                </p>
+
+                <div class="info">
+
+                    <div class="info-item">
+                        <strong>Members</strong>
+                        6
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Type</strong>
+                        Girl Group
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Company</strong>
+                        Starship Entertainment
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Members</strong>
+                        Jiwoo, Jeemin, Kylie, Hinari, Ruby, Bonnie
+                    </div>
+
                 </div>
 
-                <div class="detail">
-                    <strong>Debut</strong>
-                    <span>2026</span>
-                </div>
+                <a href="pandora.html" class="button pandora-button">
+                    View Group
+                </a>
 
             </div>
-
-            <a href="pandora.html" class="view-button">
-                View Profile →
-            </a>
-
         </div>
 
 
@@ -325,39 +241,47 @@
 
         <div class="group-card">
 
-            <div class="group-top">
-
-                <div>
-                    <div class="group-name">ELLEVEN</div>
-                    <div class="company">Aurelia Entertainment</div>
-                </div>
-
-                <div class="status">Active</div>
-
+            <div class="group-top elleven">
+                <div class="group-name">ELLEVEN</div>
             </div>
 
-            <p class="description">
-                An eleven-member group combining powerful vocals,
-                rap and high-level performance.
-            </p>
+            <div class="group-content">
 
-            <div class="details">
+                <h2>ELLEVEN</h2>
 
-                <div class="detail">
-                    <strong>Members</strong>
-                    <span>11</span>
+                <p class="group-subtitle">
+                    Aurelia Entertainment
+                </p>
+
+                <div class="info">
+
+                    <div class="info-item">
+                        <strong>Members</strong>
+                        11
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Debut</strong>
+                        Lion
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Fandom</strong>
+                        Levens
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Type</strong>
+                        Girl Group
+                    </div>
+
                 </div>
 
-                <div class="detail">
-                    <strong>Debut</strong>
-                    <span>2026</span>
-                </div>
+                <a href="elleven.html" class="button elleven-button">
+                    View Group
+                </a>
 
             </div>
-
-          <a href="elleven.html" class="view-button">
-    View Profile →
-</a>
         </div>
 
 
@@ -365,255 +289,55 @@
 
         <div class="group-card">
 
-            <div class="group-top">
-
-                <div>
-                    <div class="group-name">PINKPUNK</div>
-                    <div class="company">LUX Entertainment</div>
-                </div>
-
-                <div class="status">Active</div>
-
+            <div class="group-top pinkpunk">
+                <div class="group-name">PINKPUNK</div>
             </div>
 
-            <p class="description">
-                A seven-member powerhouse group with a strong identity,
-                charismatic performers and a global following.
-            </p>
+            <div class="group-content">
 
-            <div class="details">
+                <h2>PINKPUNK</h2>
 
-                <div class="detail">
-                    <strong>Members</strong>
-                    <span>7</span>
+                <p class="group-subtitle">
+                    LUX Entertainment
+                </p>
+
+                <div class="info">
+
+                    <div class="info-item">
+                        <strong>Members</strong>
+                        7
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Debut</strong>
+                        Whistle
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Fandom</strong>
+                        Pookies
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Type</strong>
+                        Girl Group
+                    </div>
+
                 </div>
 
-                <div class="detail">
-                    <strong>Debut</strong>
-                    <span>2026</span>
-                </div>
+                <a href="pinkpunk.html" class="button">
+                    View Group
+                </a>
 
             </div>
-
-            <a href="index.html" class="view-button">
-                View Profile →
-            </a>
-
         </div>
-
-
-        <!-- STEELROSE -->
-
-        <div class="group-card">
-
-            <div class="group-top">
-
-                <div>
-                    <div class="group-name">STEELROSE</div>
-                    <div class="company">XG Labels</div>
-                </div>
-
-                <div class="status">Active</div>
-
-            </div>
-
-            <p class="description">
-                A six-member group built around powerful choreography,
-                distinctive personalities and a bold performance style.
-            </p>
-
-            <div class="details">
-
-                <div class="detail">
-                    <strong>Members</strong>
-                    <span>6</span>
-                </div>
-
-                <div class="detail">
-                    <strong>Debut</strong>
-                    <span>2026</span>
-                </div>
-
-            </div>
-
-            <a href="index.html" class="view-button">
-                View Profile →
-            </a>
-
-        </div>
-
-
-        <!-- ONCE -->
-
-        <div class="group-card">
-
-            <div class="group-top">
-
-                <div>
-                    <div class="group-name">ONCE</div>
-                    <div class="company">MDX Entertainment</div>
-                </div>
-
-                <div class="status">Active</div>
-
-            </div>
-
-            <p class="description">
-                A five-member group with a bright identity,
-                versatile performers and strong chemistry.
-            </p>
-
-            <div class="details">
-
-                <div class="detail">
-                    <strong>Members</strong>
-                    <span>5</span>
-                </div>
-
-                <div class="detail">
-                    <strong>Debut</strong>
-                    <span>2026</span>
-                </div>
-
-            </div>
-
-            <a href="index.html" class="view-button">
-                View Profile →
-            </a>
-
-        </div>
-
-
-        <!-- GARLS -->
-
-        <div class="group-card">
-
-            <div class="group-top">
-
-                <div>
-                    <div class="group-name">GARLS</div>
-                    <div class="company">Aurelia Entertainment</div>
-                </div>
-
-                <div class="status">Active</div>
-
-            </div>
-
-            <p class="description">
-                A five-member group combining strong visuals,
-                dance performance and distinctive vocal tones.
-            </p>
-
-            <div class="details">
-
-                <div class="detail">
-                    <strong>Members</strong>
-                    <span>5</span>
-                </div>
-
-                <div class="detail">
-                    <strong>Debut</strong>
-                    <span>2026</span>
-                </div>
-
-            </div>
-
-            <a href="index.html" class="view-button">
-                View Profile →
-            </a>
-
-        </div>
-
-
-        <!-- LESSERAFIM -->
-
-        <div class="group-card">
-
-            <div class="group-top">
-
-                <div>
-                    <div class="group-name">LESSERAFIM</div>
-                    <div class="company">Aurelia Entertainment</div>
-                </div>
-
-                <div class="status">Active</div>
-
-            </div>
-
-            <p class="description">
-                A six-member performance-focused group with a
-                confident image and diverse skill set.
-            </p>
-
-            <div class="details">
-
-                <div class="detail">
-                    <strong>Members</strong>
-                    <span>6</span>
-                </div>
-
-                <div class="detail">
-                    <strong>Debut</strong>
-                    <span>2026</span>
-                </div>
-
-            </div>
-
-            <a href="index.html" class="view-button">
-                View Profile →
-            </a>
-
-        </div>
-
-
-        <!-- WO!AH -->
-
-        <div class="group-card">
-
-            <div class="group-top">
-
-                <div>
-                    <div class="group-name">WO!AH</div>
-                    <div class="company">LUX Entertainment</div>
-                </div>
-
-                <div class="status">Active</div>
-
-            </div>
-
-            <p class="description">
-                A four-member group with a youthful identity,
-                expressive performances and unique personalities.
-            </p>
-
-            <div class="details">
-
-                <div class="detail">
-                    <strong>Members</strong>
-                    <span>4</span>
-                </div>
-
-                <div class="detail">
-                    <strong>Debut</strong>
-                    <span>2026</span>
-                </div>
-
-            </div>
-
-            <a href="index.html" class="view-button">
-                View Profile →
-            </a>
-
-        </div>
-
 
     </div>
 
-</main>
-
+</div>
 
 <footer>
-    © 2026 Musicverse Profiles · Fictional database
+    Musicverse Profiles © 2026
 </footer>
 
 </body>
