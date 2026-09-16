@@ -66,7 +66,13 @@ const MUSICVERSE_GROUPS = [
         page: "steelrose.html"
     }
 
-];
+];{
+    name: "LESSERAFIM",
+    company: "Aurelia Entertainment",
+    debut: "HYLT",
+    members: ["Winter","Yujin","Liz","Haerin","Eunchae","Narin"],
+    page: "lesserafim.html"
+}
 
 
 const MUSICVERSE_IDOLS = [
@@ -320,4 +326,17 @@ const MUSICVERSE_IDOLS = [
         page:"ella.html"
     }
 
+]; {name:"Belle", group:"STEELROSE", company:"XG Labels", image:"belle.jpg", page:"belle.html"},
+{name:"Sooin", group:"STEELROSE", company:"XG Labels", image:"sooin.jpg", page:"sooin.html"},
+{name:"Gawon", group:"STEELROSE", company:"XG Labels", image:"gawon.jpg", page:"gawon.html"},
+{name:"Garam", group:"STEELROSE", company:"XG Labels", image:"garam.jpg", page:"garam.html"},
+{name:"Anna", group:"STEELROSE", company:"XG Labels", image:"anna.jpg", page:"anna.html"},
+{name:"Ella", group:"STEELROSE", company:"XG Labels", image:"ella.jpg", page:"ella.html"},
+
+{name:"Winter", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"winter.jpg", page:"winter.html", positions:"Lead Vocalist · Unnie · Visual"},
+{name:"Yujin", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"yujin.jpg", page:"yujin.html", positions:"Main-Lead Dancer · Lead-Sub Vocalist"},
+{name:"Liz", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"liz.jpg", page:"liz.html", positions:"Main Vocalist · Visual"},
+{name:"Haerin", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"haerin.jpg", page:"haerin.html", positions:"Main Dancer · Sub Vocalist"},
+{name:"Eunchae", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"eunchae.jpg", page:"eunchae.html", positions:"Lead Rapper · Lead-Sub Dancer"},
+{name:"Narin", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"narin.jpg", page:"narin.html", positions:"Maknae · Lead Vocalist · Main Rapper · Lead Dancer"}
 ];
