@@ -7,21 +7,20 @@
 <title>Yuha — ELLEVEN | Musicverse Profiles</title>
 
 <style>
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f7f5f9;
-    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f2f7;
+    color: #211c25;
 }
 
 header {
-    background: #111;
+    background: #111014;
     color: white;
     padding: 20px 8%;
     display: flex;
@@ -30,51 +29,46 @@ header {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
 nav a {
-    color: white;
+    color: #ddd;
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 24px;
     font-size: 14px;
 }
 
 nav a:hover {
-    color: #b46cff;
+    color: #b98cff;
 }
 
 .hero {
-    background: linear-gradient(135deg, #6d28d9, #a855f7);
+    background: linear-gradient(135deg, #21152d, #6d3f91);
     color: white;
-    padding: 70px 8%;
+    padding: 60px 8%;
 }
 
 .hero h1 {
-    font-size: 52px;
+    font-size: 46px;
     margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 18px;
-    opacity: .9;
+    color: #ddd;
+    font-size: 17px;
 }
 
 .profile-container {
     max-width: 1100px;
     margin: 50px auto;
     padding: 0 25px;
-}
-
-.profile-card {
-    background: white;
-    border-radius: 22px;
-    padding: 35px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 300px 1fr;
     gap: 45px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+    align-items: start;
 }
 
 .photo-box {
@@ -95,48 +89,73 @@ nav a:hover {
     object-fit: cover;
 }
 
-.info {
-    flex: 1;
+.profile-info {
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
 
-.info h2 {
-    font-size: 34px;
-    margin-bottom: 20px;
+.profile-info h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
 }
 
-.info p {
-    margin: 12px 0;
-    font-size: 16px;
-}
-
-.label {
+.subtitle {
+    color: #76558c;
     font-weight: bold;
-    color: #7c3aed;
+    margin-bottom: 25px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.info-item {
+    background: #f7f4f9;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.info-item strong {
+    display: block;
+    color: #76558c;
+    font-size: 13px;
+    margin-bottom: 5px;
 }
 
 .section {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+.section-card {
     background: white;
-    margin-top: 35px;
     padding: 35px;
     border-radius: 22px;
     box-shadow: 0 10px 30px rgba(0,0,0,.06);
 }
 
-.section h2 {
-    color: #6d28d9;
-    margin-bottom: 18px;
+.section-card h2 {
+    margin-bottom: 15px;
+    color: #35213f;
 }
 
-.section p {
+.section-card p {
     line-height: 1.7;
+    color: #555;
 }
 
 footer {
-    background: #111;
+    margin-top: 70px;
+    background: #111014;
     color: #aaa;
     text-align: center;
-    padding: 30px;
-    margin-top: 60px;
+    padding: 25px;
+    font-size: 13px;
 }
 
 @media (max-width: 800px) {
@@ -151,25 +170,22 @@ footer {
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 36px;
     }
 
-    .profile-card {
-        flex-direction: column;
-        align-items: center;
+    .profile-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 
-    .photo-box {
-        width: 260px;
-        height: 340px;
-    }
-
-    .info {
+    .profile-info {
         width: 100%;
     }
 
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
 }
-
 </style>
 </head>
 
@@ -177,84 +193,111 @@ footer {
 
 <header>
 
-<div class="logo">MUSICVERSE PROFILES</div>
+    <div class="logo">MUSICVERSE PROFILES</div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="groups.html">Groups</a>
-<a href="idols.html">Idols</a>
-<a href="index.html">Companies</a>
-<a href="index.html">Rankings</a>
-</nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="index.html">Companies</a>
+        <a href="index.html">Rankings</a>
+    </nav>
 
 </header>
 
 <section class="hero">
 
-<h1>Yuha</h1>
-<p>ELLEVEN · Aurelia Entertainment</p>
+    <h1>Yuha</h1>
+    <p>ELLEVEN · Aurelia Entertainment</p>
 
 </section>
 
 <div class="profile-container">
 
-<div class="profile-card">
+    <div class="photo-box">
+        <img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/yuha.jpg" alt="Yuha">
+    </div>
 
-<div class="photo-box">
+    <div class="profile-info">
 
-<img src="https://dosamatakdj-lgtm.github.io/musicverse-profiles/yuha.jpg" alt="Yuha">
+        <h2>Yuha</h2>
 
-</div>
+        <div class="subtitle">
+            ELLEVEN Member
+        </div>
 
-<div class="info">
+        <div class="info-grid">
 
-<h2>Yuha</h2>
+            <div class="info-item">
+                <strong>Stage Name</strong>
+                Yuha
+            </div>
 
-<p><span class="label">Stage Name:</span> Yuha</p>
+            <div class="info-item">
+                <strong>Group</strong>
+                ELLEVEN
+            </div>
 
-<p><span class="label">Group:</span> ELLEVEN</p>
+            <div class="info-item">
+                <strong>Positions</strong>
+                Main Vocalist
+            </div>
 
-<p><span class="label">Positions:</span> Main Vocalist</p>
+            <div class="info-item">
+                <strong>Company</strong>
+                Aurelia Entertainment
+            </div>
 
-<p><span class="label">Company:</span> Aurelia Entertainment</p>
+            <div class="info-item">
+                <strong>Vocal Level</strong>
+                96
+            </div>
 
-<p><span class="label">Vocal Level:</span> 96</p>
+            <div class="info-item">
+                <strong>Group Position</strong>
+                5th Oldest Member
+            </div>
 
-<p><span class="label">Group Position:</span> 5th Oldest Member</p>
+        </div>
 
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>About Yuha</h2>
-
-<p>
-Yuha is the fifth oldest member of ELLEVEN and one of the group's Main Vocalists.
-She is known for her strong vocal ability, stable performances and polished vocal tone.
-Her powerful vocals make her one of the key vocalists of ELLEVEN.
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>ELLEVEN</h2>
-
-<p>
-ELLEVEN is an 11-member girl group under Aurelia Entertainment.
-The group debuted with <strong>Lion</strong> and is known for its powerful performances, strong vocals, rap and dynamic choreography.
-</p>
-
-</div>
+    </div>
 
 </div>
+
+<section class="section">
+
+    <div class="section-card">
+
+        <h2>About Yuha</h2>
+
+        <p>
+            Yuha is the fifth oldest member of ELLEVEN and serves as one of
+            the group's Main Vocalists. She is known for her strong vocal
+            ability, stable performances and powerful vocal tone, making her
+            one of the key vocalists of ELLEVEN.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="section-card">
+
+        <h2>ELLEVEN</h2>
+
+        <p>
+            ELLEVEN is an 11-member girl group under Aurelia Entertainment.
+            The group debuted with <strong>Lion</strong>.
+        </p>
+
+    </div>
+
+</section>
 
 <footer>
-
-Musicverse Profiles © 2026
-
+    © 2026 Musicverse Profiles · Fictional Musicverse Database
 </footer>
 
 </body>
