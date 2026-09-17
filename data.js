@@ -92,6 +92,20 @@ const MUSICVERSE_GROUPS = [
             "Tzuyu"
         ],
         page: "once.html"
+    },
+
+    {
+        name: "GARLS",
+        company: "Aurelia Entertainment",
+        debut: "Black Mamba",
+        members: [
+            "Karina",
+            "Chaeryeong",
+            "Ningning",
+            "Yuna",
+            "Hanni"
+        ],
+        page: "garls.html"
     }
 ];
 
@@ -142,5 +156,11 @@ const MUSICVERSE_IDOLS = [
     {name:"Jihyo", group:"ONCE", company:"MDX Entertainment", image:"jihyo.jpg", page:"jihyo.html"},
     {name:"Dahyun", group:"ONCE", company:"MDX Entertainment", image:"dahyun.jpg", page:"dahyun.html"},
     {name:"Chaeyoung", group:"ONCE", company:"MDX Entertainment", image:"chaeyoung.jpg", page:"chaeyoung.html"},
-    {name:"Tzuyu", group:"ONCE", company:"MDX Entertainment", image:"tzuyu.jpg", page:"tzuyu.html"}
+    {name:"Tzuyu", group:"ONCE", company:"MDX Entertainment", image:"tzuyu.jpg", page:"tzuyu.html"},
+
+    {name:"Karina", group:"GARLS", company:"Aurelia Entertainment", image:"karina.jpg", page:"karina.html", positions:"Leader · Main Dancer · Lead Rapper · Visual"},
+    {name:"Chaeryeong", group:"GARLS", company:"Aurelia Entertainment", image:"chaeryeong.jpg", page:"chaeryeong.html", positions:"Main Dancer · Lead Vocalist"},
+    {name:"Ningning", group:"GARLS", company:"Aurelia Entertainment", image:"ningning.jpg", page:"ningning.html", positions:"Main Vocalist"},
+    {name:"Yuna", group:"GARLS", company:"Aurelia Entertainment", image:"yuna.jpg", page:"yuna.html", positions:"Lead Dancer · Sub Vocalist · Visual"},
+    {name:"Hanni", group:"GARLS", company:"Aurelia Entertainment", image:"hanni.jpg", page:"hanni.html", positions:"Lead Vocalist · Lead Dancer"}
 ];
