@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GARLS — Musicverse Profiles</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f2f7;
+    color: #21152d;
+}
+
+header {
+    background: #21152d;
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #21152d, #6d3f91);
+    color: white;
+    padding: 70px 8%;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin: 0 0 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 50px 8%;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+
+.info-card h3 {
+    margin-top: 0;
+    color: #76558c;
+}
+
+.members {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.member {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #21152d;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: transform 0.2s;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+}
+
+.member img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 15px;
+}
+
+.member-info h3 {
+    margin: 0 0 5px;
+}
+
+.member-info p {
+    margin: 0;
+    color: #76558c;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #21152d;
+    color: white;
+    margin-top: 50px;
+}
+
+@media (max-width: 800px) {
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    nav a {
+        margin-left: 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MUSICVERSE PROFILES</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="companies.html">Companies</a>
+        <a href="rankings.html">Rankings</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>GARLS</h1>
+    <p>Aurelia Entertainment · 5 Members · Debut: Black Mamba</p>
+</section>
+
+<div class="container">
+
+    <div class="info">
+
+        <div class="info-card">
+            <h3>Company</h3>
+            <p>Aurelia Entertainment</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Members</h3>
+            <p>5</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Debut</h3>
+            <p>Black Mamba</p>
+        </div>
+
+    </div>
+
+    <h2>Members</h2>
+
+    <div class="members">
+
+        <a class="member" href="karina.html">
+            <img src="karina.jpg">
+            <div class="member-info">
+                <h3>Karina</h3>
+                <p>Leader · Main Dancer · Lead Rapper · Visual</p>
+            </div>
+        </a>
+
+        <a class="member" href="chaeryeong.html">
+            <img src="chaeryeong.jpg">
+            <div class="member-info">
+                <h3>Chaeryeong</h3>
+                <p>Main Dancer · Lead Vocalist</p>
+            </div>
+        </a>
+
+        <a class="member" href="ningning.html">
+            <img src="ningning.jpg">
+            <div class="member-info">
+                <h3>Ningning</h3>
+                <p>Main Vocalist</p>
+            </div>
+        </a>
+
+        <a class="member" href="yuna.html">
+            <img src="yuna.jpg">
+            <div class="member-info">
+                <h3>Yuna</h3>
+                <p>Lead Dancer · Sub Vocalist · Visual</p>
+            </div>
+        </a>
+
+        <a class="member" href="hanni.html">
+            <img src="hanni.jpg">
+            <div class="member-info">
+                <h3>Hanni</h3>
+                <p>Lead Vocalist · Lead Dancer</p>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Musicverse Profiles
+</footer>
+
+</body>
+</html>
