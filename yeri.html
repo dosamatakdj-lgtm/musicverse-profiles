@@ -3,115 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yeri — Musicverse</title>
-
+<title>Yeri — TWOON | Musicverse Profiles</title>
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #080808;
-    color: white;
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 50px 20px;
-}
-
-.profile {
-    text-align: center;
-}
-
-.profile img {
-    width: 280px;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-h1 {
-    font-size: 42px;
-}
-
-.subtitle {
-    color: #aaa;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 40px;
-}
-
-.stat {
-    background: #151515;
-    padding: 25px;
-    border-radius: 15px;
-}
-
-.stat h3 {
-    color: #aaa;
-}
-
-.stat p {
-    font-size: 24px;
-}
-
-.info {
-    margin-top: 35px;
-    background: #111;
-    padding: 25px;
-    border-radius: 15px;
-}
-
-.back {
-    display: inline-block;
-    margin-top: 30px;
-    color: white;
-    text-decoration: none;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f2f7;color:#211c25}
+header{background:#111014;color:white;padding:20px 8%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:bold;letter-spacing:2px}
+nav a{color:#ddd;text-decoration:none;margin-left:24px;font-size:14px}
+nav a:hover{color:#d47b9e}
+.hero{background:linear-gradient(135deg,#21152d,#6d304d);color:white;padding:60px 8%}
+.hero h1{font-size:46px;margin-bottom:10px}.hero p{color:#ddd;font-size:17px}
+.profile-container{max-width:1100px;margin:50px auto;padding:0 25px;display:grid;grid-template-columns:300px 1fr;gap:45px}
+.photo-box{width:300px;height:380px;background:#29222f;border-radius:22px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.3)}
+.photo-box img{width:100%;height:100%;object-fit:cover}
+.profile-info{background:white;border-radius:22px;padding:35px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.profile-info h2{font-size:32px;margin-bottom:8px}.subtitle{color:#9a4e70;font-weight:bold;margin-bottom:25px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info-item{background:#f7f4f9;padding:15px;border-radius:12px}
+.info-item strong{display:block;color:#9a4e70;font-size:13px;margin-bottom:5px}
+.section{max-width:1100px;margin:35px auto;padding:0 25px}.section-card{background:white;padding:35px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.section-card h2{margin-bottom:15px;color:#35213f}.section-card p{line-height:1.7;color:#555}
+footer{margin-top:70px;background:#111014;color:#aaa;text-align:center;padding:25px;font-size:13px}
+@media(max-width:800px){header{flex-direction:column;gap:15px}.profile-container{grid-template-columns:1fr;justify-items:center}.profile-info{width:100%}.info-grid{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<header><div class="logo">MUSICVERSE PROFILES</div><nav>
+<a href="index.html">Home</a><a href="groups.html">Groups</a><a href="idols.html">Idols</a><a href="index.html">Companies</a><a href="index.html">Rankings</a>
+</nav></header>
 
-<div class="profile">
-    <img src="yeri.jpg">
-    <h1>Yeri</h1>
-    <p class="subtitle">TWOON · NOVA Entertainment</p>
+<section class="hero"><h1>Yeri</h1><p>TWOON · NOVA Entertainment</p></section>
+
+<div class="profile-container">
+<div class="photo-box"><img src="yeri.jpg" alt="Yeri"></div>
+<div class="profile-info">
+<h2>Yeri</h2><div class="subtitle">TWOON Member</div>
+<div class="info-grid">
+<div class="info-item"><strong>Stage Name</strong>Yeri</div>
+<div class="info-item"><strong>Group</strong>TWOON</div>
+<div class="info-item"><strong>Positions</strong>Lead Vocalist, Sub Dancer</div>
+<div class="info-item"><strong>Company</strong>NOVA Entertainment</div>
+<div class="info-item"><strong>Vocal Level</strong>B+</div>
+<div class="info-item"><strong>Rap Level</strong>B+</div>
+<div class="info-item"><strong>Dance Level</strong>B+</div>
+<div class="info-item"><strong>Group Position</strong>—</div>
+</div>
+</div>
 </div>
 
-<div class="info">
-    <h2>Positions</h2>
-    <p>Lead Vocalist · Sub Dancer</p>
-</div>
+<section class="section"><div class="section-card">
+<h2>About Yeri</h2>
+<p>Yeri is a member of TWOON who serves as a Lead Vocalist and Sub Dancer. She contributes to the group's vocals while adding versatility to its performances.</p>
+</div></section>
 
-<div class="stats">
+<section class="section"><div class="section-card">
+<h2>TWOON</h2>
+<p>TWOON is a 5-member girl group under NOVA Entertainment. The group debuted with <strong>Like-OH-Ah</strong>.</p>
+</div></section>
 
-<div class="stat">
-    <h3>Vocal</h3>
-    <p>B+</p>
-</div>
-
-<div class="stat">
-    <h3>Rap</h3>
-    <p>B+</p>
-</div>
-
-<div class="stat">
-    <h3>Dance</h3>
-    <p>B+</p>
-</div>
-
-</div>
-
-<a class="back" href="twoon.html">← Back to TWOON</a>
-
-</div>
-
+<footer>© 2026 Musicverse Profiles · Fictional Musicverse Database</footer>
 </body>
 </html>
