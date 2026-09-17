@@ -78,6 +78,20 @@ const MUSICVERSE_GROUPS = [
             "Narin"
         ],
         page: "lesserafim.html"
+    },
+
+    {
+        name: "ONCE",
+        company: "MDX Entertainment",
+        debut: "One Spark",
+        members: [
+            "Sana",
+            "Jihyo",
+            "Dahyun",
+            "Chaeyoung",
+            "Tzuyu"
+        ],
+        page: "once.html"
     }
 ];
 
@@ -122,5 +136,11 @@ const MUSICVERSE_IDOLS = [
     {name:"Liz", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"liz.jpg", page:"liz.html", positions:"Main Vocalist · Visual"},
     {name:"Haerin", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"haerin.jpg", page:"haerin.html", positions:"Main Dancer · Sub Vocalist"},
     {name:"Eunchae", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"eunchae.jpg", page:"eunchae.html", positions:"Lead Rapper · Lead-Sub Dancer"},
-    {name:"Narin", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"narin.jpg", page:"narin.html", positions:"Maknae · Lead Vocalist · Main Rapper · Lead Dancer"}
+    {name:"Narin", group:"LESSERAFIM", company:"Aurelia Entertainment", image:"narin.jpg", page:"narin.html", positions:"Maknae · Lead Vocalist · Main Rapper · Lead Dancer"},
+
+    {name:"Sana", group:"ONCE", company:"MDX Entertainment", image:"sana.jpg", page:"sana.html"},
+    {name:"Jihyo", group:"ONCE", company:"MDX Entertainment", image:"jihyo.jpg", page:"jihyo.html"},
+    {name:"Dahyun", group:"ONCE", company:"MDX Entertainment", image:"dahyun.jpg", page:"dahyun.html"},
+    {name:"Chaeyoung", group:"ONCE", company:"MDX Entertainment", image:"chaeyoung.jpg", page:"chaeyoung.html"},
+    {name:"Tzuyu", group:"ONCE", company:"MDX Entertainment", image:"tzuyu.jpg", page:"tzuyu.html"}
 ];
