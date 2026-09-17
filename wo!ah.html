@@ -3,110 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WO!AH — Musicverse</title>
+
+<title>WO!AH — Musicverse Profiles</title>
 
 <style>
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #080808;
-    color: white;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f3f8;
+    color: #211c25;
 }
 
 header {
-    padding: 25px;
-    text-align: center;
-    background: #111;
-    border-bottom: 1px solid #333;
+    background: #111014;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 42px;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-header p {
-    color: #aaa;
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #c993e8;
+}
+
+.hero {
+    background: linear-gradient(135deg, #21152d, #6d3f91);
+    color: white;
+    padding: 70px 8%;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #eadcf1;
+    font-size: 17px;
 }
 
 .container {
     max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+    margin: 50px auto;
+    padding: 0 25px;
 }
 
-.hero {
-    text-align: center;
-    margin-bottom: 50px;
+.group-card {
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+    margin-bottom: 35px;
 }
 
-.hero h2 {
-    font-size: 34px;
+.group-card h2 {
+    color: #4d2863;
+    margin-bottom: 15px;
 }
 
-.hero p {
-    color: #bbb;
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.6;
+.group-card p {
+    color: #555;
+    line-height: 1.7;
 }
 
-.members {
+.info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.info-item {
+    background: #f8f4fa;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.info-item strong {
+    display: block;
+    color: #6d3f91;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.members-title {
+    font-size: 30px;
+    margin: 40px 0 25px;
+    color: #35213f;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-.member {
-    background: #151515;
-    border-radius: 15px;
-    overflow: hidden;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
+.member-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+    transition: transform .2s, box-shadow .2s;
 }
 
-.member:hover {
-    transform: translateY(-6px);
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
 }
 
-.member img {
+.member-card img {
     width: 100%;
-    height: 270px;
+    height: 300px;
     object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 18px;
 }
 
-.member-info {
-    padding: 15px;
+.member-card h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
 }
 
-.member-info h3 {
-    margin: 0 0 8px;
-    font-size: 20px;
+.member-card p {
+    color: #76558c;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-.member-info p {
-    margin: 0;
-    color: #aaa;
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    background: #6d3f91;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
     font-size: 14px;
 }
 
-.info {
-    margin-top: 50px;
-    background: #111;
+.button:hover {
+    background: #512d6d;
+}
+
+footer {
+    margin-top: 70px;
+    background: #111014;
+    color: #aaa;
+    text-align: center;
     padding: 25px;
-    border-radius: 15px;
+    font-size: 13px;
 }
 
-.info p {
-    color: #bbb;
-}
+@media (max-width: 800px) {
 
-.back {
-    display: inline-block;
-    margin-top: 30px;
-    color: white;
-    text-decoration: none;
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .info-grid,
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
@@ -114,67 +201,113 @@ header p {
 <body>
 
 <header>
-    <h1>WO!AH</h1>
-    <p>LUX Entertainment</p>
+
+    <div class="logo">MUSICVERSE PROFILES</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="index.html">Companies</a>
+        <a href="index.html">Rankings</a>
+    </nav>
+
 </header>
+
+<section class="hero">
+
+    <h1>WO!AH</h1>
+    <p>4-member girl group · LUX Entertainment</p>
+
+</section>
 
 <div class="container">
 
-<section class="hero">
-    <h2>About WO!AH</h2>
-    <p>
-        WO!AH is a four-member girl group under LUX Entertainment.
-        The group debuted with <b>Unchild</b>, bringing together
-        strong vocals, rap, dance and stage presence.
-    </p>
-</section>
+    <div class="group-card">
 
-<section class="members">
+        <h2>About WO!AH</h2>
 
-<a class="member" href="shuhua.html">
-    <img src="shuhua.jpg">
-    <div class="member-info">
-        <h3>Shuhua</h3>
-        <p>Main Rapper · Lead Vocalist · Visual</p>
+        <p>
+            WO!AH is a 4-member girl group under LUX Entertainment.
+            The group is known for its versatile members, strong dance
+            performances, vocal ability and charismatic rap line.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <strong>Group</strong>
+                WO!AH
+            </div>
+
+            <div class="info-item">
+                <strong>Company</strong>
+                LUX Entertainment
+            </div>
+
+            <div class="info-item">
+                <strong>Members</strong>
+                4
+            </div>
+
+            <div class="info-item">
+                <strong>Debut Song</strong>
+                Unchild
+            </div>
+
+            <div class="info-item">
+                <strong>Fandom</strong>
+                —
+            </div>
+
+            <div class="info-item">
+                <strong>Type</strong>
+                Girl Group
+            </div>
+
+        </div>
+
     </div>
-</a>
 
-<a class="member" href="wonyoung.html">
-    <img src="wonyoung.jpg">
-    <div class="member-info">
-        <h3>Wonyoung</h3>
-        <p>Center · Lead Vocalist · Visual</p>
+    <h2 class="members-title">Members</h2>
+
+    <div class="member-grid">
+
+        <div class="member-card">
+            <img src="shuhua.jpg" alt="Shuhua">
+            <h3>Shuhua</h3>
+            <p>Main Rapper · Lead Vocalist · Visual</p>
+            <a class="button" href="shuhua.html">View Profile</a>
+        </div>
+
+        <div class="member-card">
+            <img src="wonyoung.jpg" alt="Wonyoung">
+            <h3>Wonyoung</h3>
+            <p>Center · Lead Vocalist · Visual</p>
+            <a class="button" href="wonyoung.html">View Profile</a>
+        </div>
+
+        <div class="member-card">
+            <img src="somi.jpg" alt="Somi">
+            <h3>Somi</h3>
+            <p>Main Dancer · Lead Rapper · Lead Vocalist</p>
+            <a class="button" href="somi.html">View Profile</a>
+        </div>
+
+        <div class="member-card">
+            <img src="minji.jpg" alt="Minji">
+            <h3>Minji</h3>
+            <p>Lead Dancer · Sub Vocalist</p>
+            <a class="button" href="minji.html">View Profile</a>
+        </div>
+
     </div>
-</a>
-
-<a class="member" href="somi.html">
-    <img src="somi.jpg">
-    <div class="member-info">
-        <h3>Somi</h3>
-        <p>Main Dancer · Lead Rapper · Lead Vocalist</p>
-    </div>
-</a>
-
-<a class="member" href="minji.html">
-    <img src="minji.jpg">
-    <div class="member-info">
-        <h3>Minji</h3>
-        <p>Lead Dancer · Sub Vocalist</p>
-    </div>
-</a>
-
-</section>
-
-<section class="info">
-    <h2>Group Information</h2>
-    <p><b>Company:</b> LUX Entertainment</p>
-    <p><b>Members:</b> 4</p>
-    <p><b>Debut:</b> Unchild</p>
-</section>
-
-<a class="back" href="groups.html">← Back to Groups</a>
 
 </div>
+
+<footer>
+    © 2026 Musicverse Profiles · Fictional Musicverse Database
+</footer>
 
 </body>
 </html>
