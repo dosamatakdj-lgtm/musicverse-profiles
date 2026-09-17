@@ -2,133 +2,228 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Groups — Musicverse Profiles</title>
 
 <style>
-body{
+
+*{
+    box-sizing:border-box;
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#f5f5f5;
-    color:#111;
+    padding:0;
 }
 
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f3f8;
+    color:#211c25;
+}
+
+/* HEADER */
+
 header{
-    background:#111;
+    background:#111014;
     color:white;
-    padding:20px 50px;
+    padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-header h1{
-    margin:0;
-    font-size:24px;
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
 nav a{
-    color:white;
+    color:#ddd;
     text-decoration:none;
-    margin-left:25px;
-    font-weight:bold;
+    margin-left:24px;
+    font-size:14px;
 }
 
 nav a:hover{
-    color:#aaa;
+    color:#c993e8;
 }
+
+/* HERO */
 
 .hero{
-    background:linear-gradient(135deg,#111,#333);
+    background:linear-gradient(135deg,#21152d,#6d3f91);
     color:white;
-    padding:70px 20px;
-    text-align:center;
+    padding:70px 8%;
 }
 
-.hero h2{
-    font-size:55px;
-    margin:0 0 10px;
+.hero h1{
+    font-size:52px;
+    margin-bottom:10px;
 }
 
 .hero p{
-    font-size:18px;
-    color:#ccc;
+    color:#eadcf1;
+    font-size:17px;
 }
 
+/* CONTAINER */
+
 .container{
-    max-width:1200px;
+    max-width:1100px;
     margin:50px auto;
-    padding:0 20px;
+    padding:0 25px;
 }
+
+/* INTRO */
+
+.intro{
+    margin-bottom:35px;
+}
+
+.intro h2{
+    font-size:30px;
+    color:#35213f;
+    margin-bottom:10px;
+}
+
+.intro p{
+    color:#666;
+    line-height:1.7;
+}
+
+/* GROUP GRID */
 
 .groups-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:30px;
+    gap:25px;
 }
+
+/* GROUP CARD */
 
 .group-card{
     background:white;
-    border-radius:18px;
+    border-radius:22px;
     padding:30px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    transition:0.3s;
-    position:relative;
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+    transition:transform .2s, box-shadow .2s;
 }
 
 .group-card:hover{
     transform:translateY(-5px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
-.group-card h3{
-    font-size:30px;
-    margin:0 0 10px;
-}
-
-.group-card p{
-    color:#666;
-    line-height:1.6;
-}
-
-.group-card a{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 20px;
-    background:#111;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
-}
-
-.group-card a:hover{
-    background:#333;
-}
+/* COMPANY TAG */
 
 .tag{
     display:inline-block;
-    background:#eee;
-    padding:6px 12px;
+    background:#f0e8f5;
+    color:#6d3f91;
+    padding:7px 13px;
     border-radius:20px;
-    font-size:13px;
+    font-size:12px;
+    font-weight:bold;
     margin-bottom:15px;
 }
 
-footer{
-    margin-top:80px;
-    background:#111;
-    color:#aaa;
-    text-align:center;
-    padding:30px;
+/* GROUP NAME */
+
+.group-card h3{
+    font-size:30px;
+    margin-bottom:15px;
+    color:#35213f;
 }
 
+/* DESCRIPTION */
+
+.group-card .description{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* INFO */
+
+.group-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.info-item{
+    background:#f8f4fa;
+    padding:14px;
+    border-radius:12px;
+}
+
+.info-item strong{
+    display:block;
+    color:#6d3f91;
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+.info-item span{
+    color:#444;
+    font-size:14px;
+}
+
+/* MEMBERS */
+
+.members{
+    margin-top:10px;
+    padding-top:20px;
+    border-top:1px solid #eee;
+}
+
+.members strong{
+    display:block;
+    color:#35213f;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.members p{
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* BUTTON */
+
+.button{
+    display:inline-block;
+    margin-top:20px;
+    background:#6d3f91;
+    color:white;
+    text-decoration:none;
+    padding:11px 18px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.button:hover{
+    background:#512d6d;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:70px;
+    background:#111014;
+    color:#aaa;
+    text-align:center;
+    padding:25px;
+    font-size:13px;
+}
+
+/* MOBILE */
+
 @media(max-width:800px){
-    .groups-grid{
-        grid-template-columns:1fr;
-    }
 
     header{
-        padding:20px;
         flex-direction:column;
         gap:15px;
     }
@@ -137,10 +232,20 @@ footer{
         margin:0 8px;
     }
 
-    .hero h2{
+    .hero h1{
         font-size:40px;
     }
+
+    .groups-grid{
+        grid-template-columns:1fr;
+    }
+
+    .group-info{
+        grid-template-columns:1fr;
+    }
+
 }
+
 </style>
 </head>
 
@@ -148,14 +253,16 @@ footer{
 
 <header>
 
-<h1>MUSICVERSE PROFILES</h1>
+<div class="logo">
+MUSICVERSE PROFILES
+</div>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="groups.html">Groups</a>
 <a href="idols.html">Idols</a>
-<a href="#">Companies</a>
-<a href="#">Rankings</a>
+<a href="index.html">Companies</a>
+<a href="index.html">Rankings</a>
 </nav>
 
 </header>
@@ -163,14 +270,26 @@ footer{
 
 <section class="hero">
 
-<h2>GROUPS</h2>
+<h1>GROUPS</h1>
 
-<p>Explore every group in the Musicverse</p>
+<p>Explore every girl group in the Musicverse.</p>
 
 </section>
 
 
 <div class="container">
+
+<div class="intro">
+
+<h2>Musicverse Groups</h2>
+
+<p>
+Discover every group currently part of the Musicverse,
+including their companies, debut songs, fandoms and members.
+</p>
+
+</div>
+
 
 <div class="groups-grid" id="groupsGrid"></div>
 
@@ -179,7 +298,7 @@ footer{
 
 <footer>
 
-Musicverse Profiles © 2026
+© 2026 Musicverse Profiles · Fictional Musicverse Database
 
 </footer>
 
@@ -189,7 +308,6 @@ Musicverse Profiles © 2026
 <script>
 
 const groupsGrid = document.getElementById("groupsGrid");
-
 
 MUSICVERSE_GROUPS.forEach(group => {
 
@@ -207,18 +325,47 @@ MUSICVERSE_GROUPS.forEach(group => {
             ${group.name}
         </h3>
 
-        <p>
-            ${group.members.length}-member girl group under
-            ${group.company}.
-            Debuted with <b>“${group.debut}”</b>.
+        <p class="description">
+            ${group.name} is a ${group.members.length}-member girl group
+            under ${group.company}. The group debuted with
+            <b>“${group.debut}”</b>.
         </p>
 
-        <p>
-            <b>Members:</b>
-            ${group.members.join(", ")}
-        </p>
+        <div class="group-info">
 
-        <a href="${group.page}">
+            <div class="info-item">
+                <strong>MEMBERS</strong>
+                <span>${group.members.length}</span>
+            </div>
+
+            <div class="info-item">
+                <strong>DEBUT SONG</strong>
+                <span>${group.debut}</span>
+            </div>
+
+            <div class="info-item">
+                <strong>COMPANY</strong>
+                <span>${group.company}</span>
+            </div>
+
+            <div class="info-item">
+                <strong>FANDOM</strong>
+                <span>${group.fandom}</span>
+            </div>
+
+        </div>
+
+        <div class="members">
+
+            <strong>Members</strong>
+
+            <p>
+                ${group.members.join(" · ")}
+            </p>
+
+        </div>
+
+        <a class="button" href="${group.page}">
             View Group →
         </a>
 
