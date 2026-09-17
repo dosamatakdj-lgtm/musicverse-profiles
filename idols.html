@@ -2,162 +2,267 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Idols — Musicverse Profiles</title>
 
 <style>
 
-body{
+*{
+    box-sizing:border-box;
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f5f5;
-    color:#111;
+    padding:0;
 }
 
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f3f8;
+    color:#211c25;
+}
+
+/* HEADER */
+
 header{
-    background:#111;
+    background:#111014;
     color:white;
-    padding:20px 50px;
+    padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-header h1{
-    margin:0;
-    font-size:24px;
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
 nav a{
-    color:white;
+    color:#ddd;
     text-decoration:none;
-    margin-left:25px;
-    font-weight:bold;
+    margin-left:24px;
+    font-size:14px;
 }
 
 nav a:hover{
-    color:#aaa;
+    color:#c993e8;
 }
+
+/* HERO */
 
 .hero{
-    background:linear-gradient(135deg,#111,#333);
+    background:linear-gradient(135deg,#21152d,#6d3f91);
     color:white;
-    padding:70px 20px;
-    text-align:center;
+    padding:70px 8%;
 }
 
-.hero h2{
-    font-size:55px;
-    margin:0 0 10px;
+.hero h1{
+    font-size:52px;
+    margin-bottom:10px;
 }
 
 .hero p{
-    color:#ccc;
-    font-size:18px;
+    color:#eadcf1;
+    font-size:17px;
 }
+
+/* CONTROLS */
 
 .controls{
-    max-width:1200px;
-    margin:40px auto 20px;
-    padding:0 20px;
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+    max-width:1100px;
+    margin:40px auto 25px;
+    padding:0 25px;
 }
 
-.controls input,
-.controls select{
-    padding:14px 18px;
+.controls-box{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+}
+
+.controls-title{
+    font-size:20px;
+    font-weight:bold;
+    color:#35213f;
+    margin-bottom:18px;
+}
+
+.filters{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:12px;
+}
+
+.filters input,
+.filters select{
+    width:100%;
+    padding:13px 15px;
     border:1px solid #ddd;
     border-radius:10px;
-    font-size:16px;
-    background:white;
+    font-size:14px;
+    background:#fff;
+    color:#333;
+    outline:none;
 }
 
-.controls input{
-    flex:1;
-    min-width:250px;
+.filters input:focus,
+.filters select:focus{
+    border-color:#9b6bb4;
 }
 
-.container{
-    max-width:1200px;
-    margin:20px auto;
-    padding:0 20px;
+/* RESULTS */
+
+.results{
+    max-width:1100px;
+    margin:0 auto 20px;
+    padding:0 25px;
 }
 
-.idols-grid{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:25px;
-}
-
-.idol-card{
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 5px 18px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.idol-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-.idol-card img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    object-position:center;
-    display:block;
-}
-
-.idol-info{
-    padding:18px;
-}
-
-.idol-info h3{
-    margin:0 0 7px;
-    font-size:22px;
-}
-
-.idol-info p{
-    margin:5px 0;
+.results-text{
     color:#666;
     font-size:14px;
 }
 
-.idol-info a{
+/* CONTAINER */
+
+.container{
+    max-width:1100px;
+    margin:20px auto;
+    padding:0 25px;
+}
+
+/* IDOL GRID */
+
+.idols-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+/* IDOL CARD */
+
+.idol-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+    transition:transform .2s, box-shadow .2s;
+}
+
+.idol-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+/* IMAGE */
+
+.idol-card img{
+    width:100%;
+    height:310px;
+    object-fit:cover;
     display:block;
-    margin-top:14px;
-    background:#111;
+}
+
+/* INFO */
+
+.idol-info{
+    padding:20px;
+}
+
+.idol-info h3{
+    font-size:23px;
+    color:#35213f;
+    margin-bottom:6px;
+}
+
+.group-name{
+    color:#6d3f91;
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:3px;
+}
+
+.company{
+    color:#777;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.positions{
+    background:#f7f2fa;
+    border-radius:10px;
+    padding:10px;
+    color:#76558c;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.positions strong{
+    display:block;
+    color:#6d3f91;
+    font-size:11px;
+    margin-bottom:4px;
+}
+
+/* BUTTON */
+
+.profile-button{
+    display:block;
+    margin-top:15px;
+    background:#6d3f91;
     color:white;
     text-align:center;
-    padding:10px;
-    border-radius:8px;
+    padding:11px;
+    border-radius:10px;
     text-decoration:none;
+    font-size:14px;
     font-weight:bold;
 }
 
-.idol-info a:hover{
-    background:#333;
+.profile-button:hover{
+    background:#512d6d;
 }
+
+/* NO RESULTS */
+
+.no-results{
+    grid-column:1/-1;
+    background:white;
+    border-radius:20px;
+    padding:60px 20px;
+    text-align:center;
+    color:#777;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.no-results h3{
+    color:#35213f;
+    margin-bottom:8px;
+    font-size:24px;
+}
+
+/* PAGINATION */
 
 .pagination{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:10px;
-    margin:40px 0;
+    gap:12px;
+    margin:45px 0;
 }
 
 .pagination button{
     border:none;
-    background:#111;
+    background:#6d3f91;
     color:white;
-    padding:10px 16px;
-    border-radius:8px;
+    padding:11px 18px;
+    border-radius:10px;
     cursor:pointer;
     font-weight:bold;
+}
+
+.pagination button:hover:not(:disabled){
+    background:#512d6d;
 }
 
 .pagination button:disabled{
@@ -167,35 +272,37 @@ nav a:hover{
 
 #pageInfo{
     font-weight:bold;
+    color:#35213f;
 }
+
+/* FOOTER */
 
 footer{
-    background:#111;
+    margin-top:70px;
+    background:#111014;
     color:#aaa;
     text-align:center;
-    padding:30px;
-    margin-top:60px;
+    padding:25px;
+    font-size:13px;
 }
 
-@media(max-width:1100px){
-    .idols-grid{
-        grid-template-columns:repeat(4,1fr);
-    }
-}
+/* RESPONSIVE */
 
-@media(max-width:850px){
+@media(max-width:1000px){
+
     .idols-grid{
         grid-template-columns:repeat(3,1fr);
     }
-}
 
-@media(max-width:650px){
-    .idols-grid{
-        grid-template-columns:repeat(2,1fr);
+    .filters{
+        grid-template-columns:1fr 1fr;
     }
 
+}
+
+@media(max-width:700px){
+
     header{
-        padding:20px;
         flex-direction:column;
         gap:15px;
     }
@@ -204,34 +311,45 @@ footer{
         margin:0 8px;
     }
 
-    .hero h2{
+    .hero h1{
         font-size:40px;
     }
+
+    .idols-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
 }
 
-@media(max-width:450px){
+@media(max-width:500px){
+
     .idols-grid{
         grid-template-columns:1fr;
     }
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
 }
 
 </style>
 </head>
 
-
 <body>
-
 
 <header>
 
-<h1>MUSICVERSE PROFILES</h1>
+<div class="logo">
+MUSICVERSE PROFILES
+</div>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="groups.html">Groups</a>
 <a href="idols.html">Idols</a>
-<a href="#">Companies</a>
-<a href="#">Rankings</a>
+<a href="index.html">Companies</a>
+<a href="index.html">Rankings</a>
 </nav>
 
 </header>
@@ -239,14 +357,24 @@ footer{
 
 <section class="hero">
 
-<h2>IDOLS</h2>
+<h1>IDOLS</h1>
 
-<p>Explore every idol in the Musicverse</p>
+<p>Explore every idol in the Musicverse.</p>
 
 </section>
 
 
+<!-- FILTERS -->
+
 <div class="controls">
+
+<div class="controls-box">
+
+<div class="controls-title">
+Find an Idol
+</div>
+
+<div class="filters">
 
 <input
     type="text"
@@ -256,24 +384,62 @@ footer{
 
 <select id="groupFilter">
 
-    <option value="all">All Groups</option>
+    <option value="all">
+        All Groups
+    </option>
+
+</select>
+
+<select id="companyFilter">
+
+    <option value="all">
+        All Companies
+    </option>
+
+</select>
+
+<select id="positionFilter">
+
+    <option value="all">
+        All Positions
+    </option>
 
 </select>
 
 </div>
 
+</div>
+
+</div>
+
+
+<!-- RESULTS -->
+
+<div class="results">
+
+<p class="results-text" id="resultsText"></p>
+
+</div>
+
+
+<!-- IDOLS -->
 
 <div class="container">
 
 <div class="idols-grid" id="idolsGrid"></div>
 
+
 <div class="pagination">
 
-<button id="prevBtn">← Previous</button>
+<button id="prevBtn">
+← Previous
+</button>
 
 <span id="pageInfo"></span>
 
-<button id="nextBtn">Next →</button>
+<button id="nextBtn">
+Next →
+</button>
 
 </div>
 
@@ -282,17 +448,21 @@ footer{
 
 <footer>
 
-Musicverse Profiles © 2026
+© 2026 Musicverse Profiles · Fictional Musicverse Database
 
 </footer>
 
 
-<!-- MUSICVERSE DATABASE -->
+<!-- DATABASE -->
 
 <script src="data.js"></script>
 
 
 <script>
+
+/* =========================
+   ELEMENTS
+========================= */
 
 const grid =
     document.getElementById("idolsGrid");
@@ -303,6 +473,12 @@ const search =
 const groupFilter =
     document.getElementById("groupFilter");
 
+const companyFilter =
+    document.getElementById("companyFilter");
+
+const positionFilter =
+    document.getElementById("positionFilter");
+
 const prevBtn =
     document.getElementById("prevBtn");
 
@@ -312,15 +488,18 @@ const nextBtn =
 const pageInfo =
     document.getElementById("pageInfo");
 
+const resultsText =
+    document.getElementById("resultsText");
+
 
 let currentPage = 1;
 
-const itemsPerPage = 10;
+const itemsPerPage = 8;
 
 
-/* ================================
-   CREATE GROUP FILTER AUTOMATICALLY
-================================ */
+/* =========================
+   GROUP FILTER
+========================= */
 
 MUSICVERSE_GROUPS.forEach(group => {
 
@@ -336,17 +515,92 @@ MUSICVERSE_GROUPS.forEach(group => {
 });
 
 
-/* ================================
+/* =========================
+   COMPANY FILTER
+========================= */
+
+const companies = [
+    ...new Set(
+        MUSICVERSE_IDOLS.map(
+            idol => idol.company
+        )
+    )
+];
+
+companies.sort();
+
+companies.forEach(company => {
+
+    const option =
+        document.createElement("option");
+
+    option.value = company;
+
+    option.textContent = company;
+
+    companyFilter.appendChild(option);
+
+});
+
+
+/* =========================
+   POSITION FILTER
+========================= */
+
+const positions = new Set();
+
+MUSICVERSE_IDOLS.forEach(idol => {
+
+    const idolPositions =
+        idol.positions
+            .split("·")
+            .map(position => position.trim());
+
+    idolPositions.forEach(position => {
+
+        if(position){
+            positions.add(position);
+        }
+
+    });
+
+});
+
+[...positions]
+    .sort()
+    .forEach(position => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = position;
+
+        option.textContent = position;
+
+        positionFilter.appendChild(option);
+
+    });
+
+
+/* =========================
    FILTER IDOLS
-================================ */
+========================= */
 
 function getFilteredIdols(){
 
     const searchText =
-        search.value.toLowerCase().trim();
+        search.value
+            .toLowerCase()
+            .trim();
 
     const selectedGroup =
         groupFilter.value;
+
+    const selectedCompany =
+        companyFilter.value;
+
+    const selectedPosition =
+        positionFilter.value;
 
 
     return MUSICVERSE_IDOLS.filter(idol => {
@@ -362,16 +616,34 @@ function getFilteredIdols(){
             idol.group === selectedGroup;
 
 
-        return matchesSearch && matchesGroup;
+        const matchesCompany =
+            selectedCompany === "all" ||
+            idol.company === selectedCompany;
+
+
+        const matchesPosition =
+            selectedPosition === "all" ||
+            idol.positions
+                .split("·")
+                .map(position => position.trim())
+                .includes(selectedPosition);
+
+
+        return (
+            matchesSearch &&
+            matchesGroup &&
+            matchesCompany &&
+            matchesPosition
+        );
 
     });
 
 }
 
 
-/* ================================
+/* =========================
    RENDER IDOLS
-================================ */
+========================= */
 
 function renderIdols(){
 
@@ -414,23 +686,36 @@ function renderIdols(){
     grid.innerHTML = "";
 
 
+    /* RESULTS TEXT */
+
+    resultsText.textContent =
+        `${filtered.length} idol${filtered.length === 1 ? "" : "s"} found`;
+
+
+    /* NO RESULTS */
+
     if(pageItems.length === 0){
 
         grid.innerHTML = `
 
-            <p style="
-                grid-column:1/-1;
-                text-align:center;
-                padding:50px;
-            ">
+            <div class="no-results">
 
-                No idols found.
+                <h3>
+                    No idols found
+                </h3>
 
-            </p>
+                <p>
+                    Try changing your search or filters.
+                </p>
+
+            </div>
 
         `;
 
     }
+
+
+    /* CARDS */
 
     else{
 
@@ -451,15 +736,28 @@ function renderIdols(){
                             ${idol.name}
                         </h3>
 
-                        <p>
+                        <p class="group-name">
                             ${idol.group}
                         </p>
 
-                        <p>
+                        <p class="company">
                             ${idol.company}
                         </p>
 
-                        <a href="${idol.page}">
+                        <div class="positions">
+
+                            <strong>
+                                POSITIONS
+                            </strong>
+
+                            ${idol.positions}
+
+                        </div>
+
+                        <a
+                            class="profile-button"
+                            href="${idol.page}"
+                        >
                             View Profile →
                         </a>
 
@@ -473,6 +771,8 @@ function renderIdols(){
 
     }
 
+
+    /* PAGINATION */
 
     pageInfo.textContent =
         `Page ${currentPage} of ${totalPages}`;
@@ -488,91 +788,134 @@ function renderIdols(){
 }
 
 
-/* ================================
-   PREVIOUS PAGE
-================================ */
+/* =========================
+   PREVIOUS
+========================= */
 
-prevBtn.addEventListener("click",() => {
+prevBtn.addEventListener(
+    "click",
+    () => {
 
-    if(currentPage > 1){
+        if(currentPage > 1){
 
-        currentPage--;
+            currentPage--;
 
-        renderIdols();
+            renderIdols();
 
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
 
-    }
-
-});
-
-
-/* ================================
-   NEXT PAGE
-================================ */
-
-nextBtn.addEventListener("click",() => {
-
-    const totalPages =
-        Math.ceil(
-            getFilteredIdols().length /
-            itemsPerPage
-        );
-
-
-    if(currentPage < totalPages){
-
-        currentPage++;
-
-        renderIdols();
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
+        }
 
     }
+);
 
-});
+
+/* =========================
+   NEXT
+========================= */
+
+nextBtn.addEventListener(
+    "click",
+    () => {
+
+        const totalPages =
+            Math.ceil(
+                getFilteredIdols().length /
+                itemsPerPage
+            );
 
 
-/* ================================
+        if(currentPage < totalPages){
+
+            currentPage++;
+
+            renderIdols();
+
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+
+        }
+
+    }
+);
+
+
+/* =========================
    SEARCH
-================================ */
+========================= */
 
-search.addEventListener("input",() => {
+search.addEventListener(
+    "input",
+    () => {
 
-    currentPage = 1;
+        currentPage = 1;
 
-    renderIdols();
+        renderIdols();
 
-});
-
-
-/* ================================
-   GROUP FILTER
-================================ */
-
-groupFilter.addEventListener("change",() => {
-
-    currentPage = 1;
-
-    renderIdols();
-
-});
+    }
+);
 
 
-/* ================================
+/* =========================
+   GROUP
+========================= */
+
+groupFilter.addEventListener(
+    "change",
+    () => {
+
+        currentPage = 1;
+
+        renderIdols();
+
+    }
+);
+
+
+/* =========================
+   COMPANY
+========================= */
+
+companyFilter.addEventListener(
+    "change",
+    () => {
+
+        currentPage = 1;
+
+        renderIdols();
+
+    }
+);
+
+
+/* =========================
+   POSITION
+========================= */
+
+positionFilter.addEventListener(
+    "change",
+    () => {
+
+        currentPage = 1;
+
+        renderIdols();
+
+    }
+);
+
+
+/* =========================
    START
-================================ */
+========================= */
 
 renderIdols();
 
 </script>
-
 
 </body>
 </html>
