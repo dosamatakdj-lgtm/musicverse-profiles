@@ -106,6 +106,20 @@ const MUSICVERSE_GROUPS = [
             "Hanni"
         ],
         page: "garls.html"
+    },
+
+    {
+        name: "TWOON",
+        company: "NOVA Entertainment",
+        debut: "Like-OH-Ah",
+        members: [
+            "Soojin",
+            "Soyeon",
+            "Yeri",
+            "Yuqi",
+            "Yeji"
+        ],
+        page: "twoon.html"
     }
 ];
 
@@ -162,5 +176,11 @@ const MUSICVERSE_IDOLS = [
     {name:"Chaeryeong", group:"GARLS", company:"Aurelia Entertainment", image:"chaeryeong.jpg", page:"chaeryeong.html", positions:"Main Dancer · Lead Vocalist"},
     {name:"Ningning", group:"GARLS", company:"Aurelia Entertainment", image:"ningning.jpg", page:"ningning.html", positions:"Main Vocalist"},
     {name:"Yuna", group:"GARLS", company:"Aurelia Entertainment", image:"yuna.jpg", page:"yuna.html", positions:"Lead Dancer · Sub Vocalist · Visual"},
-    {name:"Hanni", group:"GARLS", company:"Aurelia Entertainment", image:"hanni.jpg", page:"hanni.html", positions:"Lead Vocalist · Lead Dancer"}
+    {name:"Hanni", group:"GARLS", company:"Aurelia Entertainment", image:"hanni.jpg", page:"hanni.html", positions:"Lead Vocalist · Lead Dancer"},
+
+    {name:"Soojin", group:"TWOON", company:"NOVA Entertainment", image:"soojin.jpg", page:"soojin.html", positions:"Main Dancer · Lead Vocalist · Visual"},
+    {name:"Soyeon", group:"TWOON", company:"NOVA Entertainment", image:"soyeon.jpg", page:"soyeon.html", positions:"Leader · Main Rapper · Lead Vocalist"},
+    {name:"Yeri", group:"TWOON", company:"NOVA Entertainment", image:"yeri.jpg", page:"yeri.html", positions:"Lead Vocalist · Sub Dancer"},
+    {name:"Yuqi", group:"TWOON", company:"NOVA Entertainment", image:"yuqi.jpg", page:"yuqi.html", positions:"Main Vocalist · Lead Dancer"},
+    {name:"Yeji", group:"TWOON", company:"NOVA Entertainment", image:"yeji.jpg", page:"yeji.html", positions:"Main Dancer · Lead Rapper · Lead Vocalist"}
 ];
