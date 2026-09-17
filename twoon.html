@@ -3,110 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TWOON — Musicverse</title>
+
+<title>TWOON — Musicverse Profiles</title>
 
 <style>
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #080808;
-    color: white;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f3f8;
+    color: #211c25;
 }
 
 header {
-    padding: 25px;
-    text-align: center;
-    background: #111;
-    border-bottom: 1px solid #333;
+    background: #111014;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 42px;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-header p {
-    color: #aaa;
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #c993e8;
+}
+
+.hero {
+    background: linear-gradient(135deg, #21152d, #6d3f91);
+    color: white;
+    padding: 70px 8%;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #eadcf1;
+    font-size: 17px;
 }
 
 .container {
     max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+    margin: 50px auto;
+    padding: 0 25px;
 }
 
-.hero {
-    text-align: center;
-    margin-bottom: 50px;
+.group-card {
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+    margin-bottom: 35px;
 }
 
-.hero h2 {
-    font-size: 34px;
+.group-card h2 {
+    color: #4d2863;
+    margin-bottom: 15px;
 }
 
-.hero p {
-    color: #bbb;
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.6;
+.group-card p {
+    color: #555;
+    line-height: 1.7;
 }
 
-.members {
+.info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.info-item {
+    background: #f8f4fa;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.info-item strong {
+    display: block;
+    color: #6d3f91;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.members-title {
+    font-size: 30px;
+    margin: 40px 0 25px;
+    color: #35213f;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-.member {
-    background: #151515;
-    border-radius: 15px;
-    overflow: hidden;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
+.member-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+    transition: transform .2s, box-shadow .2s;
 }
 
-.member:hover {
-    transform: translateY(-6px);
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
 }
 
-.member img {
+.member-card img {
     width: 100%;
-    height: 240px;
+    height: 300px;
     object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 18px;
 }
 
-.member-info {
-    padding: 15px;
+.member-card h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
 }
 
-.member-info h3 {
-    margin: 0 0 8px;
-    font-size: 20px;
+.member-card p {
+    color: #76558c;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-.member-info p {
-    margin: 0;
-    color: #aaa;
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    background: #6d3f91;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
     font-size: 14px;
 }
 
-.info {
-    margin-top: 50px;
-    background: #111;
+.button:hover {
+    background: #512d6d;
+}
+
+footer {
+    margin-top: 70px;
+    background: #111014;
+    color: #aaa;
+    text-align: center;
     padding: 25px;
-    border-radius: 15px;
+    font-size: 13px;
 }
 
-.info p {
-    color: #bbb;
-}
+@media (max-width: 800px) {
 
-a.back {
-    display: inline-block;
-    margin-top: 30px;
-    color: white;
-    text-decoration: none;
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .info-grid,
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
@@ -114,75 +201,120 @@ a.back {
 <body>
 
 <header>
-    <h1>TWOON</h1>
-    <p>NOVA Entertainment</p>
+
+    <div class="logo">MUSICVERSE PROFILES</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="index.html">Companies</a>
+        <a href="index.html">Rankings</a>
+    </nav>
+
 </header>
+
+<section class="hero">
+
+    <h1>TWOON</h1>
+    <p>5-member girl group · NOVA Entertainment</p>
+
+</section>
 
 <div class="container">
 
-    <section class="hero">
+    <div class="group-card">
+
         <h2>About TWOON</h2>
+
         <p>
-            TWOON is a five-member girl group under NOVA Entertainment.
-            The group debuted with <b>Like-OH-Ah</b>, combining strong
-            vocals, rap and powerful dance performances.
+            TWOON is a 5-member girl group under NOVA Entertainment.
+            The group is known for its strong vocal line, powerful rap
+            performances and impressive dance skills.
         </p>
-    </section>
 
-    <section class="members">
+        <div class="info-grid">
 
-        <a class="member" href="soojin.html">
-            <img src="soojin.jpg">
-            <div class="member-info">
-                <h3>Soojin</h3>
-                <p>Main Dancer · Lead Vocalist · Visual</p>
+            <div class="info-item">
+                <strong>Group</strong>
+                TWOON
             </div>
-        </a>
 
-        <a class="member" href="soyeon.html">
-            <img src="soyeon.jpg">
-            <div class="member-info">
-                <h3>Soyeon</h3>
-                <p>Leader · Main Rapper · Lead Vocalist</p>
+            <div class="info-item">
+                <strong>Company</strong>
+                NOVA Entertainment
             </div>
-        </a>
 
-        <a class="member" href="yeri.html">
-            <img src="yeri.jpg">
-            <div class="member-info">
-                <h3>Yeri</h3>
-                <p>Lead Vocalist · Sub Dancer</p>
+            <div class="info-item">
+                <strong>Members</strong>
+                5
             </div>
-        </a>
 
-        <a class="member" href="yuqi.html">
-            <img src="yuqi.jpg">
-            <div class="member-info">
-                <h3>Yuqi</h3>
-                <p>Main Vocalist · Lead Dancer</p>
+            <div class="info-item">
+                <strong>Debut Song</strong>
+                Like-OH-Ah
             </div>
-        </a>
 
-        <a class="member" href="yeji.html">
-            <img src="yeji.jpg">
-            <div class="member-info">
-                <h3>Yeji</h3>
-                <p>Main Dancer · Lead Rapper · Lead Vocalist</p>
+            <div class="info-item">
+                <strong>Fandom</strong>
+                —
             </div>
-        </a>
 
-    </section>
+            <div class="info-item">
+                <strong>Type</strong>
+                Girl Group
+            </div>
 
-    <section class="info">
-        <h2>Group Information</h2>
-        <p><b>Company:</b> NOVA Entertainment</p>
-        <p><b>Members:</b> 5</p>
-        <p><b>Debut:</b> Like-OH-Ah</p>
-    </section>
+        </div>
 
-    <a class="back" href="groups.html">← Back to Groups</a>
+    </div>
+
+    <h2 class="members-title">Members</h2>
+
+    <div class="member-grid">
+
+        <div class="member-card">
+            <img src="soojin.jpg" alt="Soojin">
+            <h3>Soojin</h3>
+            <p>Main Dancer · Lead Vocalist · Visual</p>
+            <a class="button" href="soojin.html">View Profile</a>
+        </div>
+
+        <div class="member-card">
+            <img src="soyeon.jpg" alt="Soyeon">
+            <h3>Soyeon</h3>
+            <p>Leader · Main Rapper · Lead Vocalist</p>
+            <a class="button" href="soyeon.html">View Profile</a>
+        </div>
+
+        <div class="member-card">
+            <img src="yeri.jpg" alt="Yeri">
+            <h3>Yeri</h3>
+            <p>Lead Vocalist · Sub Dancer</p>
+            <a class="button" href="yeri.html">View Profile</a>
+        </div>
+
+        <div class="member-card">
+            <img src="yuqi.jpg" alt="Yuqi">
+            <h3>Yuqi</h3>
+            <p>Main Vocalist · Lead Dancer</p>
+            <a class="button" href="yuqi.html">View Profile</a>
+        </div>
+
+        <div class="member-card">
+            <img src="yeji.jpg" alt="Yeji">
+            <h3>Yeji</h3>
+            <p>Main Dancer · Lead Rapper · Lead Vocalist</p>
+            <a class="button" href="yeji.html">View Profile</a>
+        </div>
+
+    </div>
 
 </div>
+
+<footer>
+    © 2026 Musicverse Profiles · Fictional Musicverse Database
+</footer>
 
 </body>
 </html>
