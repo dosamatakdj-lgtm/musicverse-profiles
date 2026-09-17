@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ONCE — Musicverse Profiles</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f2f7;
+    color: #21152d;
+}
+
+header {
+    background: #21152d;
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #21152d, #6d3f91);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 50px auto;
+}
+
+.group-info {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 45px;
+    box-shadow: 0 5px 20px rgba(33,21,45,0.08);
+}
+
+.group-info h2 {
+    margin-bottom: 15px;
+}
+
+.group-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.info-box {
+    background: #f5f2f7;
+    padding: 18px;
+    border-radius: 14px;
+}
+
+.info-box strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.members-title {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.members {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.member-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #21152d;
+    box-shadow: 0 5px 18px rgba(33,21,45,0.08);
+    transition: 0.2s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 18px;
+}
+
+.member-info h3 {
+    margin-bottom: 7px;
+}
+
+.member-info p {
+    color: #777;
+    font-size: 14px;
+}
+
+footer {
+    background: #21152d;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 70px;
+}
+
+footer p {
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+@media (max-width: 850px) {
+
+    .members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .members {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        MUSICVERSE PROFILES
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="#">Companies</a>
+        <a href="rankings.html">Rankings</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>ONCE</h1>
+
+    <p>MDX Entertainment · 5 Members</p>
+
+</section>
+
+
+<main class="container">
+
+    <section class="group-info">
+
+        <h2>About ONCE</h2>
+
+        <p>
+            ONCE is a five-member girl group under MDX Entertainment.
+            The group debuted with <strong>One Spark</strong> and quickly
+            became one of the notable groups in the Musicverse.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <strong>Company</strong>
+                MDX Entertainment
+            </div>
+
+            <div class="info-box">
+                <strong>Members</strong>
+                5
+            </div>
+
+            <div class="info-box">
+                <strong>Debut</strong>
+                One Spark
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <h2 class="members-title">Members</h2>
+
+
+    <section class="members">
+
+        <a class="member-card" href="sana.html">
+
+            <img src="sana.jpg">
+
+            <div class="member-info">
+                <h3>Sana</h3>
+                <p>ONCE · MDX Entertainment</p>
+            </div>
+
+        </a>
+
+
+        <a class="member-card" href="jihyo.html">
+
+            <img src="jihyo.jpg">
+
+            <div class="member-info">
+                <h3>Jihyo</h3>
+                <p>ONCE · MDX Entertainment</p>
+            </div>
+
+        </a>
+
+
+        <a class="member-card" href="dahyun.html">
+
+            <img src="dahyun.jpg">
+
+            <div class="member-info">
+                <h3>Dahyun</h3>
+                <p>ONCE · MDX Entertainment</p>
+            </div>
+
+        </a>
+
+
+        <a class="member-card" href="chaeyoung.html">
+
+            <img src="chaeyoung.jpg">
+
+            <div class="member-info">
+                <h3>Chaeyoung</h3>
+                <p>ONCE · MDX Entertainment</p>
+            </div>
+
+        </a>
+
+
+        <a class="member-card" href="tzuyu.html">
+
+            <img src="tzuyu.jpg">
+
+            <div class="member-info">
+                <h3>Tzuyu</h3>
+                <p>ONCE · MDX Entertainment</p>
+            </div>
+
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Musicverse Profiles · Fictional Musicverse
+    </p>
+
+</footer>
+
+</body>
+</html>
