@@ -34,12 +34,11 @@ header{
     top:0;
     z-index:1000;
 
-    background:rgba(17,16,20,.94);
-    backdrop-filter:blur(14px);
+    background:rgba(17,16,20,.96);
+    backdrop-filter:blur(18px);
 
     color:white;
-
-    padding:18px 7%;
+    padding:17px 7%;
 
     display:flex;
     justify-content:space-between;
@@ -61,21 +60,16 @@ nav{
 }
 
 nav a{
-    color:#ddd;
+    color:#d8d3da;
     text-decoration:none;
-
-    margin-left:24px;
-
+    margin-left:23px;
     font-size:14px;
-
     transition:.2s;
 }
 
 nav a:hover{
-    color:#c993e8;
+    color:#d49ae9;
 }
-
-/* SEARCH */
 
 .header-search{
     position:relative;
@@ -83,29 +77,28 @@ nav a:hover{
 }
 
 #search{
-    width:170px;
+    width:180px;
 
-    background:#242128;
-    border:1px solid #3b3440;
+    background:#252129;
+    border:1px solid #403746;
 
     color:white;
 
-    padding:9px 13px;
+    padding:9px 14px;
 
-    border-radius:20px;
-
+    border-radius:22px;
     outline:none;
 
     transition:.25s;
 }
 
 #search:focus{
-    width:220px;
-    border-color:#9b63bd;
+    width:235px;
+    border-color:#a96ac7;
 }
 
 #search::placeholder{
-    color:#aaa;
+    color:#999;
 }
 
 /* =========================
@@ -113,8 +106,7 @@ nav a:hover{
 ========================= */
 
 .hero{
-    min-height:620px;
-
+    min-height:650px;
     position:relative;
 
     display:flex;
@@ -122,7 +114,7 @@ nav a:hover{
 
     overflow:hidden;
 
-    background:#18131d;
+    background:#17121c;
 }
 
 .hero-image{
@@ -134,7 +126,14 @@ nav a:hover{
 
     object-fit:cover;
 
-    opacity:.55;
+    opacity:.58;
+
+    animation:heroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom{
+    from{transform:scale(1);}
+    to{transform:scale(1.04);}
 }
 
 .hero-overlay{
@@ -144,9 +143,9 @@ nav a:hover{
     background:
         linear-gradient(
             90deg,
-            rgba(20,13,26,.96) 0%,
-            rgba(35,20,45,.78) 45%,
-            rgba(35,20,45,.25) 100%
+            rgba(18,10,25,.97) 0%,
+            rgba(29,16,38,.78) 42%,
+            rgba(29,16,38,.25) 100%
         );
 }
 
@@ -154,68 +153,83 @@ nav a:hover{
     position:relative;
     z-index:2;
 
-    max-width:1100px;
-
+    max-width:1200px;
     width:100%;
 
     margin:auto;
 
-    padding:80px 7%;
+    padding:90px 7%;
 }
 
 .hero-badge{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
 
     padding:8px 14px;
 
-    border:1px solid rgba(255,255,255,.25);
+    border:1px solid rgba(255,255,255,.22);
 
     background:rgba(255,255,255,.08);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
     border-radius:30px;
 
-    font-size:12px;
+    font-size:11px;
+    font-weight:bold;
 
     letter-spacing:2px;
 
-    margin-bottom:22px;
+    margin-bottom:24px;
 
     color:#eadcf1;
+}
+
+.hero-badge:before{
+    content:"";
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#d89be9;
+
+    margin-right:8px;
+
+    box-shadow:0 0 12px #d89be9;
 }
 
 .hero h1{
     color:white;
 
-    font-size:70px;
+    font-size:76px;
+    line-height:.98;
 
-    line-height:1;
+    max-width:760px;
 
-    max-width:700px;
+    margin-bottom:25px;
 
-    margin-bottom:22px;
+    letter-spacing:-2px;
 }
 
 .hero h1 span{
-    color:#d39bea;
+    color:#d79bea;
 }
 
 .hero p{
     color:#ddd0e3;
 
     font-size:18px;
-
     line-height:1.7;
 
-    max-width:600px;
+    max-width:620px;
 
-    margin-bottom:32px;
+    margin-bottom:34px;
 }
 
 .hero-buttons{
     display:flex;
-    gap:14px;
+    gap:13px;
     flex-wrap:wrap;
 }
 
@@ -229,34 +243,36 @@ nav a:hover{
     text-decoration:none;
 
     font-size:14px;
-
     font-weight:bold;
 
     transition:.25s;
 }
 
 .hero-button.primary{
-    background:#8c55ad;
+    background:#8d55ad;
     color:white;
+
+    box-shadow:0 10px 25px rgba(141,85,173,.25);
 }
 
 .hero-button.primary:hover{
-    background:#a76bc9;
-    transform:translateY(-2px);
+    background:#aa6acb;
+    transform:translateY(-3px);
 }
 
 .hero-button.secondary{
-    background:rgba(255,255,255,.1);
+    background:rgba(255,255,255,.09);
 
     color:white;
 
     border:1px solid rgba(255,255,255,.2);
 
-    backdrop-filter:blur(8px);
+    backdrop-filter:blur(10px);
 }
 
 .hero-button.secondary:hover{
-    background:rgba(255,255,255,.18);
+    background:rgba(255,255,255,.17);
+    transform:translateY(-3px);
 }
 
 /* =========================
@@ -266,10 +282,9 @@ nav a:hover{
 .ticker{
     background:#111014;
 
-    color:#d7afdF;
+    color:#d9a9e8;
 
     overflow:hidden;
-
     white-space:nowrap;
 
     border-top:1px solid #29242d;
@@ -279,23 +294,22 @@ nav a:hover{
 .ticker-track{
     display:inline-block;
 
-    padding:15px 0;
+    padding:14px 0;
 
-    animation:ticker 25s linear infinite;
+    animation:ticker 28s linear infinite;
 }
 
 .ticker span{
-    margin:0 35px;
+    margin:0 34px;
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:bold;
 
-    letter-spacing:1.5px;
+    letter-spacing:1.6px;
 }
 
 @keyframes ticker{
-
     0%{
         transform:translateX(0);
     }
@@ -303,7 +317,6 @@ nav a:hover{
     100%{
         transform:translateX(-50%);
     }
-
 }
 
 /* =========================
@@ -315,21 +328,21 @@ nav a:hover{
 
     margin:auto;
 
-    padding:75px 25px;
+    padding:78px 25px;
 }
 
 .section-heading{
-    margin-bottom:35px;
+    margin-bottom:32px;
 }
 
 .section-heading .eyebrow{
-    color:#9a63b7;
+    color:#9860b6;
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:bold;
 
-    letter-spacing:2px;
+    letter-spacing:2.2px;
 
     text-transform:uppercase;
 
@@ -337,11 +350,13 @@ nav a:hover{
 }
 
 .section-heading h2{
-    font-size:38px;
+    font-size:40px;
 
     color:#302034;
 
     margin-bottom:10px;
+
+    letter-spacing:-.7px;
 }
 
 .section-heading p{
@@ -350,6 +365,8 @@ nav a:hover{
     max-width:650px;
 
     line-height:1.6;
+
+    font-size:15px;
 }
 
 /* =========================
@@ -361,21 +378,21 @@ nav a:hover{
 
     grid-template-columns:1.25fr 1fr;
 
-    gap:25px;
+    gap:24px;
 }
 
 .featured-card{
     position:relative;
 
-    min-height:390px;
+    min-height:400px;
 
-    border-radius:25px;
+    border-radius:26px;
 
     overflow:hidden;
 
     background:#21152d;
 
-    box-shadow:0 15px 45px rgba(35,20,45,.14);
+    box-shadow:0 16px 45px rgba(35,20,45,.13);
 
     transition:.3s;
 }
@@ -383,7 +400,7 @@ nav a:hover{
 .featured-card:hover{
     transform:translateY(-7px);
 
-    box-shadow:0 22px 55px rgba(35,20,45,.22);
+    box-shadow:0 24px 60px rgba(35,20,45,.22);
 }
 
 .featured-card img{
@@ -396,23 +413,22 @@ nav a:hover{
 
     object-fit:cover;
 
-    transition:.5s;
+    transition:.6s;
 }
 
 .featured-card:hover img{
-    transform:scale(1.05);
+    transform:scale(1.06);
 }
 
 .featured-overlay{
     position:absolute;
-
     inset:0;
 
     background:
         linear-gradient(
             0deg,
-            rgba(20,10,27,.95),
-            rgba(20,10,27,.1) 75%
+            rgba(16,8,22,.97),
+            rgba(16,8,22,.08) 78%
         );
 }
 
@@ -431,9 +447,9 @@ nav a:hover{
 .featured-tag{
     display:inline-block;
 
-    background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,.1);
 
-    border:1px solid rgba(255,255,255,.2);
+    border:1px solid rgba(255,255,255,.18);
 
     backdrop-filter:blur(8px);
 
@@ -441,13 +457,15 @@ nav a:hover{
 
     border-radius:20px;
 
-    font-size:11px;
+    font-size:10px;
+
+    letter-spacing:1px;
 
     margin-bottom:12px;
 }
 
 .featured-content h3{
-    font-size:34px;
+    font-size:36px;
 
     margin-bottom:7px;
 }
@@ -458,8 +476,6 @@ nav a:hover{
     font-size:14px;
 
     line-height:1.5;
-
-    max-width:550px;
 }
 
 .featured-button{
@@ -472,7 +488,6 @@ nav a:hover{
     text-decoration:none;
 
     font-size:13px;
-
     font-weight:bold;
 
     padding:10px 15px;
@@ -485,19 +500,19 @@ nav a:hover{
 }
 
 .featured-button:hover{
-    background:#a96bc9;
+    background:#aa6bc9;
 }
 
 /* =========================
-   GIF SPOTLIGHT
+   SPOTLIGHT
 ========================= */
 
 .gif-section{
-    background:#17131b;
+    background:#151219;
 
     color:white;
 
-    padding:80px 0;
+    padding:82px 0;
 }
 
 .gif-section .section-heading h2{
@@ -511,36 +526,36 @@ nav a:hover{
 .gif-grid{
     display:grid;
 
-    grid-template-columns:1.4fr .8fr 1.4fr;
+    grid-template-columns:1.35fr .8fr 1.35fr;
 
-    gap:22px;
+    gap:20px;
 }
 
 .gif-card{
     position:relative;
 
-    border-radius:22px;
+    border-radius:23px;
 
     overflow:hidden;
 
     background:#241d29;
 
-    min-height:280px;
+    min-height:290px;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    box-shadow:0 18px 45px rgba(0,0,0,.32);
 
     transition:.3s;
 }
 
 .gif-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-7px);
 }
 
 .gif-card img{
     width:100%;
     height:100%;
 
-    min-height:280px;
+    min-height:290px;
 
     object-fit:cover;
 
@@ -549,19 +564,17 @@ nav a:hover{
 
 .gif-card.square img{
     aspect-ratio:1/1;
-
     object-fit:cover;
 }
 
 .gif-overlay{
     position:absolute;
-
     inset:0;
 
     background:
         linear-gradient(
             0deg,
-            rgba(0,0,0,.82),
+            rgba(0,0,0,.86),
             transparent 65%
         );
 }
@@ -577,18 +590,17 @@ nav a:hover{
 }
 
 .gif-info small{
-    color:#d7a9e8;
+    color:#d6a0e8;
 
-    font-size:11px;
+    font-size:10px;
 
-    letter-spacing:1px;
+    letter-spacing:1.5px;
 
     text-transform:uppercase;
 }
 
 .gif-info h3{
     font-size:25px;
-
     margin-top:5px;
 }
 
@@ -607,11 +619,11 @@ nav a:hover{
 .release-card{
     background:white;
 
-    border-radius:22px;
+    border-radius:23px;
 
     overflow:hidden;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.07);
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
 
     transition:.3s;
 }
@@ -625,7 +637,7 @@ nav a:hover{
 .release-card img{
     width:100%;
 
-    height:270px;
+    height:275px;
 
     object-fit:cover;
 
@@ -636,18 +648,18 @@ nav a:hover{
     padding:25px;
 }
 
-.release-info .release-label{
+.release-label{
     color:#9560b0;
 
-    font-size:11px;
+    font-size:10px;
 
-    letter-spacing:1.5px;
+    letter-spacing:1.6px;
 
     font-weight:bold;
 }
 
 .release-info h3{
-    font-size:26px;
+    font-size:27px;
 
     margin:8px 0;
 }
@@ -655,114 +667,180 @@ nav a:hover{
 .release-info p{
     color:#777;
 
-    line-height:1.5;
+    line-height:1.55;
 
     font-size:14px;
 }
 
 /* =========================
-   NEWS
+   LATEST MOMENTS
 ========================= */
 
-.news-grid{
-    display:grid;
-
-    grid-template-columns:1.3fr .7fr;
-
-    gap:25px;
+.moments-section{
+    background:#eee8f1;
 }
 
-.news-main{
-    background:white;
+.moments-layout{
+    display:grid;
 
-    border-radius:22px;
+    grid-template-columns:.8fr 1.2fr;
+
+    gap:25px;
+
+    align-items:stretch;
+}
+
+.moment-feature{
+    background:#21152d;
+
+    border-radius:25px;
 
     overflow:hidden;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    position:relative;
+
+    min-height:500px;
+
+    color:white;
+
+    box-shadow:0 15px 40px rgba(40,20,50,.12);
 }
 
-.news-main img{
-    width:100%;
+.moment-feature img{
+    position:absolute;
 
-    height:330px;
+    inset:0;
+
+    width:100%;
+    height:100%;
 
     object-fit:cover;
+
+    object-position:center;
 }
 
-.news-main-content{
-    padding:28px;
+.moment-feature:after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(20,9,27,.96),
+            rgba(20,9,27,.05) 70%
+        );
 }
 
-.news-category{
-    color:#9a63b7;
+.moment-content{
+    position:absolute;
 
-    font-size:11px;
+    z-index:2;
 
-    letter-spacing:1.5px;
+    left:0;
+    right:0;
+    bottom:0;
 
-    font-weight:bold;
+    padding:30px;
 }
 
-.news-main h3{
-    font-size:29px;
-
-    margin:10px 0;
-
-    line-height:1.2;
-}
-
-.news-main p{
-    color:#777;
-
-    line-height:1.6;
-}
-
-.news-side{
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
-}
-
-.news-small{
-    background:white;
-
-    border-radius:18px;
-
-    padding:22px;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
-
-    transition:.25s;
-}
-
-.news-small:hover{
-    transform:translateX(5px);
-}
-
-.news-small span{
-    color:#9a63b7;
+.moment-label{
+    color:#d4a0e5;
 
     font-size:10px;
 
     font-weight:bold;
 
-    letter-spacing:1px;
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
 }
 
-.news-small h4{
-    margin-top:8px;
+.moment-content h3{
+    font-size:31px;
 
-    font-size:17px;
+    line-height:1.1;
 
-    line-height:1.35;
+    margin:9px 0;
+}
+
+.moment-content p{
+    color:#d9d1dd;
+
+    font-size:14px;
+
+    line-height:1.5;
+}
+
+.moment-list{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+}
+
+.moment-card{
+    background:white;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    transition:.25s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+}
+
+.moment-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.1);
+}
+
+.moment-card span{
+    color:#9860b6;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+}
+
+.moment-card h4{
+    font-size:19px;
+
+    line-height:1.3;
+
+    margin:12px 0;
+}
+
+.moment-card p{
+    color:#777;
+
+    font-size:13px;
+
+    line-height:1.5;
 }
 
 /* =========================
-   TRENDING IDOLS
+   TRENDING
 ========================= */
+
+.trending-section{
+    background:#fff;
+}
 
 .idol-grid{
     display:grid;
@@ -773,13 +851,15 @@ nav a:hover{
 }
 
 .idol-card{
-    background:white;
+    background:#faf8fb;
+
+    border:1px solid #eee8f0;
 
     border-radius:18px;
 
     overflow:hidden;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    box-shadow:0 7px 22px rgba(0,0,0,.045);
 
     transition:.25s;
 
@@ -791,7 +871,7 @@ nav a:hover{
 .idol-card:hover{
     transform:translateY(-7px);
 
-    box-shadow:0 16px 35px rgba(0,0,0,.12);
+    box-shadow:0 16px 35px rgba(0,0,0,.11);
 }
 
 .idol-card img{
@@ -815,9 +895,13 @@ nav a:hover{
 }
 
 .idol-info p{
-    font-size:11px;
+    font-size:10px;
 
     color:#8a6d95;
+
+    font-weight:bold;
+
+    letter-spacing:.5px;
 }
 
 /* =========================
@@ -829,7 +913,7 @@ nav a:hover{
 
     color:white;
 
-    padding:70px 0;
+    padding:72px 0;
 }
 
 .stats-grid{
@@ -849,17 +933,17 @@ nav a:hover{
 .stat{
     text-align:center;
 
-    padding:25px;
+    padding:26px;
 
     border-radius:20px;
 
-    background:rgba(255,255,255,.06);
+    background:rgba(255,255,255,.055);
 
     border:1px solid rgba(255,255,255,.08);
 }
 
 .stat-number{
-    font-size:42px;
+    font-size:43px;
 
     font-weight:bold;
 
@@ -871,7 +955,7 @@ nav a:hover{
 .stat-label{
     color:#bbb;
 
-    font-size:12px;
+    font-size:11px;
 
     letter-spacing:1px;
 
@@ -893,11 +977,11 @@ nav a:hover{
 .explore-card{
     background:white;
 
-    border-radius:20px;
+    border-radius:21px;
 
     padding:30px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    box-shadow:0 10px 30px rgba(0,0,0,.055);
 
     transition:.25s;
 
@@ -917,6 +1001,7 @@ nav a:hover{
     height:48px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -946,7 +1031,7 @@ nav a:hover{
 }
 
 /* =========================
-   FINAL CTA
+   CTA
 ========================= */
 
 .cta{
@@ -971,7 +1056,7 @@ nav a:hover{
 
     border-radius:28px;
 
-    padding:55px;
+    padding:58px;
 
     color:white;
 
@@ -983,28 +1068,30 @@ nav a:hover{
 
     position:absolute;
 
-    width:250px;
-    height:250px;
+    width:270px;
+    height:270px;
 
     border-radius:50%;
 
     background:rgba(255,255,255,.06);
 
-    right:-80px;
-    top:-100px;
+    right:-90px;
+    top:-110px;
 }
 
 .cta-box h2{
     position:relative;
+
     z-index:2;
 
-    font-size:34px;
+    font-size:35px;
 
     margin-bottom:10px;
 }
 
 .cta-box p{
     position:relative;
+
     z-index:2;
 
     color:#e7d9ec;
@@ -1025,7 +1112,7 @@ footer{
 
     color:#999;
 
-    padding:40px 7%;
+    padding:42px 7%;
 
     text-align:center;
 
@@ -1077,7 +1164,7 @@ footer p{
 @media(max-width:1000px){
 
     .hero h1{
-        font-size:55px;
+        font-size:57px;
     }
 
     .idol-grid{
@@ -1090,6 +1177,10 @@ footer p{
 
     .gif-card:last-child{
         grid-column:1/-1;
+    }
+
+    .moments-layout{
+        grid-template-columns:1fr;
     }
 
 }
@@ -1125,7 +1216,7 @@ footer p{
     }
 
     .hero{
-        min-height:560px;
+        min-height:570px;
     }
 
     .hero-content{
@@ -1133,17 +1224,12 @@ footer p{
     }
 
     .hero h1{
-        font-size:46px;
+        font-size:47px;
     }
 
     .featured-grid,
-    .news-grid,
     .release-grid{
         grid-template-columns:1fr;
-    }
-
-    .featured-card{
-        min-height:350px;
     }
 
     .stats-grid{
@@ -1154,12 +1240,16 @@ footer p{
         grid-template-columns:1fr;
     }
 
+    .moment-list{
+        grid-template-columns:1fr;
+    }
+
 }
 
 @media(max-width:550px){
 
     .hero h1{
-        font-size:38px;
+        font-size:39px;
     }
 
     .hero p{
@@ -1167,7 +1257,7 @@ footer p{
     }
 
     .section-heading h2{
-        font-size:30px;
+        font-size:31px;
     }
 
     .gif-grid{
@@ -1226,7 +1316,7 @@ footer p{
 
         <a href="index.html">Companies</a>
 
-        <a href="index.html">Rankings</a>
+        <a href="rankings.html">Rankings</a>
 
         <div class="header-search">
 
@@ -1310,12 +1400,12 @@ footer p{
         <span>✦ 10 GROUPS</span>
         <span>✦ 63 IDOLS</span>
         <span>✦ 6 COMPANIES</span>
-        <span>✦ EXPLORE THE DATABASE</span>
+        <span>✦ NEW PROFILES</span>
         <span>✦ MUSICVERSE PROFILES</span>
         <span>✦ 10 GROUPS</span>
         <span>✦ 63 IDOLS</span>
         <span>✦ 6 COMPANIES</span>
-        <span>✦ EXPLORE THE DATABASE</span>
+        <span>✦ NEW PROFILES</span>
 
     </div>
 
@@ -1339,17 +1429,13 @@ footer p{
         </h2>
 
         <p>
-            Discover some of the biggest names currently
-            shaping the Musicverse.
+            Meet some of the groups currently defining
+            the Musicverse.
         </p>
 
     </div>
 
-
     <div class="featured-grid">
-
-
-        <!-- ELLEVEN -->
 
         <div class="featured-card">
 
@@ -1385,8 +1471,6 @@ footer p{
 
         </div>
 
-
-        <!-- PINKPUNK -->
 
         <div class="featured-card">
 
@@ -1446,17 +1530,13 @@ footer p{
             </h2>
 
             <p>
-                A closer look at some of the idols currently
-                turning heads across the database.
+                The idols currently catching attention across
+                the Musicverse.
             </p>
 
         </div>
 
-
         <div class="gif-grid">
-
-
-            <!-- JENNIE -->
 
             <div class="gif-card">
 
@@ -1482,12 +1562,10 @@ footer p{
             </div>
 
 
-            <!-- CHIQUITA -->
-
             <div class="gif-card square">
 
                 <img
-                    <img src="canny.giff.gif" alt="Chiquita">
+                    src="canny.giff.gif"
                     alt="Chiquita"
                 >
 
@@ -1507,8 +1585,6 @@ footer p{
 
             </div>
 
-
-            <!-- SOOJIN -->
 
             <div class="gif-card">
 
@@ -1541,7 +1617,7 @@ footer p{
 
 
 <!-- =========================
-     MUSICVERSE RELEASES
+     RELEASES
 ========================= -->
 
 <section class="container">
@@ -1557,17 +1633,13 @@ footer p{
         </h2>
 
         <p>
-            Releases connected to the fictional groups and
-            stories of the Musicverse.
+            Discover releases connected to the fictional
+            groups inside the Musicverse.
         </p>
 
     </div>
 
-
     <div class="release-grid">
-
-
-        <!-- LION -->
 
         <div class="release-card">
 
@@ -1595,8 +1667,6 @@ footer p{
 
         </div>
 
-
-        <!-- UNCHILD -->
 
         <div class="release-card">
 
@@ -1630,121 +1700,139 @@ footer p{
 
 
 <!-- =========================
-     NEWS
+     LATEST MUSICVERSE MOMENTS
 ========================= -->
 
-<section class="container">
+<section class="moments-section">
 
-    <div class="section-heading">
+    <div class="container">
 
-        <div class="eyebrow">
-            News
-        </div>
+        <div class="section-heading">
 
-        <h2>
-            Musicverse News
-        </h2>
-
-        <p>
-            Highlights, appearances and moments from across
-            the Musicverse.
-        </p>
-
-    </div>
-
-
-    <div class="news-grid">
-
-
-        <!-- MAIN NEWS -->
-
-        <article class="news-main">
-
-            <img
-                src="rorahyeon.jpg"
-                alt="Rora and Ahyeon"
-            >
-
-            <div class="news-main-content">
-
-                <div class="news-category">
-                    FEATURE
-                </div>
-
-                <h3>
-                    Rora & Ahyeon step into the spotlight
-                </h3>
-
-                <p>
-                    ELLEVEN members Rora and Ahyeon appear
-                    together in a major fashion moment,
-                    becoming one of the latest highlights
-                    across the Musicverse.
-                </p>
-
+            <div class="eyebrow">
+                Latest
             </div>
 
-        </article>
+            <h2>
+                Latest Musicverse Moments
+            </h2>
+
+            <p>
+                Fashion moments, group activity and stories
+                happening across the database.
+            </p>
+
+        </div>
 
 
-        <!-- SIDE NEWS -->
-
-        <div class="news-side">
-
-            <article class="news-small">
-
-                <span>
-                    MUSICVERSE
-                </span>
-
-                <h4>
-                    ELLEVEN continues to dominate the
-                    Musicverse spotlight.
-                </h4>
-
-            </article>
+        <div class="moments-layout">
 
 
-            <article class="news-small">
+            <!-- FEATURE -->
 
-                <span>
-                    PINKPUNK
-                </span>
+            <article class="moment-feature">
 
-                <h4>
-                    PINKPUNK remains one of the most
-                    recognizable groups in the database.
-                </h4>
+                <img
+                    src="rorahyeon.jpg"
+                    alt="Rora and Ahyeon"
+                >
 
-            </article>
+                <div class="moment-content">
 
+                    <div class="moment-label">
+                        ELLEVEN · FASHION
+                    </div>
 
-            <article class="news-small">
+                    <h3>
+                        Rora & Ahyeon step into the spotlight
+                    </h3>
 
-                <span>
-                    TWOON
-                </span>
+                    <p>
+                        The two ELLEVEN members appear together
+                        in a major fashion moment.
+                    </p>
 
-                <h4>
-                    TWOON's members continue expanding
-                    their individual profiles.
-                </h4>
+                </div>
 
             </article>
 
 
-            <article class="news-small">
+            <!-- SMALL MOMENTS -->
 
-                <span>
-                    DATABASE
-                </span>
+            <div class="moment-list">
 
-                <h4>
-                    New idols and groups are continually
-                    being added to Musicverse Profiles.
-                </h4>
+                <article class="moment-card">
 
-            </article>
+                    <span>
+                        ELLEVEN
+                    </span>
+
+                    <h4>
+                        ELLEVEN continues dominating the Musicverse spotlight.
+                    </h4>
+
+                    <p>
+                        The group's members remain among the most
+                        discussed idols in the database.
+                    </p>
+
+                </article>
+
+
+                <article class="moment-card">
+
+                    <span>
+                        PINKPUNK
+                    </span>
+
+                    <h4>
+                        PINKPUNK remains one of Musicverse's biggest groups.
+                    </h4>
+
+                    <p>
+                        The seven-member group continues attracting
+                        attention across the universe.
+                    </p>
+
+                </article>
+
+
+                <article class="moment-card">
+
+                    <span>
+                        TWOON
+                    </span>
+
+                    <h4>
+                        TWOON's individual profiles keep growing.
+                    </h4>
+
+                    <p>
+                        Explore the members and their individual
+                        positions inside the group.
+                    </p>
+
+                </article>
+
+
+                <article class="moment-card">
+
+                    <span>
+                        DATABASE
+                    </span>
+
+                    <h4>
+                        The Musicverse keeps expanding.
+                    </h4>
+
+                    <p>
+                        New idols, groups and stories continue
+                        being added to the database.
+                    </p>
+
+                </article>
+
+            </div>
 
         </div>
 
@@ -1757,7 +1845,7 @@ footer p{
      TRENDING IDOLS
 ========================= -->
 
-<section class="container">
+<section class="container trending-section">
 
     <div class="section-heading">
 
@@ -1771,7 +1859,7 @@ footer p{
 
         <p>
             Explore some of the idols currently featured
-            throughout the Musicverse.
+            throughout Musicverse Profiles.
         </p>
 
     </div>
@@ -1779,11 +1867,7 @@ footer p{
 
     <div class="idol-grid">
 
-
-        <a
-            href="lisa.html"
-            class="idol-card"
-        >
+        <a href="lisa.html" class="idol-card">
 
             <img
                 src="lisa.jpg"
@@ -1801,10 +1885,7 @@ footer p{
         </a>
 
 
-        <a
-            href="pharita.html"
-            class="idol-card"
-        >
+        <a href="pharita.html" class="idol-card">
 
             <img
                 src="pharita.jpg"
@@ -1822,10 +1903,7 @@ footer p{
         </a>
 
 
-        <a
-            href="rami.html"
-            class="idol-card"
-        >
+        <a href="rami.html" class="idol-card">
 
             <img
                 src="rami.jpg"
@@ -1843,10 +1921,7 @@ footer p{
         </a>
 
 
-        <a
-            href="miyeon.html"
-            class="idol-card"
-        >
+        <a href="miyeon.html" class="idol-card">
 
             <img
                 src="miyeon.jpg"
@@ -1864,10 +1939,7 @@ footer p{
         </a>
 
 
-        <a
-            href="rora.html"
-            class="idol-card"
-        >
+        <a href="rora.html" class="idol-card">
 
             <img
                 src="rora.jpg"
@@ -1885,10 +1957,7 @@ footer p{
         </a>
 
 
-        <a
-            href="jennie.html"
-            class="idol-card"
-        >
+        <a href="jennie.html" class="idol-card">
 
             <img
                 src="jennie.jpg"
@@ -1999,11 +2068,7 @@ footer p{
 
     <div class="explore-grid">
 
-
-        <a
-            href="groups.html"
-            class="explore-card"
-        >
+        <a href="groups.html" class="explore-card">
 
             <div class="explore-icon">
                 ♫
@@ -2021,10 +2086,7 @@ footer p{
         </a>
 
 
-        <a
-            href="idols.html"
-            class="explore-card"
-        >
+        <a href="idols.html" class="explore-card">
 
             <div class="explore-icon">
                 ★
@@ -2035,17 +2097,14 @@ footer p{
             </h3>
 
             <p>
-                Browse the complete idol database and find
+                Browse the complete idol database and discover
                 individual profiles.
             </p>
 
         </a>
 
 
-        <a
-            href="rankings.html"
-            class="explore-card"
-        >
+        <a href="rankings.html" class="explore-card">
 
             <div class="explore-icon">
                 ↑
