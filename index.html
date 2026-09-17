@@ -1,457 +1,2145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Musicverse — K-Pop Database</title>
+
+<title>Musicverse Profiles</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f2f7;
-color:#211c25;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f1f7;
+    color:#211c25;
 }
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-background:#17131c;
-color:white;
-height:76px;
-display:flex;
-align-items:center;
-padding:0 6%;
-gap:35px;
-position:sticky;
-top:0;
-z-index:100;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(17,16,20,.94);
+    backdrop-filter:blur(14px);
+
+    color:white;
+
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
+
 .logo{
-font-size:24px;
-font-weight:900;
-letter-spacing:2px;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
+    white-space:nowrap;
 }
+
 nav{
-display:flex;
-gap:25px;
-align-items:center;
-margin-left:auto;
+    display:flex;
+    align-items:center;
 }
+
 nav a{
-color:#ddd;
-text-decoration:none;
-font-size:14px;
-font-weight:bold;
+    color:#ddd;
+    text-decoration:none;
+
+    margin-left:24px;
+
+    font-size:14px;
+
+    transition:.2s;
 }
-nav a:hover{color:white}
-.search{
-background:#29242f;
-border:1px solid #494151;
-border-radius:20px;
-padding:10px 16px;
-color:white;
-outline:none;
-width:190px;
+
+nav a:hover{
+    color:#c993e8;
 }
+
+/* SEARCH */
+
+.header-search{
+    position:relative;
+    margin-left:25px;
+}
+
+#search{
+    width:170px;
+
+    background:#242128;
+    border:1px solid #3b3440;
+
+    color:white;
+
+    padding:9px 13px;
+
+    border-radius:20px;
+
+    outline:none;
+
+    transition:.25s;
+}
+
+#search:focus{
+    width:220px;
+    border-color:#9b63bd;
+}
+
+#search::placeholder{
+    color:#aaa;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-min-height:600px;
-background:
-linear-gradient(90deg,rgba(20,15,27,.9),rgba(20,15,27,.25)),
-url("herobanner.jpg") center/cover;
-display:flex;
-align-items:center;
-padding:80px 8%;
-color:white;
+    min-height:620px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#18131d;
 }
-.hero-content{max-width:650px}
-.hero small{
-letter-spacing:4px;
-font-weight:bold;
-color:#d6a8ff;
+
+.hero-image{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:.55;
 }
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20,13,26,.96) 0%,
+            rgba(35,20,45,.78) 45%,
+            rgba(35,20,45,.25) 100%
+        );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:1100px;
+
+    width:100%;
+
+    margin:auto;
+
+    padding:80px 7%;
+}
+
+.hero-badge{
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    margin-bottom:22px;
+
+    color:#eadcf1;
+}
+
 .hero h1{
-font-size:72px;
-line-height:.95;
-margin:18px 0;
+    color:white;
+
+    font-size:70px;
+
+    line-height:1;
+
+    max-width:700px;
+
+    margin-bottom:22px;
 }
+
+.hero h1 span{
+    color:#d39bea;
+}
+
 .hero p{
-font-size:18px;
-line-height:1.7;
-color:#ddd;
-max-width:550px;
+    color:#ddd0e3;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    max-width:600px;
+
+    margin-bottom:32px;
 }
-.button{
-display:inline-block;
-margin-top:30px;
-padding:14px 25px;
-border-radius:30px;
-background:white;
-color:#211c25;
-text-decoration:none;
-font-weight:bold;
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
 }
+
+.hero-button{
+    display:inline-block;
+
+    padding:13px 22px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.hero-button.primary{
+    background:#8c55ad;
+    color:white;
+}
+
+.hero-button.primary:hover{
+    background:#a76bc9;
+    transform:translateY(-2px);
+}
+
+.hero-button.secondary{
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(8px);
+}
+
+.hero-button.secondary:hover{
+    background:rgba(255,255,255,.18);
+}
+
+/* =========================
+   TICKER
+========================= */
+
 .ticker{
-background:#21152d;
-color:white;
-padding:14px 6%;
-font-size:13px;
-letter-spacing:1px;
-}
-section{
-padding:75px 7%;
-}
-.section-title{
-display:flex;
-justify-content:space-between;
-align-items:end;
-margin-bottom:30px;
-}
-.section-title h2{font-size:36px}
-.section-title span{color:#76677e;font-size:14px}
+    background:#111014;
 
-.feature-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-}
-.feature{
-background:white;
-border-radius:24px;
-overflow:hidden;
-box-shadow:0 10px 35px #211c2512;
-}
-.feature img{
-width:100%;
-height:280px;
-object-fit:cover;
-}
-.feature-content{padding:25px}
-.tag{
-font-size:11px;
-font-weight:bold;
-letter-spacing:2px;
-color:#8b55b8;
-}
-.feature h3{
-font-size:25px;
-margin:10px 0;
-}
-.feature p{
-color:#716975;
-line-height:1.6;
+    color:#d7afdF;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    border-top:1px solid #29242d;
+    border-bottom:1px solid #29242d;
 }
 
-.moment{
-background:linear-gradient(135deg,#21152d,#71429a);
-border-radius:28px;
-padding:55px;
-color:white;
-position:relative;
-overflow:hidden;
-}
-.moment:after{
-content:"MUSICVERSE";
-position:absolute;
-right:-40px;
-bottom:-50px;
-font-size:100px;
-font-weight:900;
-opacity:.08;
-}
-.moment h2{font-size:42px;margin:12px 0}
-.moment p{max-width:600px;color:#ddd;line-height:1.7}
+.ticker-track{
+    display:inline-block;
 
-.groups{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
-}
-.group-card{
-background:white;
-padding:30px;
-border-radius:22px;
-text-decoration:none;
-color:#211c25;
-box-shadow:0 8px 30px #211c2510;
-transition:.2s;
-}
-.group-card:hover{transform:translateY(-5px)}
-.group-card .number{
-font-size:12px;
-color:#8b55b8;
-font-weight:bold;
-}
-.group-card h3{font-size:28px;margin:12px 0 6px}
-.group-card p{color:#777}
-.group-card.pink{border-top:5px solid #e78bb2}
-.group-card.purple{border-top:5px solid #8b55b8}
-.group-card.blue{border-top:5px solid #5b8fd9}
+    padding:15px 0;
 
-.stats{
-background:#211c25;
-color:white;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
+    animation:ticker 25s linear infinite;
 }
-.stat h3{font-size:40px}
-.stat p{color:#aaa;margin-top:5px}
 
-.news{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-.news-card{
-background:white;
-border-radius:20px;
-padding:25px;
-min-height:190px;
-}
-.news-card small{color:#8b55b8;font-weight:bold}
-.news-card h3{margin:14px 0;font-size:21px}
-.news-card p{color:#777;line-height:1.5}
+.ticker span{
+    margin:0 35px;
 
-.vote-box{
-background:#fff;
-border-radius:25px;
-padding:45px;
-text-align:center;
-box-shadow:0 10px 35px #211c2510;
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:1.5px;
 }
-.vote-box h2{font-size:35px}
-.vote-box p{color:#777;margin:12px 0 25px}
-.vote-button{
-display:inline-block;
-background:#21152d;
-color:white;
-padding:14px 30px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
+
+@keyframes ticker{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
+
 }
+
+/* =========================
+   GENERAL
+========================= */
+
+.container{
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:75px 25px;
+}
+
+.section-heading{
+    margin-bottom:35px;
+}
+
+.section-heading .eyebrow{
+    color:#9a63b7;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+}
+
+.section-heading h2{
+    font-size:38px;
+
+    color:#302034;
+
+    margin-bottom:10px;
+}
+
+.section-heading p{
+    color:#777;
+
+    max-width:650px;
+
+    line-height:1.6;
+}
+
+/* =========================
+   FEATURED GROUPS
+========================= */
+
+.featured-grid{
+    display:grid;
+
+    grid-template-columns:1.25fr 1fr;
+
+    gap:25px;
+}
+
+.featured-card{
+    position:relative;
+
+    min-height:390px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    background:#21152d;
+
+    box-shadow:0 15px 45px rgba(35,20,45,.14);
+
+    transition:.3s;
+}
+
+.featured-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:0 22px 55px rgba(35,20,45,.22);
+}
+
+.featured-card img{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.featured-card:hover img{
+    transform:scale(1.05);
+}
+
+.featured-overlay{
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(20,10,27,.95),
+            rgba(20,10,27,.1) 75%
+        );
+}
+
+.featured-content{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    padding:30px;
+
+    color:white;
+}
+
+.featured-tag{
+    display:inline-block;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(8px);
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    margin-bottom:12px;
+}
+
+.featured-content h3{
+    font-size:34px;
+
+    margin-bottom:7px;
+}
+
+.featured-content p{
+    color:#ddd;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    max-width:550px;
+}
+
+.featured-button{
+    display:inline-block;
+
+    margin-top:15px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    padding:10px 15px;
+
+    border-radius:9px;
+
+    background:#8d56ad;
+
+    transition:.2s;
+}
+
+.featured-button:hover{
+    background:#a96bc9;
+}
+
+/* =========================
+   GIF SPOTLIGHT
+========================= */
+
+.gif-section{
+    background:#17131b;
+
+    color:white;
+
+    padding:80px 0;
+}
+
+.gif-section .section-heading h2{
+    color:white;
+}
+
+.gif-section .section-heading p{
+    color:#aaa;
+}
+
+.gif-grid{
+    display:grid;
+
+    grid-template-columns:1.4fr .8fr 1.4fr;
+
+    gap:22px;
+}
+
+.gif-card{
+    position:relative;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:#241d29;
+
+    min-height:280px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+    transition:.3s;
+}
+
+.gif-card:hover{
+    transform:translateY(-6px);
+}
+
+.gif-card img{
+    width:100%;
+    height:100%;
+
+    min-height:280px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.gif-card.square img{
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+}
+
+.gif-overlay{
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.82),
+            transparent 65%
+        );
+}
+
+.gif-info{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    padding:22px;
+}
+
+.gif-info small{
+    color:#d7a9e8;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+}
+
+.gif-info h3{
+    font-size:25px;
+
+    margin-top:5px;
+}
+
+/* =========================
+   RELEASES
+========================= */
+
+.release-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+}
+
+.release-card{
+    background:white;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    transition:.3s;
+}
+
+.release-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.release-card img{
+    width:100%;
+
+    height:270px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.release-info{
+    padding:25px;
+}
+
+.release-info .release-label{
+    color:#9560b0;
+
+    font-size:11px;
+
+    letter-spacing:1.5px;
+
+    font-weight:bold;
+}
+
+.release-info h3{
+    font-size:26px;
+
+    margin:8px 0;
+}
+
+.release-info p{
+    color:#777;
+
+    line-height:1.5;
+
+    font-size:14px;
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news-grid{
+    display:grid;
+
+    grid-template-columns:1.3fr .7fr;
+
+    gap:25px;
+}
+
+.news-main{
+    background:white;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.news-main img{
+    width:100%;
+
+    height:330px;
+
+    object-fit:cover;
+}
+
+.news-main-content{
+    padding:28px;
+}
+
+.news-category{
+    color:#9a63b7;
+
+    font-size:11px;
+
+    letter-spacing:1.5px;
+
+    font-weight:bold;
+}
+
+.news-main h3{
+    font-size:29px;
+
+    margin:10px 0;
+
+    line-height:1.2;
+}
+
+.news-main p{
+    color:#777;
+
+    line-height:1.6;
+}
+
+.news-side{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.news-small{
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+    transition:.25s;
+}
+
+.news-small:hover{
+    transform:translateX(5px);
+}
+
+.news-small span{
+    color:#9a63b7;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+}
+
+.news-small h4{
+    margin-top:8px;
+
+    font-size:17px;
+
+    line-height:1.35;
+}
+
+/* =========================
+   TRENDING IDOLS
+========================= */
+
+.idol-grid{
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:15px;
+}
+
+.idol-card{
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    transition:.25s;
+
+    text-decoration:none;
+
+    color:#211c25;
+}
+
+.idol-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.12);
+}
+
+.idol-card img{
+    width:100%;
+
+    height:210px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.idol-info{
+    padding:15px;
+}
+
+.idol-info h3{
+    font-size:17px;
+
+    margin-bottom:4px;
+}
+
+.idol-info p{
+    font-size:11px;
+
+    color:#8a6d95;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-section{
+    background:#21152d;
+
+    color:white;
+
+    padding:70px 0;
+}
+
+.stats-grid{
+    max-width:1050px;
+
+    margin:auto;
+
+    padding:0 25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.stat-number{
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:#d6a0e8;
+
+    margin-bottom:6px;
+}
+
+.stat-label{
+    color:#bbb;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+}
+
+/* =========================
+   EXPLORE
+========================= */
+
+.explore-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.explore-card{
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+    transition:.25s;
+
+    text-decoration:none;
+
+    color:#211c25;
+}
+
+.explore-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.1);
+}
+
+.explore-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:#f0e4f5;
+
+    color:#7e4b99;
+
+    font-size:22px;
+
+    margin-bottom:20px;
+}
+
+.explore-card h3{
+    margin-bottom:8px;
+
+    font-size:21px;
+}
+
+.explore-card p{
+    color:#777;
+
+    line-height:1.6;
+
+    font-size:14px;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.cta{
+    max-width:1100px;
+
+    margin:0 auto 80px;
+
+    padding:0 25px;
+}
+
+.cta-box{
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #301b40,
+            #74418f
+        );
+
+    border-radius:28px;
+
+    padding:55px;
+
+    color:white;
+
+    box-shadow:0 20px 50px rgba(60,30,75,.2);
+}
+
+.cta-box:after{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    right:-80px;
+    top:-100px;
+}
+
+.cta-box h2{
+    position:relative;
+    z-index:2;
+
+    font-size:34px;
+
+    margin-bottom:10px;
+}
+
+.cta-box p{
+    position:relative;
+    z-index:2;
+
+    color:#e7d9ec;
+
+    max-width:600px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-background:#17131c;
-color:#aaa;
-padding:40px 7%;
-text-align:center;
-font-size:13px;
+    background:#111014;
+
+    color:#999;
+
+    padding:40px 7%;
+
+    text-align:center;
+
+    font-size:13px;
 }
 
-@media(max-width:850px){
-nav{gap:12px}
-.search{width:120px}
-.hero h1{font-size:50px}
-.feature-grid,.groups,.news{grid-template-columns:1fr}
-.stats{grid-template-columns:1fr 1fr}
+.footer-logo{
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
 }
+
+footer p{
+    margin-bottom:15px;
+}
+
+.footer-links{
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:#aaa;
+
+    text-decoration:none;
+
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    color:#d29be7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .idol-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .gif-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gif-card:last-child{
+        grid-column:1/-1;
+    }
+
+}
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+
+        gap:15px;
+
+        padding:18px 5%;
+    }
+
+    nav{
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+    }
+
+    nav a{
+        margin:0 7px;
+    }
+
+    .header-search{
+        margin:5px 0 0;
+    }
+
+    #search{
+        width:220px;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero-content{
+        padding:70px 8%;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .featured-grid,
+    .news-grid,
+    .release-grid{
+        grid-template-columns:1fr;
+    }
+
+    .featured-card{
+        min-height:350px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .explore-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .section-heading h2{
+        font-size:30px;
+    }
+
+    .gif-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gif-card:last-child{
+        grid-column:auto;
+    }
+
+    .idol-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .idol-card img{
+        height:190px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat-number{
+        font-size:32px;
+    }
+
+    .cta-box{
+        padding:35px 25px;
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<header>
-<div class="logo">MUSICVERSE</div>
+<!-- =========================
+     HEADER
+========================= -->
 
-<nav>
-<a href="index.html">HOME</a>
-<a href="groups.html">GROUPS</a>
-<a href="idols.html">IDOLS</a>
-<a href="vote.html">VOTE</a>
-<input class="search" id="siteSearch" placeholder="Search...">
-</nav>
+<header>
+
+    <div class="logo">
+        MUSICVERSE PROFILES
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="groups.html">Groups</a>
+
+        <a href="idols.html">Idols</a>
+
+        <a href="index.html">Companies</a>
+
+        <a href="index.html">Rankings</a>
+
+        <div class="header-search">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search Musicverse..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </nav>
+
 </header>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
-<div class="hero-content">
-<small>THE MUSICVERSE DATABASE</small>
-<h1>Where every idol has a story.</h1>
-<p>
-Discover fictional K-pop groups, idols, companies, fandoms,
-positions and everything happening inside the Musicverse.
-</p>
-<a class="button" href="groups.html">EXPLORE GROUPS →</a>
-</div>
+
+    <img
+        src="herobanner.jpg"
+        alt="Musicverse"
+        class="hero-image"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            THE MUSICVERSE DATABASE
+        </div>
+
+        <h1>
+            Discover the world of
+            <span>Musicverse.</span>
+        </h1>
+
+        <p>
+            Explore fictional K-pop groups, idols, companies,
+            releases, rankings and stories inside the Musicverse
+            universe.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="groups.html"
+                class="hero-button primary"
+            >
+                Explore Groups
+            </a>
+
+            <a
+                href="idols.html"
+                class="hero-button secondary"
+            >
+                Browse Idols
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     TICKER
+========================= -->
 
 <div class="ticker">
-MUSICVERSE NOW &nbsp; • &nbsp; 10 GROUPS IN THE UNIVERSE &nbsp; • &nbsp; 3 GROUPS CURRENTLY PROFILED &nbsp; • &nbsp; 24 IDOLS
-</div>
 
-<section>
-<div class="section-title">
-<h2>Featured Stories</h2>
-<span>FROM THE MUSICVERSE</span>
-</div>
+    <div class="ticker-track">
 
-<div class="feature-grid">
+        <span>✦ MUSICVERSE PROFILES</span>
+        <span>✦ 10 GROUPS</span>
+        <span>✦ 63 IDOLS</span>
+        <span>✦ 6 COMPANIES</span>
+        <span>✦ EXPLORE THE DATABASE</span>
+        <span>✦ MUSICVERSE PROFILES</span>
+        <span>✦ 10 GROUPS</span>
+        <span>✦ 63 IDOLS</span>
+        <span>✦ 6 COMPANIES</span>
+        <span>✦ EXPLORE THE DATABASE</span>
 
-<div class="feature">
-<img src="ruphajang.jpg">
-<div class="feature-content">
-<div class="tag">ELLEVEN</div>
-<h3>The ELLEVEN Era</h3>
-<p>
-Eleven members. One of the defining groups of the Musicverse.
-Explore their members, positions, skills and history.
-</p>
-</div>
-</div>
-
-<div class="feature">
-<img src="chaennie2.jpg">
-<div class="feature-content">
-<div class="tag">PINKPUNK</div>
-<h3>A New Chapter</h3>
-<p>
-PINKPUNK continues to expand its legacy with seven members
-and a new generation of Musicverse moments.
-</p>
-</div>
-</div>
+    </div>
 
 </div>
+
+
+<!-- =========================
+     FEATURED GROUPS
+========================= -->
+
+<section class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            Spotlight
+        </div>
+
+        <h2>
+            Featured Groups
+        </h2>
+
+        <p>
+            Discover some of the biggest names currently
+            shaping the Musicverse.
+        </p>
+
+    </div>
+
+
+    <div class="featured-grid">
+
+
+        <!-- ELLEVEN -->
+
+        <div class="featured-card">
+
+            <img
+                src="ruphajang.jpg"
+                alt="ELLEVEN"
+            >
+
+            <div class="featured-overlay"></div>
+
+            <div class="featured-content">
+
+                <span class="featured-tag">
+                    AURELIA ENTERTAINMENT
+                </span>
+
+                <h3>
+                    ELLEVEN
+                </h3>
+
+                <p>
+                    11 members · Debut: Lion · Fandom: Levens
+                </p>
+
+                <a
+                    href="elleven.html"
+                    class="featured-button"
+                >
+                    View Group →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PINKPUNK -->
+
+        <div class="featured-card">
+
+            <img
+                src="pinpunkie.jpg"
+                alt="PINKPUNK"
+            >
+
+            <div class="featured-overlay"></div>
+
+            <div class="featured-content">
+
+                <span class="featured-tag">
+                    LUX ENTERTAINMENT
+                </span>
+
+                <h3>
+                    PINKPUNK
+                </h3>
+
+                <p>
+                    7 members · Debut: Whistle · Fandom: Pookies
+                </p>
+
+                <a
+                    href="pinkpunk.html"
+                    class="featured-button"
+                >
+                    View Group →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-<div class="moment">
-<div class="tag">MUSICVERSE MOMENT</div>
-<h2>The stage is yours.</h2>
-<p>
-Every group has its own era, every idol has their own story,
-and every fan gets to decide who stands out.
-Explore the database and make your voice heard.
-</p>
-</div>
+
+<!-- =========================
+     GIF SPOTLIGHT
+========================= -->
+
+<section class="gif-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Now Trending
+            </div>
+
+            <h2>
+                Musicverse Spotlight
+            </h2>
+
+            <p>
+                A closer look at some of the idols currently
+                turning heads across the database.
+            </p>
+
+        </div>
+
+
+        <div class="gif-grid">
+
+
+            <!-- JENNIE -->
+
+            <div class="gif-card">
+
+                <img
+                    src="iconicjennie.gif"
+                    alt="Jennie"
+                >
+
+                <div class="gif-overlay"></div>
+
+                <div class="gif-info">
+
+                    <small>
+                        PINKPUNK
+                    </small>
+
+                    <h3>
+                        Jennie
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHIQUITA -->
+
+            <div class="gif-card square">
+
+                <img
+                    src="canny.gif"
+                    alt="Chiquita"
+                >
+
+                <div class="gif-overlay"></div>
+
+                <div class="gif-info">
+
+                    <small>
+                        ELLEVEN
+                    </small>
+
+                    <h3>
+                        Chiquita
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOOJIN -->
+
+            <div class="gif-card">
+
+                <img
+                    src="soojinie.gif"
+                    alt="Soojin"
+                >
+
+                <div class="gif-overlay"></div>
+
+                <div class="gif-info">
+
+                    <small>
+                        TWOON
+                    </small>
+
+                    <h3>
+                        Soojin
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-<div class="section-title">
-<h2>Groups</h2>
-<span>EXPLORE THE UNIVERSE</span>
-</div>
 
-<div class="groups">
+<!-- =========================
+     MUSICVERSE RELEASES
+========================= -->
 
-<a class="group-card blue" href="pandora.html">
-<div class="number">01</div>
-<h3>PANDORA</h3>
-<p>Starship Entertainment · 6 members</p>
-</a>
+<section class="container">
 
-<a class="group-card purple" href="elleven.html">
-<div class="number">02</div>
-<h3>ELLEVEN</h3>
-<p>Aurelia Entertainment · 11 members</p>
-</a>
+    <div class="section-heading">
 
-<a class="group-card pink" href="pinkpunk.html">
-<div class="number">03</div>
-<h3>PINKPUNK</h3>
-<p>LUX Entertainment · 7 members</p>
-</a>
+        <div class="eyebrow">
+            Music
+        </div>
 
-</div>
+        <h2>
+            Musicverse Releases
+        </h2>
+
+        <p>
+            Releases connected to the fictional groups and
+            stories of the Musicverse.
+        </p>
+
+    </div>
+
+
+    <div class="release-grid">
+
+
+        <!-- LION -->
+
+        <div class="release-card">
+
+            <img
+                src="lion.jpg"
+                alt="Lion"
+            >
+
+            <div class="release-info">
+
+                <div class="release-label">
+                    ELLEVEN · DEBUT
+                </div>
+
+                <h3>
+                    LION
+                </h3>
+
+                <p>
+                    ELLEVEN's debut release in the Musicverse,
+                    introducing the group's powerful identity.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- UNCHILD -->
+
+        <div class="release-card">
+
+            <img
+                src="unchild.jpg"
+                alt="Unchild"
+            >
+
+            <div class="release-info">
+
+                <div class="release-label">
+                    WO!AH · DEBUT
+                </div>
+
+                <h3>
+                    Unchild
+                </h3>
+
+                <p>
+                    WO!AH's debut release, establishing the
+                    group's unique place inside the Musicverse.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="stats">
-<div class="stat">
-<h3>10</h3>
-<p>Groups in the universe</p>
-</div>
-<div class="stat">
-<h3>3</h3>
-<p>Groups currently profiled</p>
-</div>
-<div class="stat">
-<h3>24</h3>
-<p>Idols in the database</p>
-</div>
-<div class="stat">
-<h3>3</h3>
-<p>Entertainment companies</p>
-</div>
+
+<!-- =========================
+     NEWS
+========================= -->
+
+<section class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            News
+        </div>
+
+        <h2>
+            Musicverse News
+        </h2>
+
+        <p>
+            Highlights, appearances and moments from across
+            the Musicverse.
+        </p>
+
+    </div>
+
+
+    <div class="news-grid">
+
+
+        <!-- MAIN NEWS -->
+
+        <article class="news-main">
+
+            <img
+                src="rorahyeon.jpg"
+                alt="Rora and Ahyeon"
+            >
+
+            <div class="news-main-content">
+
+                <div class="news-category">
+                    FEATURE
+                </div>
+
+                <h3>
+                    Rora & Ahyeon step into the spotlight
+                </h3>
+
+                <p>
+                    ELLEVEN members Rora and Ahyeon appear
+                    together in a major fashion moment,
+                    becoming one of the latest highlights
+                    across the Musicverse.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- SIDE NEWS -->
+
+        <div class="news-side">
+
+            <article class="news-small">
+
+                <span>
+                    MUSICVERSE
+                </span>
+
+                <h4>
+                    ELLEVEN continues to dominate the
+                    Musicverse spotlight.
+                </h4>
+
+            </article>
+
+
+            <article class="news-small">
+
+                <span>
+                    PINKPUNK
+                </span>
+
+                <h4>
+                    PINKPUNK remains one of the most
+                    recognizable groups in the database.
+                </h4>
+
+            </article>
+
+
+            <article class="news-small">
+
+                <span>
+                    TWOON
+                </span>
+
+                <h4>
+                    TWOON's members continue expanding
+                    their individual profiles.
+                </h4>
+
+            </article>
+
+
+            <article class="news-small">
+
+                <span>
+                    DATABASE
+                </span>
+
+                <h4>
+                    New idols and groups are continually
+                    being added to Musicverse Profiles.
+                </h4>
+
+            </article>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-<div class="section-title">
-<h2>Latest News</h2>
-<span>MUSICVERSE DAILY</span>
-</div>
 
-<div class="news">
+<!-- =========================
+     TRENDING IDOLS
+========================= -->
 
-<div class="news-card">
-<small>DATABASE</small>
-<h3>New idol profiles added</h3>
-<p>
-The Musicverse database continues to expand with detailed
-profiles for the current generation of idols.
-</p>
-</div>
+<section class="container">
 
-<div class="news-card">
-<small>ELLEVEN</small>
-<h3>The eleven-member era continues</h3>
-<p>
-ELLEVEN remains one of the biggest names inside the
-Musicverse universe.
-</p>
-</div>
+    <div class="section-heading">
 
-<div class="news-card">
-<small>FANS</small>
-<h3>Your favorite idol awaits</h3>
-<p>
-Head over to the voting page and choose your favorite idol.
-</p>
-</div>
+        <div class="eyebrow">
+            Trending
+        </div>
 
-</div>
+        <h2>
+            Trending Idols
+        </h2>
+
+        <p>
+            Explore some of the idols currently featured
+            throughout the Musicverse.
+        </p>
+
+    </div>
+
+
+    <div class="idol-grid">
+
+
+        <a
+            href="lisa.html"
+            class="idol-card"
+        >
+
+            <img
+                src="lisa.jpg"
+                alt="Lisa"
+            >
+
+            <div class="idol-info">
+
+                <h3>Lisa</h3>
+
+                <p>PINKPUNK</p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="pharita.html"
+            class="idol-card"
+        >
+
+            <img
+                src="pharita.jpg"
+                alt="Pharita"
+            >
+
+            <div class="idol-info">
+
+                <h3>Pharita</h3>
+
+                <p>ELLEVEN</p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="rami.html"
+            class="idol-card"
+        >
+
+            <img
+                src="rami.jpg"
+                alt="Rami"
+            >
+
+            <div class="idol-info">
+
+                <h3>Rami</h3>
+
+                <p>ELLEVEN</p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="miyeon.html"
+            class="idol-card"
+        >
+
+            <img
+                src="miyeon.jpg"
+                alt="Miyeon"
+            >
+
+            <div class="idol-info">
+
+                <h3>Miyeon</h3>
+
+                <p>PINKPUNK</p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="rora.html"
+            class="idol-card"
+        >
+
+            <img
+                src="rora.jpg"
+                alt="Rora"
+            >
+
+            <div class="idol-info">
+
+                <h3>Rora</h3>
+
+                <p>ELLEVEN</p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="jennie.html"
+            class="idol-card"
+        >
+
+            <img
+                src="jennie.jpg"
+                alt="Jennie"
+            >
+
+            <div class="idol-info">
+
+                <h3>Jennie</h3>
+
+                <p>PINKPUNK</p>
+
+            </div>
+
+        </a>
+
+    </div>
+
 </section>
 
-<section>
-<div class="vote-box">
-<h2>Who is your favorite?</h2>
-<p>Vote for your favorite Musicverse idol.</p>
-<a class="vote-button" href="vote.html">GO TO VOTE →</a>
-</div>
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats-section">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+
+            <div class="stat-number">
+                10
+            </div>
+
+            <div class="stat-label">
+                Groups
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                63
+            </div>
+
+            <div class="stat-label">
+                Idols
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                6
+            </div>
+
+            <div class="stat-label">
+                Companies
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                ∞
+            </div>
+
+            <div class="stat-label">
+                Stories
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     EXPLORE
+========================= -->
+
+<section class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            Explore
+        </div>
+
+        <h2>
+            Explore Musicverse
+        </h2>
+
+        <p>
+            Everything you need to navigate the database.
+        </p>
+
+    </div>
+
+
+    <div class="explore-grid">
+
+
+        <a
+            href="groups.html"
+            class="explore-card"
+        >
+
+            <div class="explore-icon">
+                ♫
+            </div>
+
+            <h3>
+                Groups
+            </h3>
+
+            <p>
+                Discover all Musicverse groups, their members,
+                companies, fandoms and debut releases.
+            </p>
+
+        </a>
+
+
+        <a
+            href="idols.html"
+            class="explore-card"
+        >
+
+            <div class="explore-icon">
+                ★
+            </div>
+
+            <h3>
+                Idols
+            </h3>
+
+            <p>
+                Browse the complete idol database and find
+                individual profiles.
+            </p>
+
+        </a>
+
+
+        <a
+            href="rankings.html"
+            class="explore-card"
+        >
+
+            <div class="explore-icon">
+                ↑
+            </div>
+
+            <h3>
+                Rankings
+            </h3>
+
+            <p>
+                Explore Musicverse rankings, categories and
+                future fan-based statistics.
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="cta-box">
+
+        <h2>
+            Your Musicverse starts here.
+        </h2>
+
+        <p>
+            Explore the groups, discover new idols and dive
+            deeper into the fictional music industry.
+            The database is only getting bigger.
+        </p>
+
+        <a
+            href="groups.html"
+            class="hero-button primary"
+        >
+            Start Exploring →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-MUSICVERSE © 2026 · Fictional K-Pop Database
+
+    <div class="footer-logo">
+        MUSICVERSE PROFILES
+    </div>
+
+    <p>
+        © 2026 Musicverse Profiles · Fictional Musicverse Database
+    </p>
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="groups.html">
+            Groups
+        </a>
+
+        <a href="idols.html">
+            Idols
+        </a>
+
+        <a href="rankings.html">
+            Rankings
+        </a>
+
+    </div>
+
 </footer>
 
-<script>
-const search=document.getElementById("siteSearch");
 
-search.addEventListener("keydown",function(e){
-if(e.key==="Enter"){
-const q=this.value.toLowerCase().trim();
+<!-- =========================
+     DATA + SEARCH
+========================= -->
 
-const pages={
-jiwoo:"jiwoo.html",jeemin:"jeemin.html",kylie:"kylie.html",
-hinari:"hinari.html",ruby:"ruby.html",bonnie:"bonnie.html",
-ruka:"ruka.html",pharita:"pharita.html",asa:"asa.html",
-ahyeon:"ahyeon.html",yuha:"yuha.html",stella:"stella.html",
-rami:"rami.html",rora:"rora.html",juun:"juun.html",
-"a-na":"a-na.html",chiquita:"chiquita.html",
-jisoo:"jisoo.html",jennie:"jennie.html",miyeon:"miyeon.html",
-rose:"rose.html",mina:"mina.html",lisa:"lisa.html",
-minnie:"minnie.html",
-pandora:"pandora.html",elleven:"elleven.html",pinkpunk:"pinkpunk.html"
-};
-
-for(const name in pages){
-if(name.includes(q)){
-window.location.href=pages[name];
-return;
-}
-}
-
-window.location.href="idols.html?search="+encodeURIComponent(q);
-}
-});
-</script>
+<script src="data.js"></script>
+<script src="search.js"></script>
 
 </body>
 </html>
