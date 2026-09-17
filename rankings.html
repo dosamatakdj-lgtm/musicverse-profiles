@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rankings — Musicverse Profiles</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f2f7;
+    color: #21152d;
+}
+
+/* HEADER */
+
+header {
+    background: #21152d;
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg, #21152d, #6d3f91);
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+/* CONTENT */
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 50px auto;
+}
+
+/* RANKING SECTION */
+
+.ranking-section {
+    margin-bottom: 55px;
+}
+
+.ranking-title {
+    font-size: 30px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* CARDS */
+
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ranking-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 18px rgba(33, 21, 45, 0.08);
+    transition: 0.2s;
+}
+
+.ranking-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(33, 21, 45, 0.13);
+}
+
+.rank {
+    width: 48px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.idol-photo {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.idol-info {
+    flex: 1;
+}
+
+.idol-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.idol-info p {
+    font-size: 14px;
+    color: #777;
+}
+
+.level {
+    background: #76558c;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    min-width: 55px;
+    text-align: center;
+}
+
+/* TOP 3 */
+
+.ranking-card:nth-child(1) .rank {
+    color: #b08d57;
+}
+
+.ranking-card:nth-child(2) .rank {
+    color: #777;
+}
+
+.ranking-card:nth-child(3) .rank {
+    color: #a66a45;
+}
+
+/* FOOTER */
+
+footer {
+    background: #21152d;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 70px;
+}
+
+footer p {
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .ranking-card {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .idol-photo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .idol-info h3 {
+        font-size: 17px;
+    }
+
+    .level {
+        padding: 7px 10px;
+        min-width: 45px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        MUSICVERSE PROFILES
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="idols.html">Idols</a>
+        <a href="#">Companies</a>
+        <a href="rankings.html">Rankings</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Rankings</h1>
+
+    <p>
+        Musicverse rankings based on idol skills and profiles.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- VOCAL -->
+
+    <section class="ranking-section">
+
+        <h2 class="ranking-title">
+            🎤 Vocal Ranking
+        </h2>
+
+        <div class="ranking-list">
+
+            <div class="ranking-card">
+                <div class="rank">#1</div>
+                <img class="idol-photo" src="rami.jpg">
+                <div class="idol-info">
+                    <h3>Rami</h3>
+                    <p>ELLEVEN · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S+</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#2</div>
+                <img class="idol-photo" src="miyeon.jpg">
+                <div class="idol-info">
+                    <h3>Miyeon</h3>
+                    <p>PINKPUNK · LUX Entertainment</p>
+                </div>
+                <div class="level">S+</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#3</div>
+                <img class="idol-photo" src="rora.jpg">
+                <div class="idol-info">
+                    <h3>Rora</h3>
+                    <p>ELLEVEN · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S+</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#4</div>
+                <img class="idol-photo" src="rose.jpg">
+                <div class="idol-info">
+                    <h3>Rosé</h3>
+                    <p>PINKPUNK · LUX Entertainment</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#5</div>
+                <img class="idol-photo" src="yuha.jpg">
+                <div class="idol-info">
+                    <h3>Yuha</h3>
+                    <p>ELLEVEN · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RAP -->
+
+    <section class="ranking-section">
+
+        <h2 class="ranking-title">
+            🎙️ Rap Ranking
+        </h2>
+
+        <div class="ranking-list">
+
+            <div class="ranking-card">
+                <div class="rank">#1</div>
+                <img class="idol-photo" src="asa.jpg">
+                <div class="idol-info">
+                    <h3>Asa</h3>
+                    <p>ELLEVEN · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S++</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#2</div>
+                <img class="idol-photo" src="jennie.jpg">
+                <div class="idol-info">
+                    <h3>Jennie</h3>
+                    <p>PINKPUNK · LUX Entertainment</p>
+                </div>
+                <div class="level">S+</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#3</div>
+                <img class="idol-photo" src="ruka.jpg">
+                <div class="idol-info">
+                    <h3>Ruka</h3>
+                    <p>ELLEVEN · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#4</div>
+                <img class="idol-photo" src="lisa.jpg">
+                <div class="idol-info">
+                    <h3>Lisa</h3>
+                    <p>PINKPUNK · LUX Entertainment</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#5</div>
+                <img class="idol-photo" src="ahyeon.jpg">
+                <div class="idol-info">
+                    <h3>Ahyeon</h3>
+                    <p>ELLEVEN · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S-</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DANCE -->
+
+    <section class="ranking-section">
+
+        <h2 class="ranking-title">
+            💃 Dance Ranking
+        </h2>
+
+        <div class="ranking-list">
+
+            <div class="ranking-card">
+                <div class="rank">#1</div>
+                <img class="idol-photo" src="lisa.jpg">
+                <div class="idol-info">
+                    <h3>Lisa</h3>
+                    <p>PINKPUNK · LUX Entertainment</p>
+                </div>
+                <div class="level">10</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#2</div>
+                <img class="idol-photo" src="ruka.jpg">
+                <div class="idol-info">
+                    <h3>Ruka</h3>
+                    <p>ELLEVEN · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#3</div>
+                <img class="idol-photo" src="sooin.jpg">
+                <div class="idol-info">
+                    <h3>Sooin</h3>
+                    <p>STEELROSE · XG Labels</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#4</div>
+                <img class="idol-photo" src="haerin.jpg">
+                <div class="idol-info">
+                    <h3>Haerin</h3>
+                    <p>LESSERAFIM · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S+</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#5</div>
+                <img class="idol-photo" src="mina.jpg">
+                <div class="idol-info">
+                    <h3>Mina</h3>
+                    <p>PINKPUNK · LUX Entertainment</p>
+                </div>
+                <div class="level">9.2</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KBS -->
+
+    <section class="ranking-section">
+
+        <h2 class="ranking-title">
+            👑 KBS / Visual Ranking
+        </h2>
+
+        <div class="ranking-list">
+
+            <div class="ranking-card">
+                <div class="rank">#1</div>
+                <img class="idol-photo" src="jisoo.jpg">
+                <div class="idol-info">
+                    <h3>Jisoo</h3>
+                    <p>PINKPUNK · LUX Entertainment</p>
+                </div>
+                <div class="level">S+</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#2</div>
+                <img class="idol-photo" src="pharita.jpg">
+                <div class="idol-info">
+                    <h3>Pharita</h3>
+                    <p>ELLEVEN · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S+</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#3</div>
+                <img class="idol-photo" src="liz.jpg">
+                <div class="idol-info">
+                    <h3>Liz</h3>
+                    <p>LESSERAFIM · Aurelia Entertainment</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#4</div>
+                <img class="idol-photo" src="jeemin.jpg">
+                <div class="idol-info">
+                    <h3>Jeemin</h3>
+                    <p>PANDORA · Starship Entertainment</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+            <div class="ranking-card">
+                <div class="rank">#5</div>
+                <img class="idol-photo" src="ruby.jpg">
+                <div class="idol-info">
+                    <h3>Ruby</h3>
+                    <p>PANDORA · Starship Entertainment</p>
+                </div>
+                <div class="level">S</div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Musicverse Profiles · Fictional Musicverse
+    </p>
+
+</footer>
+
+</body>
+</html>
