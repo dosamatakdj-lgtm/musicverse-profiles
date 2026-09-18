@@ -8,220 +8,769 @@
 
 <style>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* =========================================================
+   MUSICVERSE RANKINGS
+   ========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f2f7;
-    color: #21152d;
+:root{
+    --bg:#f4f1f7;
+    --card:#ffffff;
+    --dark:#21152d;
+    --purple:#76558c;
+    --purple2:#9b72b5;
+    --pink:#b75d86;
+    --gold:#c49a55;
+    --text:#21152d;
+    --muted:#817889;
+    --line:#e9e2ed;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
 
 /* HEADER */
 
-header {
-    background: #21152d;
-    color: white;
-    padding: 22px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+header{
+    background:#17131c;
+    color:white;
+    min-height:76px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    gap:30px;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 2px;
+.logo{
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:2px;
+    white-space:nowrap;
 }
 
-nav {
-    display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
+nav{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:22px;
+    flex-wrap:wrap;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: 0.9;
+nav a{
+    color:#d7d2dc;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
 }
 
-nav a:hover {
-    opacity: 1;
+nav a:hover{
+    color:white;
 }
 
 /* HERO */
 
-.hero {
-    background: linear-gradient(135deg, #21152d, #6d3f91);
-    color: white;
-    text-align: center;
-    padding: 75px 20px;
+.hero{
+    background:
+        radial-gradient(circle at 15% 20%,#8f65a555,transparent 30%),
+        radial-gradient(circle at 85% 80%,#b75d8650,transparent 30%),
+        linear-gradient(135deg,#17131c,#3d244b,#6d3f91);
+    color:white;
+    padding:85px 7% 75px;
+    position:relative;
+    overflow:hidden;
 }
 
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 15px;
+.hero:after{
+    content:"RANKINGS";
+    position:absolute;
+    right:-30px;
+    bottom:-45px;
+    font-size:150px;
+    font-weight:900;
+    opacity:.035;
+    letter-spacing:10px;
 }
 
-.hero p {
-    font-size: 17px;
-    opacity: 0.9;
+.hero-top{
+    max-width:1150px;
+    margin:auto;
 }
 
-/* CONTENT */
-
-.container {
-    width: 90%;
-    max-width: 1150px;
-    margin: 50px auto;
+.hero-label{
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:5px;
+    color:#d8b8e7;
+    margin-bottom:14px;
 }
 
-/* RANKING SECTION */
-
-.ranking-section {
-    margin-bottom: 55px;
+.hero h1{
+    font-size:64px;
+    letter-spacing:2px;
+    margin-bottom:15px;
 }
 
-.ranking-title {
-    font-size: 30px;
-    margin-bottom: 22px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.hero p{
+    color:#ddd5e2;
+    font-size:16px;
+    line-height:1.7;
+    max-width:700px;
 }
 
-/* CARDS */
-
-.ranking-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.hero-stats{
+    display:flex;
+    gap:12px;
+    margin-top:32px;
+    flex-wrap:wrap;
 }
 
-.ranking-card {
-    background: white;
-    border-radius: 18px;
-    padding: 18px 22px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 5px 18px rgba(33, 21, 45, 0.08);
-    transition: 0.2s;
+.hero-stat{
+    padding:11px 17px;
+    background:#ffffff12;
+    border:1px solid #ffffff20;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:bold;
 }
 
-.ranking-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(33, 21, 45, 0.13);
+/* MAIN */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:45px auto 90px;
 }
 
-.rank {
-    width: 48px;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
+/* TABS */
+
+.tabs{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    background:white;
+    padding:10px;
+    border-radius:18px;
+    box-shadow:0 6px 25px #21152d0d;
+    margin-bottom:45px;
+    position:sticky;
+    top:86px;
+    z-index:50;
 }
 
-.idol-photo {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 14px;
+.tab{
+    border:0;
+    background:transparent;
+    color:#766d7d;
+    padding:12px 17px;
+    border-radius:12px;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.idol-info {
-    flex: 1;
+.tab:hover{
+    background:#f1ebf5;
 }
 
-.idol-info h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
+.tab.active{
+    background:var(--dark);
+    color:white;
 }
 
-.idol-info p {
-    font-size: 14px;
-    color: #777;
+/* SECTIONS */
+
+.ranking-section{
+    margin-bottom:65px;
 }
 
-.level {
-    background: #76558c;
-    color: white;
-    padding: 9px 15px;
-    border-radius: 12px;
-    font-weight: bold;
-    min-width: 55px;
-    text-align: center;
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:20px;
+    margin-bottom:22px;
 }
 
-/* TOP 3 */
-
-.ranking-card:nth-child(1) .rank {
-    color: #b08d57;
+.section-heading h2{
+    font-size:31px;
 }
 
-.ranking-card:nth-child(2) .rank {
-    color: #777;
+.section-heading p{
+    color:var(--muted);
+    font-size:13px;
 }
 
-.ranking-card:nth-child(3) .rank {
-    color: #a66a45;
+.section-badge{
+    background:#e9deef;
+    color:#68477c;
+    padding:7px 11px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+/* GROUP OVERALL */
+
+.group-list{
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+}
+
+.group-card{
+    background:white;
+    border-radius:20px;
+    padding:18px 22px;
+    display:grid;
+    grid-template-columns:55px 1fr 130px 190px;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 5px 20px #21152d0a;
+    border:1px solid transparent;
+    transition:.2s;
+}
+
+.group-card:hover{
+    transform:translateY(-3px);
+    border-color:#d9c9e2;
+    box-shadow:0 10px 28px #21152d12;
+}
+
+.group-rank{
+    font-size:27px;
+    font-weight:900;
+    text-align:center;
+}
+
+.group-rank.gold{
+    color:#b18a4d;
+}
+
+.group-rank.silver{
+    color:#777;
+}
+
+.group-rank.bronze{
+    color:#a76c4b;
+}
+
+.group-main h3{
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.group-main p{
+    color:#817889;
+    font-size:12px;
+}
+
+.score-box{
+    text-align:right;
+}
+
+.score{
+    font-size:26px;
+    font-weight:900;
+}
+
+.score small{
+    color:#958c99;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.bar{
+    height:7px;
+    background:#eee8f1;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:8px;
+}
+
+.bar span{
+    display:block;
+    height:100%;
+    background:linear-gradient(90deg,#76558c,#b75d86);
+    border-radius:20px;
+}
+
+/* GROUP MINI STATS */
+
+.mini-stats{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:5px;
+}
+
+.mini-stat{
+    text-align:center;
+}
+
+.mini-stat span{
+    display:block;
+    font-size:8px;
+    color:#99909f;
+    font-weight:bold;
+    letter-spacing:.5px;
+}
+
+.mini-stat strong{
+    font-size:12px;
+}
+
+/* PODIUM */
+
+.podium{
+    display:grid;
+    grid-template-columns:1fr 1.15fr 1fr;
+    align-items:end;
+    gap:15px;
+    margin-bottom:45px;
+}
+
+.podium-card{
+    background:white;
+    border-radius:22px;
+    padding:28px 20px;
+    text-align:center;
+    box-shadow:0 8px 25px #21152d10;
+}
+
+.podium-card.first{
+    padding-top:40px;
+    padding-bottom:38px;
+    border:2px solid #d2b274;
+}
+
+.podium-rank{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.podium-card h3{
+    font-size:23px;
+    margin-bottom:6px;
+}
+
+.podium-card p{
+    color:#88808e;
+    font-size:12px;
+}
+
+.podium-score{
+    margin-top:15px;
+    font-size:28px;
+    font-weight:900;
+}
+
+/* INDIVIDUAL OVERALL */
+
+.idol-ranking{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.idol-card{
+    background:white;
+    border-radius:18px;
+    padding:13px 18px;
+    display:grid;
+    grid-template-columns:48px 55px 1fr 150px 85px;
+    align-items:center;
+    gap:15px;
+    box-shadow:0 4px 15px #21152d09;
+    transition:.2s;
+}
+
+.idol-card:hover{
+    transform:translateX(4px);
+}
+
+.idol-rank{
+    font-size:21px;
+    font-weight:900;
+    text-align:center;
+    color:#766c7d;
+}
+
+.idol-img{
+    width:55px;
+    height:55px;
+    border-radius:14px;
+    object-fit:cover;
+    background:#eee8f1;
+}
+
+.idol-info h3{
+    font-size:17px;
+    margin-bottom:4px;
+}
+
+.idol-info p{
+    color:#8a818f;
+    font-size:11px;
+}
+
+.idol-skills{
+    display:flex;
+    gap:8px;
+    justify-content:flex-end;
+}
+
+.skill-pill{
+    background:#f0eaf3;
+    border-radius:9px;
+    padding:6px 7px;
+    font-size:9px;
+    font-weight:bold;
+}
+
+.idol-score{
+    text-align:right;
+    font-size:22px;
+    font-weight:900;
+}
+
+/* GROUP INDIVIDUAL RANKINGS */
+
+.group-ranking{
+    margin-bottom:38px;
+}
+
+.group-ranking-header{
+    background:linear-gradient(135deg,#21152d,#76558c);
+    color:white;
+    padding:24px 27px;
+    border-radius:20px 20px 0 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.group-ranking-header h3{
+    font-size:23px;
+}
+
+.group-ranking-header p{
+    margin-top:5px;
+    font-size:11px;
+    color:#d9cce1;
+}
+
+.group-overall{
+    font-size:27px;
+    font-weight:900;
+}
+
+.member-rank-list{
+    background:white;
+    border-radius:0 0 20px 20px;
+    overflow:hidden;
+}
+
+.member-rank{
+    display:grid;
+    grid-template-columns:48px 55px 1fr repeat(3,65px) 75px;
+    align-items:center;
+    gap:13px;
+    padding:13px 20px;
+    border-bottom:1px solid var(--line);
+}
+
+.member-rank:last-child{
+    border-bottom:0;
+}
+
+.member-rank:hover{
+    background:#faf8fb;
+}
+
+.member-number{
+    font-weight:900;
+    color:#8b8190;
+    text-align:center;
+}
+
+.member-image{
+    width:48px;
+    height:48px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.member-name{
+    font-weight:bold;
+}
+
+.member-name small{
+    display:block;
+    color:#938a98;
+    font-size:10px;
+    margin-top:3px;
+}
+
+.member-score{
+    text-align:center;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.member-score span{
+    display:block;
+    color:#a098a5;
+    font-size:8px;
+    margin-bottom:3px;
+}
+
+.member-overall{
+    text-align:right;
+    font-size:19px;
+    font-weight:900;
+}
+
+/* CATEGORY */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.category-card{
+    background:white;
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 5px 20px #21152d09;
+}
+
+.category-card h3{
+    font-size:21px;
+    margin-bottom:18px;
+}
+
+.category-item{
+    display:grid;
+    grid-template-columns:32px 1fr 50px;
+    align-items:center;
+    gap:10px;
+    padding:11px 0;
+    border-bottom:1px solid #eee9f0;
+}
+
+.category-item:last-child{
+    border-bottom:0;
+}
+
+.category-number{
+    font-weight:900;
+    color:#9a91a0;
+}
+
+.category-name{
+    font-weight:bold;
+    font-size:13px;
+}
+
+.category-name small{
+    display:block;
+    color:#99919f;
+    font-size:9px;
+    margin-top:3px;
+}
+
+.category-score{
+    text-align:right;
+    font-weight:900;
+}
+
+/* HIGHLIGHTS */
+
+.highlight-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.highlight{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 5px 20px #21152d09;
+}
+
+.highlight-icon{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.highlight h3{
+    font-size:17px;
+    margin-bottom:7px;
+}
+
+.highlight p{
+    color:#817889;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* HIDDEN */
+
+.page-section{
+    display:none;
+}
+
+.page-section.active{
+    display:block;
 }
 
 /* FOOTER */
 
-footer {
-    background: #21152d;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    margin-top: 70px;
+footer{
+    background:#17131c;
+    color:#aaa;
+    padding:40px;
+    text-align:center;
 }
 
-footer p {
-    opacity: 0.7;
-    font-size: 13px;
+footer strong{
+    color:white;
+}
+
+footer p{
+    margin-top:8px;
+    font-size:12px;
 }
 
 /* MOBILE */
 
-@media (max-width: 700px) {
+@media(max-width:900px){
 
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+    .group-card{
+        grid-template-columns:45px 1fr 100px;
     }
 
-    nav {
-        gap: 14px;
+    .mini-stats{
+        display:none;
     }
 
-    .hero h1 {
-        font-size: 38px;
+    .category-grid{
+        grid-template-columns:1fr;
     }
 
-    .ranking-card {
-        padding: 15px;
-        gap: 12px;
+    .highlight-grid{
+        grid-template-columns:1fr;
     }
 
-    .idol-photo {
-        width: 58px;
-        height: 58px;
+    .idol-card{
+        grid-template-columns:40px 50px 1fr 70px;
     }
 
-    .idol-info h3 {
-        font-size: 17px;
+    .idol-skills{
+        display:none;
     }
 
-    .level {
-        padding: 7px 10px;
-        min-width: 45px;
+    .member-rank{
+        grid-template-columns:35px 45px 1fr 55px;
     }
+
+    .member-score{
+        display:none;
+    }
+
+    .podium{
+        grid-template-columns:1fr;
+    }
+
+    .podium-card.first{
+        order:-1;
+    }
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:18px 5%;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    nav{
+        margin-left:0;
+        gap:14px;
+    }
+
+    .hero{
+        padding:60px 6%;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .container{
+        width:94%;
+    }
+
+    .tabs{
+        position:static;
+    }
+
+    .group-card{
+        grid-template-columns:40px 1fr 75px;
+        padding:15px;
+        gap:10px;
+    }
+
+    .group-main h3{
+        font-size:16px;
+    }
+
+    .group-main p{
+        font-size:10px;
+    }
+
+    .score{
+        font-size:21px;
+    }
+
+    .idol-card{
+        grid-template-columns:35px 45px 1fr 60px;
+        padding:11px;
+    }
+
+    .idol-img{
+        width:45px;
+        height:45px;
+    }
+
+    .idol-score{
+        font-size:18px;
+    }
+
+    .member-rank{
+        grid-template-columns:30px 42px 1fr 50px;
+        padding:11px;
+    }
+
+    .member-image{
+        width:42px;
+        height:42px;
+    }
+
 }
 
 </style>
@@ -231,16 +780,14 @@ footer p {
 
 <header>
 
-    <div class="logo">
-        MUSICVERSE PROFILES
-    </div>
+    <div class="logo">MUSICVERSE</div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="groups.html">Groups</a>
-        <a href="idols.html">Idols</a>
-        <a href="#">Companies</a>
-        <a href="rankings.html">Rankings</a>
+        <a href="index.html">HOME</a>
+        <a href="groups.html">GROUPS</a>
+        <a href="idols.html">IDOLS</a>
+        <a href="vote.html">VOTE</a>
+        <a href="rankings.html">RANKINGS</a>
     </nav>
 
 </header>
@@ -248,11 +795,25 @@ footer p {
 
 <section class="hero">
 
-    <h1>Rankings</h1>
+    <div class="hero-top">
 
-    <p>
-        Musicverse rankings based on idol skills and profiles.
-    </p>
+        <div class="hero-label">MUSICVERSE DATABASE</div>
+
+        <h1>RANKINGS</h1>
+
+        <p>
+            Explore fictional Musicverse rankings, group scores,
+            idol overalls, individual group rankings and skill categories.
+        </p>
+
+        <div class="hero-stats">
+            <div class="hero-stat">12 GROUPS</div>
+            <div class="hero-stat">78 IDOLS</div>
+            <div class="hero-stat">6 COMPANIES</div>
+            <div class="hero-stat">2026 EDITION</div>
+        </div>
+
+    </div>
 
 </section>
 
@@ -260,275 +821,1234 @@ footer p {
 <main class="container">
 
 
-    <!-- VOCAL -->
+<!-- =====================================================
+     TABS
+===================================================== -->
 
-    <section class="ranking-section">
+<div class="tabs">
 
-        <h2 class="ranking-title">
-            🎤 Vocal Ranking
-        </h2>
+    <button class="tab active" onclick="showSection('groups')">
+        GROUP OVERALL
+    </button>
 
-        <div class="ranking-list">
+    <button class="tab" onclick="showSection('idols')">
+        IDOL OVERALL
+    </button>
 
-            <div class="ranking-card">
-                <div class="rank">#1</div>
-                <img class="idol-photo" src="rami.jpg">
-                <div class="idol-info">
-                    <h3>Rami</h3>
-                    <p>ELLEVEN · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S+</div>
+    <button class="tab" onclick="showSection('individual')">
+        GROUP MEMBER RANKS
+    </button>
+
+    <button class="tab" onclick="showSection('skills')">
+        SKILLS
+    </button>
+
+    <button class="tab" onclick="showSection('highlights')">
+        HIGHLIGHTS
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     GROUP OVERALL
+===================================================== -->
+
+<section id="groups" class="page-section active">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>🏆 Group Overall</h2>
+            <p>Overall fictional rating of every Musicverse group.</p>
+        </div>
+
+        <span class="section-badge">12 GROUPS</span>
+
+    </div>
+
+
+    <div class="podium">
+
+        <div class="podium-card">
+            <div class="podium-rank">🥈</div>
+            <h3>PINKPUNK</h3>
+            <p>LUX Entertainment</p>
+            <div class="podium-score">9.7</div>
+        </div>
+
+        <div class="podium-card first">
+            <div class="podium-rank">👑</div>
+            <h3>ELLEVEN</h3>
+            <p>Aurelia Entertainment</p>
+            <div class="podium-score">9.8</div>
+        </div>
+
+        <div class="podium-card">
+            <div class="podium-rank">🥉</div>
+            <h3>STEELROSE</h3>
+            <p>XG Labels</p>
+            <div class="podium-score">9.3</div>
+        </div>
+
+    </div>
+
+
+    <div class="group-list">
+
+
+        <div class="group-card">
+
+            <div class="group-rank gold">#1</div>
+
+            <div class="group-main">
+                <h3>ELLEVEN</h3>
+                <p>11 members · Aurelia Entertainment</p>
             </div>
 
-            <div class="ranking-card">
-                <div class="rank">#2</div>
-                <img class="idol-photo" src="miyeon.jpg">
-                <div class="idol-info">
-                    <h3>Miyeon</h3>
-                    <p>PINKPUNK · LUX Entertainment</p>
-                </div>
-                <div class="level">S+</div>
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>9.9</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>10</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>9.9</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>9.7</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>9.9</strong></div>
             </div>
 
-            <div class="ranking-card">
-                <div class="rank">#3</div>
-                <img class="idol-photo" src="rora.jpg">
-                <div class="idol-info">
-                    <h3>Rora</h3>
-                    <p>ELLEVEN · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S+</div>
-            </div>
-
-            <div class="ranking-card">
-                <div class="rank">#4</div>
-                <img class="idol-photo" src="rose.jpg">
-                <div class="idol-info">
-                    <h3>Rosé</h3>
-                    <p>PINKPUNK · LUX Entertainment</p>
-                </div>
-                <div class="level">S</div>
-            </div>
-
-            <div class="ranking-card">
-                <div class="rank">#5</div>
-                <img class="idol-photo" src="yuha.jpg">
-                <div class="idol-info">
-                    <h3>Yuha</h3>
-                    <p>ELLEVEN · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S</div>
+            <div class="score-box">
+                <div class="score">9.8 <small>/10</small></div>
+                <div class="bar"><span style="width:98%"></span></div>
             </div>
 
         </div>
 
-    </section>
 
+        <div class="group-card">
 
-    <!-- RAP -->
+            <div class="group-rank silver">#2</div>
 
-    <section class="ranking-section">
-
-        <h2 class="ranking-title">
-            🎙️ Rap Ranking
-        </h2>
-
-        <div class="ranking-list">
-
-            <div class="ranking-card">
-                <div class="rank">#1</div>
-                <img class="idol-photo" src="asa.jpg">
-                <div class="idol-info">
-                    <h3>Asa</h3>
-                    <p>ELLEVEN · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S++</div>
+            <div class="group-main">
+                <h3>PINKPUNK</h3>
+                <p>7 members · LUX Entertainment</p>
             </div>
 
-            <div class="ranking-card">
-                <div class="rank">#2</div>
-                <img class="idol-photo" src="jennie.jpg">
-                <div class="idol-info">
-                    <h3>Jennie</h3>
-                    <p>PINKPUNK · LUX Entertainment</p>
-                </div>
-                <div class="level">S+</div>
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>9.7</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>9.7</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>9.8</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>9.9</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>9.7</strong></div>
             </div>
 
-            <div class="ranking-card">
-                <div class="rank">#3</div>
-                <img class="idol-photo" src="ruka.jpg">
-                <div class="idol-info">
-                    <h3>Ruka</h3>
-                    <p>ELLEVEN · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S</div>
-            </div>
-
-            <div class="ranking-card">
-                <div class="rank">#4</div>
-                <img class="idol-photo" src="lisa.jpg">
-                <div class="idol-info">
-                    <h3>Lisa</h3>
-                    <p>PINKPUNK · LUX Entertainment</p>
-                </div>
-                <div class="level">S</div>
-            </div>
-
-            <div class="ranking-card">
-                <div class="rank">#5</div>
-                <img class="idol-photo" src="ahyeon.jpg">
-                <div class="idol-info">
-                    <h3>Ahyeon</h3>
-                    <p>ELLEVEN · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S-</div>
+            <div class="score-box">
+                <div class="score">9.7 <small>/10</small></div>
+                <div class="bar"><span style="width:97%"></span></div>
             </div>
 
         </div>
 
-    </section>
 
+        <div class="group-card">
 
-    <!-- DANCE -->
+            <div class="group-rank bronze">#3</div>
 
-    <section class="ranking-section">
-
-        <h2 class="ranking-title">
-            💃 Dance Ranking
-        </h2>
-
-        <div class="ranking-list">
-
-            <div class="ranking-card">
-                <div class="rank">#1</div>
-                <img class="idol-photo" src="lisa.jpg">
-                <div class="idol-info">
-                    <h3>Lisa</h3>
-                    <p>PINKPUNK · LUX Entertainment</p>
-                </div>
-                <div class="level">10</div>
+            <div class="group-main">
+                <h3>STEELROSE</h3>
+                <p>6 members · XG Labels</p>
             </div>
 
-            <div class="ranking-card">
-                <div class="rank">#2</div>
-                <img class="idol-photo" src="ruka.jpg">
-                <div class="idol-info">
-                    <h3>Ruka</h3>
-                    <p>ELLEVEN · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S</div>
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>9.1</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>9.0</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>9.5</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>9.3</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>9.5</strong></div>
             </div>
 
-            <div class="ranking-card">
-                <div class="rank">#3</div>
-                <img class="idol-photo" src="sooin.jpg">
-                <div class="idol-info">
-                    <h3>Sooin</h3>
-                    <p>STEELROSE · XG Labels</p>
-                </div>
-                <div class="level">S</div>
-            </div>
-
-            <div class="ranking-card">
-                <div class="rank">#4</div>
-                <img class="idol-photo" src="haerin.jpg">
-                <div class="idol-info">
-                    <h3>Haerin</h3>
-                    <p>LESSERAFIM · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S+</div>
-            </div>
-
-            <div class="ranking-card">
-                <div class="rank">#5</div>
-                <img class="idol-photo" src="mina.jpg">
-                <div class="idol-info">
-                    <h3>Mina</h3>
-                    <p>PINKPUNK · LUX Entertainment</p>
-                </div>
-                <div class="level">9.2</div>
+            <div class="score-box">
+                <div class="score">9.3 <small>/10</small></div>
+                <div class="bar"><span style="width:93%"></span></div>
             </div>
 
         </div>
 
-    </section>
 
+        <div class="group-card">
 
-    <!-- KBS -->
+            <div class="group-rank">#4</div>
 
-    <section class="ranking-section">
-
-        <h2 class="ranking-title">
-            👑 KBS / Visual Ranking
-        </h2>
-
-        <div class="ranking-list">
-
-            <div class="ranking-card">
-                <div class="rank">#1</div>
-                <img class="idol-photo" src="jisoo.jpg">
-                <div class="idol-info">
-                    <h3>Jisoo</h3>
-                    <p>PINKPUNK · LUX Entertainment</p>
-                </div>
-                <div class="level">S+</div>
+            <div class="group-main">
+                <h3>LESSERAFIM</h3>
+                <p>6 members · Aurelia Entertainment</p>
             </div>
 
-            <div class="ranking-card">
-                <div class="rank">#2</div>
-                <img class="idol-photo" src="pharita.jpg">
-                <div class="idol-info">
-                    <h3>Pharita</h3>
-                    <p>ELLEVEN · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S+</div>
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>9.1</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>8.7</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>9.4</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>9.6</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>9.5</strong></div>
             </div>
 
-            <div class="ranking-card">
-                <div class="rank">#3</div>
-                <img class="idol-photo" src="liz.jpg">
-                <div class="idol-info">
-                    <h3>Liz</h3>
-                    <p>LESSERAFIM · Aurelia Entertainment</p>
-                </div>
-                <div class="level">S</div>
-            </div>
-
-            <div class="ranking-card">
-                <div class="rank">#4</div>
-                <img class="idol-photo" src="jeemin.jpg">
-                <div class="idol-info">
-                    <h3>Jeemin</h3>
-                    <p>PANDORA · Starship Entertainment</p>
-                </div>
-                <div class="level">S</div>
-            </div>
-
-            <div class="ranking-card">
-                <div class="rank">#5</div>
-                <img class="idol-photo" src="ruby.jpg">
-                <div class="idol-info">
-                    <h3>Ruby</h3>
-                    <p>PANDORA · Starship Entertainment</p>
-                </div>
-                <div class="level">S</div>
+            <div class="score-box">
+                <div class="score">9.2 <small>/10</small></div>
+                <div class="bar"><span style="width:92%"></span></div>
             </div>
 
         </div>
 
-    </section>
+
+        <div class="group-card">
+
+            <div class="group-rank">#5</div>
+
+            <div class="group-main">
+                <h3>HEARTS2HEARTS</h3>
+                <p>9 members · Aurelia Entertainment</p>
+            </div>
+
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>9.4</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>8.1</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>8.8</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>9.5</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>9.0</strong></div>
+            </div>
+
+            <div class="score-box">
+                <div class="score">9.1 <small>/10</small></div>
+                <div class="bar"><span style="width:91%"></span></div>
+            </div>
+
+        </div>
+
+
+        <div class="group-card">
+
+            <div class="group-rank">#6</div>
+
+            <div class="group-main">
+                <h3>SWEET&SOUR</h3>
+                <p>6 members · XG Labels</p>
+            </div>
+
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>8.9</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>7.6</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>8.7</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>9.4</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>8.8</strong></div>
+            </div>
+
+            <div class="score-box">
+                <div class="score">8.9 <small>/10</small></div>
+                <div class="bar"><span style="width:89%"></span></div>
+            </div>
+
+        </div>
+
+
+        <div class="group-card">
+
+            <div class="group-rank">#7</div>
+
+            <div class="group-main">
+                <h3>PANDORA</h3>
+                <p>6 members · Starship Entertainment</p>
+            </div>
+
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>8.7</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>8.0</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>8.7</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>9.1</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>8.7</strong></div>
+            </div>
+
+            <div class="score-box">
+                <div class="score">8.7 <small>/10</small></div>
+                <div class="bar"><span style="width:87%"></span></div>
+            </div>
+
+        </div>
+
+
+        <div class="group-card">
+
+            <div class="group-rank">#8</div>
+
+            <div class="group-main">
+                <h3>GARLS</h3>
+                <p>5 members · Aurelia Entertainment</p>
+            </div>
+
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>8.4</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>8.3</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>9.0</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>9.2</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>8.8</strong></div>
+            </div>
+
+            <div class="score-box">
+                <div class="score">8.6 <small>/10</small></div>
+                <div class="bar"><span style="width:86%"></span></div>
+            </div>
+
+        </div>
+
+
+        <div class="group-card">
+
+            <div class="group-rank">#9</div>
+
+            <div class="group-main">
+                <h3>TWOON</h3>
+                <p>5 members · NOVA Entertainment</p>
+            </div>
+
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>8.5</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>8.8</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>8.4</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>8.6</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>8.7</strong></div>
+            </div>
+
+            <div class="score-box">
+                <div class="score">8.6 <small>/10</small></div>
+                <div class="bar"><span style="width:86%"></span></div>
+            </div>
+
+        </div>
+
+
+        <div class="group-card">
+
+            <div class="group-rank">#10</div>
+
+            <div class="group-main">
+                <h3>ONCE</h3>
+                <p>5 members · MDX Entertainment</p>
+            </div>
+
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>8.4</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>7.7</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>8.5</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>8.8</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>8.7</strong></div>
+            </div>
+
+            <div class="score-box">
+                <div class="score">8.4 <small>/10</small></div>
+                <div class="bar"><span style="width:84%"></span></div>
+            </div>
+
+        </div>
+
+
+        <div class="group-card">
+
+            <div class="group-rank">#11</div>
+
+            <div class="group-main">
+                <h3>WO!AH</h3>
+                <p>4 members · LUX Entertainment</p>
+            </div>
+
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>8.1</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>7.8</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>8.2</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>8.7</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>8.2</strong></div>
+            </div>
+
+            <div class="score-box">
+                <div class="score">8.2 <small>/10</small></div>
+                <div class="bar"><span style="width:82%"></span></div>
+            </div>
+
+        </div>
+
+
+        <div class="group-card">
+
+            <div class="group-rank">#12</div>
+
+            <div class="group-main">
+                <h3>MIDZY</h3>
+                <p>8 members · LUX Entertainment</p>
+            </div>
+
+            <div class="mini-stats">
+                <div class="mini-stat"><span>VOCAL</span><strong>8.0</strong></div>
+                <div class="mini-stat"><span>RAP</span><strong>8.1</strong></div>
+                <div class="mini-stat"><span>DANCE</span><strong>8.3</strong></div>
+                <div class="mini-stat"><span>VISUAL</span><strong>8.4</strong></div>
+                <div class="mini-stat"><span>STAGE</span><strong>8.2</strong></div>
+            </div>
+
+            <div class="score-box">
+                <div class="score">8.1 <small>/10</small></div>
+                <div class="bar"><span style="width:81%"></span></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     IDOL OVERALL
+===================================================== -->
+
+<section id="idols" class="page-section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>👑 Idol Overall</h2>
+            <p>Global fictional ranking of Musicverse idols.</p>
+        </div>
+
+        <span class="section-badge">TOP 20</span>
+
+    </div>
+
+    <div class="idol-ranking">
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#1</div>
+            <img class="idol-img" src="rami.jpg">
+            <div class="idol-info">
+                <h3>Rami</h3>
+                <p>ELLEVEN · Aurelia Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 9.9</span>
+                <span class="skill-pill">RAP 6.0</span>
+                <span class="skill-pill">DANCE 8.8</span>
+            </div>
+            <div class="idol-score">9.8</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#2</div>
+            <img class="idol-img" src="miyeon.jpg">
+            <div class="idol-info">
+                <h3>Miyeon</h3>
+                <p>PINKPUNK · LUX Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 9.8</span>
+                <span class="skill-pill">RAP 7.0</span>
+                <span class="skill-pill">DANCE 6.5</span>
+            </div>
+            <div class="idol-score">9.7</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#3</div>
+            <img class="idol-img" src="rora.jpg">
+            <div class="idol-info">
+                <h3>Rora</h3>
+                <p>ELLEVEN · Aurelia Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 9.7</span>
+                <span class="skill-pill">RAP 5.5</span>
+                <span class="skill-pill">DANCE 7.9</span>
+            </div>
+            <div class="idol-score">9.6</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#4</div>
+            <img class="idol-img" src="jiyoon.jpg">
+            <div class="idol-info">
+                <h3>Jiyoon</h3>
+                <p>HEARTS2HEARTS · Aurelia Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 10</span>
+                <span class="skill-pill">RAP 5.0</span>
+                <span class="skill-pill">DANCE 4.0</span>
+            </div>
+            <div class="idol-score">9.5</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#5</div>
+            <img class="idol-img" src="haewon.jpg">
+            <div class="idol-info">
+                <h3>Haewon</h3>
+                <p>SWEET&SOUR · XG Labels</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 9.8</span>
+                <span class="skill-pill">RAP 4.0</span>
+                <span class="skill-pill">DANCE 3.0</span>
+            </div>
+            <div class="idol-score">9.4</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#6</div>
+            <img class="idol-img" src="asa.jpg">
+            <div class="idol-info">
+                <h3>Asa</h3>
+                <p>ELLEVEN · Aurelia Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 6.4</span>
+                <span class="skill-pill">RAP 10</span>
+                <span class="skill-pill">DANCE 9.6</span>
+            </div>
+            <div class="idol-score">9.4</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#7</div>
+            <img class="idol-img" src="lisa.jpg">
+            <div class="idol-info">
+                <h3>Lisa</h3>
+                <p>PINKPUNK · LUX Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 6.3</span>
+                <span class="skill-pill">RAP 9.8</span>
+                <span class="skill-pill">DANCE 10</span>
+            </div>
+            <div class="idol-score">9.4</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#8</div>
+            <img class="idol-img" src="emma.jpg">
+            <div class="idol-info">
+                <h3>Emma</h3>
+                <p>HEARTS2HEARTS · Aurelia Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 6.1</span>
+                <span class="skill-pill">RAP 9.2</span>
+                <span class="skill-pill">DANCE 10</span>
+            </div>
+            <div class="idol-score">9.3</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#9</div>
+            <img class="idol-img" src="pharita.jpg">
+            <div class="idol-info">
+                <h3>Pharita</h3>
+                <p>ELLEVEN · Aurelia Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 9.0</span>
+                <span class="skill-pill">RAP 5.5</span>
+                <span class="skill-pill">DANCE 6.8</span>
+            </div>
+            <div class="idol-score">9.2</div>
+        </div>
+
+
+        <div class="idol-card">
+            <div class="idol-rank">#10</div>
+            <img class="idol-img" src="rose.jpg">
+            <div class="idol-info">
+                <h3>Rosé</h3>
+                <p>PINKPUNK · LUX Entertainment</p>
+            </div>
+            <div class="idol-skills">
+                <span class="skill-pill">VOC 9.7</span>
+                <span class="skill-pill">RAP 2.0</span>
+                <span class="skill-pill">DANCE 8.6</span>
+            </div>
+            <div class="idol-score">9.2</div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INDIVIDUAL GROUP RANKINGS
+===================================================== -->
+
+<section id="individual" class="page-section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>👥 Group Member Rankings</h2>
+            <p>Every group has its own internal overall ranking.</p>
+        </div>
+
+        <span class="section-badge">GROUP BY GROUP</span>
+
+    </div>
+
+
+    <!-- ELLEVEN -->
+
+    <div class="group-ranking">
+
+        <div class="group-ranking-header">
+
+            <div>
+                <h3>ELLEVEN</h3>
+                <p>Aurelia Entertainment · 11 members</p>
+            </div>
+
+            <div class="group-overall">9.8</div>
+
+        </div>
+
+        <div class="member-rank-list">
+
+            <div class="member-rank">
+                <div class="member-number">#1</div>
+                <img class="member-image" src="rami.jpg">
+                <div class="member-name">Rami<small>ELLEVEN</small></div>
+                <div class="member-score"><span>VOC</span>9.9</div>
+                <div class="member-score"><span>RAP</span>6.0</div>
+                <div class="member-score"><span>DANCE</span>8.8</div>
+                <div class="member-overall">9.8</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#2</div>
+                <img class="member-image" src="rora.jpg">
+                <div class="member-name">Rora<small>ELLEVEN</small></div>
+                <div class="member-score"><span>VOC</span>9.7</div>
+                <div class="member-score"><span>RAP</span>5.5</div>
+                <div class="member-score"><span>DANCE</span>7.9</div>
+                <div class="member-overall">9.6</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#3</div>
+                <img class="member-image" src="asa.jpg">
+                <div class="member-name">Asa<small>ELLEVEN</small></div>
+                <div class="member-score"><span>VOC</span>6.4</div>
+                <div class="member-score"><span>RAP</span>10</div>
+                <div class="member-score"><span>DANCE</span>9.6</div>
+                <div class="member-overall">9.4</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#4</div>
+                <img class="member-image" src="pharita.jpg">
+                <div class="member-name">Pharita<small>ELLEVEN</small></div>
+                <div class="member-score"><span>VOC</span>9.0</div>
+                <div class="member-score"><span>RAP</span>5.5</div>
+                <div class="member-score"><span>DANCE</span>6.8</div>
+                <div class="member-overall">9.2</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#5</div>
+                <img class="member-image" src="ahyeon.jpg">
+                <div class="member-name">Ahyeon<small>ELLEVEN</small></div>
+                <div class="member-score"><span>VOC</span>9.5</div>
+                <div class="member-score"><span>RAP</span>9.0</div>
+                <div class="member-score"><span>DANCE</span>9.0</div>
+                <div class="member-overall">9.2</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PINKPUNK -->
+
+    <div class="group-ranking">
+
+        <div class="group-ranking-header">
+
+            <div>
+                <h3>PINKPUNK</h3>
+                <p>LUX Entertainment · 7 members</p>
+            </div>
+
+            <div class="group-overall">9.7</div>
+
+        </div>
+
+        <div class="member-rank-list">
+
+            <div class="member-rank">
+                <div class="member-number">#1</div>
+                <img class="member-image" src="lisa.jpg">
+                <div class="member-name">Lisa<small>PINKPUNK</small></div>
+                <div class="member-score"><span>VOC</span>6.3</div>
+                <div class="member-score"><span>RAP</span>9.8</div>
+                <div class="member-score"><span>DANCE</span>10</div>
+                <div class="member-overall">9.4</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#2</div>
+                <img class="member-image" src="rose.jpg">
+                <div class="member-name">Rosé<small>PINKPUNK</small></div>
+                <div class="member-score"><span>VOC</span>9.7</div>
+                <div class="member-score"><span>RAP</span>2.0</div>
+                <div class="member-score"><span>DANCE</span>8.6</div>
+                <div class="member-overall">9.2</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#3</div>
+                <img class="member-image" src="miyeon.jpg">
+                <div class="member-name">Miyeon<small>PINKPUNK</small></div>
+                <div class="member-score"><span>VOC</span>9.8</div>
+                <div class="member-score"><span>RAP</span>7.0</div>
+                <div class="member-score"><span>DANCE</span>6.5</div>
+                <div class="member-overall">9.7</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#4</div>
+                <img class="member-image" src="jennie.jpg">
+                <div class="member-name">Jennie<small>PINKPUNK</small></div>
+                <div class="member-score"><span>VOC</span>7.6</div>
+                <div class="member-score"><span>RAP</span>9.9</div>
+                <div class="member-score"><span>DANCE</span>8.8</div>
+                <div class="member-overall">9.3</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#5</div>
+                <img class="member-image" src="jisoo.jpg">
+                <div class="member-name">Jisoo<small>PINKPUNK</small></div>
+                <div class="member-score"><span>VOC</span>7.8</div>
+                <div class="member-score"><span>RAP</span>7.0</div>
+                <div class="member-score"><span>DANCE</span>6.3</div>
+                <div class="member-overall">8.9</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEARTS2HEARTS -->
+
+    <div class="group-ranking">
+
+        <div class="group-ranking-header">
+
+            <div>
+                <h3>HEARTS2HEARTS</h3>
+                <p>Aurelia Entertainment · 9 members</p>
+            </div>
+
+            <div class="group-overall">9.1</div>
+
+        </div>
+
+        <div class="member-rank-list">
+
+            <div class="member-rank">
+                <div class="member-number">#1</div>
+                <img class="member-image" src="jiyoon.jpg">
+                <div class="member-name">Jiyoon<small>HEARTS2HEARTS</small></div>
+                <div class="member-score"><span>VOC</span>10</div>
+                <div class="member-score"><span>RAP</span>5.0</div>
+                <div class="member-score"><span>DANCE</span>4.0</div>
+                <div class="member-overall">9.5</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#2</div>
+                <img class="member-image" src="sullyoon.jpg">
+                <div class="member-name">Sullyoon<small>HEARTS2HEARTS</small></div>
+                <div class="member-score"><span>VOC</span>9.1</div>
+                <div class="member-score"><span>RAP</span>3.0</div>
+                <div class="member-score"><span>DANCE</span>5.5</div>
+                <div class="member-overall">9.0</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#3</div>
+                <img class="member-image" src="emma.jpg">
+                <div class="member-name">Emma<small>HEARTS2HEARTS</small></div>
+                <div class="member-score"><span>VOC</span>6.1</div>
+                <div class="member-score"><span>RAP</span>9.2</div>
+                <div class="member-score"><span>DANCE</span>10</div>
+                <div class="member-overall">9.3</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#4</div>
+                <img class="member-image" src="kyujin.jpg">
+                <div class="member-name">Kyujin<small>HEARTS2HEARTS</small></div>
+                <div class="member-score"><span>VOC</span>8.9</div>
+                <div class="member-score"><span>RAP</span>3.0</div>
+                <div class="member-score"><span>DANCE</span>5.5</div>
+                <div class="member-overall">8.8</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#5</div>
+                <img class="member-image" src="iroha.jpg">
+                <div class="member-name">Iroha<small>HEARTS2HEARTS</small></div>
+                <div class="member-score"><span>VOC</span>4.5</div>
+                <div class="member-score"><span>RAP</span>2.0</div>
+                <div class="member-score"><span>DANCE</span>9.5</div>
+                <div class="member-overall">8.7</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SWEET&SOUR -->
+
+    <div class="group-ranking">
+
+        <div class="group-ranking-header">
+
+            <div>
+                <h3>SWEET&SOUR</h3>
+                <p>XG Labels · 6 members</p>
+            </div>
+
+            <div class="group-overall">8.9</div>
+
+        </div>
+
+        <div class="member-rank-list">
+
+            <div class="member-rank">
+                <div class="member-number">#1</div>
+                <img class="member-image" src="haewon.jpg">
+                <div class="member-name">Haewon<small>SWEET&SOUR</small></div>
+                <div class="member-score"><span>VOC</span>9.8</div>
+                <div class="member-score"><span>RAP</span>4.0</div>
+                <div class="member-score"><span>DANCE</span>3.0</div>
+                <div class="member-overall">9.4</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#2</div>
+                <img class="member-image" src="yunjin.jpg">
+                <div class="member-name">Yunjin<small>SWEET&SOUR</small></div>
+                <div class="member-score"><span>VOC</span>8.2</div>
+                <div class="member-score"><span>RAP</span>4.5</div>
+                <div class="member-score"><span>DANCE</span>5.5</div>
+                <div class="member-overall">8.7</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#3</div>
+                <img class="member-image" src="kazuha.jpg">
+                <div class="member-name">Kazuha<small>SWEET&SOUR</small></div>
+                <div class="member-score"><span>VOC</span>7.3</div>
+                <div class="member-score"><span>RAP</span>6.0</div>
+                <div class="member-score"><span>DANCE</span>9.5</div>
+                <div class="member-overall">8.8</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#4</div>
+                <img class="member-image" src="giselle.jpg">
+                <div class="member-name">Giselle<small>SWEET&SOUR</small></div>
+                <div class="member-score"><span>VOC</span>8.1</div>
+                <div class="member-score"><span>RAP</span>7.5</div>
+                <div class="member-score"><span>DANCE</span>5.5</div>
+                <div class="member-overall">8.5</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#5</div>
+                <img class="member-image" src="chaewon.jpg">
+                <div class="member-name">Chaewon<small>SWEET&SOUR</small></div>
+                <div class="member-score"><span>VOC</span>7.0</div>
+                <div class="member-score"><span>RAP</span>2.0</div>
+                <div class="member-score"><span>DANCE</span>7.5</div>
+                <div class="member-overall">8.2</div>
+            </div>
+
+            <div class="member-rank">
+                <div class="member-number">#6</div>
+                <img class="member-image" src="sakura.jpg">
+                <div class="member-name">Sakura<small>SWEET&SOUR</small></div>
+                <div class="member-score"><span>VOC</span>5.2</div>
+                <div class="member-score"><span>RAP</span>2.0</div>
+                <div class="member-score"><span>DANCE</span>8.5</div>
+                <div class="member-overall">7.9</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills" class="page-section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>🎤 Skill Rankings</h2>
+            <p>Top individual performers across the Musicverse.</p>
+        </div>
+
+        <span class="section-badge">TOP 5</span>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <div class="category-card">
+
+            <h3>🎤 Vocal</h3>
+
+            <div class="category-item">
+                <div class="category-number">#1</div>
+                <div class="category-name">Jiyoon<small>HEARTS2HEARTS</small></div>
+                <div class="category-score">10</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#2</div>
+                <div class="category-name">Rami<small>ELLEVEN</small></div>
+                <div class="category-score">9.9</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#3</div>
+                <div class="category-name">Haewon<small>SWEET&SOUR</small></div>
+                <div class="category-score">9.8</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#4</div>
+                <div class="category-name">Miyeon<small>PINKPUNK</small></div>
+                <div class="category-score">9.8</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#5</div>
+                <div class="category-name">Rora<small>ELLEVEN</small></div>
+                <div class="category-score">9.7</div>
+            </div>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <h3>🎙️ Rap</h3>
+
+            <div class="category-item">
+                <div class="category-number">#1</div>
+                <div class="category-name">Asa<small>ELLEVEN</small></div>
+                <div class="category-score">10</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#2</div>
+                <div class="category-name">Jennie<small>PINKPUNK</small></div>
+                <div class="category-score">9.9</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#3</div>
+                <div class="category-name">Ruka<small>ELLEVEN</small></div>
+                <div class="category-score">9.5</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#4</div>
+                <div class="category-name">Emma<small>HEARTS2HEARTS</small></div>
+                <div class="category-score">9.2</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#5</div>
+                <div class="category-name">Ahyeon<small>ELLEVEN</small></div>
+                <div class="category-score">9.0</div>
+            </div>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <h3>💃 Dance</h3>
+
+            <div class="category-item">
+                <div class="category-number">#1</div>
+                <div class="category-name">Lisa<small>PINKPUNK</small></div>
+                <div class="category-score">10</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#2</div>
+                <div class="category-name">Emma<small>HEARTS2HEARTS</small></div>
+                <div class="category-score">10</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#3</div>
+                <div class="category-name">Ruka<small>ELLEVEN</small></div>
+                <div class="category-score">9.8</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#4</div>
+                <div class="category-name">Iroha<small>HEARTS2HEARTS</small></div>
+                <div class="category-score">9.5</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#5</div>
+                <div class="category-name">Kazuha<small>SWEET&SOUR</small></div>
+                <div class="category-score">9.5</div>
+            </div>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <h3>👑 Visual / KBS</h3>
+
+            <div class="category-item">
+                <div class="category-number">#1</div>
+                <div class="category-name">Jisoo<small>PINKPUNK</small></div>
+                <div class="category-score">9.9</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#2</div>
+                <div class="category-name">Pharita<small>ELLEVEN</small></div>
+                <div class="category-score">9.8</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#3</div>
+                <div class="category-name">Sullyoon<small>HEARTS2HEARTS</small></div>
+                <div class="category-score">9.7</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#4</div>
+                <div class="category-name">Liz<small>LESSERAFIM</small></div>
+                <div class="category-score">9.6</div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-number">#5</div>
+                <div class="category-name">Jeemin<small>PANDORA</small></div>
+                <div class="category-score">9.5</div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HIGHLIGHTS
+===================================================== -->
+
+<section id="highlights" class="page-section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>✨ Ranking Highlights</h2>
+            <p>Some of the most interesting numbers in the Musicverse.</p>
+        </div>
+
+    </div>
+
+
+    <div class="highlight-grid">
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">🎤</div>
+
+            <h3>Strongest Vocal Line</h3>
+
+            <p>
+                ELLEVEN combines Rami, Rora, Yuha, Ahyeon and Pharita
+                to create one of the deepest vocal lines in the database.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">🔥</div>
+
+            <h3>Dance Monsters</h3>
+
+            <p>
+                Lisa, Emma, Ruka, Iroha and Kazuha occupy the highest
+                dance tiers currently recorded in Musicverse.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">🎙️</div>
+
+            <h3>Rap Power</h3>
+
+            <p>
+                Asa leads the current rap ranking, followed by Jennie,
+                Ruka, Emma and Ahyeon.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">💎</div>
+
+            <h3>Visual Power</h3>
+
+            <p>
+                PINKPUNK, ELLEVEN, HEARTS2HEARTS and PANDORA all feature
+                members placed highly in the visual rankings.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">👑</div>
+
+            <h3>Highest Individual Score</h3>
+
+            <p>
+                Rami currently sits at 9.8 overall, followed by several
+                idols in the 9.4–9.7 range.
+            </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <div class="highlight-icon">🌙</div>
+
+            <h3>New Generation</h3>
+
+            <p>
+                HEARTS2HEARTS and SWEET&SOUR have entered the Musicverse
+                rankings with their own complete internal member rankings.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
 
 </main>
 
 
 <footer>
 
+    <strong>MUSICVERSE PROFILES</strong>
+
     <p>
-        © 2026 Musicverse Profiles · Fictional Musicverse
+        © 2026 Musicverse · Fictional K-Pop Database
     </p>
 
 </footer>
+
+
+<script>
+
+/* =========================================================
+   TAB SYSTEM
+========================================================= */
+
+function showSection(id){
+
+    document.querySelectorAll(".page-section").forEach(section=>{
+        section.classList.remove("active");
+    });
+
+    document.querySelectorAll(".tab").forEach(button=>{
+        button.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    const tabs = document.querySelectorAll(".tab");
+
+    if(id === "groups") tabs[0].classList.add("active");
+    if(id === "idols") tabs[1].classList.add("active");
+    if(id === "individual") tabs[2].classList.add("active");
+    if(id === "skills") tabs[3].classList.add("active");
+    if(id === "highlights") tabs[4].classList.add("active");
+
+    window.scrollTo({
+        top:document.querySelector(".tabs").offsetTop - 100,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================================
+   KEYBOARD SHORTCUTS
+========================================================= */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "1") showSection("groups");
+    if(e.key === "2") showSection("idols");
+    if(e.key === "3") showSection("individual");
+    if(e.key === "4") showSection("skills");
+    if(e.key === "5") showSection("highlights");
+
+});
+
+</script>
 
 </body>
 </html>
