@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Musicverse News</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f9;
+    color: #17171b;
+}
+
+/* HEADER */
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #8b5cf6;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+nav a:hover,
+nav a.active {
+    color: #8b5cf6;
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1250px;
+    margin: 55px auto 35px;
+    padding: 0 25px;
+}
+
+.hero small {
+    color: #8b5cf6;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-top: 8px;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    color: #777;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+/* BREAKING */
+
+.breaking {
+    max-width: 1250px;
+    margin: 0 auto 45px;
+    padding: 0 25px;
+}
+
+.breaking-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.breaking-card:hover {
+    transform: translateY(-4px);
+}
+
+.breaking-image {
+    height: 470px;
+    overflow: hidden;
+}
+
+.breaking-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.breaking-content {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tag {
+    display: inline-block;
+    width: fit-content;
+    background: #eeeafd;
+    color: #7650df;
+    padding: 7px 12px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.breaking-content h2 {
+    font-size: 36px;
+    line-height: 1.05;
+    margin: 18px 0;
+}
+
+.date {
+    color: #999;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-top: 18px;
+}
+
+/* NEWS */
+
+.news-section {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 25px 70px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+}
+
+.section-title span {
+    color: #999;
+    font-size: 13px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+}
+
+.news-image {
+    height: 245px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-info {
+    padding: 20px;
+}
+
+.news-info h3 {
+    font-size: 19px;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.news-info p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* FILTERS */
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.filter {
+    border: 1px solid #ddd;
+    background: white;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.filter:hover,
+.filter.active {
+    background: #17171b;
+    color: white;
+    border-color: #17171b;
+}
+
+/* ARTICLE MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 25px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.article {
+    background: white;
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 22px;
+    position: relative;
+}
+
+.article img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 35px;
+}
+
+.article-content .tag {
+    margin-bottom: 15px;
+}
+
+.article-content h2 {
+    font-size: 34px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+.article-content .article-date {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.article-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.95);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* FOOTER */
+
+footer {
+    background: #17171b;
+    color: white;
+    padding: 45px 25px;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 22px;
+}
+
+footer p {
+    color: #999;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .breaking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .breaking-image {
+        height: 300px;
+    }
+
+    .breaking-content {
+        padding: 30px;
+    }
+
+    .breaking-content h2 {
+        font-size: 28px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            MUSIC<span>VERSE</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="groups.html">Groups</a>
+            <a href="idols.html">Idols</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="news.html" class="active">News</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <small>MUSICVERSE NEWS</small>
+
+    <h1>Latest News</h1>
+
+    <p>
+        Everything happening across the Musicverse.
+    </p>
+
+</section>
+
+
+<!-- BREAKING NEWS -->
+
+<section class="breaking">
+
+    <div class="breaking-card" onclick="openArticle(0)">
+
+        <div class="breaking-image">
+            <img src="h2hcover.jpg">
+        </div>
+
+        <div class="breaking-content">
+
+            <span class="tag">BREAKING NEWS</span>
+
+            <h2>
+                HEARTS2HEARTS ANNOUNCE NEW MINI ALBUM “THE CHASE”
+            </h2>
+
+            <div class="date">
+                SEPTEMBER 18, 2026 · COMEBACK
+            </div>
+
+            <p class="excerpt">
+                HEARTS2HEARTS are officially entering a new era with
+                their upcoming mini album “THE CHASE”.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="news-section">
+
+    <div class="section-title">
+        <h2>Latest Stories</h2>
+        <span>Musicverse News</span>
+    </div>
+
+
+    <div class="filters">
+
+        <button class="filter active" onclick="filterNews('ALL', this)">
+            ALL
+        </button>
+
+        <button class="filter" onclick="filterNews('COMEBACK', this)">
+            COMEBACKS
+        </button>
+
+        <button class="filter" onclick="filterNews('FASHION', this)">
+            FASHION
+        </button>
+
+        <button class="filter" onclick="filterNews('INDUSTRY', this)">
+            INDUSTRY
+        </button>
+
+        <button class="filter" onclick="filterNews('RUMOR', this)">
+            RUMORS
+        </button>
+
+    </div>
+
+
+    <div class="news-grid" id="newsGrid"></div>
+
+</section>
+
+
+<!-- ARTICLE MODAL -->
+
+<div class="modal" id="articleModal">
+
+    <div class="article">
+
+        <button class="close" onclick="closeArticle()">×</button>
+
+        <img id="articleImage">
+
+        <div class="article-content">
+
+            <span class="tag" id="articleTag"></span>
+
+            <h2 id="articleTitle"></h2>
+
+            <div class="article-date" id="articleDate"></div>
+
+            <div id="articleText"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <h2>MUSICVERSE</h2>
+
+    <p>
+        The fictional K-pop universe database.
+    </p>
+
+</footer>
+
+
+<script>
+
+const news = [
+
+    {
+        title: "HEARTS2HEARTS ANNOUNCE NEW MINI ALBUM “THE CHASE”",
+        image: "h2hcover.jpg",
+        category: "COMEBACK",
+        date: "September 18, 2026",
+        text: `
+            <p>
+                HEARTS2HEARTS have officially announced their upcoming
+                mini album <b>“THE CHASE”</b>, marking the beginning
+                of a new era for the nine-member group.
+            </p>
+
+            <p>
+                The announcement has already generated excitement
+                across the Musicverse, with fans waiting to discover
+                the album's concept, tracklist and title track.
+            </p>
+        `
+    },
+
+    {
+        title: "PHARITA & CHIQUITA NAMED NEW GARNIER AMBASSADORS",
+        image: "garnier.jpg",
+        category: "FASHION",
+        date: "September 18, 2026",
+        text: `
+            <p>
+                ELLEVEN members <b>Pharita</b> and <b>Chiquita</b>
+                have been announced as new ambassadors for Garnier.
+            </p>
+
+            <p>
+                The pair will appear together in promotional material
+                for the brand, adding another major commercial partnership
+                to their growing careers.
+            </p>
+        `
+    },
+
+    {
+        title: "SULLYOON & KYUJIN JOIN GOLDEN DEW AS NEW AMBASSADORS",
+        image: "goldendew.jpg",
+        category: "FASHION",
+        date: "September 17, 2026",
+        text: `
+            <p>
+                HEARTS2HEARTS members <b>Sullyoon</b> and
+                <b>Kyujin</b> have been selected as new ambassadors
+                for Golden Dew.
+            </p>
+
+            <p>
+                The members are expected to participate in upcoming
+                campaigns and promotional events for the luxury jewellery
+                brand.
+            </p>
+        `
+    },
+
+    {
+        title: "CHAEWON & KAZUHA SPOTTED TOGETHER AT PRIVATE PARTY",
+        image: "party.jpg",
+        category: "INDUSTRY",
+        date: "September 16, 2026",
+        text: `
+            <p>
+                SWEET&SOUR members <b>Chaewon</b> and <b>Kazuha</b>
+                were photographed together at a private industry party.
+            </p>
+
+            <p>
+                The appearance quickly attracted attention from fans,
+                who shared the photos across social media.
+            </p>
+        `
+    },
+
+    {
+        title: "MYSTERIOUS AURELIA TRAINEES SPARK DEBUT SPECULATION",
+        image: "traines.jpg",
+        category: "RUMOR",
+        date: "September 15, 2026",
+        text: `
+            <p>
+                A newly surfaced photo allegedly showing several
+                <b>Aurelia Entertainment trainees</b> has sparked
+                speculation among Musicverse fans.
+            </p>
+
+            <p>
+                Some fans believe the trainees could be preparing
+                for a future girl group, although no official debut
+                announcement has been made.
+            </p>
+
+            <p>
+                Aurelia Entertainment has not confirmed the identity
+                of the trainees or whether they are connected to a
+                future group.
+            </p>
+        `
+    }
+
+];
+
+
+function renderNews(list = news) {
+
+    const grid = document.getElementById("newsGrid");
+
+    grid.innerHTML = "";
+
+    list.forEach((item) => {
+
+        const originalIndex = news.indexOf(item);
+
+        grid.innerHTML += `
+
+            <article class="news-card"
+                     onclick="openArticle(${originalIndex})">
+
+                <div class="news-image">
+
+                    <img src="${item.image}" alt="${item.title}">
+
+                </div>
+
+                <div class="news-info">
+
+                    <span class="tag">
+                        ${item.category}
+                    </span>
+
+                    <h3>
+                        ${item.title}
+                    </h3>
+
+                    <p>
+                        ${item.date} · Musicverse News
+                    </p>
+
+                </div>
+
+            </article>
+
+        `;
+
+    });
+
+}
+
+
+function openArticle(index) {
+
+    const item = news[index];
+
+    document.getElementById("articleImage").src = item.image;
+    document.getElementById("articleTag").textContent = item.category;
+    document.getElementById("articleTitle").textContent = item.title;
+    document.getElementById("articleDate").textContent =
+        item.date + " · MUSICVERSE NEWS";
+
+    document.getElementById("articleText").innerHTML = item.text;
+
+    document.getElementById("articleModal").classList.add("show");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeArticle() {
+
+    document.getElementById("articleModal").classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+function filterNews(category, button) {
+
+    document.querySelectorAll(".filter").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    if (category === "ALL") {
+
+        renderNews(news);
+
+    } else {
+
+        renderNews(
+            news.filter(item => item.category === category)
+        );
+
+    }
+
+}
+
+
+document.getElementById("articleModal").addEventListener("click", function(e) {
+
+    if (e.target === this) {
+        closeArticle();
+    }
+
+});
+
+
+renderNews();
+
+</script>
+
+</body>
+</html>
