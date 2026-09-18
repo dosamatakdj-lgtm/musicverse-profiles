@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>STEELROSE — Musicverse</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f2f7;
+color:#211c25;
+}
+
+header{
+height:76px;
+background:#17131c;
+color:white;
+display:flex;
+align-items:center;
+padding:0 6%;
+gap:30px;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.logo{
+font-size:24px;
+font-weight:900;
+letter-spacing:2px;
+}
+
+nav{
+margin-left:auto;
+display:flex;
+gap:22px;
+align-items:center;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+}
+
+.search{
+width:180px;
+padding:10px 15px;
+border-radius:20px;
+border:1px solid #494151;
+background:#29242f;
+color:white;
+}
+
+.hero{
+background:linear-gradient(135deg,#17131c,#5b263d);
+color:white;
+padding:100px 7%;
+}
+
+.hero small{
+letter-spacing:4px;
+color:#e6b7c9;
+font-weight:bold;
+}
+
+.hero h1{
+font-size:72px;
+margin:15px 0;
+letter-spacing:3px;
+}
+
+.hero p{
+color:#ddd;
+max-width:650px;
+font-size:17px;
+line-height:1.7;
+}
+
+.info{
+padding:60px 7%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.info-box{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 8px 25px #211c2510;
+}
+
+.info-box span{
+display:block;
+font-size:11px;
+font-weight:bold;
+color:#9a4e70;
+letter-spacing:2px;
+margin-bottom:8px;
+}
+
+.info-box strong{ 
+font-size:20px;
+}
+
+.members{
+padding:20px 7% 80px;
+}
+
+.members h2{
+font-size:35px;
+margin-bottom:30px;
+}
+
+.member-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.member{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 8px 25px #211c2510;
+transition:.25s;
+}
+
+.member:hover{
+transform:translateY(-6px);
+}
+
+.member img{
+width:100%;
+height:390px;
+object-fit:cover;
+display:block;
+}
+
+.member-info{
+padding:20px;
+}
+
+.member-info h3{
+font-size:25px;
+margin-bottom:6px;
+}
+
+.position{
+font-size:12px;
+font-weight:bold;
+color:#9a4e70;
+letter-spacing:1px;
+line-height:1.6;
+}
+
+footer{
+background:#17131c;
+color:#aaa;
+padding:40px;
+text-align:center;
+}
+
+@media(max-width:900px){
+.info{
+grid-template-columns:repeat(2,1fr);
+}
+
+.member-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.info{
+grid-template-columns:1fr;
+}
+
+.member-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:50px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">MUSICVERSE</div>
+
+<nav>
+<a href="index.html">HOME</a>
+<a href="groups.html">GROUPS</a>
+<a href="idols.html">IDOLS</a>
+<a href="vote.html">VOTE</a>
+
+<input
+class="search"
+id="search"
+placeholder="Search..."
+>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<small>XG LABELS</small>
+
+<h1>STEELROSE</h1>
+
+<p>
+A six-member girl group under XG Labels.
+SWEET&SOUR debuted with <strong>Fearless</strong>.
+</p>
+
+</section>
+
+<section class="info">
+
+<div class="info-box">
+<span>COMPANY</span>
+<strong>XG Labels</strong>
+</div>
+
+<div class="info-box">
+<span>MEMBERS</span>
+<strong>6</strong>
+</div>
+
+<div class="info-box">
+<span>DEBUT</span>
+<strong>Fearless</strong>
+</div>
+
+<div class="info-box">
+<span>GROUP TYPE</span>
+<strong>Girl Group</strong>
+</div>
+
+</section>
+
+<section class="members">
+
+<h2>Members</h2>
+
+<div class="member-grid">
+
+<a href="sakura.html" style="text-decoration:none;color:inherit">
+<div class="member">
+<img src="sakura.jpg">
+<div class="member-info">
+<h3>Belle</h3>
+<div class="position">
+Unnie · Lead Dancer
+</div>
+</div>
+</div>
+</a>
+
+<a href="chaewon.html" style="text-decoration:none;color:inherit">
+<div class="member">
+<img src="chaewon.jpg">
+<div class="member-info">
+<h3>Chaewon</h3>
+Leader· Sub Vocalist
+</div>
+</div>
+</div>
+</a>
+
+<a href="giselle.html" style="text-decoration:none;color:inherit">
+<div class="member">
+<img src="giselle.jpg">
+<div class="member-info">
+<h3>Giselle</h3>
+<div class="position">
+Main Rapper
+</div>
+</div>
+</div>
+</a>
+
+<a href="yunjin.html" style="text-decoration:none;color:inherit">
+<div class="member">
+<img src="yunjin.jpg">
+<div class="member-info">
+<h3>Yunjin</h3>
+<div class="position">
+Lead Vocalist · Visual
+</div>
+</div>
+</div>
+</a>
+
+<a href="haewon.html" style="text-decoration:none;color:inherit">
+<div class="member">
+<img src="haewon.jpg">
+<div class="member-info">
+<h3>Haewon</h3>
+<div class="position">
+Main Vocalist · Visual
+</div>
+</div>
+</div>
+</a>
+
+
+<a href="kazuha.html" style="text-decoration:none;color:inherit">
+<div class="member">
+<img src="kazuha.jpg">
+<div class="member-info">
+<h3>Kazuha</h3>
+<div class="position">
+Main Dancer · Lead Rapper · Visual · Maknae
+</div>
+</div>
+</div>
+</a>
+
+</div>
+
+</section>
+
+<footer>
+MUSICVERSE © 2026 · Fictional K-Pop Database
+</footer>
+
+<script>
+
+document.getElementById("search")
+.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+
+location.href=
+"idols.html?search="+
+encodeURIComponent(this.value);
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
