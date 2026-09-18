@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Musicverse — Scores</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f7f7fb;
+        color: #222;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        background: linear-gradient(135deg, #111827, #27272a);
+        color: white;
+        padding: 45px 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 42px;
+        letter-spacing: 3px;
+        font-weight: 800;
+    }
+
+    header p {
+        margin-top: 10px;
+        color: #cfcfd6;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    /* =========================
+       CONTENEDOR
+    ========================= */
+
+    .container {
+        width: 92%;
+        max-width: 1250px;
+        margin: 45px auto;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .section-title p {
+        color: #777;
+        margin-top: 6px;
+    }
+
+    /* =========================
+       GLOBAL TOP 10
+    ========================= */
+
+    .global-top {
+        background: white;
+        border-radius: 25px;
+        padding: 30px;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .global-item {
+        display: grid;
+        grid-template-columns: 65px 1fr auto;
+        align-items: center;
+        gap: 15px;
+        padding: 17px 18px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        transition: transform .2s, box-shadow .2s;
+    }
+
+    .global-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    }
+
+    .global-item.first {
+        padding: 25px 20px;
+        border: 2px solid #f3a7cf;
+    }
+
+    .number {
+        font-size: 27px;
+        font-weight: 900;
+        color: #999;
+        text-align: center;
+    }
+
+    .first .number {
+        font-size: 38px;
+        color: #e84f9d;
+    }
+
+    .idol-name {
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .first .idol-name {
+        font-size: 24px;
+    }
+
+    .group-name {
+        color: #888;
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    .score {
+        text-align: right;
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .level {
+        display: inline-block;
+        margin-top: 5px;
+        padding: 4px 9px;
+        border-radius: 20px;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .5px;
+    }
+
+    /* =========================
+       COLORES
+    ========================= */
+
+    .top {
+        background: #ffe0ef;
+        color: #c62f78;
+    }
+
+    .great {
+        background: #eee2ff;
+        color: #7645b8;
+    }
+
+    .good {
+        background: #ddf5df;
+        color: #3f9148;
+    }
+
+    .average {
+        background: #fff4bf;
+        color: #a08000;
+    }
+
+    .below {
+        background: #ffe1c7;
+        color: #b85d18;
+    }
+
+    .dozen {
+        background: #e4e4e4;
+        color: #666;
+    }
+
+    /* =========================
+       GROUP GRID
+    ========================= */
+
+    .groups-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-top: 35px;
+    }
+
+    .group-card {
+        background: white;
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 7px 25px rgba(0,0,0,.07);
+        transition: transform .2s, box-shadow .2s;
+    }
+
+    .group-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0,0,0,.11);
+    }
+
+    .group-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .group-header h3 {
+        font-size: 21px;
+    }
+
+    .group-header span {
+        font-size: 11px;
+        color: #999;
+        font-weight: bold;
+    }
+
+    .member {
+        display: grid;
+        grid-template-columns: 30px 1fr auto;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 8px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+
+    .member:hover {
+        background: #f7f7f7;
+    }
+
+    .member-rank {
+        font-size: 12px;
+        font-weight: 800;
+        color: #999;
+    }
+
+    .member-name {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .member-score {
+        font-size: 13px;
+        font-weight: 900;
+        padding: 4px 8px;
+        border-radius: 10px;
+    }
+
+    /* =========================
+       LEGEND
+    ========================= */
+
+    .legend {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 35px 0;
+    }
+
+    .legend span {
+        padding: 8px 13px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 800;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+        .groups-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        .groups-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .global-item {
+            grid-template-columns: 45px 1fr auto;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MUSICVERSE SCORES</h1>
+    <p>GLOBAL IDOL PERFORMANCE RANKINGS</p>
+</header>
+
+
+<div class="container">
+
+    <!-- =========================
+         GLOBAL TOP 10
+    ========================= -->
+
+    <div class="section-title">
+        <h2>🏆 GLOBAL TOP 10</h2>
+        <p>The highest ranked idols in Musicverse</p>
+    </div>
+
+    <div class="global-top" id="globalTop"></div>
+
+
+    <!-- =========================
+         LEGEND
+    ========================= -->
+
+    <div class="legend">
+
+        <span class="top">
+            TOP IDOL · 9.00+
+        </span>
+
+        <span class="great">
+            GREAT IDOL · 8.00+
+        </span>
+
+        <span class="good">
+            GOOD IDOL · 7.00+
+        </span>
+
+        <span class="average">
+            AVERAGE IDOL · 6.00+
+        </span>
+
+        <span class="below">
+            BELOW IDOL · 5.00+
+        </span>
+
+        <span class="dozen">
+            DOZEN IDOL · 1.00+
+        </span>
+
+    </div>
+
+
+    <!-- =========================
+         GROUP RANKINGS
+    ========================= -->
+
+    <div class="section-title">
+        <h2>GROUP SCORES</h2>
+        <p>Individual rankings within each Musicverse group</p>
+    </div>
+
+    <div class="groups-grid" id="groupsGrid"></div>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   GROUP DATA
+========================================= */
+
+const groups = {
+
+    PINKPUNK: [
+        ["Lisa", 9.33],
+        ["Jennie", 9.05],
+        ["Minnie", 8.10],
+        ["Mina", 7.50],
+        ["Rosé", 7.38],
+        ["Miyeon", 7.15],
+        ["Jisoo", 6.00]
+    ],
+
+    GARLS: [
+        ["Karina", 9.23],
+        ["Ningning", 8.68],
+        ["Yuna", 8.43],
+        ["Hanni", 8.41],
+        ["Chaeryeong", 7.48]
+    ],
+
+    TWOON: [
+        ["Soyeon", 9.88],
+        ["Yeji", 8.54],
+        ["Yuqi", 8.36],
+        ["Soojin", 7.98],
+        ["Yeri", 6.28]
+    ],
+
+    HEARTS2HEARTS: [
+        ["Kyujin", 9.95],
+        ["Emma", 9.38],
+        ["Julie", 8.99],
+        ["Sullyoon", 8.60],
+        ["Natty", 8.38],
+        ["Danielle", 8.26],
+        ["Xiaoting", 7.53],
+        ["Iroha", 7.41],
+        ["Jiyoon", 6.75]
+    ],
+
+    "SWEET&SOUR": [
+        ["Haewon", 9.06],
+        ["Yunjin", 8.88],
+        ["Kazuha", 8.71],
+        ["Chaewon", 8.58],
+        ["Giselle", 8.54],
+        ["Sakura", 7.04]
+    ],
+
+    ELLEVEN: [
+        ["Asa", 8.79],
+        ["Ahyeon", 8.10],
+        ["Chiquita", 8.09],
+        ["Rami", 8.06],
+        ["Rora", 7.53],
+        ["Juun", 7.48],
+        ["Yuha", 7.28],
+        ["Ruka", 7.24],
+        ["Stella", 7.19],
+        ["Pharita", 6.66],
+        ["A-na", 6.55]
+    ],
+
+    STEELROSE: [
+        ["Gawon", 8.65],
+        ["Belle", 8.05],
+        ["Sooin", 7.94],
+        ["Ella", 7.58],
+        ["Garam", 7.18],
+        ["Anna", 7.06]
+    ],
+
+    LESSERAFIM: [
+        ["Narin", 8.80],
+        ["Yujin", 8.41],
+        ["Winter", 7.94],
+        ["Haerin", 7.71],
+        ["Eunchae", 7.31],
+        ["Liz", 7.18]
+    ],
+
+    ONCE: [
+        ["Jihyo", 8.88],
+        ["Dahyun", 7.48],
+        ["Chaeyoung", 7.44],
+        ["Sana", 7.35],
+        ["Tzuyu", 6.58]
+    ],
+
+    "WO!AH": [
+        ["Somi", 9.25],
+        ["Minji", 7.88],
+        ["Wonyoung", 7.39],
+        ["Shuhua", 6.47]
+    ],
+
+    MIDZY: [
+        ["HU’E", 8.63],
+        ["Kelly", 8.23],
+        ["Minju", 7.86],
+        ["Hyein", 7.86],
+        ["Leeseo", 7.28],
+        ["Haum", 7.16],
+        ["Ian", 6.94],
+        ["Jiwoo", 6.65]
+    ],
+
+    BABYDOLL: [
+        ["Megan", 8.44],
+        ["Haneul", 7.96],
+        ["Yunah", 7.90],
+        ["Yoonchae", 7.83],
+        ["Kya", 7.73],
+        ["Mai", 6.75],
+        ["Carmen", 6.08]
+    ]
+
+};
+
+
+/* =========================================
+   LEVEL SYSTEM
+========================================= */
+
+function getLevel(score) {
+
+    if (score >= 9) {
+        return {
+            name: "TOP IDOL",
+            class: "top"
+        };
+    }
+
+    if (score >= 8) {
+        return {
+            name: "GREAT IDOL",
+            class: "great"
+        };
+    }
+
+    if (score >= 7) {
+        return {
+            name: "GOOD IDOL",
+            class: "good"
+        };
+    }
+
+    if (score >= 6) {
+        return {
+            name: "AVERAGE IDOL",
+            class: "average"
+        };
+    }
+
+    if (score >= 5) {
+        return {
+            name: "BELOW IDOL",
+            class: "below"
+        };
+    }
+
+    return {
+        name: "DOZEN IDOL",
+        class: "dozen"
+    };
+}
+
+
+/* =========================================
+   CREATE GLOBAL LIST
+========================================= */
+
+let allIdols = [];
+
+
+for (const group in groups) {
+
+    groups[group].forEach(member => {
+
+        allIdols.push({
+            name: member[0],
+            score: member[1],
+            group: group
+        });
+
+    });
+
+}
+
+
+/* Sort highest → lowest */
+
+allIdols.sort((a, b) => b.score - a.score);
+
+
+/* Get Top 10 */
+
+const top10 = allIdols.slice(0, 10);
+
+const globalTop = document.getElementById("globalTop");
+
+
+/* =========================================
+   DISPLAY TOP 10
+========================================= */
+
+top10.forEach((idol, index) => {
+
+    const level = getLevel(idol.score);
+
+    const item = document.createElement("div");
+
+    item.className =
+        "global-item " +
+        level.class +
+        (index === 0 ? " first" : "");
+
+
+    item.innerHTML = `
+
+        <div class="number">
+            ${String(index + 1).padStart(2, "0")}
+        </div>
+
+        <div>
+
+            <div class="idol-name">
+                ${idol.name}
+            </div>
+
+            <div class="group-name">
+                ${idol.group}
+            </div>
+
+            <span class="level ${level.class}">
+                ${level.name}
+            </span>
+
+        </div>
+
+        <div class="score">
+            ${idol.score.toFixed(2)}
+        </div>
+
+    `;
+
+    globalTop.appendChild(item);
+
+});
+
+
+/* =========================================
+   CREATE GROUP CARDS
+========================================= */
+
+const groupsGrid =
+    document.getElementById("groupsGrid");
+
+
+for (const group in groups) {
+
+    const card =
+        document.createElement("div");
+
+    card.className = "group-card";
+
+
+    card.innerHTML = `
+
+        <div class="group-header">
+
+            <h3>
+                ${group}
+            </h3>
+
+            <span>
+                ${groups[group].length} MEMBERS
+            </span>
+
+        </div>
+
+    `;
+
+
+    groups[group].forEach((member, index) => {
+
+        const name = member[0];
+        const score = member[1];
+
+        const level = getLevel(score);
+
+        const row =
+            document.createElement("div");
+
+        row.className = "member";
+
+
+        row.innerHTML = `
+
+            <div class="member-rank">
+                ${index + 1}
+            </div>
+
+            <div class="member-name">
+                ${name}
+            </div>
+
+            <div class="member-score ${level.class}">
+                ${score.toFixed(2)}
+            </div>
+
+        `;
+
+        card.appendChild(row);
+
+    });
+
+
+    groupsGrid.appendChild(card);
+
+}
+
+</script>
+
+</body>
+</html>
