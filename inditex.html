@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Musicverse Profiles</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 
-html{scroll-behavior:smooth}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:Arial,Helvetica,sans-serif;
@@ -17,7 +26,10 @@ body{
     line-height:1.6;
 }
 
-a{text-decoration:none;color:inherit}
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
 header{
     position:sticky;
@@ -52,7 +64,9 @@ nav a{
     transition:.2s;
 }
 
-nav a:hover{color:#d59be8}
+nav a:hover{
+    color:#d59be8;
+}
 
 .header-search{
     position:relative;
@@ -74,7 +88,12 @@ nav a:hover{color:#d59be8}
     border-color:#a96ac7;
 }
 
-#search::placeholder{color:#999}
+#search::placeholder{
+    color:#999;
+}
+
+
+/* HERO */
 
 .hero{
     min-height:620px;
@@ -97,7 +116,13 @@ nav a:hover{color:#d59be8}
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(90deg,rgba(23,18,28,.94),rgba(23,18,28,.55),rgba(23,18,28,.25));
+    background:
+        linear-gradient(
+            90deg,
+            rgba(23,18,28,.94),
+            rgba(23,18,28,.55),
+            rgba(23,18,28,.25)
+        );
 }
 
 .hero-content{
@@ -156,6 +181,9 @@ nav a:hover{color:#d59be8}
     background:rgba(255,255,255,.08);
 }
 
+
+/* TICKER */
+
 .ticker{
     background:#21152d;
     color:#e9d8f0;
@@ -173,6 +201,9 @@ nav a:hover{color:#d59be8}
     font-size:12px;
     letter-spacing:1px;
 }
+
+
+/* GENERAL */
 
 .container{
     width:min(1100px,90%);
@@ -197,6 +228,9 @@ section{
     color:#766d79;
     max-width:680px;
 }
+
+
+/* FEATURE */
 
 .feature-grid{
     display:grid;
@@ -225,7 +259,10 @@ section{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(transparent 35%,rgba(20,14,25,.88));
+    background:linear-gradient(
+        transparent 35%,
+        rgba(20,14,25,.88)
+    );
 }
 
 .feature-content{
@@ -254,6 +291,9 @@ section{
     font-size:14px;
 }
 
+
+/* SPOTLIGHT */
+
 .spotlight-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -276,15 +316,14 @@ section{
     display:block;
 }
 
-.spotlight-card.square img{
-    object-fit:cover;
-}
-
 .spotlight-card::after{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(transparent 35%,rgba(20,14,25,.88));
+    background:linear-gradient(
+        transparent 35%,
+        rgba(20,14,25,.88)
+    );
 }
 
 .spotlight-info{
@@ -306,6 +345,9 @@ section{
     font-size:25px;
     margin-top:4px;
 }
+
+
+/* RELEASES */
 
 .release-grid{
     display:grid;
@@ -348,6 +390,9 @@ section{
     color:#6e6671;
 }
 
+
+/* MOMENTS */
+
 .moments-layout{
     display:grid;
     grid-template-columns:1.1fr .9fr;
@@ -375,7 +420,10 @@ section{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(transparent 40%,rgba(20,14,25,.9));
+    background:linear-gradient(
+        transparent 40%,
+        rgba(20,14,25,.9)
+    );
 }
 
 .moment-content{
@@ -437,6 +485,9 @@ section{
     font-size:13px;
 }
 
+
+/* IDOLS */
+
 .idol-grid{
     display:grid;
     grid-template-columns:repeat(6,1fr);
@@ -479,6 +530,9 @@ section{
     margin-top:3px;
 }
 
+
+/* STATS */
+
 .stats-section{
     background:#21152d;
     color:white;
@@ -507,6 +561,9 @@ section{
     color:#cfc4d3;
     font-size:13px;
 }
+
+
+/* EXPLORE */
 
 .explore-grid{
     display:grid;
@@ -541,6 +598,9 @@ section{
     font-size:14px;
 }
 
+
+/* CTA */
+
 .cta{
     padding-top:20px;
 }
@@ -550,7 +610,11 @@ section{
     margin:auto;
     padding:55px;
     border-radius:28px;
-    background:linear-gradient(135deg,#24172f,#6d3f91);
+    background:linear-gradient(
+        135deg,
+        #24172f,
+        #6d3f91
+    );
     color:white;
     text-align:center;
 }
@@ -565,6 +629,9 @@ section{
     margin:0 auto 25px;
     color:#e8dced;
 }
+
+
+/* FOOTER */
 
 footer{
     margin-top:75px;
@@ -589,46 +656,129 @@ footer{
     margin-top:15px;
 }
 
-.footer-links a:hover{color:#d49ae9}
+.footer-links a:hover{
+    color:#d49ae9;
+}
+
+
+/* RESPONSIVE */
 
 @media(max-width:950px){
-    header{flex-wrap:wrap}
-    nav{order:3;width:100%;justify-content:center}
-    .feature-grid,.moments-layout{grid-template-columns:1fr}
-    .idol-grid{grid-template-columns:repeat(3,1fr)}
+
+    header{
+        flex-wrap:wrap;
+    }
+
+    nav{
+        order:3;
+        width:100%;
+        justify-content:center;
+    }
+
+    .feature-grid,
+    .moments-layout{
+        grid-template-columns:1fr;
+    }
+
+    .idol-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
 }
 
 @media(max-width:700px){
-    .hero{min-height:560px}
-    .hero h1{font-size:44px}
-    .hero p{font-size:16px}
-    .spotlight-grid,.release-grid,.explore-grid{grid-template-columns:1fr}
-    .moment-list{grid-template-columns:1fr}
-    .stats-grid{grid-template-columns:repeat(2,1fr)}
-    .idol-grid{grid-template-columns:repeat(2,1fr)}
-    #search{width:150px}
-    #search:focus{width:180px}
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero h1{
+        font-size:44px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .spotlight-grid,
+    .release-grid,
+    .explore-grid{
+        grid-template-columns:1fr;
+    }
+
+    .moment-list{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .idol-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    #search{
+        width:150px;
+    }
+
+    #search:focus{
+        width:180px;
+    }
+
 }
 
 @media(max-width:480px){
-    header{padding:15px 5%}
-    nav{gap:12px;flex-wrap:wrap}
-    nav a{font-size:12px}
-    .hero h1{font-size:38px}
-    section{padding:55px 0}
-    .section-heading h2{font-size:30px}
-    .cta-box{padding:35px 22px}
-    .cta-box h2{font-size:30px}
+
+    header{
+        padding:15px 5%;
+    }
+
+    nav{
+        gap:12px;
+        flex-wrap:wrap;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    section{
+        padding:55px 0;
+    }
+
+    .section-heading h2{
+        font-size:30px;
+    }
+
+    .cta-box{
+        padding:35px 22px;
+    }
+
+    .cta-box h2{
+        font-size:30px;
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <header>
-    <div class="logo">MUSICVERSE PROFILES</div>
+
+    <div class="logo">
+        MUSICVERSE PROFILES
+    </div>
 
     <nav>
+
         <a href="index.html">Home</a>
         <a href="groups.html">Groups</a>
         <a href="idols.html">Idols</a>
@@ -636,22 +786,46 @@ footer{
         <a href="rankings.html">Rankings</a>
 
         <div class="header-search">
-            <input id="search" type="search" placeholder="Search Musicverse...">
+
+            <input
+                id="search"
+                type="search"
+                placeholder="Search Musicverse..."
+            >
+
         </div>
+
     </nav>
+
 </header>
+
 
 <main>
 
+
+<!-- =========================
+     HERO
+     ========================= -->
+
 <section class="hero">
-    <img class="hero-image" src="herobanner.jpg" alt="Musicverse">
+
+    <img
+        class="hero-image"
+        src="herobanner.jpg"
+        alt="Musicverse"
+    >
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-        <div class="eyebrow">Welcome to the Musicverse</div>
 
-        <h1>The fictional music industry, all in one place.</h1>
+        <div class="eyebrow">
+            Welcome to the Musicverse
+        </div>
+
+        <h1>
+            The fictional music industry, all in one place.
+        </h1>
 
         <p>
             Explore groups, idols, companies, rankings, releases and
@@ -659,328 +833,934 @@ footer{
         </p>
 
         <div class="hero-buttons">
-            <a class="button primary" href="groups.html">Explore Groups →</a>
-            <a class="button secondary" href="idols.html">Discover Idols</a>
+
+            <a
+                class="button primary"
+                href="groups.html"
+            >
+                Explore Groups →
+            </a>
+
+            <a
+                class="button secondary"
+                href="idols.html"
+            >
+                Discover Idols
+            </a>
+
         </div>
+
     </div>
+
 </section>
+
+
+<!-- =========================
+     TICKER
+     ========================= -->
 
 <div class="ticker">
+
     <div class="ticker-track">
-        <span>10 GROUPS</span>
-        <span>63 IDOLS</span>
-        <span>6 COMPANIES</span>
-        <span>∞ STORIES</span>
+
+        <span id="tickerGroups">
+            0 GROUPS
+        </span>
+
+        <span id="tickerIdols">
+            0 IDOLS
+        </span>
+
+        <span id="tickerCompanies">
+            0 COMPANIES
+        </span>
+
+        <span>
+            ∞ STORIES
+        </span>
+
     </div>
+
 </div>
 
+
+<!-- =========================
+     FEATURED GROUPS
+     ========================= -->
+
 <section>
-    <div class="container">
 
-        <div class="section-heading">
-            <div class="eyebrow">Featured Groups</div>
-            <h2>Musicverse Spotlight</h2>
-            <p>
-                Meet some of the biggest names currently shaping the fictional industry.
-            </p>
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            Featured Groups
         </div>
 
-        <div class="feature-grid">
+        <h2>
+            Musicverse Spotlight
+        </h2>
 
-            <a class="feature-card" href="elleven.html">
-                <img src="ruphajang.jpg" alt="ELLEVEN">
-                <div class="feature-content">
-                    <span>AURELIA ENTERTAINMENT</span>
-                    <h3>ELLEVEN</h3>
-                    <p>11 members · Debut: LION · Fandom: Levens</p>
-                </div>
-            </a>
+        <p>
+            Meet some of the biggest names currently shaping
+            the fictional industry.
+        </p>
 
-            <a class="feature-card" href="pinkpunk.html">
-                <img src="pinpunkie.jpg" alt="PINKPUNK">
-                <div class="feature-content">
-                    <span>LUX ENTERTAINMENT</span>
-                    <h3>PINKPUNK</h3>
-                    <p>7 members · Debut: Whistle · Fandom: Pookies</p>
-                </div>
-            </a>
-
-        </div>
     </div>
-</section>
 
-<section>
-    <div class="container">
 
-        <div class="section-heading">
-            <div class="eyebrow">Now Trending</div>
-            <h2>GIF Spotlight</h2>
-            <p>
-                Short moments from idols across the Musicverse.
-            </p>
-        </div>
+    <div class="feature-grid">
 
-        <div class="spotlight-grid">
 
-            <a class="spotlight-card" href="jennie.html">
-                <img src="iconicjennie.gif" alt="Jennie">
-                <div class="spotlight-info">
-                    <small>PINKPUNK</small>
-                    <h3>Jennie</h3>
-                </div>
-            </a>
+        <a
+            class="feature-card"
+            href="elleven.html"
+        >
 
-            <a class="spotlight-card square" href="chiquita.html">
-                <img src="canny.giff.gif" alt="Chiquita">
-                <div class="spotlight-info">
-                    <small>ELLEVEN</small>
-                    <h3>Chiquita</h3>
-                </div>
-            </a>
+            <img
+                src="ruphajang.jpg"
+                alt="ELLEVEN"
+            >
 
-            <a class="spotlight-card" href="soojin.html">
-                <img src="soojinie.gif" alt="Soojin">
-                <div class="spotlight-info">
-                    <small>TWOON</small>
-                    <h3>Soojin</h3>
-                </div>
-            </a>
+            <div class="feature-content">
 
-        </div>
-    </div>
-</section>
+                <span>
+                    AURELIA ENTERTAINMENT
+                </span>
 
-<section>
-    <div class="container">
+                <h3>
+                    ELLEVEN
+                </h3>
 
-        <div class="section-heading">
-            <div class="eyebrow">Music</div>
-            <h2>Musicverse Releases</h2>
-            <p>
-                Fictional releases connected to the groups inside the database.
-            </p>
-        </div>
-
-        <div class="release-grid">
-
-            <article class="release-card">
-                <img src="lion.jpg" alt="LION">
-                <div class="release-info">
-                    <div class="release-label">ELLEVEN · DEBUT</div>
-                    <h3>LION</h3>
-                    <p>
-                        ELLEVEN's debut release in the Musicverse,
-                        introducing the group's powerful identity.
-                    </p>
-                </div>
-            </article>
-
-            <article class="release-card">
-                <img src="unchild.jpg" alt="Unchild">
-                <div class="release-info">
-                    <div class="release-label">WO!AH · DEBUT</div>
-                    <h3>Unchild</h3>
-                    <p>
-                        WO!AH's debut release, establishing the group's
-                        unique place inside the Musicverse.
-                    </p>
-                </div>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-
-        <div class="section-heading">
-            <div class="eyebrow">Latest</div>
-            <h2>Latest Musicverse Moments</h2>
-            <p>
-                Fashion moments, group activity and stories happening across the database.
-            </p>
-        </div>
-
-        <div class="moments-layout">
-
-            <article class="moment-feature">
-                <img src="rorahyeon.jpg" alt="Rora and Ahyeon">
-                <div class="moment-content">
-                    <div class="moment-label">ELLEVEN · FASHION</div>
-                    <h3>Rora &amp; Ahyeon step into the spotlight</h3>
-                    <p>
-                        The two ELLEVEN members appear together in a major fashion moment.
-                    </p>
-                </div>
-            </article>
-
-            <div class="moment-list">
-
-                <article class="moment-card">
-                    <span>ELLEVEN</span>
-                    <h4>ELLEVEN continues dominating the Musicverse spotlight.</h4>
-                    <p>The group's members remain among the database's most discussed idols.</p>
-                </article>
-
-                <article class="moment-card">
-                    <span>PINKPUNK</span>
-                    <h4>PINKPUNK keeps its place among the industry's biggest groups.</h4>
-                    <p>The seven-member group continues to attract attention across the Musicverse.</p>
-                </article>
-
-                <article class="moment-card">
-                    <span>TWOON</span>
-                    <h4>TWOON brings five distinct performers together.</h4>
-                    <p>Soojin, Soyeon, Yeri, Yuqi and Yeji form the NOVA Entertainment group.</p>
-                </article>
-
-                <article class="moment-card">
-                    <span>MIDZY</span>
-                    <h4>MIDZY expands the LUX Entertainment lineup.</h4>
-                    <p>The eight-member group debuted with Not Shy in the Musicverse.</p>
-                </article>
+                <p>
+                    11 members · Debut: LION · Fandom: Levens
+                </p>
 
             </div>
-        </div>
+
+        </a>
+
+
+        <a
+            class="feature-card"
+            href="pinkpunk.html"
+        >
+
+            <img
+                src="pinpunkie.jpg"
+                alt="PINKPUNK"
+            >
+
+            <div class="feature-content">
+
+                <span>
+                    LUX ENTERTAINMENT
+                </span>
+
+                <h3>
+                    PINKPUNK
+                </h3>
+
+                <p>
+                    7 members · Debut: Whistle · Fandom: Pookies
+                </p>
+
+            </div>
+
+        </a>
+
+
     </div>
+
+</div>
+
 </section>
+
+
+<!-- =========================
+     GIF SPOTLIGHT
+     ========================= -->
 
 <section>
-    <div class="container">
 
-        <div class="section-heading">
-            <div class="eyebrow">Trending Idols</div>
-            <h2>Currently in the spotlight</h2>
-            <p>
-                Visit individual profiles to explore each idol's Musicverse information.
-            </p>
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            Now Trending
         </div>
 
-        <div class="idol-grid">
+        <h2>
+            GIF Spotlight
+        </h2>
 
-            <a class="idol-card" href="lisa.html">
-                <img src="lisa.jpg" alt="Lisa">
-                <div class="idol-info"><h3>Lisa</h3><p>PINKPUNK</p></div>
-            </a>
+        <p>
+            Short moments from idols across the Musicverse.
+        </p>
 
-            <a class="idol-card" href="pharita.html">
-                <img src="pharita.jpg" alt="Pharita">
-                <div class="idol-info"><h3>Pharita</h3><p>ELLEVEN</p></div>
-            </a>
-
-            <a class="idol-card" href="rami.html">
-                <img src="rami.jpg" alt="Rami">
-                <div class="idol-info"><h3>Rami</h3><p>ELLEVEN</p></div>
-            </a>
-
-            <a class="idol-card" href="miyeon.html">
-                <img src="miyeon.jpg" alt="Miyeon">
-                <div class="idol-info"><h3>Miyeon</h3><p>PINKPUNK</p></div>
-            </a>
-
-            <a class="idol-card" href="rora.html">
-                <img src="rora.jpg" alt="Rora">
-                <div class="idol-info"><h3>Rora</h3><p>ELLEVEN</p></div>
-            </a>
-
-            <a class="idol-card" href="jennie.html">
-                <img src="jennie.jpg" alt="Jennie">
-                <div class="idol-info"><h3>Jennie</h3><p>PINKPUNK</p></div>
-            </a>
-
-        </div>
     </div>
+
+
+    <div class="spotlight-grid">
+
+
+        <a
+            class="spotlight-card"
+            href="jennie.html"
+        >
+
+            <img
+                src="iconicjennie.gif"
+                alt="Jennie"
+            >
+
+            <div class="spotlight-info">
+
+                <small>
+                    PINKPUNK
+                </small>
+
+                <h3>
+                    Jennie
+                </h3>
+
+            </div>
+
+        </a>
+
+
+        <a
+            class="spotlight-card"
+            href="chiquita.html"
+        >
+
+            <img
+                src="canny.giff.gif"
+                alt="Chiquita"
+            >
+
+            <div class="spotlight-info">
+
+                <small>
+                    ELLEVEN
+                </small>
+
+                <h3>
+                    Chiquita
+                </h3>
+
+            </div>
+
+        </a>
+
+
+        <a
+            class="spotlight-card"
+            href="soojin.html"
+        >
+
+            <img
+                src="soojinie.gif"
+                alt="Soojin"
+            >
+
+            <div class="spotlight-info">
+
+                <small>
+                    TWOON
+                </small>
+
+                <h3>
+                    Soojin
+                </h3>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</div>
+
 </section>
+
+
+<!-- =========================
+     RELEASES
+     ========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            Music
+        </div>
+
+        <h2>
+            Musicverse Releases
+        </h2>
+
+        <p>
+            Fictional releases connected to the groups inside
+            the database.
+        </p>
+
+    </div>
+
+
+    <div class="release-grid">
+
+
+        <article class="release-card">
+
+            <img
+                src="lion.jpg"
+                alt="LION"
+            >
+
+            <div class="release-info">
+
+                <div class="release-label">
+                    ELLEVEN · DEBUT
+                </div>
+
+                <h3>
+                    LION
+                </h3>
+
+                <p>
+                    ELLEVEN's debut release in the Musicverse,
+                    introducing the group's powerful identity.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="release-card">
+
+            <img
+                src="unchild.jpg"
+                alt="Unchild"
+            >
+
+            <div class="release-info">
+
+                <div class="release-label">
+                    WO!AH · DEBUT
+                </div>
+
+                <h3>
+                    Unchild
+                </h3>
+
+                <p>
+                    WO!AH's debut release, establishing the group's
+                    unique place inside the Musicverse.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LATEST MOMENTS
+     ========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            Latest
+        </div>
+
+        <h2>
+            Latest Musicverse Moments
+        </h2>
+
+        <p>
+            Fashion moments, group activity and stories happening
+            across the database.
+        </p>
+
+    </div>
+
+
+    <div class="moments-layout">
+
+
+        <article class="moment-feature">
+
+            <img
+                src="rorahyeon.jpg"
+                alt="Rora and Ahyeon"
+            >
+
+            <div class="moment-content">
+
+                <div class="moment-label">
+                    ELLEVEN · FASHION
+                </div>
+
+                <h3>
+                    Rora &amp; Ahyeon step into the spotlight
+                </h3>
+
+                <p>
+                    The two ELLEVEN members appear together
+                    in a major fashion moment.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <div class="moment-list">
+
+
+            <article class="moment-card">
+
+                <span>
+                    ELLEVEN
+                </span>
+
+                <h4>
+                    ELLEVEN continues dominating the Musicverse spotlight.
+                </h4>
+
+                <p>
+                    The group's members remain among the database's
+                    most discussed idols.
+                </p>
+
+            </article>
+
+
+            <article class="moment-card">
+
+                <span>
+                    PINKPUNK
+                </span>
+
+                <h4>
+                    PINKPUNK keeps its place among the industry's biggest groups.
+                </h4>
+
+                <p>
+                    The seven-member group continues to attract
+                    attention across the Musicverse.
+                </p>
+
+            </article>
+
+
+            <article class="moment-card">
+
+                <span>
+                    TWOON
+                </span>
+
+                <h4>
+                    TWOON brings five distinct performers together.
+                </h4>
+
+                <p>
+                    Soojin, Soyeon, Yeri, Yuqi and Yeji form
+                    the NOVA Entertainment group.
+                </p>
+
+            </article>
+
+
+            <article class="moment-card">
+
+                <span>
+                    MIDZY
+                </span>
+
+                <h4>
+                    MIDZY expands the LUX Entertainment lineup.
+                </h4>
+
+                <p>
+                    The eight-member group debuted with Not Shy
+                    in the Musicverse.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TRENDING IDOLS
+     ========================= -->
+
+<section>
+
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            Trending Idols
+        </div>
+
+        <h2>
+            Currently in the spotlight
+        </h2>
+
+        <p>
+            Visit individual profiles to explore each idol's
+            Musicverse information.
+        </p>
+
+    </div>
+
+
+    <div class="idol-grid">
+
+
+        <a class="idol-card" href="lisa.html">
+
+            <img
+                src="lisa.jpg"
+                alt="Lisa"
+            >
+
+            <div class="idol-info">
+
+                <h3>
+                    Lisa
+                </h3>
+
+                <p>
+                    PINKPUNK
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a class="idol-card" href="pharita.html">
+
+            <img
+                src="pharita.jpg"
+                alt="Pharita"
+            >
+
+            <div class="idol-info">
+
+                <h3>
+                    Pharita
+                </h3>
+
+                <p>
+                    ELLEVEN
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a class="idol-card" href="rami.html">
+
+            <img
+                src="rami.jpg"
+                alt="Rami"
+            >
+
+            <div class="idol-info">
+
+                <h3>
+                    Rami
+                </h3>
+
+                <p>
+                    ELLEVEN
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a class="idol-card" href="miyeon.html">
+
+            <img
+                src="miyeon.jpg"
+                alt="Miyeon"
+            >
+
+            <div class="idol-info">
+
+                <h3>
+                    Miyeon
+                </h3>
+
+                <p>
+                    PINKPUNK
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a class="idol-card" href="rora.html">
+
+            <img
+                src="rora.jpg"
+                alt="Rora"
+            >
+
+            <div class="idol-info">
+
+                <h3>
+                    Rora
+                </h3>
+
+                <p>
+                    ELLEVEN
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a class="idol-card" href="jennie.html">
+
+            <img
+                src="jennie.jpg"
+                alt="Jennie"
+            >
+
+            <div class="idol-info">
+
+                <h3>
+                    Jennie
+                </h3>
+
+                <p>
+                    PINKPUNK
+                </p>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+     ========================= -->
 
 <section class="stats-section">
+
     <div class="stats-grid">
 
-        <div class="stat">
-            <div class="stat-number">10</div>
-            <div class="stat-label">Groups</div>
-        </div>
 
         <div class="stat">
-            <div class="stat-number">63</div>
-            <div class="stat-label">Idols</div>
+
+            <div
+                class="stat-number"
+                id="statGroups"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Groups
+            </div>
+
         </div>
 
-        <div class="stat">
-            <div class="stat-number">6</div>
-            <div class="stat-label">Companies</div>
-        </div>
 
         <div class="stat">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Stories</div>
+
+            <div
+                class="stat-number"
+                id="statIdols"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Idols
+            </div>
+
         </div>
+
+
+        <div class="stat">
+
+            <div
+                class="stat-number"
+                id="statCompanies"
+            >
+                0
+            </div>
+
+            <div class="stat-label">
+                Companies
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                ∞
+            </div>
+
+            <div class="stat-label">
+                Stories
+            </div>
+
+        </div>
+
 
     </div>
+
 </section>
+
+
+<!-- =========================
+     EXPLORE
+     ========================= -->
 
 <section>
-    <div class="container">
 
-        <div class="section-heading">
-            <div class="eyebrow">Explore</div>
-            <h2>Enter the database</h2>
-            <p>
-                Everything you need to explore the Musicverse in one place.
-            </p>
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            Explore
         </div>
 
-        <div class="explore-grid">
+        <h2>
+            Enter the database
+        </h2>
 
-            <a class="explore-card" href="groups.html">
-                <div class="explore-icon">✦</div>
-                <h3>Groups</h3>
-                <p>Browse all ten fictional groups and their members.</p>
-            </a>
+        <p>
+            Everything you need to explore the Musicverse in one place.
+        </p>
 
-            <a class="explore-card" href="idols.html">
-                <div class="explore-icon">◈</div>
-                <h3>Idols</h3>
-                <p>Search and filter all 63 idol profiles.</p>
-            </a>
-
-            <a class="explore-card" href="rankings.html">
-                <div class="explore-icon">↗</div>
-                <h3>Rankings</h3>
-                <p>Explore the Musicverse ranking system and comparisons.</p>
-            </a>
-
-        </div>
     </div>
+
+
+    <div class="explore-grid">
+
+
+        <a
+            class="explore-card"
+            href="groups.html"
+        >
+
+            <div class="explore-icon">
+                ✦
+            </div>
+
+            <h3>
+                Groups
+            </h3>
+
+            <p>
+                Browse all Musicverse groups and their members.
+            </p>
+
+        </a>
+
+
+        <a
+            class="explore-card"
+            href="idols.html"
+        >
+
+            <div class="explore-icon">
+                ◈
+            </div>
+
+            <h3>
+                Idols
+            </h3>
+
+            <p>
+                Search and filter every idol profile.
+            </p>
+
+        </a>
+
+
+        <a
+            class="explore-card"
+            href="rankings.html"
+        >
+
+            <div class="explore-icon">
+                ↗
+            </div>
+
+            <h3>
+                Rankings
+            </h3>
+
+            <p>
+                Explore the Musicverse ranking system and comparisons.
+            </p>
+
+        </a>
+
+
+    </div>
+
+</div>
+
 </section>
+
+
+<!-- =========================
+     CTA
+     ========================= -->
 
 <section class="cta">
+
     <div class="cta-box">
-        <h2>Your Musicverse starts here.</h2>
+
+        <h2>
+            Your Musicverse starts here.
+        </h2>
+
         <p>
-            Explore the groups, discover new idols and dive deeper into
-            the fictional music industry.
+            Explore the groups, discover new idols and dive deeper
+            into the fictional music industry.
         </p>
-        <a class="button primary" href="groups.html">Start Exploring →</a>
+
+        <a
+            class="button primary"
+            href="groups.html"
+        >
+            Start Exploring →
+        </a>
+
     </div>
+
 </section>
+
 
 </main>
 
+
 <footer>
-    <div class="footer-logo">MUSICVERSE PROFILES</div>
-    <p>© 2026 Musicverse Profiles · Fictional Musicverse Database</p>
+
+    <div class="footer-logo">
+        MUSICVERSE PROFILES
+    </div>
+
+    <p>
+        © 2026 Musicverse Profiles · Fictional Musicverse Database
+    </p>
 
     <div class="footer-links">
+
         <a href="index.html">Home</a>
+
         <a href="groups.html">Groups</a>
+
         <a href="idols.html">Idols</a>
+
         <a href="rankings.html">Rankings</a>
+
     </div>
+
 </footer>
 
+
+<!-- DATA FIRST -->
 <script src="data.js"></script>
+
+<!-- SEARCH -->
 <script src="search.js"></script>
+
+
+<!-- HOME DATABASE STATS -->
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const groups = MUSICVERSE_GROUPS;
+    const idols = MUSICVERSE_IDOLS;
+
+    const companies = [
+        ...new Set(
+            groups.map(group => group.company)
+        )
+    ];
+
+
+    /* TICKER */
+
+    document.getElementById("tickerGroups").textContent =
+        `${groups.length} GROUPS`;
+
+    document.getElementById("tickerIdols").textContent =
+        `${idols.length} IDOLS`;
+
+    document.getElementById("tickerCompanies").textContent =
+        `${companies.length} COMPANIES`;
+
+
+    /* STATS */
+
+    document.getElementById("statGroups").textContent =
+        groups.length;
+
+    document.getElementById("statIdols").textContent =
+        idols.length;
+
+    document.getElementById("statCompanies").textContent =
+        companies.length;
+
+});
+
+</script>
 
 </body>
 </html>
