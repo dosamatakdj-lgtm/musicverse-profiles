@@ -6,7 +6,11 @@
 <title>SWEET&SOUR — Musicverse</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
 body{
 font-family:Arial,Helvetica,sans-serif;
@@ -47,6 +51,10 @@ font-size:13px;
 font-weight:bold;
 }
 
+nav a:hover{
+color:white;
+}
+
 .search{
 width:180px;
 padding:10px 15px;
@@ -54,6 +62,11 @@ border-radius:20px;
 border:1px solid #494151;
 background:#29242f;
 color:white;
+outline:none;
+}
+
+.search::placeholder{
+color:#aaa;
 }
 
 .hero{
@@ -104,7 +117,7 @@ letter-spacing:2px;
 margin-bottom:8px;
 }
 
-.info-box strong{ 
+.info-box strong{
 font-size:20px;
 }
 
@@ -159,6 +172,12 @@ letter-spacing:1px;
 line-height:1.6;
 }
 
+.member-link{
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
 footer{
 background:#17131c;
 color:#aaa;
@@ -167,6 +186,7 @@ text-align:center;
 }
 
 @media(max-width:900px){
+
 .info{
 grid-template-columns:repeat(2,1fr);
 }
@@ -174,9 +194,11 @@ grid-template-columns:repeat(2,1fr);
 .member-grid{
 grid-template-columns:repeat(2,1fr);
 }
+
 }
 
 @media(max-width:600px){
+
 .info{
 grid-template-columns:1fr;
 }
@@ -188,6 +210,15 @@ grid-template-columns:1fr;
 .hero h1{
 font-size:50px;
 }
+
+nav{
+gap:10px;
+}
+
+.search{
+width:130px;
+}
+
 }
 </style>
 </head>
@@ -214,6 +245,7 @@ placeholder="Search..."
 
 </header>
 
+
 <section class="hero">
 
 <small>XG LABELS</small>
@@ -226,6 +258,7 @@ SWEET&SOUR debuted with <strong>Fearless</strong>.
 </p>
 
 </section>
+
 
 <section class="info">
 
@@ -251,102 +284,177 @@ SWEET&SOUR debuted with <strong>Fearless</strong>.
 
 </section>
 
+
 <section class="members">
 
 <h2>Members</h2>
 
 <div class="member-grid">
 
-<a href="sakura.html" style="text-decoration:none;color:inherit">
+
+<!-- SAKURA -->
+
+<a href="sakura.html" class="member-link">
+
 <div class="member">
-<img src="sakura.jpg">
+
+<img src="sakura.jpg" alt="Sakura">
+
 <div class="member-info">
-<h3>Belle</h3>
+
+<h3>Sakura</h3>
+
 <div class="position">
 Unnie · Lead Dancer
 </div>
+
 </div>
+
 </div>
+
 </a>
 
-<a href="chaewon.html" style="text-decoration:none;color:inherit">
+
+<!-- CHAEWON -->
+
+<a href="chaewon.html" class="member-link">
+
 <div class="member">
-<img src="chaewon.jpg">
+
+<img src="chaewon.jpg" alt="Chaewon">
+
 <div class="member-info">
+
 <h3>Chaewon</h3>
-Leader· Sub Vocalist
+
+<div class="position">
+Leader · Sub Vocalist
 </div>
+
 </div>
+
 </div>
+
 </a>
 
-<a href="giselle.html" style="text-decoration:none;color:inherit">
+
+<!-- GISELLE -->
+
+<a href="giselle.html" class="member-link">
+
 <div class="member">
-<img src="giselle.jpg">
+
+<img src="giselle.jpg" alt="Giselle">
+
 <div class="member-info">
+
 <h3>Giselle</h3>
+
 <div class="position">
 Main Rapper
 </div>
+
 </div>
+
 </div>
+
 </a>
 
-<a href="yunjin.html" style="text-decoration:none;color:inherit">
+
+<!-- YUNJIN -->
+
+<a href="yunjin.html" class="member-link">
+
 <div class="member">
-<img src="yunjin.jpg">
+
+<img src="yunjin.jpg" alt="Yunjin">
+
 <div class="member-info">
+
 <h3>Yunjin</h3>
+
 <div class="position">
 Lead Vocalist · Visual
 </div>
+
 </div>
+
 </div>
+
 </a>
 
-<a href="haewon.html" style="text-decoration:none;color:inherit">
+
+<!-- HAEWON -->
+
+<a href="haewon.html" class="member-link">
+
 <div class="member">
-<img src="haewon.jpg">
+
+<img src="haewon.jpg" alt="Haewon">
+
 <div class="member-info">
+
 <h3>Haewon</h3>
+
 <div class="position">
 Main Vocalist · Visual
 </div>
+
 </div>
+
 </div>
+
 </a>
 
 
-<a href="kazuha.html" style="text-decoration:none;color:inherit">
+<!-- KAZUHA -->
+
+<a href="kazuha.html" class="member-link">
+
 <div class="member">
-<img src="kazuha.jpg">
+
+<img src="kazuha.jpg" alt="Kazuha">
+
 <div class="member-info">
+
 <h3>Kazuha</h3>
+
 <div class="position">
 Main Dancer · Lead Rapper · Visual · Maknae
 </div>
+
 </div>
+
 </div>
+
 </a>
+
 
 </div>
 
 </section>
 
+
 <footer>
 MUSICVERSE © 2026 · Fictional K-Pop Database
 </footer>
 
+
 <script>
 
-document.getElementById("search")
-.addEventListener("keydown",function(e){
+document.getElementById("search").addEventListener("keydown",function(e){
 
 if(e.key==="Enter"){
 
+const searchValue=this.value.trim();
+
+if(searchValue){
+
 location.href=
 "idols.html?search="+
-encodeURIComponent(this.value);
+encodeURIComponent(searchValue);
+
+}
 
 }
 
