@@ -138,6 +138,39 @@ const MUSICVERSE_GROUPS = [
             "Kazuha"
         ],
         page: "sweetandsour.html"
+    },
+
+    {
+        name: "BABYDOLL",
+        company: "—",
+        debut: "—",
+        fandom: "—",
+        members: [
+            "Yunah",
+            "Mai",
+            "Haneul",
+            "Megan",
+            "Carmen",
+            "Yoonchae",
+            "Kya"
+        ],
+        page: "babydoll.html"
+    },
+
+    {
+        name: "DICE",
+        company: "—",
+        debut: "—",
+        fandom: "—",
+        members: [
+            "Sunhye",
+            "Jiana",
+            "Koko",
+            "Jungeun",
+            "Doeun",
+            "Jieun"
+        ],
+        page: "dice.html"
     }
 
 ];
@@ -904,6 +937,133 @@ const MUSICVERSE_IDOLS = [
         image: "kazuha.jpg",
         page: "kazuha.html",
         positions: "Main Dancer · Lead Rapper · Visual · Sub Vocalist · Maknae"
+    },
+
+
+    /* =========================
+       BABYDOLL
+       ========================= */
+
+    {
+        name: "Yunah",
+        group: "BABYDOLL",
+        company: "—",
+        image: "yunah.jpg",
+        page: "yunah.html",
+        positions: "—"
+    },
+
+    {
+        name: "Mai",
+        group: "BABYDOLL",
+        company: "—",
+        image: "mai.jpg",
+        page: "mai.html",
+        positions: "—"
+    },
+
+    {
+        name: "Haneul",
+        group: "BABYDOLL",
+        company: "—",
+        image: "haneul.jpg",
+        page: "haneul.html",
+        positions: "—"
+    },
+
+    {
+        name: "Megan",
+        group: "BABYDOLL",
+        company: "—",
+        image: "megan.jpg",
+        page: "megan.html",
+        positions: "—"
+    },
+
+    {
+        name: "Carmen",
+        group: "BABYDOLL",
+        company: "—",
+        image: "carmen.jpg",
+        page: "carmen.html",
+        positions: "—"
+    },
+
+    {
+        name: "Yoonchae",
+        group: "BABYDOLL",
+        company: "—",
+        image: "yoonchae.jpg",
+        page: "yoonchae.html",
+        positions: "—"
+    },
+
+    {
+        name: "Kya",
+        group: "BABYDOLL",
+        company: "—",
+        image: "kya.jpg",
+        page: "kya.html",
+        positions: "—"
+    },
+
+
+    /* =========================
+       DICE
+       ========================= */
+
+    {
+        name: "Sunhye",
+        group: "DICE",
+        company: "—",
+        image: "sunhye.jpg",
+        page: "sunhye.html",
+        positions: "—"
+    },
+
+    {
+        name: "Jiana",
+        group: "DICE",
+        company: "—",
+        image: "jiana.jpg",
+        page: "jiana.html",
+        positions: "—"
+    },
+
+    {
+        name: "Koko",
+        group: "DICE",
+        company: "—",
+        image: "koko.jpg",
+        page: "koko.html",
+        positions: "—"
+    },
+
+    {
+        name: "Jungeun",
+        group: "DICE",
+        company: "—",
+        image: "jungeun.jpg",
+        page: "jungeun.html",
+        positions: "—"
+    },
+
+    {
+        name: "Doeun",
+        group: "DICE",
+        company: "—",
+        image: "doeun.jpg",
+        page: "doeun.html",
+        positions: "—"
+    },
+
+    {
+        name: "Jieun",
+        group: "DICE",
+        company: "—",
+        image: "jieun.jpg",
+        page: "jieun.html",
+        positions: "—"
     }
 
 ];
