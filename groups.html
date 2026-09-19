@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -108,6 +109,7 @@ h1{
 }
 
 .group-card{
+    display:block;
     background:white;
     border-radius:22px;
     padding:28px;
@@ -215,6 +217,7 @@ footer{
 }
 
 </style>
+
 </head>
 
 <body>
@@ -289,293 +292,33 @@ footer{
 </footer>
 
 
+<!-- =====================================================
+     CARGAR DATA.JS
+     ===================================================== -->
+
 <script src="data.js"></script>
+
 
 <script>
 
-/* =========================================================
-   MUSICVERSE GROUPS
-   ========================================================= */
+/* =====================================================
+   ELEMENTOS
+   ===================================================== */
 
-const MUSICVERSE_GROUPS = [
-
-    {
-        name:"PANDORA",
-        company:"Starship Entertainment",
-        members:[
-            "Jiwoo",
-            "Jeemin",
-            "Kylie",
-            "Hinari",
-            "Ruby",
-            "Bonnie"
-        ],
-        debut:"2026",
-        fandom:"Pandas",
-        page:"pandora.html"
-    },
+const groupsGrid = document.getElementById("groupsGrid");
+const groupSearch = document.getElementById("groupSearch");
 
 
-    {
-        name:"ELLEVEN",
-        company:"AURELIA Entertainment",
-        members:[
-            "Ruka",
-            "Pharita",
-            "Asa",
-            "Ahyeon",
-            "Yuha",
-            "Stella",
-            "Rami",
-            "Rora",
-            "Juun",
-            "A-na",
-            "Chiquita"
-        ],
-        debut:"2026",
-        fandom:"Levens",
-        page:"elleven.html"
-    },
+/* =====================================================
+   USAR LOS GRUPOS DE DATA.JS
+   ===================================================== */
+
+const groupsData = MUSICVERSE_GROUPS;
 
 
-    {
-        name:"PINKPUNK",
-        company:"LUX Entertainment",
-        members:[
-            "Jisoo",
-            "Jennie",
-            "Miyeon",
-            "Rosé",
-            "Mina",
-            "Lisa",
-            "Minnie"
-        ],
-        debut:"2025",
-        fandom:"Pookies",
-        page:"pinkpunk.html"
-    },
-
-
-    {
-        name:"STEELROSE",
-        company:"XG Labels",
-        members:[
-            "Belle",
-            "Sooin",
-            "Gawon",
-            "Garam",
-            "Anna",
-            "Ella"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"steelrose.html"
-    },
-
-
-    {
-        name:"LESSERAFIM",
-        company:"AURELIA Entertainment",
-        members:[
-            "Winter",
-            "Yujin",
-            "Liz",
-            "Haerin",
-            "Eunchae",
-            "Narin"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"lesserafim.html"
-    },
-
-
-    {
-        name:"ONCE",
-        company:"MDX Entertainment",
-        members:[
-            "Sana",
-            "Jihyo",
-            "Dahyun",
-            "Chaeyoung",
-            "Tzuyu"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"once.html"
-    },
-
-
-    {
-        name:"GARLS",
-        company:"AURELIA Entertainment",
-        members:[
-            "Karina",
-            "Chaeryeong",
-            "Ningning",
-            "Yuna",
-            "Hanni"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"garls.html"
-    },
-
-
-    {
-        name:"TWOON",
-        company:"NOVA Entertainment",
-        members:[
-            "Soojin",
-            "Soyeon",
-            "Yeri",
-            "Yuqi",
-            "Yeji"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"twoon.html"
-    },
-
-
-    {
-        name:"WO!AH",
-        company:"LUX Entertainment",
-        members:[
-            "Shuhua",
-            "Wonyoung",
-            "Somi",
-            "Minji"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"woah.html"
-    },
-
-
-    {
-        name:"MIDZY",
-        company:"LUX Entertainment",
-        members:[
-            "HU’E",
-            "Minju",
-            "Kelly",
-            "Jiwoo",
-            "Haum",
-            "Leeseo",
-            "Hyein",
-            "Ian"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"midzy.html"
-    },
-
-
-    {
-        name:"HEARTS2HEARTS",
-        company:"AURELIA Entertainment",
-        members:[
-            "Xiaoting",
-            "Julie",
-            "Emma",
-            "Natty",
-            "Sullyoon",
-            "Danielle",
-            "Jiyoon",
-            "Kyujin",
-            "Iroha"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"hearts2hearts.html"
-    },
-
-
-    {
-        name:"SWEET&SOUR",
-        company:"XG Labels",
-        members:[
-            "Sakura",
-            "Chaewon",
-            "Giselle",
-            "Yunjin",
-            "Haewon",
-            "Kazuha"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"sweetandsour.html"
-    },
-
-
-    {
-        name:"BABYDOLL",
-        company:"—",
-        members:[
-            "Yunah",
-            "Mai",
-            "Haneul",
-            "Megan",
-            "Carmen",
-            "Yoonchae",
-            "Kya"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"babydoll.html"
-    },
-
-
-    {
-        name:"DICE",
-        company:"—",
-        members:[
-            "Sunhye",
-            "Jiana",
-            "Koko",
-            "Jungeun",
-            "Doeun",
-            "Jieun"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"dice.html"
-    },
-
-
-    {
-        name:"EUPHORIA",
-        company:"AURELIA Entertainment",
-        members:[
-            "Annie",
-            "Bailey",
-            "Moka",
-            "Youngseo",
-            "Marquise"
-        ],
-        debut:"2026",
-        fandom:"—",
-        page:"euphoria.html"
-    }
-
-];
-
-
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
-
-const groupsGrid =
-    document.getElementById("groupsGrid");
-
-const groupSearch =
-    document.getElementById("groupSearch");
-
-
-/* =========================================================
-   RENDER GROUPS
-   ========================================================= */
+/* =====================================================
+   MOSTRAR GRUPOS
+   ===================================================== */
 
 function renderGroups(list){
 
@@ -585,18 +328,14 @@ function renderGroups(list){
     if(list.length === 0){
 
         groupsGrid.innerHTML = `
-
             <p style="
                 grid-column:1/-1;
                 text-align:center;
                 color:#77707b;
                 padding:40px;
             ">
-
                 No groups found.
-
             </p>
-
         `;
 
         return;
@@ -605,76 +344,50 @@ function renderGroups(list){
 
     list.forEach(group => {
 
-        const card =
-            document.createElement("a");
+        const card = document.createElement("a");
 
+        card.className = "group-card";
 
-        card.className =
-            "group-card";
-
-
-        card.href =
-            group.page;
+        card.href = group.page;
 
 
         card.innerHTML = `
 
             <div class="group-company">
-
                 ${group.company}
-
             </div>
 
-
             <h2>
-
                 ${group.name}
-
             </h2>
-
 
             <div class="group-info">
 
                 <div>
-
                     <strong>Members:</strong>
-
                     ${group.members.length}
-
                 </div>
 
-
                 <div>
-
                     <strong>Debut:</strong>
-
                     ${group.debut}
-
                 </div>
 
-
                 <div>
-
                     <strong>Fandom:</strong>
-
                     ${group.fandom}
-
                 </div>
 
             </div>
 
 
             <div class="members">
-
                 ${group.members.join(" · ")}
-
             </div>
 
 
             <span class="view-button">
-
                 View Profile →
-
             </span>
 
         `;
@@ -687,11 +400,11 @@ function renderGroups(list){
 }
 
 
-/* =========================================================
-   SEARCH
-   ========================================================= */
+/* =====================================================
+   BUSCADOR
+   ===================================================== */
 
-function searchGroups(){
+groupSearch.addEventListener("input", function(){
 
     const query =
         groupSearch.value
@@ -700,47 +413,43 @@ function searchGroups(){
 
 
     const filtered =
-        MUSICVERSE_GROUPS.filter(group =>
+        groupsData.filter(group => {
 
-            group.name
-                .toLowerCase()
-                .includes(query)
+            const name =
+                group.name
+                    .toLowerCase();
 
-            ||
 
-            group.company
-                .toLowerCase()
-                .includes(query)
+            const company =
+                group.company
+                    .toLowerCase();
 
-            ||
 
-            group.members.some(member =>
+            const members =
+                group.members
+                    .join(" ")
+                    .toLowerCase();
 
-                member
-                    .toLowerCase()
-                    .includes(query)
 
-            )
+            return (
+                name.includes(query) ||
+                company.includes(query) ||
+                members.includes(query)
+            );
 
-        );
+        });
 
 
     renderGroups(filtered);
 
-}
+});
 
 
-groupSearch.addEventListener(
-    "input",
-    searchGroups
-);
+/* =====================================================
+   CARGA INICIAL
+   ===================================================== */
 
-
-/* =========================================================
-   INITIAL LOAD
-   ========================================================= */
-
-renderGroups(MUSICVERSE_GROUPS);
+renderGroups(groupsData);
 
 </script>
 
