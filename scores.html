@@ -1,25 +1,921 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Musicverse — Scores</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f5f7;
+    color: #171717;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    background: #111111;
+    color: white;
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #aaa;
+    font-weight: 400;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ddd;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.hero {
+    max-width: 1250px;
+    margin: 45px auto 30px;
+    padding: 0 25px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 25px 80px;
+}
+
+.section {
+    margin-top: 48px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 17px;
+    gap: 15px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: -.5px;
+}
+
+.section-title span {
+    color: #888;
+    font-size: 12px;
+}
+
+
 /* =====================================================
-   STEELROSE
+   GLOBAL TOP 10
    ===================================================== */
 
-Belle: {
-    vocal: "S",
-    rap: "High N.R"
-},
+.top-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
 
-Sooin: {
-    vocal: "B+",
-    rap: "High N.R"
-},
+.top-card {
+    background: white;
+    border: 1px solid #e4e4e7;
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 155px;
+    position: relative;
+    overflow: hidden;
+}
 
-Gawon: {
-    vocal: "A",
-    rap: "High N.R"
-},const CATEGORY_SCORES = {
+.top-card.rank1 {
+    border-top: 4px solid #d0aa36;
+}
 
-    /* =====================================================
+.top-card.rank2 {
+    border-top: 4px solid #999da5;
+}
+
+.top-card.rank3 {
+    border-top: 4px solid #aa704e;
+}
+
+.top-number {
+    color: #888;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.top-name {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.top-group {
+    margin-top: 5px;
+    color: #888;
+    font-size: 12px;
+}
+
+.top-score {
+    position: absolute;
+    right: 18px;
+    bottom: 15px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+
+/* =====================================================
+   GROUP SCORES
+   ===================================================== */
+
+.group-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.group-card {
+    background: white;
+    border: 1px solid #e4e4e7;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.group-header {
+    background: #151515;
+    color: white;
+    padding: 19px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.group-title {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.group-company {
+    color: #aaa;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.group-average {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.member-list {
+    padding: 5px 0;
+}
+
+.member {
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 17px;
+    border-bottom: 1px solid #f0f0f2;
+}
+
+.member:last-child {
+    border-bottom: none;
+}
+
+.member-rank {
+    color: #999;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.member-name {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.member-score {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+/* =====================================================
+   GLOBAL CATEGORY TABLES
+   ===================================================== */
+
+.score-table {
+    background: white;
+    border: 1px solid #e4e4e7;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.score-row {
+    display: grid;
+    grid-template-columns: 55px 1.3fr 1fr 180px;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 20px;
+    border-bottom: 1px solid #eeeeef;
+}
+
+.score-row:last-child {
+    border-bottom: none;
+}
+
+.score-row.header-row {
+    background: #fafafa;
+    color: #888;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.rank {
+    color: #999;
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.idol {
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.group {
+    color: #777;
+    font-size: 13px;
+}
+
+.level {
+    justify-self: end;
+    background: #f0f0f2;
+    border-radius: 7px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    border-top: 1px solid #ddd;
+    padding: 28px;
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+    .top-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .group-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 20px;
+    }
+
+    .hero {
+        margin-top: 30px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .top-grid,
+    .group-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .score-row {
+        grid-template-columns: 35px 1fr auto;
+    }
+
+    .score-row .group {
+        display: none;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header>
+
+    <div class="logo">
+        MUSICVERSE <span>PROFILES</span>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="groups.html">GROUPS</a>
+        <a href="idols.html">IDOLS</a>
+        <a href="scores.html">SCORES</a>
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <h1>Musicverse Scores</h1>
+
+    <p>
+        Global idol rankings, group averages and individual skill scores.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     GLOBAL TOP 10
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>GLOBAL TOP 10</h2>
+
+        <span>Overall Score</span>
+
+    </div>
+
+    <div id="globalTop" class="top-grid"></div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GROUP SCORES
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>GROUP SCORES</h2>
+
+        <span>Average Overall Score</span>
+
+    </div>
+
+    <div id="groupScores" class="group-grid"></div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VOCAL GLOBAL
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>VOCAL — GLOBAL</h2>
+
+        <span>All available idols</span>
+
+    </div>
+
+    <div id="vocalRanking" class="score-table"></div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RAP GLOBAL
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>RAP — GLOBAL</h2>
+
+        <span>Rap Classification</span>
+
+    </div>
+
+    <div id="rapRanking" class="score-table"></div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DANCE GLOBAL
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>DANCE — GLOBAL</h2>
+
+        <span>Score / 10</span>
+
+    </div>
+
+    <div id="danceRanking" class="score-table"></div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STAGE PRESENCE GLOBAL
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>STAGE PRESENCE — GLOBAL</h2>
+
+        <span>Score / 20</span>
+
+    </div>
+
+    <div id="stageRanking" class="score-table"></div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+    Musicverse Profiles · Scores Database
+
+</footer>
+
+
+
+<!-- =====================================================
+     DATA.JS
+     ===================================================== -->
+
+<script src="data.js"></script>
+
+
+<script>
+
+/* =====================================================
+   GROUPS
+   ===================================================== */
+
+const MUSICVERSE_SCORE_GROUPS = [
+
+    {
+        name: "ELLEVEN",
+        company: "AURELIA Entertainment",
+        members: [
+            "Ruka",
+            "Pharita",
+            "Asa",
+            "Ahyeon",
+            "Yuha",
+            "Stella",
+            "Rami",
+            "Rora",
+            "Juun",
+            "A-na",
+            "Chiquita"
+        ]
+    },
+
+    {
+        name: "PINKPUNK",
+        company: "LUX Entertainment",
+        members: [
+            "Jisoo",
+            "Jennie",
+            "Miyeon",
+            "Rosé",
+            "Mina",
+            "Lisa",
+            "Minnie"
+        ]
+    },
+
+    {
+        name: "STEELROSE",
+        company: "XG Labels",
+        members: [
+            "Belle",
+            "Sooin",
+            "Gawon",
+            "Garam",
+            "Anna",
+            "Ella"
+        ]
+    },
+
+    {
+        name: "LESSERAFIM",
+        company: "AURELIA Entertainment",
+        members: [
+            "Winter",
+            "Yujin",
+            "Liz",
+            "Haerin",
+            "Eunchae",
+            "Narin"
+        ]
+    },
+
+    {
+        name: "ONCE",
+        company: "MDX Entertainment",
+        members: [
+            "Sana",
+            "Jihyo",
+            "Dahyun",
+            "Chaeyoung",
+            "Tzuyu"
+        ]
+    },
+
+    {
+        name: "GARLS",
+        company: "AURELIA Entertainment",
+        members: [
+            "Karina",
+            "Chaeryeong",
+            "Ningning",
+            "Yuna",
+            "Hanni"
+        ]
+    },
+
+    {
+        name: "TWOON",
+        company: "NOVA Entertainment",
+        members: [
+            "Soojin",
+            "Soyeon",
+            "Yeri",
+            "Yuqi",
+            "Yeji"
+        ]
+    },
+
+    {
+        name: "WO!AH",
+        company: "LUX Entertainment",
+        members: [
+            "Shuhua",
+            "Wonyoung",
+            "Somi",
+            "Minji"
+        ]
+    },
+
+    {
+        name: "MIDZY",
+        company: "LUX Entertainment",
+        members: [
+            "HU’E",
+            "Minju",
+            "Kelly",
+            "Haum",
+            "Leeseo",
+            "Hyein",
+            "Ian",
+            "Jiwoo-midzy"
+        ]
+    },
+
+    {
+        name: "HEARTS2HEARTS",
+        company: "AURELIA Entertainment",
+        members: [
+            "Xiaoting",
+            "Julie",
+            "Emma",
+            "Natty",
+            "Sullyoon",
+            "Danielle",
+            "Jiyoon",
+            "Kyujin",
+            "Iroha"
+        ]
+    },
+
+    {
+        name: "SWEET&SOUR",
+        company: "XG Labels",
+        members: [
+            "Sakura",
+            "Chaewon",
+            "Giselle",
+            "Yunjin",
+            "Haewon",
+            "Kazuha"
+        ]
+    },
+
+    {
+        name: "BABYDOLL",
+        company: "—",
+        members: [
+            "Yunah",
+            "Mai",
+            "Haneul",
+            "Megan",
+            "Carmen",
+            "Yoonchae",
+            "Kya"
+        ]
+    },
+
+    {
+        name: "DICE",
+        company: "—",
+        members: [
+            "Sunhye",
+            "Jiana",
+            "Koko",
+            "Jungeun",
+            "Doeun",
+            "Jieun"
+        ]
+    },
+
+    {
+        name: "EUPHORIA",
+        company: "AURELIA Entertainment",
+        members: [
+            "Annie",
+            "Bailey",
+            "Moka",
+            "Youngseo",
+            "Marquise"
+        ]
+    }
+
+];
+
+
+
+/* =====================================================
+   OVERALL SCORES
+   ===================================================== */
+
+const OVERALL_SCORES = {
+
+    /* ELLEVEN */
+
+    Ruka: 7.24,
+    Pharita: 6.66,
+    Asa: 8.79,
+    Ahyeon: 8.10,
+    Yuha: 7.28,
+    Stella: 7.19,
+    Rami: 8.06,
+    Rora: 7.53,
+    Juun: 7.48,
+    "A-na": 6.55,
+    Chiquita: 8.09,
+
+
+    /* PINKPUNK */
+
+    Jisoo: 6.00,
+    Jennie: 9.05,
+    Miyeon: 7.15,
+    "Rosé": 7.38,
+    Mina: 7.50,
+    Lisa: 9.33,
+    Minnie: 8.10,
+
+
+    /* STEELROSE */
+
+    Belle: 8.05,
+    Sooin: 7.94,
+    Gawon: 8.65,
+    Garam: 7.18,
+    Anna: 7.06,
+    Ella: 7.58,
+
+
+    /* LESSERAFIM */
+
+    Winter: 7.94,
+    Yujin: 8.41,
+    Liz: 7.18,
+    Haerin: 7.71,
+    Eunchae: 7.31,
+    Narin: 8.80,
+
+
+    /* ONCE */
+
+    Sana: 7.35,
+    Jihyo: 8.88,
+    Dahyun: 7.48,
+    Chaeyoung: 7.44,
+    Tzuyu: 6.58,
+
+
+    /* GARLS */
+
+    Karina: 9.23,
+    Chaeryeong: 7.48,
+    Ningning: 8.68,
+    Yuna: 8.43,
+    Hanni: 8.41,
+
+
+    /* TWOON */
+
+    Soojin: 7.98,
+    Soyeon: 9.88,
+    Yeri: 6.28,
+    Yuqi: 8.36,
+    Yeji: 8.54,
+
+
+    /* WO!AH */
+
+    Shuhua: 6.47,
+    Wonyoung: 7.39,
+    Somi: 9.25,
+    Minji: 7.88,
+
+
+    /* MIDZY */
+
+    "HU’E": 8.63,
+    Minju: 7.86,
+    Kelly: 8.23,
+    Haum: 7.16,
+    Leeseo: 7.28,
+    Hyein: 7.86,
+    Ian: 6.94,
+
+    /* Jiwoo de MIDZY tiene nombre duplicado con PANDORA */
+
+    "Jiwoo-midzy": 6.65,
+
+
+    /* HEARTS2HEARTS */
+
+    Xiaoting: 7.53,
+    Julie: 8.99,
+    Emma: 9.38,
+    Natty: 8.38,
+    Sullyoon: 8.60,
+    Danielle: 8.26,
+    Jiyoon: 6.75,
+    Kyujin: 9.95,
+    Iroha: 7.41,
+
+
+    /* SWEET&SOUR */
+
+    Sakura: 7.04,
+    Chaewon: 8.58,
+    Giselle: 8.54,
+    Yunjin: 8.88,
+    Haewon: 9.06,
+    Kazuha: 8.71,
+
+
+    /* BABYDOLL */
+
+    Yunah: 7.90,
+    Mai: 6.75,
+    Haneul: 7.96,
+    Megan: 8.44,
+    Carmen: 6.08,
+    Yoonchae: 7.83,
+    Kya: 7.73,
+
+
+    /* DICE */
+
+    Sunhye: 10.38,
+    Jiana: 9.55,
+    Koko: 7.85,
+    Jungeun: 9.00,
+    Doeun: 9.73,
+    Jieun: 10.10,
+
+
+    /* EUPHORIA */
+
+    Annie: 7.09,
+    Bailey: 8.63,
+    Moka: 7.05,
+    Youngseo: 7.48,
+    Marquise: 8.60
+
+};
+
+
+
+/* =====================================================
+   CATEGORY SCORES
+   ===================================================== */
+
+const CATEGORY_SCORES = {
+
+
+    /* =================================================
        PINKPUNK
-       ===================================================== */
+       ================================================= */
 
     Jisoo: {
         vocal: "E+",
@@ -36,9 +932,12 @@ Gawon: {
     },
 
 
-    /* =====================================================
+    /* =================================================
        STEELROSE
-       ===================================================== */
+
+       IMPORTANT:
+       Rap uses the N.R/T scale.
+       ================================================= */
 
     Belle: {
         vocal: "S",
@@ -71,9 +970,9 @@ Gawon: {
     },
 
 
-    /* =====================================================
+    /* =================================================
        WO!AH
-       ===================================================== */
+       ================================================= */
 
     Shuhua: {
         vocal: "E",
@@ -88,94 +987,9 @@ Gawon: {
     },
 
 
-    /* =====================================================
-       HEARTS2HEARTS
-       ===================================================== */
-
-    Xiaoting: {
-        vocal: "B",
-        rap: "S-"
-    },
-
-    Julie: {
-        vocal: "S",
-        rap: "A+"
-    },
-
-    Emma: {
-        vocal: "A+",
-        rap: "S+++"
-    },
-
-    Natty: {
-        vocal: "A",
-        rap: "S"
-    },
-
-    Sullyoon: {
-        vocal: "E+",
-        rap: "C+"
-    },
-
-    Danielle: {
-        vocal: "D+",
-        rap: "B-"
-    },
-
-    Jiyoon: {
-        vocal: "F",
-        rap: "E-"
-    },
-
-    Kyujin: {
-        vocal: "E+",
-        rap: "D+"
-    },
-
-    Iroha: {
-        vocal: "E-",
-        rap: "S+"
-    },
-
-
-    /* =====================================================
-       SWEET&SOUR
-       ===================================================== */
-
-    Sakura: {
-        vocal: "E-",
-        rap: "A+"
-    },
-
-    Chaewon: {
-        vocal: "F-",
-        rap: "B+"
-    },
-
-    Giselle: {
-        vocal: "B+",
-        rap: "B-"
-    },
-
-    Yunjin: {
-        vocal: "F+",
-        rap: "B-"
-    },
-
-    Haewon: {
-        vocal: "F",
-        rap: "E-"
-    },
-
-    Kazuha: {
-        vocal: "C+",
-        rap: "S+"
-    },
-
-
-    /* =====================================================
+    /* =================================================
        DICE
-       ===================================================== */
+       ================================================= */
 
     Sunhye: {
         vocal: "D+",
@@ -220,9 +1034,9 @@ Gawon: {
     },
 
 
-    /* =====================================================
+    /* =================================================
        EUPHORIA
-       ===================================================== */
+       ================================================= */
 
     Annie: {
         vocal: "F+",
@@ -261,17 +1075,510 @@ Gawon: {
 
 };
 
-Garam: {
-    vocal: "A-",
-    rap: "High N.R"
-},
 
-Anna: {
-    vocal: "B",
-    rap: "High N.R"
-},
 
-Ella: {
-    vocal: "B+",
-    rap: "High N.R"
-},
+/* =====================================================
+   VOCAL SCALE
+   ===================================================== */
+
+const VOCAL_ORDER = [
+
+    "S",
+    "A",
+    "B+",
+    "B",
+    "B-",
+    "C+",
+    "C",
+    "C-",
+    "D+",
+    "D",
+    "D-",
+    "E+",
+    "E",
+    "E-",
+    "F+",
+    "F",
+
+    /* Legacy value currently present for Garam */
+    "A-"
+
+];
+
+
+
+/* =====================================================
+   RAP SCALE
+   ===================================================== */
+
+const RAP_ORDER = [
+
+    "T1",
+
+    "High T2",
+    "Mid T2",
+    "Low T2",
+
+    "High T3",
+    "Mid T3",
+    "Low T3",
+
+    "High T4",
+    "Mid T4",
+    "Low T4",
+
+    "High T5",
+    "Mid T5",
+    "Low T5",
+
+    "High T6",
+    "Mid T6",
+    "Low T6",
+
+    "High N.R",
+    "Upper N.R",
+    "Mid N.R",
+    "Low N.R"
+
+];
+
+
+
+/* =====================================================
+   CLEAN DISPLAY NAME
+   ===================================================== */
+
+function displayName(name) {
+
+    if (name === "Jiwoo-midzy") {
+        return "Jiwoo";
+    }
+
+    return name;
+
+}
+
+
+
+/* =====================================================
+   FIND GROUP
+   ===================================================== */
+
+function findGroup(name) {
+
+    for (const group of MUSICVERSE_SCORE_GROUPS) {
+
+        if (group.members.includes(name)) {
+            return group;
+        }
+
+    }
+
+    return null;
+
+}
+
+
+
+/* =====================================================
+   SCORE CLASS
+   ===================================================== */
+
+function scoreClass(score) {
+
+    if (score >= 9.00) {
+        return "score-top";
+    }
+
+    if (score >= 8.00) {
+        return "score-good";
+    }
+
+    if (score < 7.00) {
+        return "score-low";
+    }
+
+    return "score-mid";
+
+}
+
+
+
+/* =====================================================
+   GLOBAL TOP 10
+   ===================================================== */
+
+function renderGlobalTop() {
+
+    const top = Object.entries(OVERALL_SCORES)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+
+    const container = document.getElementById("globalTop");
+
+    container.innerHTML = top.map(([name, score], index) => {
+
+        const group = findGroup(name);
+
+        return `
+
+            <div class="top-card ${index < 3 ? "rank" + (index + 1) : ""}">
+
+                <div class="top-number">
+                    #${index + 1}
+                </div>
+
+                <div class="top-name">
+                    ${displayName(name)}
+                </div>
+
+                <div class="top-group">
+                    ${group ? group.name : "—"}
+                </div>
+
+                <div class="top-score">
+                    ${score.toFixed(2)}
+                </div>
+
+            </div>
+
+        `;
+
+    }).join("");
+
+}
+
+
+
+/* =====================================================
+   GROUP SCORES
+   ===================================================== */
+
+function renderGroupScores() {
+
+    const container = document.getElementById("groupScores");
+
+    container.innerHTML = MUSICVERSE_SCORE_GROUPS.map(group => {
+
+        const members = group.members
+            .filter(name => OVERALL_SCORES[name] !== undefined)
+            .sort((a, b) => OVERALL_SCORES[b] - OVERALL_SCORES[a]);
+
+        if (members.length === 0) {
+
+            return `
+
+                <article class="group-card">
+
+                    <div class="group-header">
+
+                        <div>
+
+                            <div class="group-title">
+                                ${group.name}
+                            </div>
+
+                            <div class="group-company">
+                                ${group.company}
+                            </div>
+
+                        </div>
+
+                        <div class="group-average">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="member-list">
+
+                        <div class="member">
+
+                            <span></span>
+
+                            <span class="member-name">
+                                No overall scores yet
+                            </span>
+
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            `;
+
+        }
+
+
+        const average =
+            members.reduce(
+                (total, name) =>
+                    total + OVERALL_SCORES[name],
+                0
+            ) / members.length;
+
+
+        return `
+
+            <article class="group-card">
+
+                <div class="group-header">
+
+                    <div>
+
+                        <div class="group-title">
+                            ${group.name}
+                        </div>
+
+                        <div class="group-company">
+                            ${group.company}
+                        </div>
+
+                    </div>
+
+                    <div class="group-average">
+                        ${average.toFixed(2)}
+                    </div>
+
+                </div>
+
+
+                <div class="member-list">
+
+                    ${members.map((name, index) => `
+
+                        <div class="member">
+
+                            <span class="member-rank">
+                                #${index + 1}
+                            </span>
+
+                            <span class="member-name">
+                                ${displayName(name)}
+                            </span>
+
+                            <span class="member-score">
+                                ${OVERALL_SCORES[name].toFixed(2)}
+                            </span>
+
+                        </div>
+
+                    `).join("")}
+
+                </div>
+
+            </article>
+
+        `;
+
+    }).join("");
+
+}
+
+
+
+/* =====================================================
+   GLOBAL CATEGORY RANKING
+   ===================================================== */
+
+function renderCategoryRanking(
+    elementId,
+    category,
+    order,
+    numeric = false,
+    denominator = null
+) {
+
+    const entries = Object.entries(CATEGORY_SCORES)
+        .filter(([name, data]) => {
+
+            return data[category] !== undefined;
+
+        });
+
+
+    entries.sort((a, b) => {
+
+        const valueA = a[1][category];
+        const valueB = b[1][category];
+
+
+        if (numeric) {
+
+            return valueB - valueA;
+
+        }
+
+
+        const indexA = order.indexOf(valueA);
+        const indexB = order.indexOf(valueB);
+
+
+        const safeA =
+            indexA === -1
+                ? order.length
+                : indexA;
+
+        const safeB =
+            indexB === -1
+                ? order.length
+                : indexB;
+
+
+        return safeA - safeB;
+
+    });
+
+
+    const container =
+        document.getElementById(elementId);
+
+
+    let rows = `
+
+        <div class="score-row header-row">
+
+            <div>#</div>
+
+            <div>IDOL</div>
+
+            <div>GROUP</div>
+
+            <div>LEVEL</div>
+
+        </div>
+
+    `;
+
+
+    entries.forEach(([name, data], index) => {
+
+        const group = findGroup(name);
+
+        let displayValue =
+            data[category];
+
+
+        if (numeric) {
+
+            if (category === "stage") {
+
+                displayValue =
+                    Number(displayValue).toFixed(
+                        Number(displayValue) % 1 === 0
+                            ? 0
+                            : 2
+                    )
+                    + "/"
+                    + denominator;
+
+            } else {
+
+                displayValue =
+                    Number(displayValue).toFixed(2)
+                    + "/10";
+
+            }
+
+        }
+
+
+        rows += `
+
+            <div class="score-row">
+
+                <div class="rank">
+                    #${index + 1}
+                </div>
+
+                <div class="idol">
+                    ${displayName(name)}
+                </div>
+
+                <div class="group">
+                    ${group ? group.name : "—"}
+                </div>
+
+                <div class="level">
+                    ${displayValue}
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    if (entries.length === 0) {
+
+        rows += `
+
+            <div class="score-row">
+
+                <div></div>
+
+                <div class="idol">
+                    No data available
+                </div>
+
+                <div></div>
+
+                <div></div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    container.innerHTML = rows;
+
+}
+
+
+
+/* =====================================================
+   START PAGE
+   ===================================================== */
+
+renderGlobalTop();
+
+renderGroupScores();
+
+renderCategoryRanking(
+    "vocalRanking",
+    "vocal",
+    VOCAL_ORDER
+);
+
+renderCategoryRanking(
+    "rapRanking",
+    "rap",
+    RAP_ORDER
+);
+
+renderCategoryRanking(
+    "danceRanking",
+    "dance",
+    [],
+    true
+);
+
+renderCategoryRanking(
+    "stageRanking",
+    "stage",
+    [],
+    true,
+    20
+);
+
+</script>
+
+
+</body>
+</html>
