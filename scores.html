@@ -1,1057 +1,909 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Musicverse — Scores</title>
-
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f7f7fb;
-        color: #222;
-    }
-
-    header {
-        background: linear-gradient(135deg, #111827, #27272a);
-        color: white;
-        padding: 45px 20px;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 42px;
-        letter-spacing: 3px;
-        font-weight: 800;
-    }
-
-    header p {
-        margin-top: 10px;
-        color: #cfcfd6;
-        font-size: 15px;
-        letter-spacing: 1px;
-    }
-
-    .container {
-        width: 92%;
-        max-width: 1250px;
-        margin: 45px auto;
-    }
-
-    .section-title {
-        text-align: center;
-        margin: 55px 0 25px;
-    }
-
-    .section-title h2 {
-        font-size: 28px;
-    }
-
-    .section-title p {
-        color: #777;
-        margin-top: 6px;
-    }
-
-    /* =========================
-       GLOBAL TOP 10
-    ========================= */
-
-    .global-top {
-        background: white;
-        border-radius: 25px;
-        padding: 30px;
-        box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-        max-width: 850px;
-        margin: auto;
-    }
-
-    .global-item {
-        display: grid;
-        grid-template-columns: 65px 1fr auto;
-        align-items: center;
-        gap: 15px;
-        padding: 17px 18px;
-        margin-bottom: 10px;
-        border-radius: 15px;
-        transition: transform .2s, box-shadow .2s;
-    }
-
-    .global-item:hover {
-        transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(0,0,0,.08);
-    }
-
-    .global-item.first {
-        padding: 25px 20px;
-        border: 2px solid #f3a7cf;
-    }
-
-    .number {
-        font-size: 27px;
-        font-weight: 900;
-        color: #999;
-        text-align: center;
-    }
-
-    .first .number {
-        font-size: 38px;
-        color: #e84f9d;
-    }
-
-    .idol-name {
-        font-size: 18px;
-        font-weight: 800;
-    }
-
-    .first .idol-name {
-        font-size: 24px;
-    }
-
-    .group-name {
-        color: #888;
-        font-size: 13px;
-        margin-top: 4px;
-    }
-
-    .score {
-        text-align: right;
-        font-size: 20px;
-        font-weight: 900;
-    }
-
-    .level {
-        display: inline-block;
-        margin-top: 5px;
-        padding: 4px 9px;
-        border-radius: 20px;
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: .5px;
-    }
-
-    /* =========================
-       LEVEL COLORS
-    ========================= */
-
-    .top {
-        background: #ffe0ef;
-        color: #c62f78;
-    }
-
-    .great {
-        background: #eee2ff;
-        color: #7645b8;
-    }
-
-    .good {
-        background: #ddf5df;
-        color: #3f9148;
-    }
-
-    .average {
-        background: #fff4bf;
-        color: #a08000;
-    }
-
-    .below {
-        background: #ffe1c7;
-        color: #b85d18;
-    }
-
-    .dozen {
-        background: #e4e4e4;
-        color: #666;
-    }
-
-    /* =========================
-       GROUP GRID
-    ========================= */
-
-    .groups-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-        margin-top: 35px;
-    }
-
-    .group-card {
-        background: white;
-        border-radius: 20px;
-        padding: 22px;
-        box-shadow: 0 7px 25px rgba(0,0,0,.07);
-        transition: transform .2s, box-shadow .2s;
-    }
-
-    .group-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(0,0,0,.11);
-    }
-
-    .group-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 18px;
-        padding-bottom: 13px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .group-header h3 {
-        font-size: 21px;
-    }
-
-    .group-header span {
-        font-size: 11px;
-        color: #999;
-        font-weight: bold;
-    }
-
-    .member {
-        display: grid;
-        grid-template-columns: 30px 1fr auto;
-        align-items: center;
-        gap: 8px;
-        padding: 9px 8px;
-        border-radius: 10px;
-        margin-bottom: 5px;
-    }
-
-    .member:hover {
-        background: #f7f7f7;
-    }
-
-    .member-rank {
-        font-size: 12px;
-        font-weight: 800;
-        color: #999;
-    }
-
-    .member-name {
-        font-size: 14px;
-        font-weight: 700;
-    }
-
-    .member-score {
-        font-size: 13px;
-        font-weight: 900;
-        padding: 4px 8px;
-        border-radius: 10px;
-    }
-
-    /* =========================
-       CATEGORY SECTIONS
-    ========================= */
-
-    .category-section {
-        margin-top: 60px;
-    }
-
-    .category-title {
-        text-align: center;
-        margin-bottom: 25px;
-    }
-
-    .category-title h2 {
-        font-size: 28px;
-    }
-
-    .category-title p {
-        color: #777;
-        margin-top: 6px;
-    }
-
-    .category-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-    }
-
-    .category-card {
-        background: white;
-        border-radius: 20px;
-        padding: 22px;
-        box-shadow: 0 7px 25px rgba(0,0,0,.07);
-    }
-
-    .category-card h3 {
-        font-size: 20px;
-        margin-bottom: 17px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .category-member {
-        display: grid;
-        grid-template-columns: 30px 1fr auto;
-        align-items: center;
-        gap: 8px;
-        padding: 9px 8px;
-        border-radius: 10px;
-        margin-bottom: 4px;
-    }
-
-    .category-member:hover {
-        background: #f7f7f7;
-    }
-
-    .category-rank {
-        font-size: 12px;
-        font-weight: 800;
-        color: #999;
-    }
-
-    .category-name {
-        font-size: 14px;
-        font-weight: 700;
-    }
-
-    .category-score {
-        font-size: 13px;
-        font-weight: 900;
-        padding: 4px 8px;
-        border-radius: 10px;
-    }
-
-    /* =========================
-       LEGEND
-    ========================= */
-
-    .legend {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 35px 0;
-    }
-
-    .legend span {
-        padding: 8px 13px;
-        border-radius: 20px;
-        font-size: 11px;
-        font-weight: 800;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 900px) {
-
-        .groups-grid,
-        .category-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 600px) {
-
-        header h1 {
-            font-size: 30px;
-        }
-
-        .groups-grid,
-        .category-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .global-item {
-            grid-template-columns: 45px 1fr auto;
-        }
-    }
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>MUSICVERSE SCORES</h1>
-    <p>GLOBAL IDOL PERFORMANCE RANKINGS</p>
-</header>
-
-<div class="container">
-
-    <!-- =========================
-         GLOBAL TOP 10
-    ========================= -->
-
-    <div class="section-title">
-        <h2>🏆 GLOBAL TOP 10</h2>
-        <p>The highest ranked idols in Musicverse</p>
-    </div>
-
-    <div class="global-top" id="globalTop"></div>
-
-
-    <!-- =========================
-         LEGEND
-    ========================= -->
-
-    <div class="legend">
-
-        <span class="top">
-            TOP IDOL · 9.00+
-        </span>
-
-        <span class="great">
-            GREAT IDOL · 8.00+
-        </span>
-
-        <span class="good">
-            GOOD IDOL · 7.00+
-        </span>
-
-        <span class="average">
-            AVERAGE IDOL · 6.00+
-        </span>
-
-        <span class="below">
-            BELOW IDOL · 5.00+
-        </span>
-
-        <span class="dozen">
-            DOZEN IDOL · 1.00+
-        </span>
-
-    </div>
-
-
-    <!-- =========================
-         GROUP SCORES
-    ========================= -->
-
-    <div class="section-title">
-        <h2>GROUP SCORES</h2>
-        <p>Individual rankings within each Musicverse group</p>
-    </div>
-
-    <div class="groups-grid" id="groupsGrid"></div>
-
-
-    <!-- =========================
-         VOCAL
-    ========================= -->
-
-    <div class="category-section">
-
-        <div class="category-title">
-            <h2>🎤 VOCAL RANKINGS</h2>
-            <p>Vocal rankings within each group</p>
-        </div>
-
-        <div class="category-grid" id="vocalGrid"></div>
-
-    </div>
-
-
-    <!-- =========================
-         RAP
-    ========================= -->
-
-    <div class="category-section">
-
-        <div class="category-title">
-            <h2>🎙️ RAP RANKINGS</h2>
-            <p>Rap rankings within each group</p>
-        </div>
-
-        <div class="category-grid" id="rapGrid"></div>
-
-    </div>
-
-
-    <!-- =========================
-         DANCE
-    ========================= -->
-
-    <div class="category-section">
-
-        <div class="category-title">
-            <h2>💃 DANCE RANKINGS</h2>
-            <p>Dance rankings within each group</p>
-        </div>
-
-        <div class="category-grid" id="danceGrid"></div>
-
-    </div>
-
-
-    <!-- =========================
-         STAGE PRESENCE
-    ========================= -->
-
-    <div class="category-section">
-
-        <div class="category-title">
-            <h2>⭐ STAGE PRESENCE RANKINGS</h2>
-            <p>Stage presence rankings within each group</p>
-        </div>
-
-        <div class="category-grid" id="stageGrid"></div>
-
-    </div>
-
-</div>
-
-
-<script>
-
-/* =========================================
-   OVERALL GROUP DATA
-========================================= */
-
-const groups = {
-
-    PINKPUNK: [
-        ["Lisa", 9.33],
-        ["Jennie", 9.05],
-        ["Minnie", 8.10],
-        ["Mina", 7.50],
-        ["Rosé", 7.38],
-        ["Miyeon", 7.15],
-        ["Jisoo", 6.00]
-    ],
-
-    GARLS: [
-        ["Karina", 9.23],
-        ["Ningning", 8.68],
-        ["Yuna", 8.43],
-        ["Hanni", 8.41],
-        ["Chaeryeong", 7.48]
-    ],
-
-    TWOON: [
-        ["Soyeon", 9.88],
-        ["Yeji", 8.54],
-        ["Yuqi", 8.36],
-        ["Soojin", 7.98],
-        ["Yeri", 6.28]
-    ],
-
-    HEARTS2HEARTS: [
-        ["Kyujin", 9.95],
-        ["Emma", 9.38],
-        ["Julie", 8.99],
-        ["Sullyoon", 8.60],
-        ["Natty", 8.38],
-        ["Danielle", 8.26],
-        ["Xiaoting", 7.53],
-        ["Iroha", 7.41],
-        ["Jiyoon", 6.75]
-    ],
-
-    "SWEET&SOUR": [
-        ["Haewon", 9.06],
-        ["Yunjin", 8.88],
-        ["Kazuha", 8.71],
-        ["Chaewon", 8.58],
-        ["Giselle", 8.54],
-        ["Sakura", 7.04]
-    ],
-
-    ELLEVEN: [
-        ["Asa", 8.79],
-        ["Ahyeon", 8.10],
-        ["Chiquita", 8.09],
-        ["Rami", 8.06],
-        ["Rora", 7.53],
-        ["Juun", 7.48],
-        ["Yuha", 7.28],
-        ["Ruka", 7.24],
-        ["Stella", 7.19],
-        ["Pharita", 6.66],
-        ["A-na", 6.55]
-    ],
-
-    STEELROSE: [
-        ["Gawon", 8.65],
-        ["Belle", 8.05],
-        ["Sooin", 7.94],
-        ["Ella", 7.58],
-        ["Garam", 7.18],
-        ["Anna", 7.06]
-    ],
-
-    LESSERAFIM: [
-        ["Narin", 8.80],
-        ["Yujin", 8.41],
-        ["Winter", 7.94],
-        ["Haerin", 7.71],
-        ["Eunchae", 7.31],
-        ["Liz", 7.18]
-    ],
-
-    ONCE: [
-        ["Jihyo", 8.88],
-        ["Dahyun", 7.48],
-        ["Chaeyoung", 7.44],
-        ["Sana", 7.35],
-        ["Tzuyu", 6.58]
-    ],
-
-    "WO!AH": [
-        ["Somi", 9.25],
-        ["Minji", 7.88],
-        ["Wonyoung", 7.39],
-        ["Shuhua", 6.47]
-    ],
-
-    MIDZY: [
-        ["HU’E", 8.63],
-        ["Kelly", 8.23],
-        ["Minju", 7.86],
-        ["Hyein", 7.86],
-        ["Leeseo", 7.28],
-        ["Haum", 7.16],
-        ["Ian", 6.94],
-        ["Jiwoo", 6.65]
-    ],
-
-    BABYDOLL: [
-        ["Megan", 8.44],
-        ["Haneul", 7.96],
-        ["Yunah", 7.90],
-        ["Yoonchae", 7.83],
-        ["Kya", 7.73],
-        ["Mai", 6.75],
-        ["Carmen", 6.08]
-    ],
-
-    DICE: [
-        ["Sunhye", 10.38],
-        ["Jieun", 10.10],
-        ["Doeun", 9.73],
-        ["Jiana", 9.55],
-        ["Jungeun", 9.00],
-        ["Koko", 7.85]
-    ],
-
-    EUPHORIA: [
-        ["Bailey", 8.63],
-        ["Marquise", 8.60],
-        ["Youngseo", 7.48],
-        ["Annie", 7.09],
-        ["Moka", 7.05]
-    ]
-
-};
-
-
-/* =========================================
-   CATEGORY DATA
-   Scores:
-   Vocal = points
-   Rap = points
-   Dance = score x10
-   Stage = score x5
-========================================= */
-
-const categoryData = {
-
-    BABYDOLL: {
-
-        vocal: [
-            ["Kya", 50],
-            ["Megan", 35],
-            ["Carmen", 35],
-            ["Yunah", null],
-            ["Mai", null],
-            ["Haneul", null],
-            ["Yoonchae", null]
-        ],
-
-        rap: [
-            ["Haneul", null],
-            ["Yoonchae", null],
-            ["Megan", null],
-            ["Kya", null],
-            ["Mai", null],
-            ["Yunah", null],
-            ["Carmen", null]
-        ],
-
-        dance: [
-            ["Megan", null],
-            ["Yunah", null],
-            ["Haneul", null],
-            ["Kya", null],
-            ["Yoonchae", null],
-            ["Mai", null],
-            ["Carmen", null]
-        ],
-
-        stage: [
-            ["Megan", null],
-            ["Haneul", null],
-            ["Yunah", null],
-            ["Kya", null],
-            ["Yoonchae", null],
-            ["Mai", null],
-            ["Carmen", null]
-        ]
+/* =========================================================
+   MUSICVERSE DATABASE
+   ========================================================= */
+
+const MUSICVERSE_GROUPS = [
+
+    {
+        name: "PANDORA",
+        company: "Starship Entertainment",
+        debut: "Pandora",
+        fandom: "Pandas",
+        members: ["Jiwoo", "Jeemin", "Kylie", "Hinari", "Ruby", "Bonnie"],
+        page: "pandora.html"
     },
 
-    DICE: {
-
-        vocal: [
-            ["Jungeun", 80],
-            ["Sunhye", 50],
-            ["Jieun", 50],
-            ["Jiana", 40],
-            ["Doeun", 25],
-            ["Koko", 20]
+    {
+        name: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        debut: "LION",
+        fandom: "Levens",
+        members: [
+            "Ruka", "Pharita", "Asa", "Ahyeon", "Yuha", "Stella",
+            "Rami", "Rora", "Juun", "A-na", "Chiquita"
         ],
-
-        rap: [
-            ["Doeun", 100],
-            ["Sunhye", 95],
-            ["Jiana", 85],
-            ["Jieun", 80],
-            ["Koko", 40],
-            ["Jungeun", 10]
-        ],
-
-        dance: [
-            ["Sunhye", 95],
-            ["Jieun", 94],
-            ["Jungeun", 90],
-            ["Koko", 89],
-            ["Doeun", 89],
-            ["Jiana", 87]
-        ],
-
-        stage: [
-            ["Sunhye", 95],
-            ["Jieun", 100],
-            ["Jiana", 90],
-            ["Jungeun", 100],
-            ["Doeun", 95],
-            ["Koko", 85]
-        ]
+        page: "elleven.html"
     },
 
-    EUPHORIA: {
-
-        vocal: [
-            ["Marquise", 55],
-            ["Bailey", 30],
-            ["Moka", 25],
-            ["Annie", 10],
-            ["Youngseo", 10]
+    {
+        name: "PINKPUNK",
+        company: "LUX Entertainment",
+        debut: "Whistle",
+        fandom: "Pookies",
+        members: [
+            "Jisoo", "Jennie", "Miyeon", "Rosé",
+            "Mina", "Lisa", "Minnie"
         ],
+        page: "pinkpunk.html"
+    },
 
-        rap: [
-            ["Annie", 65],
-            ["Marquise", 20],
-            ["Youngseo", 20],
-            ["Bailey", 15],
-            ["Moka", 5]
+    {
+        name: "STEELROSE",
+        company: "XG Labels",
+        debut: "Jump",
+        fandom: "Dahlias",
+        members: ["Belle", "Sooin", "Gawon", "Garam", "Anna", "Ella"],
+        page: "steelrose.html"
+    },
+
+    {
+        name: "LESSERAFIM",
+        company: "Aurelia Entertainment",
+        debut: "HYLT",
+        fandom: "Serafins",
+        members: [
+            "Winter", "Yujin", "Liz", "Haerin", "Eunchae", "Narin"
         ],
+        page: "lesserafim.html"
+    },
 
-        dance: [
-            ["Bailey", 100],
-            ["Marquise", 94],
-            ["Youngseo", 89],
-            ["Moka", 82],
-            ["Annie", 58.5]
+    {
+        name: "ONCE",
+        company: "MDX Entertainment",
+        debut: "One Spark",
+        fandom: "TWICE",
+        members: ["Sana", "Jihyo", "Dahyun", "Chaeyoung", "Tzuyu"],
+        page: "once.html"
+    },
+
+    {
+        name: "GARLS",
+        company: "Aurelia Entertainment",
+        debut: "Black Mamba",
+        fandom: "Gurlies",
+        members: ["Karina", "Chaeryeong", "Ningning", "Yuna", "Hanni"],
+        page: "garls.html"
+    },
+
+    {
+        name: "TWOON",
+        company: "NOVA Entertainment",
+        debut: "Like-OH-Ah",
+        fandom: "TWICE",
+        members: ["Soojin", "Soyeon", "Yeri", "Yuqi", "Yeji"],
+        page: "twoon.html"
+    },
+
+    {
+        name: "WO!AH",
+        company: "LUX Entertainment",
+        debut: "Unchild",
+        fandom: "OMGs",
+        members: ["Shuhua", "Wonyoung", "Somi", "Minji"],
+        page: "wo!ah.html"
+    },
+
+    {
+        name: "MIDZY",
+        company: "LUX Entertainment",
+        debut: "Not Shy",
+        fandom: "Dizzys",
+        members: [
+            "HU’E", "Minju", "Kelly", "Jiwoo",
+            "Haum", "Leeseo", "Hyein", "Ian"
         ],
+        page: "midzy.html"
+    },
 
-        stage: [
-            ["Bailey", 100],
-            ["Youngseo", 100],
-            ["Marquise", 95],
-            ["Moka", 90],
-            ["Annie", 70]
-        ]
+    {
+        name: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        debut: "We Go Up",
+        fandom: "H2H",
+        members: [
+            "Xiaoting",
+            "Julie",
+            "Emma",
+            "Natty",
+            "Sullyoon",
+            "Danielle",
+            "Jiyoon",
+            "Kyujin",
+            "Iroha"
+        ],
+        page: "hearts2hearts.html"
+    },
+
+    {
+        name: "SWEET&SOUR",
+        company: "XG Labels",
+        debut: "Fearless",
+        fandom: "—",
+        members: [
+            "Sakura",
+            "Chaewon",
+            "Giselle",
+            "Yunjin",
+            "Haewon",
+            "Kazuha"
+        ],
+        page: "sweetandsour.html"
     }
 
-};
+];
 
 
-/* =========================================
-   LEVEL SYSTEM
-========================================= */
+const MUSICVERSE_IDOLS = [
 
-function getLevel(score) {
+    /* =========================
+       PANDORA
+       ========================= */
 
-    if (score >= 9) {
-        return {
-            name: "TOP IDOL",
-            class: "top"
-        };
+    {
+        name: "Jiwoo",
+        group: "PANDORA",
+        company: "Starship Entertainment",
+        image: "jiwoo.jpg",
+        page: "jiwoo.html",
+        positions: "Leader · Main Vocalist"
+    },
+
+    {
+        name: "Jeemin",
+        group: "PANDORA",
+        company: "Starship Entertainment",
+        image: "jeemin.jpg",
+        page: "jeemin.html",
+        positions: "Main Dancer · Vocalist"
+    },
+
+    {
+        name: "Kylie",
+        group: "PANDORA",
+        company: "Starship Entertainment",
+        image: "kylie.jpg",
+        page: "kylie.html",
+        positions: "Main Rapper"
+    },
+
+    {
+        name: "Hinari",
+        group: "PANDORA",
+        company: "Starship Entertainment",
+        image: "hinari.jpg",
+        page: "hinari.html",
+        positions: "Vocalist · Dancer"
+    },
+
+    {
+        name: "Ruby",
+        group: "PANDORA",
+        company: "Starship Entertainment",
+        image: "ruby.jpg",
+        page: "ruby.html",
+        positions: "Lead Vocalist"
+    },
+
+    {
+        name: "Bonnie",
+        group: "PANDORA",
+        company: "Starship Entertainment",
+        image: "bonnie.jpg",
+        page: "bonnie.html",
+        positions: "Maknae · Vocalist"
+    },
+
+
+    /* =========================
+       ELLEVEN
+       ========================= */
+
+    {
+        name: "Ruka",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "ruka.jpg",
+        page: "ruka.html",
+        positions: "Main Dancer · Main Rapper"
+    },
+
+    {
+        name: "Pharita",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "pharita.jpg",
+        page: "pharita.html",
+        positions: "Lead Vocalist · Visual"
+    },
+
+    {
+        name: "Asa",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "asa.jpg",
+        page: "asa.html",
+        positions: "Main Rapper · Dancer"
+    },
+
+    {
+        name: "Ahyeon",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "ahyeon.jpg",
+        page: "ahyeon.html",
+        positions: "All Rounder · Vocalist · Rapper"
+    },
+
+    {
+        name: "Yuha",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "yuha.jpg",
+        page: "yuha.html",
+        positions: "Lead Vocalist"
+    },
+
+    {
+        name: "Stella",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "stella.jpg",
+        page: "stella.html",
+        positions: "Vocalist"
+    },
+
+    {
+        name: "Rami",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "rami.jpg",
+        page: "rami.html",
+        positions: "Main Vocalist"
+    },
+
+    {
+        name: "Rora",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "rora.jpg",
+        page: "rora.html",
+        positions: "Lead Vocalist · Visual"
+    },
+
+    {
+        name: "Juun",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "juun.jpg",
+        page: "juun.html",
+        positions: "Main Dancer"
+    },
+
+    {
+        name: "A-na",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "a-na.jpg",
+        page: "a-na.html",
+        positions: "Vocalist"
+    },
+
+    {
+        name: "Chiquita",
+        group: "ELLEVEN",
+        company: "Aurelia Entertainment",
+        image: "chiquita.jpg",
+        page: "chiquita.html",
+        positions: "Lead Dancer · Vocalist · Maknae"
+    },
+
+
+    /* =========================
+       PINKPUNK
+       ========================= */
+
+    {
+        name: "Jisoo",
+        group: "PINKPUNK",
+        company: "LUX Entertainment",
+        image: "jisoo.jpg",
+        page: "jisoo.html",
+        positions: "Visual · Unnie · Sub Rapper"
+    },
+
+    {
+        name: "Jennie",
+        group: "PINKPUNK",
+        company: "LUX Entertainment",
+        image: "jennie.jpg",
+        page: "jennie.html",
+        positions: "Main Rapper · Sub Vocalist · FOTG"
+    },
+
+    {
+        name: "Miyeon",
+        group: "PINKPUNK",
+        company: "LUX Entertainment",
+        image: "miyeon.jpg",
+        page: "miyeon.html",
+        positions: "Main Vocalist · Sub Rapper · Visual"
+    },
+
+    {
+        name: "Rosé",
+        group: "PINKPUNK",
+        company: "LUX Entertainment",
+        image: "rose.jpg",
+        page: "rose.html",
+        positions: "Main Vocalist · Lead Dancer"
+    },
+
+    {
+        name: "Mina",
+        group: "PINKPUNK",
+        company: "LUX Entertainment",
+        image: "mina.jpg",
+        page: "mina.html",
+        positions: "Lead Dancer · Visual · Sub Vocalist"
+    },
+
+    {
+        name: "Lisa",
+        group: "PINKPUNK",
+        company: "LUX Entertainment",
+        image: "lisa.jpg",
+        page: "lisa.html",
+        positions: "Main Dancer · Lead Rapper"
+    },
+
+    {
+        name: "Minnie",
+        group: "PINKPUNK",
+        company: "LUX Entertainment",
+        image: "minnie.jpg",
+        page: "minnie.html",
+        positions: "Lead Vocalist · Lead Rapper"
+    },
+
+
+    /* =========================
+       STEELROSE
+       ========================= */
+
+    {
+        name: "Belle",
+        group: "STEELROSE",
+        company: "XG Labels",
+        image: "belle.jpg",
+        page: "belle.html",
+        positions: "Main Vocalist"
+    },
+
+    {
+        name: "Sooin",
+        group: "STEELROSE",
+        company: "XG Labels",
+        image: "sooin.jpg",
+        page: "sooin.html",
+        positions: "Lead Vocalist"
+    },
+
+    {
+        name: "Gawon",
+        group: "STEELROSE",
+        company: "XG Labels",
+        image: "gawon.jpg",
+        page: "gawon.html",
+        positions: "Main Rapper"
+    },
+
+    {
+        name: "Garam",
+        group: "STEELROSE",
+        company: "XG Labels",
+        image: "garam.jpg",
+        page: "garam.html",
+        positions: "Lead Dancer · Vocalist"
+    },
+
+    {
+        name: "Anna",
+        group: "STEELROSE",
+        company: "XG Labels",
+        image: "anna.jpg",
+        page: "anna.html",
+        positions: "Vocalist"
+    },
+
+    {
+        name: "Ella",
+        group: "STEELROSE",
+        company: "XG Labels",
+        image: "ella.jpg",
+        page: "ella.html",
+        positions: "Maknae · Dancer"
+    },
+
+
+    /* =========================
+       LESSERAFIM
+       ========================= */
+
+    {
+        name: "Winter",
+        group: "LESSERAFIM",
+        company: "Aurelia Entertainment",
+        image: "winter.jpg",
+        page: "winter.html",
+        positions: "Main Vocalist · Dancer"
+    },
+
+    {
+        name: "Yujin",
+        group: "LESSERAFIM",
+        company: "Aurelia Entertainment",
+        image: "yujin.jpg",
+        page: "yujin.html",
+        positions: "Leader · Vocalist"
+    },
+
+    {
+        name: "Liz",
+        group: "LESSERAFIM",
+        company: "Aurelia Entertainment",
+        image: "liz.jpg",
+        page: "liz.html",
+        positions: "Main Vocalist"
+    },
+
+    {
+        name: "Haerin",
+        group: "LESSERAFIM",
+        company: "Aurelia Entertainment",
+        image: "haerin.jpg",
+        page: "haerin.html",
+        positions: "Lead Dancer · Vocalist"
+    },
+
+    {
+        name: "Eunchae",
+        group: "LESSERAFIM",
+        company: "Aurelia Entertainment",
+        image: "eunchae.jpg",
+        page: "eunchae.html",
+        positions: "Lead Dancer · Maknae"
+    },
+
+    {
+        name: "Narin",
+        group: "LESSERAFIM",
+        company: "Aurelia Entertainment",
+        image: "narin.jpg",
+        page: "narin.html",
+        positions: "Vocalist · Visual"
+    },
+
+
+    /* =========================
+       ONCE
+       ========================= */
+
+    {
+        name: "Sana",
+        group: "ONCE",
+        company: "MDX Entertainment",
+        image: "sana.jpg",
+        page: "sana.html",
+        positions: "Lead Dancer · Vocalist"
+    },
+
+    {
+        name: "Jihyo",
+        group: "ONCE",
+        company: "MDX Entertainment",
+        image: "jihyo.jpg",
+        page: "jihyo.html",
+        positions: "Leader · Main Vocalist"
+    },
+
+    {
+        name: "Dahyun",
+        group: "ONCE",
+        company: "MDX Entertainment",
+        image: "dahyun.jpg",
+        page: "dahyun.html",
+        positions: "Main Rapper"
+    },
+
+    {
+        name: "Chaeyoung",
+        group: "ONCE",
+        company: "MDX Entertainment",
+        image: "chaeyoung.jpg",
+        page: "chaeyoung.html",
+        positions: "Main Rapper · Vocalist"
+    },
+
+    {
+        name: "Tzuyu",
+        group: "ONCE",
+        company: "MDX Entertainment",
+        image: "tzuyu.jpg",
+        page: "tzuyu.html",
+        positions: "Visual · Lead Dancer · Maknae"
+    },
+
+
+    /* =========================
+       GARLS
+       ========================= */
+
+    {
+        name: "Karina",
+        group: "GARLS",
+        company: "Aurelia Entertainment",
+        image: "karina.jpg",
+        page: "karina.html",
+        positions: "Leader · Main Dancer · Rapper"
+    },
+
+    {
+        name: "Chaeryeong",
+        group: "GARLS",
+        company: "Aurelia Entertainment",
+        image: "chaeryeong.jpg",
+        page: "chaeryeong.html",
+        positions: "Main Dancer · Vocalist"
+    },
+
+    {
+        name: "Ningning",
+        group: "GARLS",
+        company: "Aurelia Entertainment",
+        image: "ningning.jpg",
+        page: "ningning.html",
+        positions: "Main Vocalist"
+    },
+
+    {
+        name: "Yuna",
+        group: "GARLS",
+        company: "Aurelia Entertainment",
+        image: "yuna.jpg",
+        page: "yuna.html",
+        positions: "Lead Dancer · Visual"
+    },
+
+    {
+        name: "Hanni",
+        group: "GARLS",
+        company: "Aurelia Entertainment",
+        image: "hanni.jpg",
+        page: "hanni.html",
+        positions: "Lead Vocalist"
+    },
+
+
+    /* =========================
+       TWOON
+       ========================= */
+
+    {
+        name: "Soojin",
+        group: "TWOON",
+        company: "NOVA Entertainment",
+        image: "soojin.jpg",
+        page: "soojin.html",
+        positions: "Main Dancer · Vocalist"
+    },
+
+    {
+        name: "Soyeon",
+        group: "TWOON",
+        company: "NOVA Entertainment",
+        image: "soyeon.jpg",
+        page: "soyeon.html",
+        positions: "Leader · Main Rapper"
+    },
+
+    {
+        name: "Yeri",
+        group: "TWOON",
+        company: "NOVA Entertainment",
+        image: "yeri.jpg",
+        page: "yeri.html",
+        positions: "Vocalist"
+    },
+
+    {
+        name: "Yuqi",
+        group: "TWOON",
+        company: "NOVA Entertainment",
+        image: "yuqi.jpg",
+        page: "yuqi.html",
+        positions: "Main Vocalist"
+    },
+
+    {
+        name: "Yeji",
+        group: "TWOON",
+        company: "NOVA Entertainment",
+        image: "yeji.jpg",
+        page: "yeji.html",
+        positions: "Main Dancer · Vocalist"
+    },
+
+
+    /* =========================
+       WO!AH
+       ========================= */
+
+    {
+        name: "Shuhua",
+        group: "WO!AH",
+        company: "LUX Entertainment",
+        image: "shuhua.jpg",
+        page: "shuhua.html",
+        positions: "Visual · Vocalist"
+    },
+
+    {
+        name: "Wonyoung",
+        group: "WO!AH",
+        company: "LUX Entertainment",
+        image: "wonyoung.jpg",
+        page: "wonyoung.html",
+        positions: "Visual · Vocalist"
+    },
+
+    {
+        name: "Somi",
+        group: "WO!AH",
+        company: "LUX Entertainment",
+        image: "somi.jpg",
+        page: "somi.html",
+        positions: "Lead Vocalist · Dancer"
+    },
+
+    {
+        name: "Minji",
+        group: "WO!AH",
+        company: "LUX Entertainment",
+        image: "minji.jpg",
+        page: "minji.html",
+        positions: "Vocalist · Maknae"
+    },
+
+
+    /* =========================
+       MIDZY
+       ========================= */
+
+    {
+        name: "HU’E",
+        group: "MIDZY",
+        company: "LUX Entertainment",
+        image: "hue.jpg",
+        page: "hue.html",
+        positions: "Leader · Vocalist"
+    },
+
+    {
+        name: "Minju",
+        group: "MIDZY",
+        company: "LUX Entertainment",
+        image: "minju.jpg",
+        page: "minju.html",
+        positions: "Main Vocalist"
+    },
+
+    {
+        name: "Kelly",
+        group: "MIDZY",
+        company: "LUX Entertainment",
+        image: "kelly.jpg",
+        page: "kelly.html",
+        positions: "Main Rapper"
+    },
+
+    {
+        name: "Jiwoo",
+        group: "MIDZY",
+        company: "LUX Entertainment",
+        image: "jiwoo-midzy.jpg",
+        page: "jiwoo-midzy.html",
+        positions: "Lead Dancer · Vocalist"
+    },
+
+    {
+        name: "Haum",
+        group: "MIDZY",
+        company: "LUX Entertainment",
+        image: "haum.jpg",
+        page: "haum.html",
+        positions: "Vocalist"
+    },
+
+    {
+        name: "Leeseo",
+        group: "MIDZY",
+        company: "LUX Entertainment",
+        image: "leeseo.jpg",
+        page: "leeseo.html",
+        positions: "Lead Dancer"
+    },
+
+    {
+        name: "Hyein",
+        group: "MIDZY",
+        company: "LUX Entertainment",
+        image: "hyein.jpg",
+        page: "hyein.html",
+        positions: "Vocalist · Visual"
+    },
+
+    {
+        name: "Ian",
+        group: "MIDZY",
+        company: "LUX Entertainment",
+        image: "ian.jpg",
+        page: "ian.html",
+        positions: "Visual · Maknae"
+    },
+
+
+    /* =========================
+       HEARTS2HEARTS
+       ========================= */
+
+    {
+        name: "Xiaoting",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "xiaoting.jpg",
+        page: "xiaoting.html",
+        positions: "Unnie · Lead Dancer"
+    },
+
+    {
+        name: "Julie",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "julie.jpg",
+        page: "julie.html",
+        positions: "Main Rapper · Leader"
+    },
+
+    {
+        name: "Emma",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "emma.jpg",
+        page: "emma.html",
+        positions: "Main Dancer · Rapper"
+    },
+
+    {
+        name: "Natty",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "natty.jpg",
+        page: "natty.html",
+        positions: "Lead Dancer · Rapper"
+    },
+
+    {
+        name: "Sullyoon",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "sullyoon.jpg",
+        page: "sullyoon.html",
+        positions: "Lead Vocalist · Visual"
+    },
+
+    {
+        name: "Danielle",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "danielle.jpg",
+        page: "danielle.html",
+        positions: "Vocalist · Visual"
+    },
+
+    {
+        name: "Jiyoon",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "jiyoon.jpg",
+        page: "jiyoon.html",
+        positions: "Main Vocalist · Visual"
+    },
+
+    {
+        name: "Kyujin",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "kyujin.jpg",
+        page: "kyujin.html",
+        positions: "All Rounder"
+    },
+
+    {
+        name: "Iroha",
+        group: "HEARTS2HEARTS",
+        company: "Aurelia Entertainment",
+        image: "iroha.jpg",
+        page: "iroha.html",
+        positions: "Lead Dancer · Maknae"
+    },
+
+
+    /* =========================
+       SWEET&SOUR
+       ========================= */
+
+    {
+        name: "Sakura",
+        group: "SWEET&SOUR",
+        company: "XG Labels",
+        image: "sakura.jpg",
+        page: "sakura.html",
+        positions: "Unnie · Lead Dancer"
+    },
+
+    {
+        name: "Chaewon",
+        group: "SWEET&SOUR",
+        company: "XG Labels",
+        image: "chaewon.jpg",
+        page: "chaewon.html",
+        positions: "Leader · Sub Vocalist"
+    },
+
+    {
+        name: "Giselle",
+        group: "SWEET&SOUR",
+        company: "XG Labels",
+        image: "giselle.jpg",
+        page: "giselle.html",
+        positions: "Main Rapper"
+    },
+
+    {
+        name: "Yunjin",
+        group: "SWEET&SOUR",
+        company: "XG Labels",
+        image: "yunjin.jpg",
+        page: "yunjin.html",
+        positions: "Lead Vocalist · Visual"
+    },
+
+    {
+        name: "Haewon",
+        group: "SWEET&SOUR",
+        company: "XG Labels",
+        image: "haewon.jpg",
+        page: "haewon.html",
+        positions: "Main Vocalist · Visual"
+    },
+
+    {
+        name: "Kazuha",
+        group: "SWEET&SOUR",
+        company: "XG Labels",
+        image: "kazuha.jpg",
+        page: "kazuha.html",
+        positions: "Main Dancer · Lead Rapper · Visual · Sub Vocalist · Maknae"
     }
 
-    if (score >= 8) {
-        return {
-            name: "GREAT IDOL",
-            class: "great"
-        };
-    }
-
-    if (score >= 7) {
-        return {
-            name: "GOOD IDOL",
-            class: "good"
-        };
-    }
-
-    if (score >= 6) {
-        return {
-            name: "AVERAGE IDOL",
-            class: "average"
-        };
-    }
-
-    if (score >= 5) {
-        return {
-            name: "BELOW IDOL",
-            class: "below"
-        };
-    }
-
-    return {
-        name: "DOZEN IDOL",
-        class: "dozen"
-    };
-}
-
-
-/* =========================================
-   GLOBAL TOP 10
-========================================= */
-
-let allIdols = [];
-
-for (const group in groups) {
-
-    groups[group].forEach(member => {
-
-        allIdols.push({
-            name: member[0],
-            score: member[1],
-            group: group
-        });
-
-    });
-
-}
-
-allIdols.sort((a, b) => b.score - a.score);
-
-const top10 = allIdols.slice(0, 10);
-
-const globalTop = document.getElementById("globalTop");
-
-top10.forEach((idol, index) => {
-
-    const level = getLevel(idol.score);
-
-    const item = document.createElement("div");
-
-    item.className =
-        "global-item " +
-        level.class +
-        (index === 0 ? " first" : "");
-
-    item.innerHTML = `
-
-        <div class="number">
-            ${String(index + 1).padStart(2, "0")}
-        </div>
-
-        <div>
-
-            <div class="idol-name">
-                ${idol.name}
-            </div>
-
-            <div class="group-name">
-                ${idol.group}
-            </div>
-
-            <span class="level ${level.class}">
-                ${level.name}
-            </span>
-
-        </div>
-
-        <div class="score">
-            ${idol.score.toFixed(2)}
-        </div>
-
-    `;
-
-    globalTop.appendChild(item);
-
-});
-
-
-/* =========================================
-   GROUP SCORES
-========================================= */
-
-const groupsGrid =
-    document.getElementById("groupsGrid");
-
-for (const group in groups) {
-
-    const card =
-        document.createElement("div");
-
-    card.className = "group-card";
-
-    card.innerHTML = `
-
-        <div class="group-header">
-
-            <h3>${group}</h3>
-
-            <span>
-                ${groups[group].length} MEMBERS
-            </span>
-
-        </div>
-
-    `;
-
-    groups[group].forEach((member, index) => {
-
-        const name = member[0];
-        const score = member[1];
-
-        const level = getLevel(score);
-
-        const row =
-            document.createElement("div");
-
-        row.className = "member";
-
-        row.innerHTML = `
-
-            <div class="member-rank">
-                ${index + 1}
-            </div>
-
-            <div class="member-name">
-                ${name}
-            </div>
-
-            <div class="member-score ${level.class}">
-                ${score.toFixed(2)}
-            </div>
-
-        `;
-
-        card.appendChild(row);
-
-    });
-
-    groupsGrid.appendChild(card);
-
-}
-
-
-/* =========================================
-   CATEGORY CARD CREATOR
-========================================= */
-
-function createCategoryCards(containerId, category) {
-
-    const container =
-        document.getElementById(containerId);
-
-    for (const group in categoryData) {
-
-        const members =
-            categoryData[group][category];
-
-        if (!members) continue;
-
-        const card =
-            document.createElement("div");
-
-        card.className = "category-card";
-
-        card.innerHTML = `
-
-            <h3>${group}</h3>
-
-        `;
-
-        members.forEach((member, index) => {
-
-            const name = member[0];
-            const score = member[1];
-
-            const row =
-                document.createElement("div");
-
-            row.className =
-                "category-member";
-
-            let displayScore = "—";
-
-            if (score !== null) {
-
-                if (category === "dance") {
-                    displayScore =
-                        (score / 10).toFixed(2);
-                }
-
-                else if (category === "stage") {
-                    displayScore =
-                        (score / 5).toFixed(0) + "/20";
-                }
-
-                else {
-                    displayScore =
-                        score;
-                }
-            }
-
-            row.innerHTML = `
-
-                <div class="category-rank">
-                    ${index + 1}
-                </div>
-
-                <div class="category-name">
-                    ${name}
-                </div>
-
-                <div class="category-score">
-                    ${displayScore}
-                </div>
-
-            `;
-
-            card.appendChild(row);
-
-        });
-
-        container.appendChild(card);
-
-    }
-
-}
-
-
-/* =========================================
-   CREATE CATEGORY SECTIONS
-========================================= */
-
-createCategoryCards("vocalGrid", "vocal");
-createCategoryCards("rapGrid", "rap");
-createCategoryCards("danceGrid", "dance");
-createCategoryCards("stageGrid", "stage");
-
-</script>
-
-</body>
-</html>
+];
