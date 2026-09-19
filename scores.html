@@ -19,10 +19,6 @@
         color: #222;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
-
     header {
         background: linear-gradient(135deg, #111827, #27272a);
         color: white;
@@ -43,10 +39,6 @@
         letter-spacing: 1px;
     }
 
-    /* =========================
-       CONTENEDOR
-    ========================= */
-
     .container {
         width: 92%;
         max-width: 1250px;
@@ -55,7 +47,7 @@
 
     .section-title {
         text-align: center;
-        margin-bottom: 25px;
+        margin: 55px 0 25px;
     }
 
     .section-title h2 {
@@ -145,7 +137,7 @@
     }
 
     /* =========================
-       COLORES
+       LEVEL COLORS
     ========================= */
 
     .top {
@@ -254,6 +246,80 @@
     }
 
     /* =========================
+       CATEGORY SECTIONS
+    ========================= */
+
+    .category-section {
+        margin-top: 60px;
+    }
+
+    .category-title {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .category-title h2 {
+        font-size: 28px;
+    }
+
+    .category-title p {
+        color: #777;
+        margin-top: 6px;
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .category-card {
+        background: white;
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 7px 25px rgba(0,0,0,.07);
+    }
+
+    .category-card h3 {
+        font-size: 20px;
+        margin-bottom: 17px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .category-member {
+        display: grid;
+        grid-template-columns: 30px 1fr auto;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 8px;
+        border-radius: 10px;
+        margin-bottom: 4px;
+    }
+
+    .category-member:hover {
+        background: #f7f7f7;
+    }
+
+    .category-rank {
+        font-size: 12px;
+        font-weight: 800;
+        color: #999;
+    }
+
+    .category-name {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .category-score {
+        font-size: 13px;
+        font-weight: 900;
+        padding: 4px 8px;
+        border-radius: 10px;
+    }
+
+    /* =========================
        LEGEND
     ========================= */
 
@@ -277,7 +343,9 @@
     ========================= */
 
     @media (max-width: 900px) {
-        .groups-grid {
+
+        .groups-grid,
+        .category-grid {
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -288,7 +356,8 @@
             font-size: 30px;
         }
 
-        .groups-grid {
+        .groups-grid,
+        .category-grid {
             grid-template-columns: 1fr;
         }
 
@@ -305,7 +374,6 @@
     <h1>MUSICVERSE SCORES</h1>
     <p>GLOBAL IDOL PERFORMANCE RANKINGS</p>
 </header>
-
 
 <div class="container">
 
@@ -355,7 +423,7 @@
 
 
     <!-- =========================
-         GROUP RANKINGS
+         GROUP SCORES
     ========================= -->
 
     <div class="section-title">
@@ -365,13 +433,77 @@
 
     <div class="groups-grid" id="groupsGrid"></div>
 
+
+    <!-- =========================
+         VOCAL
+    ========================= -->
+
+    <div class="category-section">
+
+        <div class="category-title">
+            <h2>🎤 VOCAL RANKINGS</h2>
+            <p>Vocal rankings within each group</p>
+        </div>
+
+        <div class="category-grid" id="vocalGrid"></div>
+
+    </div>
+
+
+    <!-- =========================
+         RAP
+    ========================= -->
+
+    <div class="category-section">
+
+        <div class="category-title">
+            <h2>🎙️ RAP RANKINGS</h2>
+            <p>Rap rankings within each group</p>
+        </div>
+
+        <div class="category-grid" id="rapGrid"></div>
+
+    </div>
+
+
+    <!-- =========================
+         DANCE
+    ========================= -->
+
+    <div class="category-section">
+
+        <div class="category-title">
+            <h2>💃 DANCE RANKINGS</h2>
+            <p>Dance rankings within each group</p>
+        </div>
+
+        <div class="category-grid" id="danceGrid"></div>
+
+    </div>
+
+
+    <!-- =========================
+         STAGE PRESENCE
+    ========================= -->
+
+    <div class="category-section">
+
+        <div class="category-title">
+            <h2>⭐ STAGE PRESENCE RANKINGS</h2>
+            <p>Stage presence rankings within each group</p>
+        </div>
+
+        <div class="category-grid" id="stageGrid"></div>
+
+    </div>
+
 </div>
 
 
 <script>
 
 /* =========================================
-   GROUP DATA
+   OVERALL GROUP DATA
 ========================================= */
 
 const groups = {
@@ -489,7 +621,155 @@ const groups = {
         ["Kya", 7.73],
         ["Mai", 6.75],
         ["Carmen", 6.08]
+    ],
+
+    DICE: [
+        ["Sunhye", 10.38],
+        ["Jieun", 10.10],
+        ["Doeun", 9.73],
+        ["Jiana", 9.55],
+        ["Jungeun", 9.00],
+        ["Koko", 7.85]
+    ],
+
+    EUPHORIA: [
+        ["Bailey", 8.63],
+        ["Marquise", 8.60],
+        ["Youngseo", 7.48],
+        ["Annie", 7.09],
+        ["Moka", 7.05]
     ]
+
+};
+
+
+/* =========================================
+   CATEGORY DATA
+   Scores:
+   Vocal = points
+   Rap = points
+   Dance = score x10
+   Stage = score x5
+========================================= */
+
+const categoryData = {
+
+    BABYDOLL: {
+
+        vocal: [
+            ["Kya", 50],
+            ["Megan", 35],
+            ["Carmen", 35],
+            ["Yunah", null],
+            ["Mai", null],
+            ["Haneul", null],
+            ["Yoonchae", null]
+        ],
+
+        rap: [
+            ["Haneul", null],
+            ["Yoonchae", null],
+            ["Megan", null],
+            ["Kya", null],
+            ["Mai", null],
+            ["Yunah", null],
+            ["Carmen", null]
+        ],
+
+        dance: [
+            ["Megan", null],
+            ["Yunah", null],
+            ["Haneul", null],
+            ["Kya", null],
+            ["Yoonchae", null],
+            ["Mai", null],
+            ["Carmen", null]
+        ],
+
+        stage: [
+            ["Megan", null],
+            ["Haneul", null],
+            ["Yunah", null],
+            ["Kya", null],
+            ["Yoonchae", null],
+            ["Mai", null],
+            ["Carmen", null]
+        ]
+    },
+
+    DICE: {
+
+        vocal: [
+            ["Jungeun", 80],
+            ["Sunhye", 50],
+            ["Jieun", 50],
+            ["Jiana", 40],
+            ["Doeun", 25],
+            ["Koko", 20]
+        ],
+
+        rap: [
+            ["Doeun", 100],
+            ["Sunhye", 95],
+            ["Jiana", 85],
+            ["Jieun", 80],
+            ["Koko", 40],
+            ["Jungeun", 10]
+        ],
+
+        dance: [
+            ["Sunhye", 95],
+            ["Jieun", 94],
+            ["Jungeun", 90],
+            ["Koko", 89],
+            ["Doeun", 89],
+            ["Jiana", 87]
+        ],
+
+        stage: [
+            ["Sunhye", 95],
+            ["Jieun", 100],
+            ["Jiana", 90],
+            ["Jungeun", 100],
+            ["Doeun", 95],
+            ["Koko", 85]
+        ]
+    },
+
+    EUPHORIA: {
+
+        vocal: [
+            ["Marquise", 55],
+            ["Bailey", 30],
+            ["Moka", 25],
+            ["Annie", 10],
+            ["Youngseo", 10]
+        ],
+
+        rap: [
+            ["Annie", 65],
+            ["Marquise", 20],
+            ["Youngseo", 20],
+            ["Bailey", 15],
+            ["Moka", 5]
+        ],
+
+        dance: [
+            ["Bailey", 100],
+            ["Marquise", 94],
+            ["Youngseo", 89],
+            ["Moka", 82],
+            ["Annie", 58.5]
+        ],
+
+        stage: [
+            ["Bailey", 100],
+            ["Youngseo", 100],
+            ["Marquise", 95],
+            ["Moka", 90],
+            ["Annie", 70]
+        ]
+    }
 
 };
 
@@ -543,11 +823,10 @@ function getLevel(score) {
 
 
 /* =========================================
-   CREATE GLOBAL LIST
+   GLOBAL TOP 10
 ========================================= */
 
 let allIdols = [];
-
 
 for (const group in groups) {
 
@@ -563,22 +842,11 @@ for (const group in groups) {
 
 }
 
-
-/* Sort highest → lowest */
-
 allIdols.sort((a, b) => b.score - a.score);
-
-
-/* Get Top 10 */
 
 const top10 = allIdols.slice(0, 10);
 
 const globalTop = document.getElementById("globalTop");
-
-
-/* =========================================
-   DISPLAY TOP 10
-========================================= */
 
 top10.forEach((idol, index) => {
 
@@ -590,7 +858,6 @@ top10.forEach((idol, index) => {
         "global-item " +
         level.class +
         (index === 0 ? " first" : "");
-
 
     item.innerHTML = `
 
@@ -626,12 +893,11 @@ top10.forEach((idol, index) => {
 
 
 /* =========================================
-   CREATE GROUP CARDS
+   GROUP SCORES
 ========================================= */
 
 const groupsGrid =
     document.getElementById("groupsGrid");
-
 
 for (const group in groups) {
 
@@ -640,14 +906,11 @@ for (const group in groups) {
 
     card.className = "group-card";
 
-
     card.innerHTML = `
 
         <div class="group-header">
 
-            <h3>
-                ${group}
-            </h3>
+            <h3>${group}</h3>
 
             <span>
                 ${groups[group].length} MEMBERS
@@ -656,7 +919,6 @@ for (const group in groups) {
         </div>
 
     `;
-
 
     groups[group].forEach((member, index) => {
 
@@ -669,7 +931,6 @@ for (const group in groups) {
             document.createElement("div");
 
         row.className = "member";
-
 
         row.innerHTML = `
 
@@ -691,10 +952,104 @@ for (const group in groups) {
 
     });
 
-
     groupsGrid.appendChild(card);
 
 }
+
+
+/* =========================================
+   CATEGORY CARD CREATOR
+========================================= */
+
+function createCategoryCards(containerId, category) {
+
+    const container =
+        document.getElementById(containerId);
+
+    for (const group in categoryData) {
+
+        const members =
+            categoryData[group][category];
+
+        if (!members) continue;
+
+        const card =
+            document.createElement("div");
+
+        card.className = "category-card";
+
+        card.innerHTML = `
+
+            <h3>${group}</h3>
+
+        `;
+
+        members.forEach((member, index) => {
+
+            const name = member[0];
+            const score = member[1];
+
+            const row =
+                document.createElement("div");
+
+            row.className =
+                "category-member";
+
+            let displayScore = "—";
+
+            if (score !== null) {
+
+                if (category === "dance") {
+                    displayScore =
+                        (score / 10).toFixed(2);
+                }
+
+                else if (category === "stage") {
+                    displayScore =
+                        (score / 5).toFixed(0) + "/20";
+                }
+
+                else {
+                    displayScore =
+                        score;
+                }
+            }
+
+            row.innerHTML = `
+
+                <div class="category-rank">
+                    ${index + 1}
+                </div>
+
+                <div class="category-name">
+                    ${name}
+                </div>
+
+                <div class="category-score">
+                    ${displayScore}
+                </div>
+
+            `;
+
+            card.appendChild(row);
+
+        });
+
+        container.appendChild(card);
+
+    }
+
+}
+
+
+/* =========================================
+   CREATE CATEGORY SECTIONS
+========================================= */
+
+createCategoryCards("vocalGrid", "vocal");
+createCategoryCards("rapGrid", "rap");
+createCategoryCards("danceGrid", "dance");
+createCategoryCards("stageGrid", "stage");
 
 </script>
 
