@@ -142,7 +142,7 @@ const MUSICVERSE_GROUPS = [
 
     {
         name: "BABYDOLL",
-        company: "—",
+        company: "LUX Entertainment",
         debut: "—",
         fandom: "—",
         members: [
@@ -159,7 +159,7 @@ const MUSICVERSE_GROUPS = [
 
     {
         name: "DICE",
-        company: "—",
+        company: "LUX Entertainment × AURELIA Labels",
         debut: "—",
         fandom: "—",
         members: [
@@ -171,6 +171,21 @@ const MUSICVERSE_GROUPS = [
             "Jieun"
         ],
         page: "dice.html"
+    },
+
+    {
+        name: "EUPHORIA",
+        company: "Aurelia Entertainment",
+        debut: "—",
+        fandom: "—",
+        members: [
+            "Annie",
+            "Bailey",
+            "Moka",
+            "Youngseo",
+            "Marquise"
+        ],
+        page: "euphoria.html"
     }
 
 ];
@@ -947,64 +962,64 @@ const MUSICVERSE_IDOLS = [
     {
         name: "Yunah",
         group: "BABYDOLL",
-        company: "—",
+        company: "LUX Entertainment",
         image: "yunah.jpg",
         page: "yunah.html",
-        positions: "—"
+        positions: "Unnie · Lead Dancer"
     },
 
     {
         name: "Mai",
         group: "BABYDOLL",
-        company: "—",
+        company: "LUX Entertainment",
         image: "mai.jpg",
         page: "mai.html",
-        positions: "—"
+        positions: "Leader · Visual · Main Rapper"
     },
 
     {
         name: "Haneul",
         group: "BABYDOLL",
-        company: "—",
+        company: "LUX Entertainment",
         image: "haneul.jpg",
         page: "haneul.html",
-        positions: "—"
+        positions: "Visual · Vocalist · Rapper"
     },
 
     {
         name: "Megan",
         group: "BABYDOLL",
-        company: "—",
+        company: "LUX Entertainment",
         image: "megan.jpg",
         page: "megan.html",
-        positions: "—"
+        positions: "Main Dancer · Lead Vocalist"
     },
 
     {
         name: "Carmen",
         group: "BABYDOLL",
-        company: "—",
+        company: "LUX Entertainment",
         image: "carmen.jpg",
         page: "carmen.html",
-        positions: "—"
+        positions: "Vocalist · Visual"
     },
 
     {
         name: "Yoonchae",
         group: "BABYDOLL",
-        company: "—",
+        company: "LUX Entertainment",
         image: "yoonchae.jpg",
         page: "yoonchae.html",
-        positions: "—"
+        positions: "Dancer · Vocalist"
     },
 
     {
         name: "Kya",
         group: "BABYDOLL",
-        company: "—",
+        company: "LUX Entertainment",
         image: "kya.jpg",
         page: "kya.html",
-        positions: "—"
+        positions: "Main Vocalist · Maknae · Visual"
     },
 
 
@@ -1015,54 +1030,104 @@ const MUSICVERSE_IDOLS = [
     {
         name: "Sunhye",
         group: "DICE",
-        company: "—",
+        company: "LUX Entertainment × AURELIA Labels",
         image: "sunhye.jpg",
         page: "sunhye.html",
-        positions: "—"
+        positions: "Main Rapper · Dancer · Unnie · Leader · Main Dancer"
     },
 
     {
         name: "Jiana",
         group: "DICE",
-        company: "—",
+        company: "LUX Entertainment × AURELIA Labels",
         image: "jiana.jpg",
         page: "jiana.html",
-        positions: "—"
+        positions: "Vocalist · Dancer"
     },
 
     {
         name: "Koko",
         group: "DICE",
-        company: "—",
+        company: "LUX Entertainment × AURELIA Labels",
         image: "koko.jpg",
         page: "koko.html",
-        positions: "—"
+        positions: "Visual · Sub Vocalist"
     },
 
     {
         name: "Jungeun",
         group: "DICE",
-        company: "—",
+        company: "LUX Entertainment × AURELIA Labels",
         image: "jungeun.jpg",
         page: "jungeun.html",
-        positions: "—"
+        positions: "Main Vocalist · Visual"
     },
 
     {
         name: "Doeun",
         group: "DICE",
-        company: "—",
+        company: "LUX Entertainment × AURELIA Labels",
         image: "doeun.jpg",
         page: "doeun.html",
-        positions: "—"
+        positions: "Main Rapper · Dancer"
     },
 
     {
         name: "Jieun",
         group: "DICE",
-        company: "—",
+        company: "LUX Entertainment × AURELIA Labels",
         image: "jieun.jpg",
         page: "jieun.html",
+        positions: "Maknae · Main Dancer"
+    },
+
+
+    /* =========================
+       EUPHORIA
+       ========================= */
+
+    {
+        name: "Annie",
+        group: "EUPHORIA",
+        company: "Aurelia Entertainment",
+        image: "annie.jpg",
+        page: "annie.html",
+        positions: "—"
+    },
+
+    {
+        name: "Bailey",
+        group: "EUPHORIA",
+        company: "Aurelia Entertainment",
+        image: "bailey.jpg",
+        page: "bailey.html",
+        positions: "—"
+    },
+
+    {
+        name: "Moka",
+        group: "EUPHORIA",
+        company: "Aurelia Entertainment",
+        image: "moka.jpg",
+        page: "moka.html",
+        positions: "—"
+    },
+
+    {
+        name: "Youngseo",
+        group: "EUPHORIA",
+        company: "Aurelia Entertainment",
+        image: "youngseo.jpg",
+        page: "youngseo.html",
+        positions: "—"
+    },
+
+    {
+        name: "Marquise",
+        group: "EUPHORIA",
+        company: "Aurelia Entertainment",
+        image: "marquise.jpg",
+        page: "marquise.html",
         positions: "—"
     }
 
